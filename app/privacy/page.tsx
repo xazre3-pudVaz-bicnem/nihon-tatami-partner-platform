@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { SITE_NAME, SITE_URL } from "@/lib/metadata";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `プライバシーポリシー | ${SITE_NAME}`,
+  description: "日本畳パートナーズのプライバシーポリシーについてご確認いただけます。",
   alternates: { canonical: `${SITE_URL}/privacy` },
 };
 
