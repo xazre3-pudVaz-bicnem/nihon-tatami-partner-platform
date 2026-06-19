@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-kiji: #F5F0E8;
+  --color-kiji-dark: #EDE5D4;
+  --color-sumi: #1A1A1A;
+  --color-sumi-light: #2D2D2D;
+  --color-ai: #1A2E5A;
+  --color-ai-light: #2A4070;
+  --color-matcha: #5C6B3E;
+  --color-igusa: #6B8C5A;
+  --color-kincya: #B8860B;
+  --color-do: #9B5E3A;
+  --color-shiro: #FAFAF8;
+  --color-cloud: #F0EDE6;
+  --color-border: #D4CFC6;
+
+  --font-serif: 'Noto Serif JP', 'Yu Mincho', '游明朝', serif;
+  --font-sans: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-shiro);
+    color: var(--color-sumi);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background-color: var(--color-kiji-dark);
+    color: var(--color-ai);
+  }
+}
+
+@layer utilities {
+  .tatami-pattern {
+    background-image:
+      linear-gradient(0deg, transparent 47%, rgba(100,85,60,0.06) 48%, rgba(100,85,60,0.06) 52%, transparent 53%),
+      linear-gradient(90deg, transparent 47%, rgba(100,85,60,0.06) 48%, rgba(100,85,60,0.06) 52%, transparent 53%);
+    background-size: 60px 60px;
+  }
+}
