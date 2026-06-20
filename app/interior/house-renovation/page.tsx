@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -16,7 +16,7 @@ export default function HouseRenovationPage() {
       title="住宅内装リフォーム"
       subtitle="畳を軸に、床・壁・建具をまとめてリフォームできます。部屋ごとの個別対応から、複数部屋・丸ごとリフォームまで一括でご相談ください。"
       breadcrumbs={[{ label: "内装工事", href: "/interior" }, { label: "住宅内装リフォーム" }]}
-      image="/images/interior-house.jpg"
+      image="/images/nihon-tatami/interior/interior-residential-workers-01.png"
       sections={[
         {
           heading: "住宅内装リフォームの進め方",

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -20,7 +20,7 @@ export default function RyukyuTatamiPage() {
         { label: "畳工事", href: "/services/tatami" },
         { label: "琉球畳" },
       ]}
-      image="/images/service-ryukyu.jpg"
+      image="/images/nihon-tatami/tatami/tatami-room-ryokan-lantern-01.png"
       sections={[
         {
           heading: "琉球畳とは",

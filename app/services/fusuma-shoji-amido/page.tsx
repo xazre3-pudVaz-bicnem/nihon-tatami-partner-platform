@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -20,7 +20,7 @@ export default function FusumaPage() {
         { label: "畳工事", href: "/services/tatami" },
         { label: "襖・障子・網戸" },
       ]}
-      image="/images/service-fusuma.jpg"
+      image="/images/nihon-tatami/shoji/shoji-installation-01.png"
       sections={[
         {
           heading: "和室一式のリフレッシュ",

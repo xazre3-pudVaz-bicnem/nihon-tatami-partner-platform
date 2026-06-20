@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -16,7 +16,7 @@ export default function CushionFloorPage() {
       title="クッションフロア張替え"
       subtitle="水や汚れに強いクッションフロアの張替えに対応。賃貸物件の原状回復や水回りのリフォームに多く使われます。"
       breadcrumbs={[{ label: "内装工事", href: "/interior" }, { label: "クッションフロア" }]}
-      image="/images/interior-cf.jpg"
+      image="/images/nihon-tatami/restoration/restoration-kitchen-check-01.png"
       sections={[
         {
           heading: "クッションフロアとは",

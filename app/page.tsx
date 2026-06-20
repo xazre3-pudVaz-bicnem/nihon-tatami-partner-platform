@@ -149,7 +149,7 @@ export default function HomePage() {
         {/* Background image — right side */}
         <div className="absolute right-0 top-0 bottom-0 w-[52%] hidden lg:block" aria-hidden="true">
           <Image
-            src="/images/hero-tatami.jpg"
+            src="/images/nihon-tatami/hero/hero-tatami-premium.png"
             alt="和室の畳空間"
             fill
             className="object-cover"
@@ -302,7 +302,7 @@ export default function HomePage() {
                 <div className="relative">
                   <div className="relative h-72 sm:h-96 bg-sumi/10 overflow-hidden">
                     <Image
-                      src="/images/concept-tatami.jpg"
+                      src="/images/nihon-tatami/tatami/tatami-room-traditional-01.png"
                       alt="畳の空間"
                       fill
                       className="object-cover"

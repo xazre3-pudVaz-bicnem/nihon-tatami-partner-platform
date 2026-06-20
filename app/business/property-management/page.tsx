@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -19,7 +19,7 @@ export default function PropertyManagementPage() {
         { label: "法人・施設向け", href: "/business" },
         { label: "不動産管理会社向け" },
       ]}
-      image="/images/restoration-management.jpg"
+      image="/images/nihon-tatami/restoration/restoration-wall-painting-01.png"
       sections={[
         {
           heading: "管理会社様の業務効率化をサポート",

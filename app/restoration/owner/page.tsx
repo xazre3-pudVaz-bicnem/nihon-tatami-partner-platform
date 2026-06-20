@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -19,7 +19,7 @@ export default function RestorationOwnerPage() {
         { label: "原状回復", href: "/restoration" },
         { label: "オーナー向け対応" },
       ]}
-      image="/images/restoration-owner.jpg"
+      image="/images/nihon-tatami/restoration/restoration-vacant-check-02.png"
       sections={[
         {
           heading: "オーナー様のメリット",

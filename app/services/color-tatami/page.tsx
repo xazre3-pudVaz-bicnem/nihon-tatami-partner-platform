@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -20,7 +20,7 @@ export default function ColorTatamiPage() {
         { label: "畳工事", href: "/services/tatami" },
         { label: "カラー畳" },
       ]}
-      image="/images/service-color.jpg"
+      image="/images/nihon-tatami/tatami/tatami-room-herinashi-01.png"
       sections={[
         {
           heading: "カラー畳とは",

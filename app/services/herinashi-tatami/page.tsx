@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -20,7 +20,7 @@ export default function HerinashiTatamiPage() {
         { label: "畳工事", href: "/services/tatami" },
         { label: "縁なし畳" },
       ]}
-      image="/images/service-herinashi.jpg"
+      image="/images/nihon-tatami/tatami/tatami-room-herinashi-01.png"
       sections={[
         {
           heading: "縁なし畳とは",

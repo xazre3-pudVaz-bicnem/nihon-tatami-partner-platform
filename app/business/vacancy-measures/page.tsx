@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -19,7 +19,7 @@ export default function VacancyMeasuresPage() {
         { label: "法人・施設向け", href: "/business" },
         { label: "空室対策" },
       ]}
-      image="/images/restoration-rental.jpg"
+      image="/images/nihon-tatami/restoration/restoration-vacant-check-01.png"
       sections={[
         {
           heading: "空室対策に内装整備が有効な理由",

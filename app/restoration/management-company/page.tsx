@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import { FAQ_ITEMS } from "@/data/faq";
@@ -20,7 +20,7 @@ export default function RestorationManagementPage() {
         { label: "原状回復", href: "/restoration" },
         { label: "管理会社向け対応" },
       ]}
-      image="/images/restoration-management.jpg"
+      image="/images/nihon-tatami/restoration/restoration-wall-painting-01.png"
       sections={[
         {
           heading: "管理会社様の業務をサポート",

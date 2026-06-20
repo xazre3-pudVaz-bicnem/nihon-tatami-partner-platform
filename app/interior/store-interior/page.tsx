@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -16,7 +16,7 @@ export default function StoreInteriorPage() {
       title="店舗内装工事"
       subtitle="新規開業・改装・退去後の原状回復まで、店舗内装工事を幅広く承ります。和食店・旅館の和室空間づくりも得意分野です。"
       breadcrumbs={[{ label: "内装工事", href: "/interior" }, { label: "店舗内装工事" }]}
-      image="/images/interior-store.jpg"
+      image="/images/nihon-tatami/interior/interior-store-workers-01.png"
       sections={[
         {
           heading: "店舗内装工事の対応範囲",

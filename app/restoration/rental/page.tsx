@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import { FAQ_ITEMS } from "@/data/faq";
@@ -20,7 +20,7 @@ export default function RestorationRentalPage() {
         { label: "原状回復", href: "/restoration" },
         { label: "賃貸退去後の原状回復" },
       ]}
-      image="/images/restoration-rental.jpg"
+      image="/images/nihon-tatami/restoration/restoration-vacant-check-01.png"
       sections={[
         {
           heading: "賃貸物件の原状回復とは",

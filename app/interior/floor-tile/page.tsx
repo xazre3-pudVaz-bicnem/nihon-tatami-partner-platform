@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -16,7 +16,7 @@ export default function FloorTilePage() {
       title="フロアタイル張替え"
       subtitle="耐久性が高くデザイン性に優れたフロアタイルの施工に対応。石目・木目調など豊富な種類から空間に合わせて選択できます。"
       breadcrumbs={[{ label: "内装工事", href: "/interior" }, { label: "フロアタイル" }]}
-      image="/images/interior-tile.jpg"
+      image="/images/nihon-tatami/interior/interior-woodwork-shelving-01.png"
       sections={[
         {
           heading: "フロアタイルとは",

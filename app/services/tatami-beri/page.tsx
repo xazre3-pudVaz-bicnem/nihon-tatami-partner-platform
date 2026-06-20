@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -20,7 +20,7 @@ export default function TatamiBerinPage() {
         { label: "畳工事", href: "/services/tatami" },
         { label: "畳縁・特注縁" },
       ]}
-      image="/images/service-beri.jpg"
+      image="/images/nihon-tatami/tatami/tatami-room-large-01.png"
       sections={[
         {
           heading: "畳縁の種類",

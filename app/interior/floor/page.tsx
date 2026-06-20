@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -16,7 +16,7 @@ export default function FloorPage() {
       title="床工事・フローリング張替え"
       subtitle="フローリング材の張替え・上貼り・部分補修に対応。和室から洋室への変更や逆に洋室に畳スペースを設ける工事も承ります。"
       breadcrumbs={[{ label: "内装工事", href: "/interior" }, { label: "床工事・フローリング" }]}
-      image="/images/interior-floor.jpg"
+      image="/images/nihon-tatami/restoration/restoration-floor-repair-01.png"
       sections={[
         {
           heading: "床工事の種類",

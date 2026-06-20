@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import { FAQ_ITEMS } from "@/data/faq";
@@ -21,7 +21,7 @@ export default function TatamiOmotegaePage() {
         { label: "畳工事", href: "/services/tatami" },
         { label: "畳表替え" },
       ]}
-      image="/images/service-omotegae.jpg"
+      image="/images/nihon-tatami/tatami/tatami-craftsman-01.png"
       sections={[
         {
           heading: "畳表替えとは",

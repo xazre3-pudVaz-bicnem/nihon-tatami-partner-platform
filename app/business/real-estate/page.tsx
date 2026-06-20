@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import { FAQ_ITEMS } from "@/data/faq";
@@ -20,7 +20,7 @@ export default function RealEstatePage() {
         { label: "法人・施設向け", href: "/business" },
         { label: "不動産会社・管理会社向け" },
       ]}
-      image="/images/restoration-management.jpg"
+      image="/images/nihon-tatami/restoration/restoration-wall-painting-01.png"
       sections={[
         {
           heading: "不動産会社・管理会社様のお悩みを解決",

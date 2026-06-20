@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -19,7 +19,7 @@ export default function CrossPage() {
         { label: "内装工事", href: "/interior" },
         { label: "クロス張替え" },
       ]}
-      image="/images/interior-cross.jpg"
+      image="/images/nihon-tatami/restoration/restoration-wallpaper-01.png"
       sections={[
         {
           heading: "クロス張替えで変わること",

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
@@ -19,7 +19,7 @@ export default function RestorationStorePage() {
         { label: "原状回復", href: "/restoration" },
         { label: "店舗退去後の原状回復" },
       ]}
-      image="/images/restoration-store.jpg"
+      image="/images/nihon-tatami/restoration/restoration-office-01.png"
       sections={[
         {
           heading: "店舗退去時の原状回復",

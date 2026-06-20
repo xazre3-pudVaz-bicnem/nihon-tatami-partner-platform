@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import { FAQ_ITEMS } from "@/data/faq";
@@ -20,7 +20,7 @@ export default function RentalOwnerPage() {
         { label: "法人・施設向け", href: "/business" },
         { label: "賃貸オーナー向け" },
       ]}
-      image="/images/restoration-owner.jpg"
+      image="/images/nihon-tatami/restoration/restoration-vacant-check-02.png"
       sections={[
         {
           heading: "賃貸オーナー様のお悩みを解決",

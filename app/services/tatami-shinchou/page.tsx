@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import { FAQ_ITEMS } from "@/data/faq";
@@ -21,7 +21,7 @@ export default function TatamiShinchouPage() {
         { label: "畳工事", href: "/services/tatami" },
         { label: "畳新調" },
       ]}
-      image="/images/service-shinchou.jpg"
+      image="/images/nihon-tatami/tatami/tatami-room-traditional-01.png"
       sections={[
         {
           heading: "畳新調とは",
