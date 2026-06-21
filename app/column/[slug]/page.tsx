@@ -37,11 +37,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function formatDate(dateStr: string): string {
-  const d = new Date(dateStr);
-  return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
-}
-
 export default async function ColumnArticlePage({ params }: Props) {
   const { slug } = await params;
   const article = COLUMN_ARTICLES.find((a) => a.slug === slug);
@@ -110,8 +105,6 @@ export default async function ColumnArticlePage({ params }: Props) {
           <Breadcrumb items={[{ label: "専門コラム", href: "/column" }, { label: article.title }]} />
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <span className="text-xs border border-igusa/40 text-igusa px-2 py-0.5">{article.category}</span>
-            <span className="text-xs text-white/40">{formatDate(article.publishedAt)}</span>
-            {article.updatedAt && <span className="text-xs text-white/30">更新 {formatDate(article.updatedAt)}</span>}
             <span className="text-xs text-white/30">読了約{article.readTime}分</span>
           </div>
           <h1 className="text-2xl sm:text-3xl text-white leading-snug" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }}>

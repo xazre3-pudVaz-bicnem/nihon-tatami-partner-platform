@@ -321,15 +321,12 @@ export default function FullServicePageTemplate({ data }: { data: FullServicePag
           <SectionHeading eyebrow="For You">対象者別のご提案</SectionHeading>
           <div className="space-y-4">
             {TARGET_PROPOSALS.map((tp) => (
-              <div key={tp.key} className="bg-shiro border border-border p-6 sm:p-7 grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-4 sm:gap-6 items-start">
-                <div className="flex items-center gap-3">
-                  <span className="w-10 h-10 shrink-0 bg-sumi text-kincya flex items-center justify-center text-sm" style={{ fontFamily: "var(--font-serif)" }}>
-                    {tp.icon}
-                  </span>
-                  <h3 className="text-base text-sumi sm:hidden" style={{ fontFamily: "var(--font-serif)" }}>{tp.label}向け</h3>
-                </div>
+              <div key={tp.key} className="bg-shiro border border-border p-6 sm:p-7 flex flex-row gap-4 sm:gap-6 items-start">
+                <span className="w-10 h-10 shrink-0 bg-sumi text-kincya flex items-center justify-center text-sm" style={{ fontFamily: "var(--font-serif)" }}>
+                  {tp.icon}
+                </span>
                 <div>
-                  <h3 className="text-base text-sumi mb-2 hidden sm:block" style={{ fontFamily: "var(--font-serif)" }}>{tp.label}向け</h3>
+                  <h3 className="text-base text-sumi mb-2" style={{ fontFamily: "var(--font-serif)" }}>{tp.label}向け</h3>
                   <p className="text-sm text-sumi/80 leading-relaxed">{proposals[tp.key]}</p>
                 </div>
               </div>

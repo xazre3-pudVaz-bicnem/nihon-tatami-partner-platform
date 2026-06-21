@@ -9,11 +9,6 @@ type Props = {
   index?: number;
 };
 
-function formatDate(dateStr: string): string {
-  const d = new Date(dateStr);
-  return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
-}
-
 export default function ColumnCard({ article, index = 0 }: Props) {
   return (
     <motion.div
@@ -38,7 +33,6 @@ export default function ColumnCard({ article, index = 0 }: Props) {
         <div className="p-5">
           <div className="flex items-center gap-3 mb-2">
             <span className="text-xs border border-igusa/30 text-igusa px-2 py-0.5">{article.category}</span>
-            <span className="text-xs text-sumi/40">{formatDate(article.publishedAt)}</span>
           </div>
           <h3
             className="text-sm text-sumi mb-2 leading-snug group-hover:text-ai transition-colors duration-200"
