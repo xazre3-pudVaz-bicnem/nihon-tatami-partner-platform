@@ -5,6 +5,7 @@ import { WORKS_DETAIL } from "@/data/works-detail";
 import { MATERIALS } from "@/data/materials";
 import { PROBLEMS } from "@/data/problems";
 import { AREAS, AREA_SERVICES } from "@/data/areas";
+import { PURPOSE_PAGES } from "@/data/purpose";
 
 const BASE = SITE_URL;
 const LAST_MODIFIED = new Date("2026-06-21");
@@ -27,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const worksUrls = WORKS_DETAIL.map((w) => url(`/works/${w.slug}`, 0.7, "monthly"));
   const materialUrls = MATERIALS.map((m) => url(`/materials/${m.slug}`, 0.7, "monthly"));
   const problemUrls = PROBLEMS.map((p) => url(`/problems/${p.slug}`, 0.7, "monthly"));
+  const purposeUrls = PURPOSE_PAGES.map((p) => url(`/purpose/${p.slug}`, 0.7, "monthly"));
 
   // Area pages: prefecture / city / pref×service / city×service
   const areaUrls: MetadataRoute.Sitemap = [];
@@ -55,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/area", 0.8, "monthly"),
     url("/materials", 0.8, "monthly"),
     url("/problems", 0.8, "monthly"),
+    url("/purpose", 0.8, "monthly"),
     url("/privacy", 0.3, "yearly"),
 
     // Target landing pages
@@ -67,13 +70,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Standalone service hubs
     url("/fusuma", 0.8, "monthly"),
+    url("/fusuma/replacement", 0.7, "monthly"),
+    url("/fusuma/price", 0.7, "monthly"),
+    url("/fusuma/for-rental", 0.7, "monthly"),
+    url("/fusuma/for-ryokan", 0.7, "monthly"),
+    url("/fusuma/for-temple-shrine", 0.7, "monthly"),
     url("/shoji", 0.8, "monthly"),
+    url("/shoji/replacement", 0.7, "monthly"),
+    url("/shoji/price", 0.7, "monthly"),
+    url("/shoji/strong-paper", 0.7, "monthly"),
+    url("/shoji/for-rental", 0.7, "monthly"),
+    url("/shoji/for-ryokan", 0.7, "monthly"),
+    url("/shoji/for-temple-shrine", 0.7, "monthly"),
     url("/flooring", 0.8, "monthly"),
     url("/wallpaper", 0.8, "monthly"),
 
     // Services — Tatami
     url("/services", 0.9, "monthly"),
-    url("/services/tatami", 0.8, "monthly"),
+    url("/services/tatami", 0.9, "monthly"),
     url("/services/tatami-omotegae", 0.9, "monthly"),
     url("/services/tatami-uragaeshi", 0.8, "monthly"),
     url("/services/tatami-shinchou", 0.9, "monthly"),
@@ -111,7 +125,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/business/store", 0.7, "monthly"),
     url("/business/vacancy-measures", 0.7, "monthly"),
 
-    // Needs
+    // Purpose (目的から探す)
+    url("/purpose", 0.8, "monthly"),
+    ...purposeUrls,
+
+    // Needs (お悩み別)
     url("/needs", 0.7, "monthly"),
     url("/needs/mold", 0.7, "monthly"),
     url("/needs/dani", 0.7, "monthly"),

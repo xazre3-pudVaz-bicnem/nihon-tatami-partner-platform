@@ -1,216 +1,276 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
-import { TATAMI_SERVICES } from "@/data/services";
-import ServiceCard from "@/components/ui/ServiceCard";
-import CTASection from "@/components/ui/CTASection";
-import Breadcrumb from "@/components/ui/Breadcrumb";
-import Link from "next/link";
+import FullServicePageTemplate, { type FullServicePageData } from "@/components/templates/FullServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: `畳工事一覧 | 表替え・裏返し・新調・縁なし畳・和紙畳 | ${SITE_NAME}`,
+  title: `畳工事・畳張替え｜表替え・裏返し・新調・原状回復まで対応 | ${SITE_NAME}`,
   description:
-    "畳表替え・裏返し・新調の違いから素材選びの総合ガイドまで。い草・和紙・樹脂、縁あり・縁なしを用途別（住宅・旅館・寺社・店舗・賃貸）に解説。住宅から法人施設まで幅広い畳工事を承ります。",
+    "畳表替え・裏返し・新調から縁なし畳・和紙畳・樹脂畳まで。住宅・賃貸・旅館・寺社・店舗のあらゆる畳工事に対応。素材の選び方・費用目安・施工の流れ・よくある質問を専門家が徹底解説。現地確認・お見積もり無料。",
   path: "/services/tatami",
+  image: "/images/nihon-tatami/tatami/tatami-craftsman-01.png",
 });
 
-const WORK_TYPES = [
-  {
-    name: "表替え",
-    desc: "畳床はそのままに、表面の畳表（ゴザ）と縁を新しくする工事。費用を抑えながら清潔感とい草の香りを取り戻せる、最も一般的なメンテナンスです。",
-    cycle: "5〜8年に一度が目安",
-    href: "/services/tatami-omotegae",
-  },
-  {
-    name: "裏返し",
-    desc: "使用中の畳表を裏返して再利用する工事。2〜3年程度使った比較的新しい畳表に有効で、費用を大きく抑えられます。一度しか行えません。",
-    cycle: "使用2〜3年が目安",
-    href: "/services/tatami-uragaeshi",
-  },
-  {
-    name: "新調",
-    desc: "畳床・畳表・縁をすべて作り直す完全リニューアル。踏み込みの沈み・へたり、深部のカビダニ、リフォーム時に最適です。",
-    cycle: "10〜20年・床の劣化時",
-    href: "/services/tatami-shinchou",
-  },
-];
+const data: FullServicePageData = {
+  slug: "tatami",
+  breadcrumbs: [
+    { label: "サービス", href: "/services" },
+    { label: "畳工事" },
+  ],
+  h1: "畳工事・畳張替えなら日本畳パートナーズ｜表替え・裏返し・新調・原状回復まで対応",
+  lead: "埼玉県・さいたま市を中心に、畳表替え・裏返し・新調から縁なし畳・和紙畳・樹脂畳の新調まで。住宅・賃貸・旅館・寺社・店舗まであらゆる場面の畳工事に対応します。",
+  heroImage: "/images/nihon-tatami/tatami/tatami-craftsman-01.png",
+  heroImageAlt: "畳を一枚ずつ手作業で仕上げる職人",
+  targets: ["一般住宅", "賃貸オーナー", "不動産・管理会社", "旅館・宿泊施設", "寺社", "店舗"],
+  whatYouLearn: [
+    "畳の表替え・裏返し・新調の違いと、それぞれが向いている状態",
+    "い草・和紙・樹脂など畳表素材の選び方と特徴",
+    "縁あり畳と縁なし畳（琉球畳風）の違いと使い分け",
+    "畳工事にかかる費用の目安と、費用が変わる要因",
+    "旅館・寺社など大量施工・格式が求められる現場での進め方",
+    "賃貸退去後・入居前の原状回復としての畳工事",
+    "畳を放置した場合のカビ・ダニ・へたりなどのリスク",
+    "失敗しない畳業者の選び方と、施工前に確認すべきこと",
+  ],
+  recommendedFor: [
+    "畳の色あせ・ささくれが気になり、きれいにしたい方",
+    "表替え・裏返し・新調のどれが合うか分からない方",
+    "ペットや小さなお子様がいて、傷・汚れに強い畳を探している方",
+    "和室をモダンな雰囲気にリノベーションしたい方",
+    "賃貸物件の退去後・入居前に畳を整えたい賃貸オーナー様",
+    "複数物件の畳をまとめて管理したい不動産・管理会社様",
+    "繁忙期前に客室の畳を一新したい旅館・宿泊施設の方",
+    "法要・行事の前に本堂や客殿を整えたい寺社の方",
+    "店舗の小上がり・座敷を清潔で魅力的に保ちたい方",
+    "畳のカビ・ダニ・臭い・沈みなどのトラブルを解決したい方",
+  ],
+  serviceOverview:
+    "畳は、日本の住空間が育んできた床材です。い草の畳表（たたみおもて）、芯材である畳床（たたみどこ）、縁取りの縁（へり）という三つの要素で構成され、調湿性・断熱性・適度なクッション性を備えています。素足で過ごす心地よさ、独特の香り、空間を静かに整える佇まいは、フローリングにはない畳ならではの価値です。\n" +
+    "一方で、畳は天然素材を使うがゆえに、年月とともに少しずつ変化します。日焼けによる色あせ、表面のささくれ、湿気によるカビやダニ、踏み込んだときの沈みなどは、使い続ければ避けられない経年変化です。これらのサインを見逃さず、適切なタイミングで適切な工事を行うことが、畳を長く美しく保つ秘訣です。\n" +
+    "畳工事には、大きく「裏返し」「表替え」「新調」の三種類があります。裏返しは今ある畳表を裏向きに張り直す最も経済的な方法、表替えは畳表と縁を新しくする標準的なメンテナンス、新調は畳床から作り替える完全リニューアルです。状態を見極めずに工事を選ぶと、まだ裏返しで足りる畳を新調してしまったり、逆に新調すべき畳に表替えを繰り返してかえって費用がかさんだりします。\n" +
+    "近年は、天然い草に加えて、色あせや傷に強い和紙畳、水拭きできる樹脂畳、縁のないモダンな縁なし畳など、選択肢が大きく広がりました。ペットや子育て世帯、賃貸物件、店舗など、用途に応じて最適な素材を選ぶことで、暮らしやすさと美しさを両立できます。\n" +
+    "畳を放置すると、見た目の劣化だけでなく、カビ・ダニによる衛生面の問題、畳床のへたりによる転倒リスクなど、生活の質に関わる影響が出ます。特に湿気の多い環境では、表面のカビが芯まで進行し、表替えでは対応できず新調が必要になることもあります。早めの相談が、結果的に費用と手間を抑えることにつながります。\n" +
+    "業者選びでは、価格の安さだけで判断しないことが大切です。使用する畳表の産地・等級、縁の種類、廃材処分の有無、施工後の保証など、見積もりの条件を揃えて比較しましょう。日本畳パートナーズでは、現地確認のうえで畳床の状態まで見極め、本当に必要な工事だけを正直にご提案します。住宅から旅館・寺社・店舗・賃貸管理物件まで、規模を問わず対応いたします。",
+  workScope: [
+    "畳の裏返し（使用2〜3年の畳表を裏向きに再利用）",
+    "畳の表替え（畳表と縁を新品に交換）",
+    "畳の新調（畳床から丸ごと作り替え）",
+    "国産い草・中国産い草への張替え",
+    "和紙畳（機能性畳）への張替え・新調",
+    "樹脂畳（ポリプロピレン畳）への張替え・新調",
+    "縁なし畳・琉球畳風の新調（半畳・市松敷き）",
+    "カラー畳によるデザイン和室の施工",
+    "畳縁（へり）の選定・特注縁・紋縁の対応",
+    "賃貸退去後・入居前の畳の原状回復",
+    "旅館・寺社・店舗など大量枚数の計画施工",
+    "畳と襖・障子・網戸・クロスの同時施工",
+  ],
+  comparisonTable: [
+    {
+      method: "裏返し",
+      condition: "使用2〜3年で表面の傷みが浅い",
+      appearance: "新品に近い清潔感がよみがえる",
+      cost: "最も安い",
+      duration: "引き取り〜翌日が目安",
+      recommended: "費用を抑えたい・色あせが軽度",
+      notes: "一度しかできない。シミ・カビが裏まで通ると不可",
+    },
+    {
+      method: "表替え",
+      condition: "畳床は健全で表面が傷んでいる",
+      appearance: "新品同様の見た目と香り",
+      cost: "中程度",
+      duration: "引き取り〜翌日が目安",
+      recommended: "5〜8年ごとの標準メンテナンス",
+      notes: "畳床に沈みがある場合は不可",
+    },
+    {
+      method: "新調",
+      condition: "畳床のへたり・沈み・深部のカビ",
+      appearance: "踏み心地まで完全に新品",
+      cost: "最も高い",
+      duration: "採寸〜製作で数日",
+      recommended: "10〜20年経過・リフォーム時",
+      notes: "古畳の処分費が加わる場合がある",
+    },
+  ],
+  materials: [
+    {
+      name: "国産い草",
+      feature: "国内産地で栽培された天然い草。香りと色つやに優れる",
+      merit: "自然な香りと風合い、調湿性が高い",
+      demerit: "色あせ・ささくれが起きやすく湿気に弱い",
+      suitableFor: "住宅の和室・茶室・旅館・寺社",
+      cost: "標準〜やや高め",
+    },
+    {
+      name: "中国産い草",
+      feature: "輸入の天然い草。コストを抑えやすい",
+      merit: "費用が手頃で天然い草の風合いがある",
+      demerit: "国産より色つや・耐久性で劣る傾向",
+      suitableFor: "コスト重視の住宅・賃貸",
+      cost: "手頃",
+    },
+    {
+      name: "和紙畳",
+      feature: "和紙をこより状にし樹脂加工した畳表",
+      merit: "色あせ・ささくれに強く撥水性が高い",
+      demerit: "い草の香りはなく初期費用はやや高め",
+      suitableFor: "子育て・ペット世帯・賃貸・旅館",
+      cost: "やや高め",
+    },
+    {
+      name: "樹脂畳",
+      feature: "ポリプロピレン等を主原料とした畳表",
+      merit: "水拭きでき汚れに非常に強い",
+      demerit: "香り・調湿性がなく熱がこもりやすい",
+      suitableFor: "店舗・飲食・水回り近く・ペット世帯",
+      cost: "高め",
+    },
+    {
+      name: "縁なし畳",
+      feature: "縁を付けず半畳を市松状に敷く仕立て",
+      merit: "すっきりモダンで陰影が美しい",
+      demerit: "角が傷みやすく製作費が高め",
+      suitableFor: "和モダン住宅・店舗・ホテル",
+      cost: "高め",
+    },
+    {
+      name: "琉球畳風",
+      feature: "縁なしの正方形畳。本来は七島い草を使用",
+      merit: "重厚で味わい深い質感、耐久性が高い",
+      demerit: "本格的な七島い草は希少で高価",
+      suitableFor: "旅館・茶室・上質な和空間",
+      cost: "高め",
+    },
+    {
+      name: "ペット対応畳",
+      feature: "和紙・樹脂素材で傷・汚れに配慮した仕様",
+      merit: "爪に強く、粗相も拭き取りやすい",
+      demerit: "天然い草の風合いは控えめ",
+      suitableFor: "犬・猫と暮らすご家庭",
+      cost: "やや高め〜高め",
+    },
+    {
+      name: "カビに強い畳",
+      feature: "防カビ・防湿性に配慮した機能性畳・畳床",
+      merit: "湿気の多い環境でもカビが発生しにくい",
+      demerit: "通常のい草より費用が上がる",
+      suitableFor: "北側和室・湿気の多い物件",
+      cost: "やや高め",
+    },
+    {
+      name: "耐久性重視畳",
+      feature: "摩耗・色あせに強い和紙・樹脂系の畳表",
+      merit: "張替え周期が長く維持管理が楽",
+      demerit: "初期費用は天然い草より高い",
+      suitableFor: "賃貸・店舗・人の出入りが多い空間",
+      cost: "高め",
+    },
+  ],
+  residentialProposal:
+    "住宅の和室では、見た目の清潔感と暮らしやすさの両立を大切にご提案します。香りと風合いを楽しみたい方には国産い草の表替えを、来客や法事に備えたい場合は格式に合う縁の選定までお手伝いします。小さなお子様がいるご家庭には、食べこぼしを拭き取りやすく転倒時の衝撃をやわらげる和紙畳が好評です。ペットと暮らすお宅には傷・汚れ・臭いに強い和紙畳・樹脂畳、高齢のご家族がいる場合は沈みのない安全な畳床への新調をおすすめしています。リビング横の畳コーナーなど、現代の住まいに馴染むモダンな縁なし畳のご相談も承ります。",
+  rentalOwnerProposal:
+    "賃貸物件のオーナー様には、入居率と費用対効果の視点でご提案します。畳の色あせやささくれは内見時の第一印象を大きく下げ、空室期間の長期化につながります。退去後の原状回復では、傷みの程度に応じて裏返し・表替え・新調を使い分け、過剰な工事を避けてコストを最適化します。ペット可物件への転換を狙うなら、傷・汚れに強い和紙畳・樹脂畳への変更が差別化に有効です。畳とクロス・床をまとめて一新すれば、募集用の写真映えも改善し、次の入居者を早く迎えられます。複数戸の入退去に合わせた計画施工もご相談ください。",
+  realEstateProposal:
+    "不動産会社・管理会社様には、複数物件をまとめて効率的に管理できる体制でご対応します。退去のたびに業者を探す手間を省き、畳・襖・障子・クロス・床の原状回復をワンストップで承ります。施工前後の写真付き報告書の発行、工種別に分かれた明確な見積もり、退去スケジュールに合わせたスピード対応など、業務効率化に必要な要素を整えています。国土交通省の原状回復ガイドラインの考え方に沿って、貸主・借主の負担区分の判断材料もご提供します。継続的なお取引や請求書払いにも対応いたします。",
+  ryokanProposal:
+    "旅館・宿泊施設では、客室の第一印象と口コミ評価に直結する畳の状態を重視してご提案します。青々としたい草の香りは、おもてなしの質を一段引き上げます。繁忙期前に客室を順番に施工し、営業を止めずに整える計画施工が可能です。一般客室には耐久性とコストのバランスに優れた素材、特別室・茶室には手刈り天日干しの上質い草を、と用途別に最適化します。インバウンドや若い世代に向けた縁なし畳のモダンリニューアルも人気です。大広間・宴会場など広い面積、複数室の大量施工にも対応します。",
+  templeProposal:
+    "寺社では、本堂・客殿・控室それぞれの格式に合わせた畳工事をご提案します。本堂には高品質な畳表と伝統的な紋縁を選び、法要・年忌・祭礼の日程から逆算して確実に間に合わせる計画施工を行います。境内での作業では養生と清掃を徹底し、神聖な空間にふさわしい静かで丁寧な施工を心がけます。客殿や控室は来客の印象を左右するため、清潔感のある国産い草で整えるのが効果的です。広い本堂の大量枚数も一括で対応し、格式を損なわない仕上がりをお約束します。",
+  storeProposal:
+    "店舗では、空間の魅力と運営のしやすさを両立する畳をご提案します。和食店の座敷・小上がりには、飲食による汚れを水拭きで落とせる樹脂畳が最適です。和モダンな個室やくつろぎの空間づくりには、色あせに強い和紙畳の縁なし仕立てが特別感を演出します。営業への影響を抑えるため、定休日や営業時間外に合わせた施工計画を立てます。客単価や滞在時間を高める和の演出から、退去時の原状回復まで、店舗ならではのご要望に幅広く対応します。",
+  priceTable: [
+    { item: "畳 裏返し", unit: "1枚あたり", priceMin: "3,300円", priceMax: "", notes: "使用2〜3年の畳表が対象" },
+    { item: "畳 表替え（中国産い草）", unit: "1枚あたり", priceMin: "4,500円", priceMax: "", notes: "コスト重視" },
+    { item: "畳 表替え（国産い草・機械すき）", unit: "1枚あたり", priceMin: "5,500円", priceMax: "", notes: "標準グレード" },
+    { item: "畳 表替え（国産い草・手刈り）", unit: "1枚あたり", priceMin: "8,000円", priceMax: "", notes: "高品質グレード" },
+    { item: "畳 表替え（和紙畳）", unit: "1枚あたり", priceMin: "8,000円", priceMax: "", notes: "耐久・撥水性重視" },
+    { item: "畳 表替え（樹脂畳）", unit: "1枚あたり", priceMin: "9,000円", priceMax: "", notes: "水拭き可能" },
+    { item: "畳 新調（建材床・国産い草）", unit: "1枚あたり", priceMin: "15,000円", priceMax: "", notes: "床+表+縁" },
+    { item: "畳 新調（わら床・国産い草）", unit: "1枚あたり", priceMin: "20,000円", priceMax: "", notes: "旅館・茶室向け" },
+    { item: "縁なし畳（和紙・半畳）", unit: "1枚あたり", priceMin: "8,000円", priceMax: "", notes: "和モダン" },
+    { item: "樹脂畳（半畳・縁なし）", unit: "1枚あたり", priceMin: "10,000円", priceMax: "", notes: "水拭き可能" },
+  ],
+  priceNotes: [
+    "畳のサイズ（京間・江戸間など地域規格）により1枚の大きさが異なります。",
+    "縁の種類・畳床の補修要否・搬入経路・階数により費用が変動します。",
+    "複数枚・複数物件のまとめ施工は単価を抑えられる場合があります。",
+    "古畳の処分費・遠方への出張費が別途発生する場合があります。",
+  ],
+  flow: [
+    { step: 1, title: "お問い合わせ", detail: "電話・フォーム・LINEからご相談ください。畳の枚数やお困りの内容をお知らせいただくとスムーズです。" },
+    { step: 2, title: "現地確認・採寸（無料）", detail: "畳床の状態まで点検し、最適な工事と素材をご提案します。サンプルで色味や縁もご確認いただけます。" },
+    { step: 3, title: "お見積もり", detail: "工種別に内訳を明示した見積もりをご提示します。ご了承いただいてから施工に進みます。" },
+    { step: 4, title: "施工日の調整", detail: "ご都合や行事・繁忙期に合わせて日程を調整します。法人案件は計画施工をご提案します。" },
+    { step: 5, title: "畳の引き取り", detail: "既存の畳を採寸しながら工場へ引き取ります。家具の移動が必要な場合は事前にご相談ください。" },
+    { step: 6, title: "工場での製作", detail: "畳表の張替えや畳床の製作を一枚ずつ部屋の寸法に合わせて行います。" },
+    { step: 7, title: "納品・敷き込み", detail: "隙間や浮きがないか確認しながら敷き込み、建具との干渉もチェックします。" },
+    { step: 8, title: "仕上げ確認・引き渡し", detail: "仕上がりをご確認いただき、古畳の処分・お手入れ方法のご案内まで行います。" },
+    { step: 9, title: "アフターフォロー", detail: "施工後の気になる点にも対応します。次回メンテナンスの目安もお伝えします。" },
+    { step: 10, title: "法人向け写真報告", detail: "管理会社・オーナー様には施工前後の写真付き報告書を発行し、物件管理にお役立ていただけます。" },
+  ],
+  preWorkChecklist: [
+    "畳を踏んで沈み・ふかふか感がないか（畳床の状態確認）",
+    "表面の色あせ・ささくれ・シミの範囲",
+    "カビ・臭いが表面だけか芯まで及んでいるか",
+    "畳のサイズ・枚数のおおよその把握",
+    "希望する素材（い草・和紙・樹脂）の方向性",
+    "縁あり・縁なしの好み",
+    "畳の上の家具の移動可否",
+    "搬入経路・エレベーターの有無（マンション・施設）",
+    "施工希望時期（行事・繁忙期・退去日など）",
+    "予算の目安と優先順位",
+    "賃貸の場合は費用負担区分の確認",
+    "同時に襖・障子・クロスなども整えるか",
+  ],
+  commonMistakes: [
+    "まだ裏返しで足りる畳を新調してしまい費用が無駄になる",
+    "畳床が傷んでいるのに表替えを繰り返し、すぐにへたる",
+    "価格の安さだけで選び、素材グレードや処分費が含まれていなかった",
+    "色あせ対策をせず、日当たりの良い和室ですぐ退色する",
+    "ペットや子どもがいるのに天然い草を選び、傷みが早い",
+    "湿気対策を怠り、新しい畳にすぐカビが発生する",
+    "縁の選定を業者任せにして、空間と合わない仕上がりになる",
+    "行事・繁忙期の直前に依頼して希望日に間に合わない",
+    "賃貸で費用負担区分を確認せず、後からトラブルになる",
+    "家具の移動を当日まで放置し、施工がスムーズに進まない",
+  ],
+  relatedWorksIds: ["works-01", "works-02", "works-03"],
+  relatedColumnIds: [
+    "tatami-omotegae-uragaeshi-shinchou",
+    "tatami-timing",
+    "washi-tatami-vs-resin-tatami",
+  ],
+  relatedServices: [
+    { href: "/services/tatami-omotegae", label: "畳表替え" },
+    { href: "/services/tatami-uragaeshi", label: "畳裏返し" },
+    { href: "/services/tatami-shinchou", label: "畳新調" },
+    { href: "/services/herinashi-tatami", label: "縁なし畳" },
+    { href: "/services/washi-tatami", label: "和紙畳" },
+    { href: "/services/resin-tatami", label: "樹脂畳" },
+    { href: "/services/fusuma-shoji-amido", label: "襖・障子・網戸" },
+    { href: "/price", label: "料金の目安" },
+  ],
+  faqs: [
+    { q: "畳はどのくらいの頻度で替えるべきですか？", a: "住宅では裏返しが使用2〜3年、表替えが5〜8年、新調が10〜20年が一つの目安です。旅館や店舗など人の出入りが多い空間では表替えを3〜5年ごとに行うこともあります。使用環境により前後しますので、サインが出たら現地確認をおすすめします。" },
+    { q: "表替え・裏返し・新調のどれを選べばいいですか？", a: "畳床に沈みがなく表面だけ傷んでいれば表替え、使用2〜3年で傷みが軽ければ裏返し、踏むと沈む・芯までカビている場合は新調が適します。畳をめくらないと畳床の状態は分からないため、現地確認で見極めてご提案します。" },
+    { q: "費用はどのくらいかかりますか？", a: "裏返しは3,300円〜、表替えは素材により4,500円〜、新調は15,000円〜が1枚あたりの目安です。畳のサイズ・縁・搬入条件・枚数により変動します。正確な費用は現地確認後に正式見積もりでご案内します。" },
+    { q: "賃貸の畳替え費用は誰が負担しますか？", a: "日焼けや自然な色あせなど通常損耗は貸主負担、こぼしたシミやペットによる損傷など故意・過失は借主負担とされるのが一般的です。契約内容や状況によりますので、現場を整理してご報告します。" },
+    { q: "い草・和紙・樹脂はどう違いますか？", a: "い草は香りと風合いが魅力の天然素材、和紙畳は色あせ・傷に強く撥水性が高い機能性素材、樹脂畳は水拭きできて汚れに最も強い素材です。香り重視ならい草、耐久性なら和紙、清掃性なら樹脂が向いています。" },
+    { q: "工期はどのくらいですか？", a: "表替え・裏返しは引き取り後に翌日返しが可能なケースが多く、当日返しに対応できる場合もあります。新調は一枚ずつ製作するため数日が目安です。枚数や素材により変わります。" },
+    { q: "ペットがいても畳は使えますか？", a: "はい。爪による傷や粗相に強い和紙畳・樹脂畳がおすすめです。樹脂畳は水拭きでき染み込みにくいため、犬・猫と暮らすご家庭に好相性です。" },
+    { q: "畳にカビが生えてしまいました。表替えで直りますか？", a: "表面だけのカビなら表替えで改善します。芯まで進行している場合は再発するため新調をおすすめすることがあります。再発防止には換気・除湿と、カビに強い素材への変更が有効です。" },
+    { q: "家具はどうすればいいですか？", a: "畳の上の家具は事前の移動をお願いしています。大型家具の移動が難しい場合はご相談ください。状況に応じて対応方法をご案内します。" },
+    { q: "マンションでも新調できますか？", a: "可能です。マンションでは軽量な建材床が選ばれることが多くあります。搬入経路や下地の状況を現地で確認のうえご提案します。" },
+    { q: "旅館・寺社の大量施工も対応できますか？", a: "はい。客室・本堂など広い面積・大量枚数に対応します。営業や行事に支障が出ないよう、客室を順番に施工するなどの計画施工を行います。" },
+    { q: "縁なし畳と縁あり畳はどちらがいいですか？", a: "縁なし畳はすっきりモダンで陰影が美しく、和モダン空間に向きます。縁あり畳は伝統的で格式があり、縁の擦れ以外は耐久性に優れます。空間のテイストと用途でお選びください。" },
+    { q: "見積もりは無料ですか？", a: "はい。現地確認・お見積もりは無料です。見積もり後のキャンセルも費用は発生しません。お気軽にご相談ください。" },
+    { q: "古い畳の処分もお願いできますか？", a: "はい。新調などで不要になった古畳は引き取り・処分します。処分費が別途必要な場合は見積もり時にご案内します。" },
+    { q: "畳と一緒に襖や障子も頼めますか？", a: "はい。畳と襖・障子・網戸・クロスをまとめて施工すると、和室全体の印象が一新され、日程調整の手間も減らせます。一括でご相談ください。" },
+  ],
+};
 
-export default function TatamiServicesPage() {
-  return (
-    <>
-      <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 tatami-pattern opacity-20" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: "サービス", href: "/services" }, { label: "畳工事" }]} />
-          <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Tatami Works</p>
-          <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            畳工事
-          </h1>
-          <p className="text-sm text-white/60 max-w-xl leading-relaxed">
-            畳表替え・裏返し・新調から縁なし畳・和紙畳・樹脂畳まで。
-            住宅・旅館・寺社・店舗・賃貸物件の畳工事を幅広く承ります。
-          </p>
-        </div>
-      </section>
-
-      {/* サービス一覧 */}
-      <section className="py-16 bg-shiro">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {TATAMI_SERVICES.map((s, i) => (
-              <ServiceCard key={s.id} service={s} index={i} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 畳工事の全体像 */}
-      <section className="py-14 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl text-sumi mb-4" style={{ fontFamily: "var(--font-serif)" }}>
-            畳工事の全体像
-          </h2>
-          <p className="text-sm text-sumi/80 leading-relaxed mb-8">
-            畳のメンテナンスには、大きく分けて「表替え」「裏返し」「新調」の3つの工法があります。
-            畳の状態・使用年数・ご予算に応じて最適な工法は異なります。
-            まずはそれぞれの違いを知り、現在の畳に合った方法を選びましょう。
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {WORK_TYPES.map((w) => (
-              <Link
-                key={w.name}
-                href={w.href}
-                className="block bg-kiji/40 border border-border p-5 hover:border-ai transition-colors duration-200"
-              >
-                <h3 className="text-lg text-sumi mb-2 pl-3 border-l-2 border-kincya" style={{ fontFamily: "var(--font-serif)" }}>
-                  {w.name}
-                </h3>
-                <p className="text-xs text-sumi/70 leading-relaxed mb-3">{w.desc}</p>
-                <p className="text-xs text-kincya">目安：{w.cycle}</p>
-              </Link>
-            ))}
-          </div>
-          <p className="text-xs text-sumi/50 mt-4">
-            3つの違いをより詳しく知りたい方は
-            <Link href="/compare/omotegae-uragaeshi-shinchou" className="text-ai hover:underline mx-1">
-              「表替え・裏返し・新調の違い」
-            </Link>
-            をご覧ください。
-          </p>
-        </div>
-      </section>
-
-      {/* 素材選びの総合ガイド */}
-      <section className="py-14 bg-kiji/40">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl text-sumi mb-4" style={{ fontFamily: "var(--font-serif)" }}>
-            素材選びの総合ガイド
-          </h2>
-          <p className="text-sm text-sumi/80 leading-relaxed mb-6">
-            畳の表面素材は、い草・和紙・樹脂の3種類が代表的です。
-            香り・風合いを重視するならい草、耐久性・色あせにくさ・清掃性を重視するなら和紙・樹脂が向いています。
-            縁あり・縁なし（琉球畳）の選択でも空間の印象が大きく変わります。
-          </p>
-          <div className="bg-white border border-border overflow-hidden">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-sumi text-white">
-                  <th className="text-left text-xs py-3 px-5 font-normal">素材</th>
-                  <th className="text-left text-xs py-3 px-5 font-normal">特徴</th>
-                  <th className="text-left text-xs py-3 px-5 font-normal hidden sm:table-cell">向いている用途</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                <tr className="hover:bg-kiji/30 transition-colors">
-                  <td className="text-sm py-3.5 px-5 text-sumi" style={{ fontFamily: "var(--font-serif)" }}>い草</td>
-                  <td className="text-xs py-3.5 px-5 text-sumi/70">自然な香り・調湿性・伝統的な風合い</td>
-                  <td className="text-xs py-3.5 px-5 text-sumi/50 hidden sm:table-cell">住宅の和室・茶室・旅館・寺社</td>
-                </tr>
-                <tr className="hover:bg-kiji/30 transition-colors">
-                  <td className="text-sm py-3.5 px-5 text-sumi" style={{ fontFamily: "var(--font-serif)" }}>和紙</td>
-                  <td className="text-xs py-3.5 px-5 text-sumi/70">色あせ・ささくれに強く清掃しやすい</td>
-                  <td className="text-xs py-3.5 px-5 text-sumi/50 hidden sm:table-cell">子育て・ペット・賃貸・旅館</td>
-                </tr>
-                <tr className="hover:bg-kiji/30 transition-colors">
-                  <td className="text-sm py-3.5 px-5 text-sumi" style={{ fontFamily: "var(--font-serif)" }}>樹脂</td>
-                  <td className="text-xs py-3.5 px-5 text-sumi/70">水拭き可・高耐久・防汚性が高い</td>
-                  <td className="text-xs py-3.5 px-5 text-sumi/50 hidden sm:table-cell">水回り近く・店舗・汚れやすい空間</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p className="text-xs text-sumi/50 mt-4">
-            素材ごとの詳しい比較は
-            <Link href="/compare/igusa-washi-resin" className="text-ai hover:underline mx-1">
-              「い草・和紙・樹脂畳の比較」
-            </Link>
-            、選び方の流れは
-            <Link href="/guide/how-to-choose-tatami" className="text-ai hover:underline mx-1">
-              「畳の選び方ガイド」
-            </Link>
-            をご覧ください。
-          </p>
-        </div>
-      </section>
-
-      {/* 用途別おすすめ */}
-      <section className="py-14 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl text-sumi mb-6" style={{ fontFamily: "var(--font-serif)" }}>
-            用途別のおすすめ
-          </h2>
-          <div className="space-y-4 text-sm text-sumi/80 leading-relaxed">
-            <p>
-              <strong className="text-sumi">住宅</strong> — 香りと風合いを楽しむなら国産い草の表替え。
-              小さなお子様・ペットがいるご家庭には和紙畳・樹脂畳が安心です。
-            </p>
-            <p>
-              <strong className="text-sumi">旅館・宿泊施設</strong> — 一般客室は耐久性とコストのバランスに優れた素材、
-              特別室・茶室には手刈り天日干しの上質い草を。
-              <Link href="/business/ryokan" className="text-ai hover:underline mx-1">旅館向け畳工事</Link>
-              をご覧ください。
-            </p>
-            <p>
-              <strong className="text-sumi">寺院・神社</strong> — 本堂には格式の高い縁と上質い草を。
-              <Link href="/business/temple-shrine" className="text-ai hover:underline mx-1">寺院・神社向け畳工事</Link>
-              で詳しく解説しています。
-            </p>
-            <p>
-              <strong className="text-sumi">店舗</strong> — 小上がり・和スペースには、人の出入りに強く清掃しやすい和紙畳・樹脂畳がおすすめです。
-            </p>
-            <p>
-              <strong className="text-sumi">賃貸物件</strong> — 退去後の原状回復は表替え・裏返しでコストを抑え、
-              空室対策には和紙畳への変更でペット可転換も。
-              <Link href="/restoration/rental" className="text-ai hover:underline mx-1">賃貸の原状回復</Link>
-              をご覧ください。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 bg-kiji/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl text-sumi mb-6" style={{ fontFamily: "var(--font-serif)" }}>関連サービス・ページ</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {[
-              { label: "襖・障子・網戸", href: "/services/fusuma-shoji-amido" },
-              { label: "内装工事", href: "/interior" },
-              { label: "原状回復", href: "/restoration" },
-              { label: "畳の選び方ガイド", href: "/guide/how-to-choose-tatami" },
-              { label: "料金の目安", href: "/price" },
-              { label: "施工事例", href: "/works" },
-              { label: "FAQ", href: "/faq" },
-              { label: "お問い合わせ", href: "/contact" },
-            ].map((link) => (
-              <Link key={link.href} href={link.href} className="border border-border text-sm text-sumi text-center py-3 hover:border-ai hover:text-ai transition-colors duration-200">
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CTASection />
-    </>
-  );
+export default function TatamiServicePage() {
+  return <FullServicePageTemplate data={data} />;
 }
