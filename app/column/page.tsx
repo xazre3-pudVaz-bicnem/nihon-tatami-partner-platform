@@ -35,23 +35,34 @@ export default function ColumnPage() {
       <section className="py-8 bg-cloud/40 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2">
-            <button className="text-xs border border-sumi text-sumi px-4 py-1.5">すべて</button>
+            <a href="#all" className="text-xs border border-sumi text-sumi px-4 py-1.5">すべて</a>
             {CATEGORIES.map((cat) => (
-              <button key={cat} className="text-xs border border-border text-sumi/60 px-4 py-1.5 hover:border-ai hover:text-ai transition-colors duration-200">
+              <a key={cat} href={`#cat-${encodeURIComponent(cat)}`} className="text-xs border border-border text-sumi/60 px-4 py-1.5 hover:border-ai hover:text-ai transition-colors duration-200">
                 {cat}
-              </button>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-shiro">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {COLUMN_ARTICLES.map((article, i) => (
-              <ColumnCard key={article.slug} article={article} index={i} />
-            ))}
-          </div>
+      <section id="all" className="py-16 bg-shiro">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+          {CATEGORIES.map((cat) => {
+            const articles = COLUMN_ARTICLES.filter((a) => a.category === cat);
+            if (articles.length === 0) return null;
+            return (
+              <div key={cat} id={`cat-${encodeURIComponent(cat)}`} className="scroll-mt-24">
+                <h2 className="text-xl text-sumi mb-6 pl-4 border-l-2 border-kincya" style={{ fontFamily: "var(--font-serif)" }}>
+                  {cat}
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {articles.map((article, i) => (
+                    <ColumnCard key={article.slug} article={article} index={i} />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 

@@ -1,12 +1,25 @@
+export type ColumnSection = {
+  heading: string;
+  body: string[];
+  list?: string[];
+};
+
+export type ColumnFaq = { q: string; a: string };
+
 export type ColumnArticle = {
   slug: string;
   title: string;
   excerpt: string;
   publishedAt: string;
+  updatedAt?: string;
   category: string;
   tags: string[];
   readTime: number;
   image: string;
+  content?: ColumnSection[];
+  faqs?: ColumnFaq[];
+  relatedServices?: { label: string; href: string }[];
+  relatedSlugs?: string[];
 };
 
 export const COLUMN_ARTICLES: ColumnArticle[] = [

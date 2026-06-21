@@ -52,6 +52,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/interior/room-renovation", 0.7, "monthly"),
     url("/interior/floor-repair", 0.6, "monthly"),
 
+    // Fusuma (襖張替え)
+    url("/fusuma/replacement", 0.8, "monthly"),
+    url("/fusuma/price", 0.7, "monthly"),
+    url("/fusuma/for-rental", 0.7, "monthly"),
+    url("/fusuma/for-ryokan", 0.7, "monthly"),
+    url("/fusuma/for-temple-shrine", 0.7, "monthly"),
+
+    // Shoji (障子張替え)
+    url("/shoji/replacement", 0.8, "monthly"),
+    url("/shoji/price", 0.7, "monthly"),
+    url("/shoji/strong-paper", 0.7, "monthly"),
+    url("/shoji/for-rental", 0.7, "monthly"),
+    url("/shoji/for-ryokan", 0.7, "monthly"),
+    url("/shoji/for-temple-shrine", 0.7, "monthly"),
+
     // Restoration
     url("/restoration", 0.8, "monthly"),
     url("/restoration/rental", 0.8, "monthly"),
