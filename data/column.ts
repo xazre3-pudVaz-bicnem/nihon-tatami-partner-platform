@@ -1,7 +1,12 @@
 export type ColumnSection = {
   heading: string;
+<<<<<<< HEAD
   body: string[]; // 段落（HTMLは使わず純テキスト）
   list?: string[]; // 箇条書き
+=======
+  body: string[];
+  list?: string[];
+>>>>>>> worktree-agent-a593ef458cd30cc49
 };
 
 export type ColumnFaq = { q: string; a: string };

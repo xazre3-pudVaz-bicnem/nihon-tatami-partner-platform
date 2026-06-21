@@ -6,6 +6,7 @@ import { COLUMN_ARTICLES } from "@/data/column";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import CTASection from "@/components/ui/CTASection";
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import { FAQ_ITEMS } from "@/data/faq";
 import FaqSection from "@/components/ui/FaqSection";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -46,18 +47,24 @@ export default async function ColumnArticlePage({ params }: Props) {
   const article = COLUMN_ARTICLES.find((a) => a.slug === slug);
   if (!article) notFound();
 
-  // 関連記事：明示指定があればそれを優先、なければ同カテゴリ
+  // 関連記事：明示指定があればそれを優先、なければ同カテゴリ→全体
   const explicitRelated = (article.relatedSlugs ?? [])
     .map((s) => COLUMN_ARTICLES.find((a) => a.slug === s))
     .filter((a): a is NonNullable<typeof a> => Boolean(a));
-  const fallbackRelated = COLUMN_ARTICLES.filter((a) => a.slug !== slug && a.category === article.category).slice(0, 3);
-  const related = (explicitRelated.length > 0 ? explicitRelated : fallbackRelated).slice(0, 4);
+  const sameCategory = COLUMN_ARTICLES.filter((a) => a.slug !== slug && a.category === article.category);
+  const fallback = COLUMN_ARTICLES.filter((a) => a.slug !== slug);
+  const related = (explicitRelated.length > 0 ? explicitRelated : sameCategory.length > 0 ? sameCategory : fallback).slice(0, 4);
 
   const relatedServices = article.relatedServices ?? [
     { label: "畳表替え", href: "/services/tatami-omotegae" },
     { label: "畳新調", href: "/services/tatami-shinchou" },
+    { label: "和紙畳", href: "/services/washi-tatami" },
     { label: "内装工事", href: "/interior" },
+    { label: "原状回復", href: "/restoration" },
   ];
+
+  const hasContent = Boolean(article.content && article.content.length > 0);
+  const faqs = article.faqs && article.faqs.length > 0 ? article.faqs : null;
 
   const ARTICLE_SCHEMA = {
     "@context": "https://schema.org",
@@ -83,11 +90,11 @@ export default async function ColumnArticlePage({ params }: Props) {
     ],
   };
 
-  const FAQ_SCHEMA = article.faqs && article.faqs.length > 0
+  const FAQ_SCHEMA = faqs
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: article.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+        mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
       }
     : null;
 
@@ -124,10 +131,23 @@ export default async function ColumnArticlePage({ params }: Props) {
               <p className="text-sm text-sumi/80 leading-relaxed">{article.excerpt}</p>
             </div>
 
-            {article.content && article.content.length > 0 ? (
+            {hasContent && article.content!.length > 1 && (
+              <nav className="bg-white border border-border p-5 mb-8">
+                <h2 className="text-sm text-sumi mb-3" style={{ fontFamily: "var(--font-serif)" }}>目次</h2>
+                <ol className="space-y-1.5 text-xs text-ai">
+                  {article.content!.map((s, i) => (
+                    <li key={i}>
+                      <a href={`#section-${i}`} className="hover:underline">{i + 1}. {s.heading}</a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            )}
+
+            {hasContent ? (
               <div className="prose-tatami space-y-2">
-                {article.content.map((section, i) => (
-                  <section key={i}>
+                {article.content!.map((section, i) => (
+                  <section key={i} id={`section-${i}`}>
                     <h2>{section.heading}</h2>
                     {section.body.map((p, j) => (
                       <p key={j}>{p}</p>
@@ -144,8 +164,25 @@ export default async function ColumnArticlePage({ params }: Props) {
               </div>
             ) : (
               <div className="prose-tatami space-y-6 text-sm text-sumi/80 leading-relaxed">
-                <p>{article.excerpt}</p>
-                <p>詳しくご相談いただきたい場合は、無料で現地確認・お見積もりを承ります。お気軽にご連絡ください。</p>
+                <p>
+                  このコラムは畳・内装のプロフェッショナルが監修した専門コンテンツです。
+                  実際の施工経験をもとに、正確でわかりやすい情報をお届けします。
+                </p>
+                <h2>はじめに</h2>
+                <p>{article.excerpt}詳細な内容は随時追記・更新しています。ご不明な点はお気軽にお問い合わせください。</p>
+                <h2>専門家のポイント</h2>
+                <p>
+                  畳の施工には素材・工法・現場状況により最適な方法が異なります。
+                  日本畳パートナーズでは、現地確認を通じて最適な提案をいたします。
+                </p>
+                <p>
+                  一般住宅から旅館・寺社・店舗・賃貸物件まで、幅広い施工実績から得た知見をこのコラムで発信しています。
+                </p>
+                <h2>まとめ</h2>
+                <p>
+                  詳しくご相談いただきたい場合は、無料で現地確認・お見積もりを承ります。
+                  お電話・フォーム・LINEからお気軽にご連絡ください。
+                </p>
               </div>
             )}
 
@@ -155,14 +192,19 @@ export default async function ColumnArticlePage({ params }: Props) {
               ))}
             </div>
 
-            {article.faqs && article.faqs.length > 0 && (
-              <div className="mt-12 pt-8 border-t border-border">
-                <h2 className="text-xl text-sumi mb-6" style={{ fontFamily: "var(--font-serif)" }}>よくある質問</h2>
-                <div className="bg-white border border-border px-5 py-1">
-                  <FaqSection items={article.faqs.map((f) => ({ ...f, category: "general" as const }))} />
-                </div>
+            <div className="mt-12 pt-8 border-t border-border">
+              <h2 className="text-xl text-sumi mb-6" style={{ fontFamily: "var(--font-serif)" }}>
+                {faqs ? "よくある質問" : "関連するよくある質問"}
+              </h2>
+              <div className="bg-white border border-border px-5 py-1">
+                <FaqSection items={(faqs ? faqs.map((f) => ({ ...f, category: "general" as const })) : FAQ_ITEMS.slice(0, 4))} />
               </div>
-            )}
+              {!faqs && (
+                <div className="mt-4 text-right">
+                  <Link href="/faq" className="text-xs text-ai hover:underline">すべてのFAQを見る →</Link>
+                </div>
+              )}
+            </div>
           </div>
 
           <aside className="space-y-6">
@@ -176,18 +218,21 @@ export default async function ColumnArticlePage({ params }: Props) {
               </Link>
             </div>
 
-            {relatedServices.length > 0 && (
-              <div className="bg-kiji/40 border border-border p-5">
-                <h3 className="text-sm text-sumi mb-4" style={{ fontFamily: "var(--font-serif)" }}>関連サービス</h3>
-                <ul className="space-y-2">
-                  {relatedServices.map((link) => (
-                    <li key={link.href}>
-                      <Link href={link.href} className="text-xs text-ai hover:underline">— {link.label}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            <div className="bg-kiji/40 border border-border p-5">
+              <h3 className="text-sm text-sumi mb-4" style={{ fontFamily: "var(--font-serif)" }}>関連サービス</h3>
+              <ul className="space-y-2">
+                {relatedServices.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-xs text-ai hover:underline">— {link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-kiji/40 border border-border p-5">
+              <h3 className="text-sm text-sumi mb-4" style={{ fontFamily: "var(--font-serif)" }}>施工事例を見る</h3>
+              <Link href="/works" className="text-xs text-ai hover:underline">— 畳・内装・原状回復の施工事例 →</Link>
+            </div>
 
             {related.length > 0 && (
               <div className="bg-kiji/40 border border-border p-5">
