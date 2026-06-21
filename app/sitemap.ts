@@ -1,10 +1,18 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 import { COLUMN_ARTICLES } from "@/data/column";
+import { WORKS_DETAIL } from "@/data/works-detail";
+import { MATERIALS } from "@/data/materials";
+import { PROBLEMS } from "@/data/problems";
+import { AREAS, AREA_SERVICES } from "@/data/areas";
 
 const BASE = SITE_URL;
 
-function url(path: string, priority: number = 0.7, changeFreq: MetadataRoute.Sitemap[0]["changeFrequency"] = "monthly"): MetadataRoute.Sitemap[0] {
+function url(
+  path: string,
+  priority: number = 0.7,
+  changeFreq: MetadataRoute.Sitemap[0]["changeFrequency"] = "monthly"
+): MetadataRoute.Sitemap[0] {
   return {
     url: `${BASE}${path}`,
     lastModified: new Date(),
@@ -14,9 +22,25 @@ function url(path: string, priority: number = 0.7, changeFreq: MetadataRoute.Sit
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const columnUrls = COLUMN_ARTICLES.map((a) =>
-    url(`/column/${a.slug}`, 0.7, "monthly")
-  );
+  const columnUrls = COLUMN_ARTICLES.map((a) => url(`/column/${a.slug}`, 0.7, "monthly"));
+  const worksUrls = WORKS_DETAIL.map((w) => url(`/works/${w.slug}`, 0.7, "monthly"));
+  const materialUrls = MATERIALS.map((m) => url(`/materials/${m.slug}`, 0.7, "monthly"));
+  const problemUrls = PROBLEMS.map((p) => url(`/problems/${p.slug}`, 0.7, "monthly"));
+
+  // Area pages: prefecture / city / pref×service / city×service
+  const areaUrls: MetadataRoute.Sitemap = [];
+  for (const pref of AREAS) {
+    areaUrls.push(url(`/area/${pref.slug}`, 0.8, "monthly"));
+    for (const s of AREA_SERVICES) {
+      areaUrls.push(url(`/area/${pref.slug}/${s.slug}`, 0.7, "monthly"));
+    }
+    for (const city of pref.cities) {
+      areaUrls.push(url(`/area/${pref.slug}/${city.slug}`, 0.7, "monthly"));
+      for (const s of AREA_SERVICES) {
+        areaUrls.push(url(`/area/${pref.slug}/${city.slug}/${s.slug}`, 0.6, "monthly"));
+      }
+    }
+  }
 
   return [
     // Core
@@ -28,29 +52,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/faq", 0.8, "monthly"),
     url("/works", 0.8, "monthly"),
     url("/area", 0.8, "monthly"),
+    url("/materials", 0.8, "monthly"),
+    url("/problems", 0.8, "monthly"),
     url("/privacy", 0.3, "yearly"),
+
+    // Target landing pages
+    url("/for-homeowner", 0.8, "monthly"),
+    url("/for-rental-owner", 0.8, "monthly"),
+    url("/for-real-estate-company", 0.8, "monthly"),
+    url("/for-ryokan", 0.8, "monthly"),
+    url("/for-temple", 0.8, "monthly"),
+    url("/for-store", 0.8, "monthly"),
+
+    // Standalone service hubs
+    url("/fusuma", 0.8, "monthly"),
+    url("/shoji", 0.8, "monthly"),
+    url("/flooring", 0.8, "monthly"),
+    url("/wallpaper", 0.8, "monthly"),
 
     // Services — Tatami
     url("/services", 0.9, "monthly"),
-    url("/services/tatami-omotekaeri", 0.9, "monthly"),
-    url("/services/tatami-uragaeri", 0.8, "monthly"),
-    url("/services/tatami-shincho", 0.9, "monthly"),
-    url("/services/washi-tatami", 0.8, "monthly"),
+    url("/services/tatami", 0.8, "monthly"),
+    url("/services/tatami-omotegae", 0.9, "monthly"),
+    url("/services/tatami-uragaeshi", 0.8, "monthly"),
+    url("/services/tatami-shinchou", 0.9, "monthly"),
+    url("/services/herinashi-tatami", 0.8, "monthly"),
     url("/services/ryukyu-tatami", 0.8, "monthly"),
-    url("/services/domestic-igusa", 0.7, "monthly"),
-    url("/services/fusuma", 0.7, "monthly"),
-    url("/services/shoji", 0.7, "monthly"),
-    url("/services/mushiro", 0.6, "monthly"),
-    url("/services/tatami-cleaning", 0.6, "monthly"),
+    url("/services/washi-tatami", 0.8, "monthly"),
+    url("/services/resin-tatami", 0.8, "monthly"),
+    url("/services/color-tatami", 0.7, "monthly"),
+    url("/services/tatami-beri", 0.6, "monthly"),
+    url("/services/fusuma-shoji-amido", 0.7, "monthly"),
 
     // Interior
     url("/interior", 0.8, "monthly"),
-    url("/interior/flooring", 0.8, "monthly"),
-    url("/interior/wallpaper", 0.8, "monthly"),
+    url("/interior/cross", 0.8, "monthly"),
+    url("/interior/floor", 0.8, "monthly"),
+    url("/interior/cushion-floor", 0.7, "monthly"),
+    url("/interior/floor-tile", 0.7, "monthly"),
     url("/interior/store-interior", 0.7, "monthly"),
-    url("/interior/ryokan-renovation", 0.7, "monthly"),
-    url("/interior/room-renovation", 0.7, "monthly"),
-    url("/interior/floor-repair", 0.6, "monthly"),
+    url("/interior/house-renovation", 0.7, "monthly"),
 
     // Restoration
     url("/restoration", 0.8, "monthly"),
@@ -82,21 +123,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/needs/before-sale", 0.7, "monthly"),
     url("/needs/before-guest-arrival", 0.7, "monthly"),
 
-    // Column (static SEO articles)
+    // Column (SEO articles)
     url("/column", 0.8, "weekly"),
     ...columnUrls,
 
     // Blog
     url("/blog", 0.7, "weekly"),
 
+    // Works details
+    ...worksUrls,
+
+    // Materials
+    ...materialUrls,
+
+    // Problems
+    ...problemUrls,
+
     // Area pages
-    url("/area/saitama", 0.8, "monthly"),
-    url("/area/kawaguchi", 0.7, "monthly"),
-    url("/area/urawa", 0.7, "monthly"),
-    url("/area/omiya", 0.7, "monthly"),
-    url("/area/yono", 0.6, "monthly"),
-    url("/area/koshigaya", 0.6, "monthly"),
-    url("/area/toda", 0.6, "monthly"),
-    url("/area/warabi", 0.6, "monthly"),
+    ...areaUrls,
   ];
 }
