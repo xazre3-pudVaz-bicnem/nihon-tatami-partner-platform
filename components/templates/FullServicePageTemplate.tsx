@@ -380,7 +380,7 @@ export default function FullServicePageTemplate({ data }: { data: FullServicePag
       <section className="py-14 sm:py-20 bg-kiji">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Flow">施工の流れ</SectionHeading>
-          <ol className="space-y-4">
+          <ol className="list-none space-y-4">
             {data.flow.map((step) => (
               <li key={step.step} className="bg-shiro border border-border p-5 flex items-start gap-4">
                 <span className="w-9 h-9 shrink-0 bg-kincya text-white flex items-center justify-center text-sm rounded-full" style={{ fontFamily: "var(--font-serif)" }}>
@@ -418,7 +418,7 @@ export default function FullServicePageTemplate({ data }: { data: FullServicePag
           <ul className="space-y-3">
             {data.commonMistakes.map((item, i) => (
               <li key={i} className="bg-shiro border-l-4 border-do/70 border border-border p-4 flex items-start gap-3 text-sm text-sumi/80 leading-relaxed">
-                <span className="text-do shrink-0 mt-0.5" aria-hidden>⚠</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-do shrink-0 mt-2" aria-hidden />
                 <span>{item}</span>
               </li>
             ))}

@@ -13,7 +13,6 @@ import WorksCard from "@/components/ui/WorksCard";
 import ColumnCard from "@/components/ui/ColumnCard";
 import TargetCard from "@/components/ui/TargetCard";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import AnimatedNumber from "@/components/ui/AnimatedNumber";
 import IgusaLine from "@/components/ui/IgusaLine";
 import SectionLabel from "@/components/ui/SectionLabel";
 import FAQTabs from "@/components/ui/FAQTabs";
@@ -220,34 +219,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== 2. STATS BAND ===== */}
-      <section className="py-14 bg-shiro border-b border-border/50">
-        <div className="max-w-3xl mx-auto px-6">
-          <ScrollReveal>
-            <div className="grid grid-cols-3 gap-6 sm:gap-12 text-center">
-              {[
-                { value: 3000, suffix: "+", label: "年間施工件数" },
-                { value: 48, prefix: "★ ", suffix: "", label: "お客様満足度" },
-                { value: 20, suffix: "+", label: "対応サービス数" },
-              ].map((stat, i) => (
-                <div key={i}>
-                  <p
-                    className="text-3xl sm:text-4xl text-sumi mb-2"
-                    style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }}
-                  >
-                    <AnimatedNumber
-                      value={stat.value}
-                      suffix={stat.suffix}
-                      prefix={stat.prefix ?? ""}
-                    />
-                  </p>
-                  <p className="text-[10px] text-sumi/40 tracking-[0.2em]">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* ===== 2. STATS BAND — 実績確定まで非表示 ===== */}
 
       {/* ===== 3. CONCEPT ===== */}
       <section className="py-24 sm:py-32 bg-kiji relative overflow-hidden">
