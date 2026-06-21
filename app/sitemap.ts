@@ -3,11 +3,12 @@ import { SITE_URL } from "@/lib/site";
 import { COLUMN_ARTICLES } from "@/data/column";
 
 const BASE = SITE_URL;
+const LAST_MODIFIED = new Date("2026-06-21");
 
 function url(path: string, priority: number = 0.7, changeFreq: MetadataRoute.Sitemap[0]["changeFrequency"] = "monthly"): MetadataRoute.Sitemap[0] {
   return {
     url: `${BASE}${path}`,
-    lastModified: new Date(),
+    lastModified: LAST_MODIFIED,
     changeFrequency: changeFreq,
     priority,
   };
@@ -32,25 +33,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Services — Tatami
     url("/services", 0.9, "monthly"),
-    url("/services/tatami-omotekaeri", 0.9, "monthly"),
-    url("/services/tatami-uragaeri", 0.8, "monthly"),
-    url("/services/tatami-shincho", 0.9, "monthly"),
-    url("/services/washi-tatami", 0.8, "monthly"),
+    url("/services/tatami", 0.8, "monthly"),
+    url("/services/tatami-omotegae", 0.9, "monthly"),
+    url("/services/tatami-uragaeshi", 0.8, "monthly"),
+    url("/services/tatami-shinchou", 0.9, "monthly"),
+    url("/services/herinashi-tatami", 0.8, "monthly"),
     url("/services/ryukyu-tatami", 0.8, "monthly"),
-    url("/services/domestic-igusa", 0.7, "monthly"),
-    url("/services/fusuma", 0.7, "monthly"),
-    url("/services/shoji", 0.7, "monthly"),
-    url("/services/mushiro", 0.6, "monthly"),
-    url("/services/tatami-cleaning", 0.6, "monthly"),
+    url("/services/washi-tatami", 0.8, "monthly"),
+    url("/services/resin-tatami", 0.8, "monthly"),
+    url("/services/color-tatami", 0.7, "monthly"),
+    url("/services/tatami-beri", 0.6, "monthly"),
+    url("/services/fusuma-shoji-amido", 0.7, "monthly"),
 
     // Interior
     url("/interior", 0.8, "monthly"),
-    url("/interior/flooring", 0.8, "monthly"),
-    url("/interior/wallpaper", 0.8, "monthly"),
+    url("/interior/cross", 0.8, "monthly"),
+    url("/interior/floor", 0.8, "monthly"),
+    url("/interior/cushion-floor", 0.7, "monthly"),
+    url("/interior/floor-tile", 0.7, "monthly"),
     url("/interior/store-interior", 0.7, "monthly"),
-    url("/interior/ryokan-renovation", 0.7, "monthly"),
-    url("/interior/room-renovation", 0.7, "monthly"),
-    url("/interior/floor-repair", 0.6, "monthly"),
+    url("/interior/house-renovation", 0.7, "monthly"),
 
     // Restoration
     url("/restoration", 0.8, "monthly"),
@@ -81,6 +83,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/needs/vacant-room", 0.7, "monthly"),
     url("/needs/before-sale", 0.7, "monthly"),
     url("/needs/before-guest-arrival", 0.7, "monthly"),
+
+    // Guides
+    url("/guide/how-to-choose-tatami", 0.8, "monthly"),
+    url("/guide/tatami-price-guide", 0.8, "monthly"),
+    url("/guide/tatami-maintenance", 0.8, "monthly"),
+
+    // Compare
+    url("/compare/omotegae-uragaeshi-shinchou", 0.8, "monthly"),
+    url("/compare/igusa-washi-resin", 0.8, "monthly"),
 
     // Column (static SEO articles)
     url("/column", 0.8, "weekly"),
