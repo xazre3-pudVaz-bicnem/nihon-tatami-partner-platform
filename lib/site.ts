@@ -17,7 +17,7 @@ export const NAV_LINKS = [
   { label: "法人・施設", href: "/business" },
   { label: "内装工事", href: "/interior" },
   { label: "原状回復", href: "/restoration" },
-  { label: "施工事例", href: "/works" },
+  { label: "施工対応例", href: "/works" },
   { label: "料金", href: "/price" },
   { label: "コラム", href: "/column" },
   { label: "会社情報", href: "/about" },

@@ -8,6 +8,9 @@ const hasTel = (SITE_TEL as string).trim() !== "";
 const hasEmail = (SITE_EMAIL as string).trim() !== "";
 const hasLine = (SITE_LINE as string).trim() !== "";
 
+const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+const ENDPOINT = FORMSPREE_ID ? `https://formspree.io/f/${FORMSPREE_ID}` : null;
+
 const INQUIRY_TYPES = [
   "畳の表替え・裏返し",
   "畳の新調",
@@ -23,6 +26,8 @@ const INQUIRY_TYPES = [
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [form, setForm] = useState({ name: "", company: "", tel: "", email: "", area: "", type: "", message: "", method: "", privacy: false });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -37,11 +42,42 @@ export default function ContactPage() {
     return errs;
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
-    setSent(true);
+
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      if (ENDPOINT) {
+        const res = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            お問い合わせ種別: form.type,
+            お名前: form.name,
+            会社名施設名: form.company || "（個人）",
+            電話番号: form.tel || "—",
+            メールアドレス: form.email || "—",
+            施工場所: form.area || "—",
+            お問い合わせ内容: form.message,
+            ご希望の連絡方法: form.method || "—",
+            _subject: `お問い合わせ: ${form.type}（${form.name}様）`,
+          }),
+        });
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          throw new Error((data as { error?: string }).error || "送信エラー");
+        }
+      }
+      setSent(true);
+    } catch {
+      setSubmitError("送信に失敗しました。お手数ですが時間をおいて再度お試しください。");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (sent) {
@@ -241,9 +277,20 @@ export default function ContactPage() {
             </div>
             {errors.privacy && <p className="text-xs text-do">{errors.privacy}</p>}
 
-            <button type="submit" className="w-full bg-sumi text-white text-sm py-4 tracking-wider hover:bg-sumi-light transition-colors duration-300">
-              無料見積もりを相談する
+            {/* spam honeypot — hidden from users */}
+            <input type="text" name="_gotcha" aria-hidden="true" tabIndex={-1} autoComplete="off" className="hidden" />
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-sumi text-white text-sm py-4 tracking-wider hover:bg-ai transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? "送信中..." : "無料見積もりを相談する"}
             </button>
+
+            {submitError && (
+              <p className="text-xs text-do text-center">{submitError}</p>
+            )}
 
             <p className="text-xs text-sumi/40 text-center">
               ※ 内容確認後にご連絡します。お急ぎの場合はその旨をお問い合わせ内容にご記載ください。

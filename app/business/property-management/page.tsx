@@ -5,9 +5,9 @@ import type { FaqItem } from "@/data/faq";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: `管理会社向け原状回復・畳交換・内装整備｜複数棟・スピード対応・写真報告 | ${SITE_NAME}`,
+  title: `管理会社向け原状回復・畳交換・内装整備｜複数棟対応・写真報告 | ${SITE_NAME}`,
   description:
-    "管理会社向けの原状回復・畳交換・クロス張替え・床補修・建具調整を一括対応。複数棟管理の効率化、退去後のスピード見積もり、国交省ガイドライン準拠の判断材料、写真付き施工報告書まで。継続取引歓迎。",
+    "管理会社向けの原状回復・畳交換・クロス張替え・床補修・建具調整を一括対応。複数棟管理の効率化、退去後の迅速な見積もり対応、国交省ガイドライン準拠の判断材料、写真付き施工報告書まで。継続取引歓迎。",
   path: "/business/property-management",
 });
 
@@ -39,7 +39,7 @@ export default function PropertyManagementPage() {
     <ServicePageTemplate
       eyebrow="For Property Management"
       title="管理会社向け原状回復・畳交換・内装整備"
-      subtitle="複数棟の原状回復・空室対策・定期メンテナンスを一括サポート。スピード見積もり・写真付き報告で、管理業務の効率化を支援します。"
+      subtitle="複数棟の原状回復・空室対策・定期メンテナンスを一括サポート。写真付き報告・迅速な見積もり対応で、管理業務の窓口を一本化します。"
       breadcrumbs={[{ label: "法人・施設向け", href: "/business" }, { label: "管理会社向け" }]}
       image="/images/nihon-tatami/restoration/restoration-wall-painting-01.png"
       sections={[
