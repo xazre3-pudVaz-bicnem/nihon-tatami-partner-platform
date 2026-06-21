@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 import { COLUMN_ARTICLES } from "@/data/column";
+import { PURPOSE_PAGES } from "@/data/purpose";
+import { PROBLEM_PAGES } from "@/data/problems-pages";
 
 const BASE = SITE_URL;
 
@@ -14,9 +16,9 @@ function url(path: string, priority: number = 0.7, changeFreq: MetadataRoute.Sit
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const columnUrls = COLUMN_ARTICLES.map((a) =>
-    url(`/column/${a.slug}`, 0.7, "monthly")
-  );
+  const columnUrls = COLUMN_ARTICLES.map((a) => url(`/column/${a.slug}`, 0.7, "monthly"));
+  const purposeUrls = PURPOSE_PAGES.map((p) => url(`/purpose/${p.slug}`, 0.7, "monthly"));
+  const problemUrls = PROBLEM_PAGES.map((p) => url(`/problems/${p.slug}`, 0.7, "monthly"));
 
   return [
     // Core
@@ -32,25 +34,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Services — Tatami
     url("/services", 0.9, "monthly"),
-    url("/services/tatami-omotekaeri", 0.9, "monthly"),
-    url("/services/tatami-uragaeri", 0.8, "monthly"),
-    url("/services/tatami-shincho", 0.9, "monthly"),
-    url("/services/washi-tatami", 0.8, "monthly"),
+    url("/services/tatami", 0.9, "monthly"),
+    url("/services/tatami-omotegae", 0.9, "monthly"),
+    url("/services/tatami-uragaeshi", 0.8, "monthly"),
+    url("/services/tatami-shinchou", 0.9, "monthly"),
+    url("/services/herinashi-tatami", 0.8, "monthly"),
     url("/services/ryukyu-tatami", 0.8, "monthly"),
-    url("/services/domestic-igusa", 0.7, "monthly"),
-    url("/services/fusuma", 0.7, "monthly"),
-    url("/services/shoji", 0.7, "monthly"),
-    url("/services/mushiro", 0.6, "monthly"),
-    url("/services/tatami-cleaning", 0.6, "monthly"),
+    url("/services/washi-tatami", 0.8, "monthly"),
+    url("/services/resin-tatami", 0.8, "monthly"),
+    url("/services/color-tatami", 0.7, "monthly"),
+    url("/services/tatami-beri", 0.6, "monthly"),
+    url("/services/fusuma-shoji-amido", 0.7, "monthly"),
 
     // Interior
     url("/interior", 0.8, "monthly"),
-    url("/interior/flooring", 0.8, "monthly"),
-    url("/interior/wallpaper", 0.8, "monthly"),
+    url("/interior/cross", 0.8, "monthly"),
+    url("/interior/floor", 0.8, "monthly"),
+    url("/interior/cushion-floor", 0.7, "monthly"),
+    url("/interior/floor-tile", 0.7, "monthly"),
     url("/interior/store-interior", 0.7, "monthly"),
-    url("/interior/ryokan-renovation", 0.7, "monthly"),
-    url("/interior/room-renovation", 0.7, "monthly"),
-    url("/interior/floor-repair", 0.6, "monthly"),
+    url("/interior/house-renovation", 0.7, "monthly"),
 
     // Restoration
     url("/restoration", 0.8, "monthly"),
@@ -68,6 +71,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/business/temple-shrine", 0.7, "monthly"),
     url("/business/store", 0.7, "monthly"),
     url("/business/vacancy-measures", 0.7, "monthly"),
+
+    // Purpose (目的から探す)
+    url("/purpose", 0.8, "monthly"),
+    ...purposeUrls,
+
+    // Problems (お悩み解決)
+    url("/problems", 0.8, "monthly"),
+    ...problemUrls,
 
     // Needs
     url("/needs", 0.7, "monthly"),
