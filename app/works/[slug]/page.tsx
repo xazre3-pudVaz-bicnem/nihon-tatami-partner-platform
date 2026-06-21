@@ -14,10 +14,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const work = getWorkBySlug(slug);
-  if (!work) return { title: `施工事例が見つかりません | ${SITE_NAME}` };
+  if (!work) return { title: `施工対応例が見つかりません | ${SITE_NAME}` };
   return buildMetadata({
-    title: `${work.title} | 施工事例 | ${SITE_NAME}`,
-    description: `${work.location}での${work.service}の施工事例。${work.challenge.slice(0, 80)}`,
+    title: `${work.title} | 施工対応例・施工イメージ | ${SITE_NAME}`,
+    description: `${work.location}での${work.service}の施工対応例。${work.challenge.slice(0, 80)}`,
     path: `/works/${slug}`,
     image: work.heroImage,
   });

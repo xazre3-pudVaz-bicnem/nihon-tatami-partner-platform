@@ -27,6 +27,11 @@ const faqs: FaqItem[] = [
   { category: "price", q: "寺社向けの料金はどのくらいですか？", a: "素材・縁・枚数・空間により変動します。格式ある縁や多枚数の場合は個別にお見積もりします。まずは空間と畳数をお知らせください。現地確認後に正式なお見積もりをご案内します。" },
   { category: "price", q: "請求書払いに対応していますか？", a: "請求書払い・お振込での対応をご相談いただけます。寺社のご事情に合わせた対応をご案内します。" },
   { category: "btob", q: "遠方でも対応できますか？", a: "所在地によっては出張費が発生する場合があります。まずは所在地をお知らせいただければ、対応可否と条件をご案内します。" },
+  { category: "btob", q: "写真付き報告書を檀家・氏子向けの説明に使えますか？", a: "はい。施工前後の写真・工種別費用内訳の報告書をご提供します。整備の透明性を示す資料としてご活用いただけます。" },
+  { category: "btob", q: "遠方の寺社でも対応できますか？", a: "所在地により出張費が発生する場合があります。まずは所在地をお知らせください。対応可否と条件をご案内します。" },
+  { category: "timing", q: "法要ギリギリのご依頼でも対応できますか？", a: "可能な範囲で対応します。素材の確保・施工計画の都合があるため、できる限り早めのご相談をおすすめします。" },
+  { category: "btob", q: "施工後のアフターフォローはありますか？", a: "引き渡し後に気になる点があればご相談ください。状況を確認して対応します。" },
+  { category: "btob", q: "本堂以外（庫裏・社務所）のみの依頼でも大丈夫ですか？", a: "はい。1部屋・1空間からのご依頼も歓迎します。用途に応じた素材と費用をご提案します。" },
 ];
 
 export default function TempleShrinesPage() {
@@ -121,6 +126,98 @@ export default function TempleShrinesPage() {
               法務・祈祷・祭礼の妨げにならないよう作業時間を調整し、古い畳などの廃材は適切に運び出して処理します。
               施工後は養生を撤去し、清掃を行ってお引き渡しします。
             </p>
+          ),
+        },
+        {
+          heading: "寺社の畳工事で求められる4つの配慮",
+          content: (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>格式に合わせた素材・縁の選定</h3>
+                <p className="text-sumi/80 text-sm">本堂・拝殿には紋縁・麻縁など格式ある縁、日常使いの空間には実用的な縁を提案します。</p>
+              </div>
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>境内・参拝者への配慮</h3>
+                <p className="text-sumi/80 text-sm">搬入経路の養生、作業時間の調整、廃材の速やかな搬出を行います。</p>
+              </div>
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>文化財・歴史的建築物への対応</h3>
+                <p className="text-sumi/80 text-sm">現地確認のうえ、養生・搬入方法を慎重に検討。対応可否は現地確認後にご案内します。</p>
+              </div>
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>静かな施工</h3>
+                <p className="text-sumi/80 text-sm">畳は工場加工のため現場騒音は最小限。法務・祈祷中の作業は避けます。</p>
+              </div>
+            </div>
+          ),
+        },
+        {
+          heading: "空間別の対応ポイント",
+          content: (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>本堂・拝殿</h3>
+                <p className="text-sumi/80 text-sm">紋縁・麻縁で格式を保ちます。多枚数の新調・表替えに対応。</p>
+              </div>
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>客殿・控室</h3>
+                <p className="text-sumi/80 text-sm">来客・檀家への印象を整えます。行事前の施工計画が重要。</p>
+              </div>
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>庫裏・社務所</h3>
+                <p className="text-sumi/80 text-sm">日常使いに適した実用素材でコストと清潔感を整えます。</p>
+              </div>
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>参集殿</h3>
+                <p className="text-sumi/80 text-sm">使用頻度が高い空間は耐久性素材で長く保ちます。</p>
+              </div>
+            </div>
+          ),
+        },
+        {
+          heading: "法要・祭礼前の整備タイムライン",
+          content: (
+            <>
+              <ol className="space-y-2">
+                <li className="text-sumi">1. 2〜3か月前: ご相談・現地確認の日程調整</li>
+                <li className="text-sumi">2. 現地確認・状態記録・素材提案</li>
+                <li className="text-sumi">3. お見積もりの確認・着工日の確定</li>
+                <li className="text-sumi">4. 施工（畳引き取り → 工場加工 → 納品）</li>
+                <li className="text-sumi">5. 仕上がり確認・引き渡し</li>
+              </ol>
+              <p className="text-sm text-sumi/60 mt-3">急ぎのご依頼も可能な範囲で対応します。</p>
+            </>
+          ),
+        },
+        {
+          heading: "紋縁・格式縁の選び方",
+          content: (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>紋縁</h3>
+                <p className="text-sumi/80 text-sm">家紋・宗紋をあしらった格式ある縁。本堂や格式を重んじる空間向け。</p>
+              </div>
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>麻縁</h3>
+                <p className="text-sumi/80 text-sm">麻素材で質感が高く、格式のある客殿・控室などに用いられます。</p>
+              </div>
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>無地縁</h3>
+                <p className="text-sumi/80 text-sm">落ち着いた色合い。格式と実用性のバランスが取れた日常使いの空間向け。</p>
+              </div>
+            </div>
+          ),
+        },
+        {
+          heading: "施工中の配慮事項",
+          content: (
+            <ul className="space-y-2">
+              <li className="text-sumi/80">法務・祈祷・祭礼が行われている時間は作業を避けます</li>
+              <li className="text-sumi/80">境内を養生し、汚れ・傷をつけません</li>
+              <li className="text-sumi/80">廃材は作業後に速やかに搬出します</li>
+              <li className="text-sumi/80">現場での騒音は最小限（畳は工場加工）</li>
+              <li className="text-sumi/80">参拝者・関係者の通行を妨げないよう配慮します</li>
+            </ul>
           ),
         },
       ]}

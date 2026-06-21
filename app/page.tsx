@@ -61,8 +61,8 @@ const REASONS = [
   },
   {
     num: "08",
-    title: "丁寧な施工と確認・引き渡し",
-    desc: "施工後の確認を徹底し、仕上がりに満足いただいてから引き渡します。疑問や不安は遠慮なくご相談ください。",
+    title: "丁寧な施工と仕上がり確認",
+    desc: "施工後に仕上がりを確認のうえ引き渡します。疑問や不安があれば遠慮なくご相談ください。",
   },
 ];
 
@@ -89,7 +89,7 @@ const PRICE_ROWS = [
 ];
 
 const FLOW_STEPS = [
-  { num: "01", title: "お問い合わせ", desc: "フォーム・電話・LINEからご連絡ください。お見積もりは無料です。", sub: "法人の方は物件情報・概要をお知らせください。" },
+  { num: "01", title: "お問い合わせ", desc: "サイト内のお問い合わせフォームよりご連絡ください。お見積もりは無料です。", sub: "法人の方は物件情報・概要をお知らせください。" },
   { num: "02", title: "現地確認", desc: "ご希望日程に現地をご訪問します。畳・内装の状態を確認し、最適な施工方法をご提案します。", sub: "複数物件・大規模案件は日程を調整します。" },
   { num: "03", title: "お見積もり・ご提案", desc: "現地確認後、素材・施工方法・金額をわかりやすくご提示します。ご納得いただいてからのご依頼です。", sub: "追加費用が発生する場合は事前にご説明します。" },
   { num: "04", title: "施工日のご調整", desc: "ご都合に合わせて施工日を設定します。旅館・管理物件の場合は稼働状況に合わせた計画を立てます。", sub: "" },
@@ -97,6 +97,7 @@ const FLOW_STEPS = [
   { num: "06", title: "確認・引き渡し", desc: "施工後にお客様と仕上がりを確認します。ご満足いただいてから引き渡しです。", sub: "管理会社様には写真付き報告書を提出します。" },
 ];
 
+const _hasTel = (SITE_TEL as string).trim() !== "";
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -104,7 +105,7 @@ const STRUCTURED_DATA = {
   description: "畳の表替え・新調から内装工事・原状回復まで。住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナー。",
   "@id": "https://nihontatami.jp",
   url: "https://nihontatami.jp",
-  telephone: SITE_TEL,
+  ...(_hasTel ? { telephone: SITE_TEL } : {}),
   priceRange: "¥¥",
   areaServed: { "@type": "Country", name: "Japan" },
   hasOfferCatalog: {

@@ -27,6 +27,11 @@ const faqs: FaqItem[] = [
   { category: "btob", q: "施工中の騒音や匂いは大丈夫ですか？", a: "畳は工場でお預かりして加工するため、客室内での作業は最小限です。新しいい草には香りがありますが、これは品質の証でもあります。気になる場合は和紙畳・樹脂畳もご提案できます。搬入経路・作業時間も他の宿泊客に配慮して調整します。" },
   { category: "price", q: "旅館向けの料金はどのくらいですか？", a: "一般客室向けの表替えは1枚あたりの目安をご案内できますが、客室数・素材・縁・スケジュールにより変動します。10室・20室・30室といった単位の大量施工は個別にお見積もりします。まずは客室数と畳数をお知らせください。" },
   { category: "price", q: "請求書払い・法人取引に対応していますか？", a: "請求書払い・お振込での対応をご相談いただけます。法人契約・継続取引の条件についても、案件規模に応じて柔軟にご案内します。" },
+  { category: "btob", q: "施工報告書はもらえますか？", a: "はい。施工前後の写真を添えた報告書を発行します。支配人・オーナー様への報告資料としてご活用いただけます。" },
+  { category: "btob", q: "複数施設を運営していますが一括対応できますか？", a: "はい。複数施設の施工スケジュールを調整し、継続的なお取引として対応します。施設数・客室数をお知らせください。" },
+  { category: "btob", q: "廊下や共用部にも対応できますか？", a: "はい。廊下・ロビー・共用部の畳またはその他床材の整備にも対応します。用途に応じた素材をご提案します。" },
+  { category: "btob", q: "見積もりに必要な情報は何ですか？", a: "施設名・客室数・畳の枚数（目安）・現在の状態（写真があれば尚良）・ご希望の時期をお知らせください。スムーズにご案内できます。" },
+  { category: "btob", q: "施工後の品質確認はしてもらえますか？", a: "はい。施工後に仕上がりを確認し、問題がないことを確かめてからお引き渡しします。" },
 ];
 
 export default function RyokanPage() {
@@ -164,6 +169,119 @@ export default function RyokanPage() {
               <li>5. 段階施工・養生・清掃を徹底して施工</li>
               <li>6. 仕上がり確認・引き渡し</li>
             </ol>
+          ),
+        },
+        {
+          heading: "旅館畳工事で特に重要な3点",
+          content: (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>稼働を止めない段階施工</h3>
+                <p className="text-sumi/80 text-sm">チェックアウト後に引き取り・工場加工・チェックインまでに返却。1棟ずつ・1客室ずつ順番に対応します。</p>
+              </div>
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>客室タイプ別素材選定</h3>
+                <p className="text-sumi/80 text-sm">一般客室は国産い草・標準グレード、特別室は高品質い草・紋縁、大広間は和紙畳（ささくれに強い）。用途に応じた素材をご提案します。</p>
+              </div>
+              <div className="bg-kiji/40 rounded-lg p-5">
+                <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>繁忙期2〜3か月前のご相談</h3>
+                <p className="text-sumi/80 text-sm">お盆・年末年始・大型連休前は依頼が集中します。早めのスケジュール共有で計画しやすくなります。</p>
+              </div>
+            </div>
+          ),
+        },
+        {
+          heading: "客室タイプ別の素材・施工サイクル目安",
+          content: (
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-border">
+                <thead>
+                  <tr className="bg-kiji/50">
+                    <th className="text-left py-2 px-3 text-sumi font-normal border-b border-border" style={{ fontFamily: "var(--font-serif)" }}>客室タイプ</th>
+                    <th className="text-left py-2 px-3 text-sumi font-normal border-b border-border" style={{ fontFamily: "var(--font-serif)" }}>推奨素材</th>
+                    <th className="text-left py-2 px-3 text-sumi font-normal border-b border-border" style={{ fontFamily: "var(--font-serif)" }}>縁の選び方</th>
+                    <th className="text-left py-2 px-3 text-sumi font-normal border-b border-border" style={{ fontFamily: "var(--font-serif)" }}>表替えサイクル目安</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  <tr className="hover:bg-kiji/20 transition-colors">
+                    <td className="py-2 px-3 text-sumi">一般客室</td>
+                    <td className="py-2 px-3 text-sumi/80">国産い草（機械すき）</td>
+                    <td className="py-2 px-3 text-sumi/80">落ち着いた無地縁</td>
+                    <td className="py-2 px-3 text-sumi/80">3〜5年</td>
+                  </tr>
+                  <tr className="hover:bg-kiji/20 transition-colors">
+                    <td className="py-2 px-3 text-sumi">特別室・離れ</td>
+                    <td className="py-2 px-3 text-sumi/80">手刈り高品質い草</td>
+                    <td className="py-2 px-3 text-sumi/80">紋縁・麻縁</td>
+                    <td className="py-2 px-3 text-sumi/80">状態を見て判断</td>
+                  </tr>
+                  <tr className="hover:bg-kiji/20 transition-colors">
+                    <td className="py-2 px-3 text-sumi">大広間・宴会場</td>
+                    <td className="py-2 px-3 text-sumi/80">和紙畳（耐久性重視）</td>
+                    <td className="py-2 px-3 text-sumi/80">格式ある縁</td>
+                    <td className="py-2 px-3 text-sumi/80">5年〜（状態により）</td>
+                  </tr>
+                  <tr className="hover:bg-kiji/20 transition-colors">
+                    <td className="py-2 px-3 text-sumi">廊下・共用部</td>
+                    <td className="py-2 px-3 text-sumi/80">樹脂畳または耐久素材</td>
+                    <td className="py-2 px-3 text-sumi/80">—</td>
+                    <td className="py-2 px-3 text-sumi/80">状態により</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="text-sm text-sumi/60 mt-2">※ 素材・枚数・スケジュールにより費用変動。現地確認後に正式お見積もり（税込）。</p>
+            </div>
+          ),
+        },
+        {
+          heading: "稼働を止めない段階施工の進め方",
+          content: (
+            <>
+              <ol className="space-y-2">
+                <li className="text-sumi">1. 閑散期または繁忙期翌日に施工日程を共有</li>
+                <li className="text-sumi">2. チェックアウト後、対象客室の畳を引き取り</li>
+                <li className="text-sumi">3. 工場で畳表・縁の交換・加工</li>
+                <li className="text-sumi">4. チェックインまでに納品・敷き込み</li>
+                <li className="text-sumi">5. 複数客室を並行対応することも可能（要相談）</li>
+              </ol>
+              <p className="text-sm text-sumi/60 mt-3">1泊の空きがあれば1室対応が目安です。まずは状況をご相談ください。</p>
+            </>
+          ),
+        },
+        {
+          heading: "インバウンド需要と畳の品質管理",
+          content: (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <p className="text-sumi/80">宿泊予約サイトの「清潔感」評価には畳の状態が関係します。青々とした畳表はSNS映えし、外国人ゲストの和の体験を高めます。定期的な表替えはゲスト満足と口コミ向上への投資と考えられています。</p>
+              </div>
+              <div>
+                <p className="text-sumi/80">土足で使われることが多い客室には、傷みにくい和紙畳・樹脂畳をご提案します。い草の香りを楽しんでいただきたい客室と使い分けも可能です。</p>
+              </div>
+            </div>
+          ),
+        },
+        {
+          heading: "旅館の畳メンテナンス計画の考え方",
+          content: (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-kiji/40 rounded-lg p-5">
+                  <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>毎年一定数を更新する方式</h3>
+                  <p className="text-sumi/80 text-sm">費用を平準化しながら客室品質を維持。例：年間20室を3年かけて更新。</p>
+                </div>
+                <div className="bg-kiji/40 rounded-lg p-5">
+                  <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>稼働率の高い客室から優先する方式</h3>
+                  <p className="text-sumi/80 text-sm">傷みが早い客室を優先整備。費用対効果を意識した進め方。</p>
+                </div>
+                <div className="bg-kiji/40 rounded-lg p-5">
+                  <h3 className="text-sumi font-semibold mb-2" style={{ fontFamily: "var(--font-serif)" }}>繁忙期前に集中整備する方式</h3>
+                  <p className="text-sumi/80 text-sm">閑散期にまとめて施工。シーズン前に全体を整えます。</p>
+                </div>
+              </div>
+              <p className="text-sm text-sumi/60 mt-3">※ 客室数・稼働率・ご予算に応じた計画をご相談いただけます。</p>
+            </>
           ),
         },
       ]}

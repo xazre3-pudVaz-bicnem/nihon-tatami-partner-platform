@@ -9,15 +9,15 @@ import FaqSection from "@/components/ui/FaqSection";
 import type { FaqItem } from "@/data/faq";
 
 export const metadata: Metadata = buildMetadata({
-  title: `施工事例 | 畳・襖・障子・内装・原状回復の実績 | ${SITE_NAME}`,
-  description: "住宅・賃貸・旅館・寺社・店舗・オフィスなど多様な施工事例を掲載。畳表替え・新調、襖障子張替え、内装工事、原状回復の実績を課題・提案・施工内容とともにご紹介します。",
+  title: `施工対応例・施工イメージ | 畳・内装・原状回復 | ${SITE_NAME}`,
+  description: "住宅・賃貸・旅館・寺社・店舗・オフィスなど多様な施工対応例を掲載。畳表替え・新調、襖障子張替え、内装工事、原状回復の施工イメージをご確認いただけます。",
   path: "/works",
 });
 
 const worksFaqs: FaqItem[] = [
   { category: "general", q: "施工事例のような工事を自宅でも頼めますか？", a: "はい。掲載している事例と同様の畳工事・内装工事・原状回復に対応します。現地の状況により最適な工事内容は異なりますので、まずは無料の現地確認・お見積もりをご利用ください。" },
   { category: "general", q: "事例と同じ素材・仕上がりにできますか？", a: "同じ素材・仕様での施工が可能です。ただし、お部屋の状態・サイズ・既存の仕様により仕上がりが変わる場合があります。現地確認のうえ、近い仕上がりになるようご提案します。" },
-  { category: "btob", q: "法人・複数物件の事例もありますか？", a: "賃貸物件・旅館・寺社・店舗など、法人・施設の施工にも幅広く対応しています。複数物件・継続案件の実績もございます。法人向けのご相談もお気軽にお問い合わせください。" },
+  { category: "btob", q: "法人・複数物件の対応例もありますか？", a: "賃貸物件・旅館・寺社・店舗など、法人・施設の施工にも幅広く対応しています。複数物件・継続案件のご相談にも対応しています。法人向けのご相談もお気軽にお問い合わせください。" },
   { category: "price", q: "事例に記載の費用は固定ですか？", a: "事例の費用は参考目安です。実際の費用は素材・枚数・面積・損傷状況・建物の用途により変動します。正式な費用は現地確認後に無料でお見積もりします。" },
   { category: "timing", q: "事例のような工事はどのくらいの期間で終わりますか？", a: "畳の表替えは持ち帰り翌日〜2日、内装・原状回復一式は範囲により数日が目安です。工事内容により変動するため、計画段階でスケジュールをご案内します。" },
   { category: "general", q: "施工前後の写真は残せますか？", a: "はい。ご希望に応じて施工前後の写真をお渡しします。法人のお客様には写真付きの施工報告書も発行しており、記録・報告資料としてご活用いただけます。" },
@@ -31,14 +31,13 @@ export default function WorksPage() {
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb items={[{ label: "施工事例" }]} />
+          <Breadcrumb items={[{ label: "施工対応例" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Works</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            施工事例
+            施工対応例・施工イメージ
           </h1>
           <p className="text-sm text-white/60 max-w-xl leading-relaxed">
-            住宅・賃貸・旅館・寺社・店舗・オフィスなど、さまざまな施工実績をご紹介します。
-            各事例では、ご相談内容・ご提案・施工内容・施工後の変化を詳しくご覧いただけます。
+            施工対応例・施工イメージをご紹介します。実際の素材・費用・期間は現地確認後にご案内します。
           </p>
         </div>
       </section>

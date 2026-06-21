@@ -17,10 +17,10 @@ export default async function BlogPage() {
   const { posts } = await getPosts({ per_page: 12 });
 
   const FALLBACK_POSTS = [
-    { slug: "sample-01", date: "2025-08-01", title: "夏の繁忙期前に旅館客室8室の畳表替えを実施", excerpt: "お盆前の旅館からのご依頼で、客室8室・64枚の畳表替えを実施しました。", image: "/images/blog-placeholder.jpg", category: "施工レポート" },
-    { slug: "sample-02", date: "2025-07-15", title: "賃貸マンションの退去後原状回復（和紙畳へ変更）", excerpt: "管理会社様からのご依頼で、退去後の原状回復を実施。ペット可物件にするため和紙畳への変更もご提案しました。", image: "/images/blog-placeholder.jpg", category: "施工レポート" },
+    { slug: "sample-01", date: "2025-08-01", title: "夏の繁忙期前に旅館客室8室の畳表替えを想定した工程と流れ", excerpt: "旅館客室8室の畳表替えを想定した工程と流れをご紹介します。", image: "/images/blog-placeholder.jpg", category: "施工レポート" },
+    { slug: "sample-02", date: "2025-07-15", title: "賃貸マンションの退去後原状回復（和紙畳へ変更）", excerpt: "管理会社様からのご相談の流れをご紹介します。退去後の原状回復で、ペット可物件にするため和紙畳への変更もご提案しました。", image: "/images/blog-placeholder.jpg", category: "施工レポート" },
     { slug: "sample-03", date: "2025-07-01", title: "寺院の本堂・客殿の畳新調工事が完成", excerpt: "築50年の寺院の本堂と客殿の畳を新調。法要前に間に合うよう施工スケジュールを調整しました。", image: "/images/blog-placeholder.jpg", category: "施工レポート" },
-    { slug: "sample-04", date: "2025-06-20", title: "お盆前の畳替えのご依頼を承っています", excerpt: "お盆前に畳をきれいにしたい方、旅館・宿泊施設の定期整備をご検討の方、お気軽にご相談ください。", image: "/images/blog-placeholder.jpg", category: "お知らせ" },
+    { slug: "sample-04", date: "2025-06-20", title: "お盆前の畳替えのご相談を受け付けています", excerpt: "お盆前に畳をきれいにしたい方、旅館・宿泊施設の定期整備をご検討の方、お気軽にご相談ください。", image: "/images/blog-placeholder.jpg", category: "お知らせ" },
   ];
 
   const displayPosts = posts.length > 0 ? posts.map((p) => ({
