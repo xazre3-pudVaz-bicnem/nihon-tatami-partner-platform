@@ -1,28 +1,16 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
-<<<<<<< HEAD
 import { WORKS_DETAIL, WORK_CATEGORIES } from "@/data/works-detail";
 import WorksFilter from "@/components/ui/WorksFilter";
-=======
-import { WORKS } from "@/data/works";
-import type { FaqItem } from "@/data/faq";
-import WorksCard from "@/components/ui/WorksCard";
->>>>>>> worktree-agent-a593ef458cd30cc49
 import CTASection from "@/components/ui/CTASection";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
+import type { FaqItem } from "@/data/faq";
 
 export const metadata: Metadata = buildMetadata({
-<<<<<<< HEAD
   title: `施工事例 | 畳・襖・障子・内装・原状回復の実績 | ${SITE_NAME}`,
   description: "住宅・賃貸・旅館・寺社・店舗・オフィスなど多様な施工事例を掲載。畳表替え・新調、襖障子張替え、内装工事、原状回復の実績を課題・提案・施工内容とともにご紹介します。",
-  path: "/works",
-});
-
-=======
-  title: `施工事例 | 畳・内装・原状回復の施工実績 | ${SITE_NAME}`,
-  description: "住宅・旅館・寺社・店舗・賃貸物件など多様な施工事例を紹介。畳表替え・新調・内装工事・原状回復の実績をご確認いただけます。課題・施工内容・結果とともにご覧いただけます。",
   path: "/works",
 });
 
@@ -37,17 +25,6 @@ const worksFaqs: FaqItem[] = [
   { category: "general", q: "相談だけでも大丈夫ですか？", a: "もちろんです。「どんな工事が必要か分からない」という段階でのご相談も歓迎です。現地確認・お見積もりは無料で、お見積もり後のキャンセルでも費用は発生しません。" },
 ];
 
-const CATEGORIES = [
-  { label: "すべて", value: "all" },
-  { label: "住宅", value: "house" },
-  { label: "旅館", value: "ryokan" },
-  { label: "寺社", value: "temple" },
-  { label: "店舗", value: "store" },
-  { label: "賃貸", value: "rental" },
-  { label: "不動産", value: "realestate" },
-];
-
->>>>>>> worktree-agent-a593ef458cd30cc49
 export default function WorksPage() {
   return (
     <>
