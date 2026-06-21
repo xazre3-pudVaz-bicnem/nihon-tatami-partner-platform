@@ -7,6 +7,7 @@ import { PROBLEMS } from "@/data/problems";
 import { AREAS, AREA_SERVICES } from "@/data/areas";
 
 const BASE = SITE_URL;
+const LAST_MODIFIED = new Date("2026-06-21");
 
 function url(
   path: string,
@@ -15,7 +16,7 @@ function url(
 ): MetadataRoute.Sitemap[0] {
   return {
     url: `${BASE}${path}`,
-    lastModified: new Date(),
+    lastModified: LAST_MODIFIED,
     changeFrequency: changeFreq,
     priority,
   };
@@ -122,6 +123,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/needs/vacant-room", 0.7, "monthly"),
     url("/needs/before-sale", 0.7, "monthly"),
     url("/needs/before-guest-arrival", 0.7, "monthly"),
+
+    // Guides
+    url("/guide/how-to-choose-tatami", 0.8, "monthly"),
+    url("/guide/tatami-price-guide", 0.8, "monthly"),
+    url("/guide/tatami-maintenance", 0.8, "monthly"),
+
+    // Compare
+    url("/compare/omotegae-uragaeshi-shinchou", 0.8, "monthly"),
+    url("/compare/igusa-washi-resin", 0.8, "monthly"),
 
     // Column (SEO articles)
     url("/column", 0.8, "weekly"),
