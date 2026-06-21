@@ -18,7 +18,7 @@ export function buildMetadata({
   const url = `${SITE_URL}${path}`;
   const ogImage = image || OG_IMAGE;
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical: url },
     openGraph: {

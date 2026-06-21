@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { SITE_NAME, SITE_TEL, SITE_EMAIL } from "@/lib/site";
 
+const hasTel = (SITE_TEL as string).trim() !== "";
+const hasEmail = (SITE_EMAIL as string).trim() !== "";
+
 const FOOTER_LINKS = [
   {
     heading: "畳工事",
@@ -68,13 +71,19 @@ export default function Footer() {
               畳の表替えから内装工事・原状回復まで。住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナー。
             </p>
             <div className="space-y-2">
-              <a href={`tel:${SITE_TEL.replace(/-/g, "")}`} className="block text-xs text-white/50 hover:text-white transition-colors">
-                {SITE_TEL}
-              </a>
-              <a href={`mailto:${SITE_EMAIL}`} className="block text-xs text-white/50 hover:text-white transition-colors">
-                {SITE_EMAIL}
-              </a>
-              <p className="text-xs text-white/30">受付 9:00〜18:00（土日祝定休）</p>
+              {hasTel && (
+                <a href={`tel:${SITE_TEL.replace(/-/g, "")}`} className="block text-xs text-white/50 hover:text-white transition-colors">
+                  {SITE_TEL}
+                </a>
+              )}
+              {hasEmail && (
+                <a href={`mailto:${SITE_EMAIL}`} className="block text-xs text-white/50 hover:text-white transition-colors">
+                  {SITE_EMAIL}
+                </a>
+              )}
+              <Link href="/contact" className="block text-xs text-kincya/70 hover:text-kincya transition-colors">
+                お問い合わせフォーム
+              </Link>
             </div>
           </div>
 

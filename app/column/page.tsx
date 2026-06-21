@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import { COLUMN_ARTICLES } from "@/data/column";
-import ColumnCard from "@/components/ui/ColumnCard";
+import ColumnFilter from "@/components/ui/ColumnFilter";
 import CTASection from "@/components/ui/CTASection";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 
@@ -11,8 +11,6 @@ export const metadata: Metadata = buildMetadata({
   description: "畳の表替え・裏返し・新調の違い、素材選び、賃貸物件の空室対策、旅館・寺院の畳整備など。畳・内装のプロが書く専門コラム。",
   path: "/column",
 });
-
-const CATEGORIES = [...new Set(COLUMN_ARTICLES.map((a) => a.category))];
 
 export default function ColumnPage() {
   return (
@@ -32,39 +30,8 @@ export default function ColumnPage() {
         </div>
       </section>
 
-      <section className="py-8 bg-cloud/40 border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-2">
-            <a href="#all" className="text-xs border border-sumi text-sumi px-4 py-1.5">すべて</a>
-            {CATEGORIES.map((cat) => (
-              <a key={cat} href={`#cat-${encodeURIComponent(cat)}`} className="text-xs border border-border text-sumi/60 px-4 py-1.5 hover:border-ai hover:text-ai transition-colors duration-200">
-                {cat}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="all" className="py-16 bg-shiro">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          {CATEGORIES.map((cat) => {
-            const articles = COLUMN_ARTICLES.filter((a) => a.category === cat);
-            if (articles.length === 0) return null;
-            return (
-              <div key={cat} id={`cat-${encodeURIComponent(cat)}`} className="scroll-mt-24">
-                <h2 className="text-xl text-sumi mb-6 pl-4 border-l-2 border-kincya" style={{ fontFamily: "var(--font-serif)" }}>
-                  {cat}
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {articles.map((article, i) => (
-                    <ColumnCard key={article.slug} article={article} index={i} />
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+      {/* Interactive category filter + article grid (client component) */}
+      <ColumnFilter articles={COLUMN_ARTICLES} />
 
       <div className="py-8 bg-kiji/40 text-center">
         <p className="text-sm text-sumi/60 mb-3">日々の施工レポートはブログで公開しています。</p>

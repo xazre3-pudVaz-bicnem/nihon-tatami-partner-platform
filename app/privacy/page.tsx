@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `プライバシーポリシー | ${SITE_NAME}`,
+  title: { absolute: `プライバシーポリシー | ${SITE_NAME}` },
   description: "日本畳パートナーズのプライバシーポリシーについてご確認いただけます。",
   alternates: { canonical: `${SITE_URL}/privacy` },
 };
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
               <p>{sec.p}</p>
             </div>
           ))}
-          <p className="text-xs text-sumi/40">最終更新日：2025年6月19日</p>
+          <p className="text-xs text-sumi/40">最終更新日：2026年6月21日</p>
         </div>
       </div>
     </>

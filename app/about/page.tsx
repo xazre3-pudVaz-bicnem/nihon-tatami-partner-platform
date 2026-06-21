@@ -1,28 +1,25 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME, SITE_TEL, SITE_EMAIL } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import CTASection from "@/components/ui/CTASection";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: `会社情報 | ${SITE_NAME}`,
-  description: "日本畳パートナーズの会社情報。畳の専門集団として、住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナーです。",
+  description: "日本畳パートナーズの事業内容と強みをご紹介します。畳工事・内装工事・原状回復を軸に、住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナーです。",
   path: "/about",
 });
 
 const COMPANY_INFO = [
-  { label: "社名", value: "日本畳パートナーズ株式会社" },
-  { label: "設立", value: "2022年" },
+  { label: "屋号", value: "日本畳パートナーズ" },
   { label: "事業内容", value: "畳工事・内装工事・原状回復工事" },
-  { label: "対応地域", value: "全国（詳しくはご相談ください）" },
-  { label: "電話番号", value: SITE_TEL },
-  { label: "メール", value: SITE_EMAIL },
-  { label: "受付時間", value: "9:00〜18:00（土日祝定休）" },
+  { label: "対応地域", value: "詳しくはお問い合わせください" },
+  { label: "お問い合わせ", value: "サイト内フォームよりご連絡ください" },
 ];
 
 const STRENGTHS = [
-  { title: "畳を軸にした専門集団", desc: "い草・和紙・樹脂・琉球畳など幅広い素材と施工方法に精通した職人が在籍。一般住宅から旅館・寺社・店舗まで、最適な施工をご提供します。" },
-  { title: "法人・管理会社のパートナー", desc: "不動産管理会社・賃貸オーナー・旅館・寺社・店舗オーナーとの継続的なお取引実績。複数物件・大量施工にも対応する体制を整えています。" },
+  { title: "畳を軸にした専門集団", desc: "い草・和紙・樹脂・琉球畳など幅広い素材と施工方法に対応。一般住宅から旅館・寺社・店舗まで、用途に合わせた施工をご提案します。" },
+  { title: "法人・管理会社への対応体制", desc: "不動産管理会社・賃貸オーナー・旅館・寺社・店舗オーナーからのご相談に対応する体制を整えています。複数物件・大量施工もご相談ください。" },
   { title: "内装・原状回復まで一括対応", desc: "畳だけでなく、クロス・床材・建具の内装工事も承ります。複数業者に依頼する手間を省き、空間全体を整えることができます。" },
   { title: "丁寧な現地確認と提案", desc: "施工前に必ず現地を確認し、状態・素材・ご予算に合わせた適切な施工方法をご提案。お見積もりは無料です。" },
 ];
@@ -30,10 +27,8 @@ const STRENGTHS = [
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "日本畳パートナーズ株式会社",
-  url: "https://nihontatami.jp",
-  telephone: SITE_TEL,
-  email: SITE_EMAIL,
+  name: SITE_NAME,
+  url: SITE_URL,
   description: "畳の表替え・新調から内装工事・原状回復まで対応する畳と空間整備の専門パートナー",
 };
 
@@ -84,7 +79,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-cloud/40">
+      <section className="py-16 bg-kiji/30">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl text-sumi mb-10 text-center" style={{ fontFamily: "var(--font-serif)" }}>会社概要</h2>
           <div className="bg-white border border-border overflow-hidden">
@@ -99,6 +94,7 @@ export default function AboutPage() {
               </tbody>
             </table>
           </div>
+          <p className="text-xs text-sumi/40 mt-4 text-center">※ 詳細情報は順次更新予定です。ご質問はお問い合わせフォームよりご連絡ください。</p>
         </div>
       </section>
 

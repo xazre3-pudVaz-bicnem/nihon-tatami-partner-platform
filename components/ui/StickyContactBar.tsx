@@ -4,6 +4,10 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { SITE_TEL } from "@/lib/site";
 
+// Show the phone button only when SITE_TEL is set and not a placeholder
+const isTelValid =
+  SITE_TEL.trim() !== "" && !SITE_TEL.includes("XXX");
+
 export default function StickyContactBar() {
   const [visible, setVisible] = useState(false);
 
@@ -24,27 +28,42 @@ export default function StickyContactBar() {
       aria-label="お問い合わせ"
     >
       <div
-        className="flex border-t border-white/10"
+        className="flex h-14 border-t border-white/10"
         style={{ backgroundColor: "rgba(30,28,26,0.97)", backdropFilter: "blur(8px)" }}
       >
-        <a
-          href={`tel:${SITE_TEL.replace(/-/g, "")}`}
-          className="flex-1 flex flex-col items-center justify-center py-3 text-white/60 hover:text-white border-r border-white/10 transition-colors"
-        >
-          <span className="text-[10px] tracking-widest">電話で相談</span>
-        </a>
+        {/* Phone button — only rendered when tel is configured */}
+        {isTelValid && (
+          <a
+            href={`tel:${SITE_TEL.replace(/-/g, "")}`}
+            className="flex-1 flex flex-col items-center justify-center text-white/60 hover:text-white border-r border-white/10 transition-colors"
+          >
+            <span className="text-[10px] tracking-widest" style={{ fontFamily: "var(--font-serif)" }}>
+              電話で相談
+            </span>
+            <span className="text-[11px] font-medium mt-0.5">{SITE_TEL}</span>
+          </a>
+        )}
+
+        {/* Primary CTA — 無料見積もり相談 */}
         <Link
           href="/contact"
-          className="flex-[1.4] flex flex-col items-center justify-center py-3 text-white tracking-widest text-[10px]"
-          style={{ backgroundColor: "#B88942" }}
+          className={`flex items-center justify-center text-white tracking-widest text-[11px] font-medium transition-opacity hover:opacity-90 ${
+            isTelValid ? "flex-[1.4]" : "flex-1 border-r border-white/10"
+          }`}
+          style={{ backgroundColor: "#B88942", fontFamily: "var(--font-serif)" }}
         >
-          無料見積もり
+          無料見積もり相談
         </Link>
+
+        {/* Secondary CTA — 法人・施設のご相談 */}
         <Link
           href="/contact#business"
-          className="flex-1 flex flex-col items-center justify-center py-3 text-white/60 hover:text-white border-l border-white/10 transition-colors text-[10px] tracking-widest"
+          className="flex-1 flex items-center justify-center text-white/60 hover:text-white border-l border-white/10 transition-colors text-[10px] tracking-widest"
+          style={{ fontFamily: "var(--font-serif)" }}
         >
-          法人相談
+          法人・施設の
+          <br />
+          ご相談
         </Link>
       </div>
     </div>

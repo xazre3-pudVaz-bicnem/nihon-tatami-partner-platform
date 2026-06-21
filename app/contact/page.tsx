@@ -4,6 +4,10 @@ import { useState } from "react";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { SITE_TEL, SITE_EMAIL, SITE_LINE } from "@/lib/site";
 
+const hasTel = (SITE_TEL as string).trim() !== "";
+const hasEmail = (SITE_EMAIL as string).trim() !== "";
+const hasLine = (SITE_LINE as string).trim() !== "";
+
 const INQUIRY_TYPES = [
   "畳の表替え・裏返し",
   "畳の新調",
@@ -49,10 +53,11 @@ export default function ContactPage() {
           </div>
           <h2 className="text-2xl text-sumi mb-3" style={{ fontFamily: "var(--font-serif)" }}>送信が完了しました</h2>
           <p className="text-sm text-sumi/60 leading-relaxed">
-            お問い合わせありがとうございます。1〜2営業日以内にご連絡いたします。
-            急ぎの場合はお電話ください。
+            お問い合わせありがとうございます。内容を確認のうえ、担当よりご連絡いたします。
           </p>
-          <a href={`tel:${SITE_TEL.replace(/-/g, "")}`} className="block mt-4 text-sm text-kincya">{SITE_TEL}</a>
+          {hasTel && (
+            <a href={`tel:${SITE_TEL.replace(/-/g, "")}`} className="block mt-4 text-sm text-kincya">{SITE_TEL}</a>
+          )}
         </div>
       </div>
     );
@@ -74,33 +79,36 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-10 bg-kiji border-b border-border">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="text-center">
-              <p className="text-xs text-sumi/50 tracking-wide mb-2">お電話でのご相談</p>
-              <a href={`tel:${SITE_TEL.replace(/-/g, "")}`} className="text-xl text-sumi hover:text-ai transition-colors" style={{ fontFamily: "var(--font-serif)" }}>
-                {SITE_TEL}
-              </a>
-              <p className="text-xs text-sumi/40 mt-1">受付 9:00〜18:00（土日祝定休）</p>
-            </div>
-            <div className="text-center">
-              <p className="text-xs text-sumi/50 tracking-wide mb-2">LINEでのご相談</p>
-              <a href={SITE_LINE} className="inline-block border border-kincya/40 text-kincya text-sm px-5 py-2 hover:bg-kincya/10 transition-colors duration-300">
-                LINEで問い合わせる
-              </a>
-              <p className="text-xs text-sumi/40 mt-2">24時間受付</p>
-            </div>
-            <div className="text-center">
-              <p className="text-xs text-sumi/50 tracking-wide mb-2">メールでのご相談</p>
-              <a href={`mailto:${SITE_EMAIL}`} className="text-sm text-ai hover:underline">
-                {SITE_EMAIL}
-              </a>
-              <p className="text-xs text-sumi/40 mt-1">1〜2営業日以内に返信</p>
+      {(hasTel || hasEmail || hasLine) && (
+        <section className="py-10 bg-kiji border-b border-border">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap justify-center gap-10">
+              {hasTel && (
+                <div className="text-center">
+                  <p className="text-xs text-sumi/50 tracking-wide mb-2">お電話でのご相談</p>
+                  <a href={`tel:${SITE_TEL.replace(/-/g, "")}`} className="text-xl text-sumi hover:text-ai transition-colors" style={{ fontFamily: "var(--font-serif)" }}>
+                    {SITE_TEL}
+                  </a>
+                </div>
+              )}
+              {hasLine && (
+                <div className="text-center">
+                  <p className="text-xs text-sumi/50 tracking-wide mb-2">LINEでのご相談</p>
+                  <a href={SITE_LINE} className="inline-block border border-kincya/40 text-kincya text-sm px-5 py-2 hover:bg-kincya/10 transition-colors duration-300">
+                    LINEで問い合わせる
+                  </a>
+                </div>
+              )}
+              {hasEmail && (
+                <div className="text-center">
+                  <p className="text-xs text-sumi/50 tracking-wide mb-2">メールでのご相談</p>
+                  <a href={`mailto:${SITE_EMAIL}`} className="text-sm text-ai hover:underline">{SITE_EMAIL}</a>
+                </div>
+              )}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section className="py-16 bg-shiro">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -234,11 +242,11 @@ export default function ContactPage() {
             {errors.privacy && <p className="text-xs text-do">{errors.privacy}</p>}
 
             <button type="submit" className="w-full bg-sumi text-white text-sm py-4 tracking-wider hover:bg-sumi-light transition-colors duration-300">
-              送信する（無料・返信保証）
+              無料見積もりを相談する
             </button>
 
             <p className="text-xs text-sumi/40 text-center">
-              ※ 送信後、1〜2営業日以内にご連絡します。急ぎの場合はお電話ください。
+              ※ 内容確認後にご連絡します。お急ぎの場合はその旨をお問い合わせ内容にご記載ください。
             </p>
           </form>
         </div>
