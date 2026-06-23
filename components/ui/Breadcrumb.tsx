@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site";
 
 type BreadcrumbItem = {
   label: string;
@@ -16,27 +17,47 @@ export default function Breadcrumb({ items, variant = "dark" }: Props) {
   const active = variant === "dark" ? "text-white/70" : "text-sumi/70";
   const hover = variant === "dark" ? "hover:text-white" : "hover:text-ai";
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_URL },
+      ...items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 2,
+        name: item.label,
+        ...(item.href ? { item: `${SITE_URL}${item.href}` } : {}),
+      })),
+    ],
+  };
+
   return (
-    <nav aria-label="パンくずリスト" className="py-4">
-      <ol className={`flex flex-wrap items-center gap-1.5 text-xs ${base}`}>
-        <li>
-          <Link href="/" className={`${hover} transition-colors duration-200`}>
-            ホーム
-          </Link>
-        </li>
-        {items.map((item, i) => (
-          <li key={i} className="flex items-center gap-1.5">
-            <span aria-hidden="true">/</span>
-            {item.href ? (
-              <Link href={item.href} className={`${hover} transition-colors duration-200`}>
-                {item.label}
-              </Link>
-            ) : (
-              <span className={active}>{item.label}</span>
-            )}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <nav aria-label="パンくずリスト" className="py-4">
+        <ol className={`flex flex-wrap items-center gap-1.5 text-xs ${base}`}>
+          <li>
+            <Link href="/" className={`${hover} transition-colors duration-200`}>
+              ホーム
+            </Link>
           </li>
-        ))}
-      </ol>
-    </nav>
+          {items.map((item, i) => (
+            <li key={i} className="flex items-center gap-1.5">
+              <span aria-hidden="true">/</span>
+              {item.href ? (
+                <Link href={item.href} className={`${hover} transition-colors duration-200`}>
+                  {item.label}
+                </Link>
+              ) : (
+                <span className={active}>{item.label}</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </>
   );
 }

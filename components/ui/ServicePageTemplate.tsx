@@ -36,8 +36,28 @@ export default function ServicePageTemplate({
   relatedPages,
   price,
 }: Props) {
+  const faqSchema =
+    faqs && faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map(({ q, a }) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: { "@type": "Answer", text: a },
+          })),
+        }
+      : null;
+
   return (
     <>
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
