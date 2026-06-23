@@ -29,9 +29,23 @@ const STEPS_BUSINESS = [
   { num: "06", title: "写真付き報告書・お引き渡し", desc: "施工完了後、写真付きの報告書を提出します。管理会社・オーナー様への報告資料としてご活用いただけます。" },
 ];
 
+const HOWTO_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "畳工事・内装工事の依頼から施工までの流れ",
+  description: "お問い合わせから現地確認・お見積もり・施工・引き渡しまでの流れをご説明します。",
+  step: STEPS_PERSONAL.map((step, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: step.title,
+    text: step.desc,
+  })),
+};
+
 export default function FlowPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOWTO_SCHEMA) }} />
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

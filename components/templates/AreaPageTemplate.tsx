@@ -40,13 +40,23 @@ export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: P
     ],
   };
 
+  const areaServed = city
+    ? [{ "@type": "City", name: city.name }]
+    : pref.cities.length > 0
+      ? [
+          { "@type": "State", name: pref.name },
+          ...pref.cities.map((c) => ({ "@type": "City", name: c.name })),
+        ]
+      : [{ "@type": "State", name: pref.name }];
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: SITE_NAME,
     url: `${SITE_URL}${path}`,
-    areaServed: areaName,
-    description: `${areaName}で${serviceName}に対応する畳と空間整備の専門パートナー。`,
+    description: `${areaName}の畳張替え・内装工事・原状回復工事`,
+    areaServed,
+    priceRange: "¥¥",
   };
 
   const faqs = [

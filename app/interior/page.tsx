@@ -97,9 +97,20 @@ const faqs: FaqItem[] = [
   { category: "btob", q: "写真付き報告書を出してもらえますか？", a: "はい。施工前・施工後の写真を添えた報告書を発行します。法人・管理会社様のオーナー報告や社内確認用資料としてご活用いただけます。" },
 ];
 
+const INTERIOR_FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+
 export default function InteriorPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(INTERIOR_FAQ_SCHEMA) }} />
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

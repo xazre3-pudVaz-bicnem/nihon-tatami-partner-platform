@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { WORKS_DETAIL, WORK_CATEGORIES } from "@/data/works-detail";
 import WorksFilter from "@/components/ui/WorksFilter";
 import CTASection from "@/components/ui/CTASection";
@@ -25,9 +25,40 @@ const worksFaqs: FaqItem[] = [
   { category: "general", q: "相談だけでも大丈夫ですか？", a: "もちろんです。「どんな工事が必要か分からない」という段階でのご相談も歓迎です。現地確認・お見積もりは無料で、お見積もり後のキャンセルでも費用は発生しません。" },
 ];
 
+const WORKS_LIST_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "畳・内装・原状回復 施工対応例一覧",
+  description: "住宅・賃貸・旅館・寺社・店舗・オフィスなど多様な施工対応例",
+  url: `${SITE_URL}/works`,
+  numberOfItems: WORKS_DETAIL.length,
+  itemListElement: WORKS_DETAIL.map((work, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "Article",
+      name: work.title,
+      url: `${SITE_URL}/works/${work.slug}`,
+      description: work.challenge,
+    },
+  })),
+};
+
+const WORKS_FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: worksFaqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+
 export default function WorksPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(WORKS_LIST_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(WORKS_FAQ_SCHEMA) }} />
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

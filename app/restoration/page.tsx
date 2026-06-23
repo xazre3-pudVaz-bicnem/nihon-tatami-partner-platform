@@ -79,9 +79,20 @@ const faqs: FaqItem[] = [
   { category: "btob", q: "施工中のカギの管理はどうなりますか？", a: "合鍵をお預かりするか、キーボックスを設置いただくかを事前にご相談します。お預かりした合鍵は施工完了後に速やかにお返しし、取り扱いは厳重に管理します。" },
 ];
 
+const RESTORATION_FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+
 export default function RestorationPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(RESTORATION_FAQ_SCHEMA) }} />
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
