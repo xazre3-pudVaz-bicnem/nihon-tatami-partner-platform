@@ -12,6 +12,18 @@ export const metadata: Metadata = buildMetadata({
   path: "/column",
 });
 
+const COLLECTION_PAGE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${SITE_URL}/column`,
+  url: `${SITE_URL}/column`,
+  name: `専門コラム | ${SITE_NAME}`,
+  description: "畳工事・内装工事・原状回復に関する専門コラム記事一覧",
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
+};
+
 const COLUMN_LIST_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -35,6 +47,7 @@ const COLUMN_LIST_SCHEMA = {
 export default function ColumnPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(COLLECTION_PAGE_SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(COLUMN_LIST_SCHEMA) }} />
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />

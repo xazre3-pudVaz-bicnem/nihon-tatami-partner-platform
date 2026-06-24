@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import type { FaqItem } from "@/data/faq";
 import { RESTORATION_SERVICES } from "@/data/services";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -79,6 +79,23 @@ const faqs: FaqItem[] = [
   { category: "btob", q: "施工中のカギの管理はどうなりますか？", a: "合鍵をお預かりするか、キーボックスを設置いただくかを事前にご相談します。お預かりした合鍵は施工完了後に速やかにお返しし、取り扱いは厳重に管理します。" },
 ];
 
+const RESTORATION_SERVICE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${SITE_URL}/restoration#service`,
+  name: "原状回復工事（畳・クロス・床・建具）",
+  description: "賃貸退去後・店舗退去後の原状回復。畳交換・クロス張替え・床補修・建具調整を一括対応。国土交通省ガイドラインに基づく判断説明と写真付き報告書。",
+  serviceType: "原状回復工事",
+  inLanguage: "ja",
+  provider: {
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#organization`,
+    name: SITE_NAME,
+  },
+  url: `${SITE_URL}/restoration`,
+  areaServed: { "@type": "Country", name: "Japan" },
+};
+
 const RESTORATION_FAQ_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -92,6 +109,7 @@ const RESTORATION_FAQ_SCHEMA = {
 export default function RestorationPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(RESTORATION_SERVICE_SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(RESTORATION_FAQ_SCHEMA) }} />
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />

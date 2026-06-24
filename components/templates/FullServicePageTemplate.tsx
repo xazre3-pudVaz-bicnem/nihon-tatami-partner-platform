@@ -136,20 +136,28 @@ export default function FullServicePageTemplate({ data }: { data: FullServicePag
     })),
   };
 
-  const orgSchema = {
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: SITE_NAME,
-    url: SITE_URL,
-    description:
-      "畳の表替え・裏返し・新調から内装工事・原状回復まで対応する畳と空間整備の専門パートナー。",
+    "@type": "Service",
+    "@id": `${SITE_URL}/services/${data.slug}#service`,
+    name: data.h1,
+    description: data.lead,
+    serviceType: "畳工事",
+    inLanguage: "ja",
+    provider: {
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+    },
+    url: `${SITE_URL}/services/${data.slug}`,
+    areaServed: { "@type": "Country", name: "Japan" },
   };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       {/* Hero */}
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">

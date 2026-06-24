@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import CTASection from "@/components/ui/CTASection";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqAccordion from "@/components/templates/FaqAccordion";
@@ -126,6 +126,30 @@ const FAQ_SCHEMA = {
   mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
 
+const PRICE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "畳・内装工事料金一覧",
+  url: `${SITE_URL}/price`,
+  provider: {
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#organization`,
+    name: SITE_NAME,
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "施工別料金目安",
+    itemListElement: [
+      ...[...TATAMI_PRICES, ...BUILDING_PRICES, ...INTERIOR_PRICES].filter((row) => row.price !== "別途見積もり").map((row) => ({
+        "@type": "Offer",
+        name: row.service,
+        description: `${row.price} ${row.unit}${row.note ? ` — ${row.note}` : ""}`,
+        priceCurrency: "JPY",
+      })),
+    ],
+  },
+};
+
 function PriceTable({ title, rows, unitHeader }: { title: string; rows: Row[]; unitHeader: string }) {
   return (
     <div className="mt-12 first:mt-0">
@@ -158,6 +182,7 @@ export default function PricePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PRICE_SCHEMA) }} />
 
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />

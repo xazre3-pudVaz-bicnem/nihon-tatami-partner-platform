@@ -68,11 +68,59 @@ export default async function ColumnArticlePage({ params }: Props) {
     description: article.excerpt,
     datePublished: article.publishedAt,
     dateModified: article.updatedAt ?? article.publishedAt,
-    image: article.image,
-    author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
-    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    image: {
+      "@type": "ImageObject",
+      url: article.image.startsWith("http") ? article.image : `${SITE_URL}${article.image}`,
+      width: 1200,
+      height: 630,
+    },
+    author: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+      },
+    },
     keywords: article.tags.join(", "),
-    mainEntityOfPage: `${SITE_URL}/column/${slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/column/${slug}`,
+    },
+    inLanguage: "ja",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+    },
+    // speakable: mark h2/h3 headings and FAQ as speakable for voice search
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", ".faq-answer"],
+    },
+  };
+
+  const WEBPAGE_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/column/${slug}`,
+    url: `${SITE_URL}/column/${slug}`,
+    name: article.title,
+    description: article.excerpt,
+    inLanguage: "ja",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@id": `${SITE_URL}/#organization` },
+    datePublished: article.publishedAt,
+    dateModified: article.updatedAt ?? article.publishedAt,
   };
 
   const BREADCRUMB_SCHEMA = {
@@ -96,6 +144,7 @@ export default async function ColumnArticlePage({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBPAGE_SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
       {FAQ_SCHEMA && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />}
 

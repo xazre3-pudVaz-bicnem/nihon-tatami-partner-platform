@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import type { FaqItem } from "@/data/faq";
 import { INTERIOR_SERVICES } from "@/data/services";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -97,6 +97,23 @@ const faqs: FaqItem[] = [
   { category: "btob", q: "写真付き報告書を出してもらえますか？", a: "はい。施工前・施工後の写真を添えた報告書を発行します。法人・管理会社様のオーナー報告や社内確認用資料としてご活用いただけます。" },
 ];
 
+const INTERIOR_SERVICE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${SITE_URL}/interior#service`,
+  name: "内装工事（クロス・床・建具）",
+  description: "クロス張替え・フローリング・クッションフロア・フロアタイル・建具調整など、住宅・店舗・賃貸物件の内装工事を一括対応。",
+  serviceType: "内装工事",
+  inLanguage: "ja",
+  provider: {
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#organization`,
+    name: SITE_NAME,
+  },
+  url: `${SITE_URL}/interior`,
+  areaServed: { "@type": "Country", name: "Japan" },
+};
+
 const INTERIOR_FAQ_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -110,6 +127,7 @@ const INTERIOR_FAQ_SCHEMA = {
 export default function InteriorPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(INTERIOR_SERVICE_SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(INTERIOR_FAQ_SCHEMA) }} />
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />

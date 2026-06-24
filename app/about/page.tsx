@@ -24,18 +24,34 @@ const STRENGTHS = [
   { title: "丁寧な現地確認と提案", desc: "施工前に必ず現地を確認し、状態・素材・ご予算に合わせた適切な施工方法をご提案。お見積もりは無料です。" },
 ];
 
-const STRUCTURED_DATA = {
+const ABOUT_PAGE_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "AboutPage",
+  "@id": `${SITE_URL}/about`,
+  name: `会社情報 | ${SITE_NAME}`,
+  url: `${SITE_URL}/about`,
+  description: "日本畳パートナーズの事業内容・強み・会社概要",
+  inLanguage: "ja",
+  mainEntity: { "@id": `${SITE_URL}/#organization` },
+};
+
+const ORG_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: SITE_URL,
   description: "畳の表替え・新調から内装工事・原状回復まで対応する畳と空間整備の専門パートナー",
+  knowsAbout: [
+    "畳工事", "畳表替え", "畳裏返し", "畳新調", "縁なし畳", "和紙畳", "内装工事", "原状回復"
+  ],
 };
 
 export default function AboutPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ABOUT_PAGE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }} />
 
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />

@@ -25,6 +25,18 @@ const worksFaqs: FaqItem[] = [
   { category: "general", q: "相談だけでも大丈夫ですか？", a: "もちろんです。「どんな工事が必要か分からない」という段階でのご相談も歓迎です。現地確認・お見積もりは無料で、お見積もり後のキャンセルでも費用は発生しません。" },
 ];
 
+const WORKS_COLLECTION_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${SITE_URL}/works`,
+  url: `${SITE_URL}/works`,
+  name: `施工対応例・施工イメージ | ${SITE_NAME}`,
+  description: "畳工事・内装工事・原状回復の施工対応例・施工イメージ一覧",
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
+};
+
 const WORKS_LIST_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -57,6 +69,7 @@ const WORKS_FAQ_SCHEMA = {
 export default function WorksPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(WORKS_COLLECTION_SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(WORKS_LIST_SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(WORKS_FAQ_SCHEMA) }} />
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { FAQ_ITEMS } from "@/data/faq";
 import FaqSection from "@/components/ui/FaqSection";
 import CTASection from "@/components/ui/CTASection";
@@ -11,6 +11,21 @@ export const metadata: Metadata = buildMetadata({
   description: "畳の表替え・新調・料金・タイミング・素材の違いから、法人・管理会社向けのご質問まで。よくあるご質問をまとめました。",
   path: "/faq",
 });
+
+const FAQ_PAGE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${SITE_URL}/faq`,
+  url: `${SITE_URL}/faq`,
+  name: `よくある質問 | ${SITE_NAME}`,
+  description: "畳の表替え・新調・料金・タイミングから法人向けまでのFAQ",
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".faq-question", "h1", "h2"],
+  },
+};
 
 const FAQ_SCHEMA = {
   "@context": "https://schema.org",
@@ -32,6 +47,7 @@ const CATEGORIES = [
 export default function FaqPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_PAGE_SCHEMA) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
 
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
