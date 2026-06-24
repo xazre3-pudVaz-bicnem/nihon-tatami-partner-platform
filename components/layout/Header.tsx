@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SITE_NAME, NAV_LINKS, SITE_TEL } from "@/lib/site";
@@ -41,21 +42,15 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 h-16 flex items-center justify-between gap-6">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 group" aria-label="日本畳パートナーズ トップへ">
-            <div
-              className={`w-6 h-6 relative overflow-hidden border transition-colors duration-500 ${
-                scrolled ? "border-sumi/25" : "border-white/25"
-              }`}
-              aria-hidden="true"
-            >
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: scrolled
-                    ? "linear-gradient(0deg, transparent 47%, rgba(30,28,26,0.14) 48%, rgba(30,28,26,0.14) 52%, transparent 53%), linear-gradient(90deg, transparent 47%, rgba(30,28,26,0.14) 48%, rgba(30,28,26,0.14) 52%, transparent 53%)"
-                    : "linear-gradient(0deg, transparent 47%, rgba(255,255,255,0.18) 48%, rgba(255,255,255,0.18) 52%, transparent 53%), linear-gradient(90deg, transparent 47%, rgba(255,255,255,0.18) 48%, rgba(255,255,255,0.18) 52%, transparent 53%)",
-                  backgroundSize: "8px 8px",
-                }}
+          <Link href="/" className="flex items-center gap-2.5 shrink-0 group" aria-label="日本畳パートナーズ トップへ">
+            <div className="w-9 h-9 rounded-full overflow-hidden shrink-0 ring-1 ring-white/10 group-hover:ring-white/25 transition-all duration-300">
+              <Image
+                src="/logo.png"
+                alt="日本畳パートナーズ ロゴ"
+                width={36}
+                height={36}
+                className="w-full h-full object-cover"
+                priority
               />
             </div>
             <div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SITE_NAME, SITE_TEL, SITE_EMAIL } from "@/lib/site";
 
 const hasTel = (SITE_TEL as string).trim() !== "";
@@ -57,8 +58,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-7 h-7 bg-white/10 tatami-pattern relative">
-                <div className="absolute inset-0 bg-white/5" />
+              <div className="w-9 h-9 rounded-full overflow-hidden shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="日本畳パートナーズ ロゴ"
+                  width={36}
+                  height={36}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <span className="block text-sm tracking-[0.12em]" style={{ fontFamily: "var(--font-serif)" }}>
