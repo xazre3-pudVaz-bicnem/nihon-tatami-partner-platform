@@ -34,6 +34,8 @@ const faqs: FaqItem[] = [
 export default function StorePage() {
   return (
     <ServicePageTemplate
+      canonicalPath="/business/store"
+      serviceTypeName="店舗向け畳・内装工事"
       eyebrow="For Store Owner"
       title="店舗向け畳工事・内装工事"
       subtitle="和食店・居酒屋・料亭・カフェ・サロンの和空間づくりから、座敷改修・店舗内装・退去時の原状回復まで。店舗の魅力を高める空間づくりをサポートします。"

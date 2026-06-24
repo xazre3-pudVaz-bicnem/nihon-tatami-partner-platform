@@ -37,6 +37,8 @@ const faqs: FaqItem[] = [
 export default function RyokanPage() {
   return (
     <ServicePageTemplate
+      canonicalPath="/business/ryokan"
+      serviceTypeName="旅館向け畳工事"
       eyebrow="For Ryokan / Hotel"
       title="旅館・宿泊施設向け畳工事"
       subtitle="客室の定期メンテナンス、繁忙期前の集中施工、高品質素材での格式維持。旅館のスケジュールに合わせた施工計画を立てます。"

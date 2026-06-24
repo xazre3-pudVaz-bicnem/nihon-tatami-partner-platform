@@ -2,7 +2,19 @@
 
 import { useState } from "react";
 import Breadcrumb from "@/components/ui/Breadcrumb";
-import { SITE_TEL, SITE_EMAIL, SITE_LINE } from "@/lib/site";
+import { SITE_TEL, SITE_EMAIL, SITE_LINE, SITE_URL, SITE_NAME } from "@/lib/site";
+
+const CONTACT_PAGE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": `${SITE_URL}/contact`,
+  url: `${SITE_URL}/contact`,
+  name: `お問い合わせ | ${SITE_NAME}`,
+  description: "畳・内装・原状回復のご相談はこちらから。無料見積もりはお気軽にどうぞ。",
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
+};
 
 const hasTel = (SITE_TEL as string).trim() !== "";
 const hasEmail = (SITE_EMAIL as string).trim() !== "";
@@ -101,6 +113,7 @@ export default function ContactPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(CONTACT_PAGE_SCHEMA) }} />
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 tatami-pattern opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -37,6 +37,8 @@ const faqs: FaqItem[] = [
 export default function TempleShrinesPage() {
   return (
     <ServicePageTemplate
+      canonicalPath="/business/temple-shrine"
+      serviceTypeName="寺社向け畳工事"
       eyebrow="For Temple / Shrine"
       title="寺院・神社の畳工事"
       subtitle="本堂・客殿・社務所など、格式と用途に合わせた素材・縁の選定から施工まで。法要・祭礼前の整備にも対応します。"

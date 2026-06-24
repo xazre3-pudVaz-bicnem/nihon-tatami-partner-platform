@@ -37,6 +37,8 @@ const faqs: FaqItem[] = [
 export default function PropertyManagementPage() {
   return (
     <ServicePageTemplate
+      canonicalPath="/business/property-management"
+      serviceTypeName="賃貸管理会社向け原状回復工事"
       eyebrow="For Property Management"
       title="管理会社向け原状回復・畳交換・内装整備"
       subtitle="複数棟の原状回復・空室対策・定期メンテナンスを一括サポート。写真付き報告・迅速な見積もり対応で、管理業務の窓口を一本化します。"

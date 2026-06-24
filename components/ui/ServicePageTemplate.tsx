@@ -4,6 +4,7 @@ import CTASection from "@/components/ui/CTASection";
 import FaqSection from "@/components/ui/FaqSection";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import type { FaqItem } from "@/data/faq";
+import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 type RelatedLink = { label: string; href: string };
 type BreadcrumbItem = { label: string; href?: string };
@@ -22,6 +23,8 @@ type Props = {
   relatedServices?: RelatedLink[];
   relatedPages?: RelatedLink[];
   price?: { service: string; price: string; note?: string }[];
+  canonicalPath?: string;
+  serviceTypeName?: string;
 };
 
 export default function ServicePageTemplate({
@@ -35,6 +38,8 @@ export default function ServicePageTemplate({
   relatedServices,
   relatedPages,
   price,
+  canonicalPath,
+  serviceTypeName,
 }: Props) {
   const faqSchema =
     faqs && faqs.length > 0
@@ -49,12 +54,37 @@ export default function ServicePageTemplate({
         }
       : null;
 
+  const serviceSchema = canonicalPath
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${SITE_URL}${canonicalPath}#service`,
+        name: title,
+        description: subtitle,
+        serviceType: serviceTypeName ?? title,
+        inLanguage: "ja",
+        provider: {
+          "@type": "LocalBusiness",
+          "@id": `${SITE_URL}/#organization`,
+          name: SITE_NAME,
+        },
+        url: `${SITE_URL}${canonicalPath}`,
+        areaServed: { "@type": "Country", name: "Japan" },
+      }
+    : null;
+
   return (
     <>
       {faqSchema && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      {serviceSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
       )}
 

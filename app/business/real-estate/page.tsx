@@ -37,6 +37,8 @@ const faqs: FaqItem[] = [
 export default function RealEstatePage() {
   return (
     <ServicePageTemplate
+      canonicalPath="/business/real-estate"
+      serviceTypeName="不動産会社向け内装整備"
       eyebrow="For Real Estate"
       title="不動産会社向け畳工事・内装工事"
       subtitle="売買前の内覧整備・原状回復・空室対策を一括サポート。買主の第一印象を整え、成約と価格交渉を有利に進めるお手伝いをします。"
