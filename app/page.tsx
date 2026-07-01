@@ -98,16 +98,30 @@ const FLOW_STEPS = [
 ];
 
 const _hasTel = (SITE_TEL as string).trim() !== "";
+
+const AREA_SERVED = [
+  { "@type": "AdministrativeArea", name: "東京都" },
+  { "@type": "AdministrativeArea", name: "神奈川県" },
+  { "@type": "AdministrativeArea", name: "千葉県" },
+  { "@type": "AdministrativeArea", name: "埼玉県" },
+  { "@type": "AdministrativeArea", name: "群馬県" },
+  { "@type": "AdministrativeArea", name: "栃木県" },
+  { "@type": "AdministrativeArea", name: "茨城県" },
+];
+
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
-  description: "畳の表替え・新調から内装工事・原状回復まで。住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナー。",
-  "@id": `${SITE_URL}`,
   url: `${SITE_URL}`,
+  email: "nihontatami.0110@gmail.com",
+  description: "畳の表替え・新調から内装工事・原状回復まで。東京・神奈川・千葉・埼玉・群馬・栃木・茨城に対応する畳と空間整備の専門パートナー。",
   ...(_hasTel ? { telephone: SITE_TEL } : {}),
   priceRange: "¥¥",
-  areaServed: { "@type": "Country", name: "Japan" },
+  areaServed: AREA_SERVED,
+  knowsAbout: ["畳張替え", "畳表替え", "畳新調", "縁なし畳", "琉球畳", "和紙畳", "樹脂畳", "襖張替え", "障子張替え", "原状回復工事", "内装工事"],
+  serviceType: ["畳工事", "内装工事", "原状回復"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "畳・内装工事サービス",
@@ -120,12 +134,37 @@ const STRUCTURED_DATA = {
   },
 };
 
+const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: `${SITE_URL}`,
+  name: SITE_NAME,
+  description: "畳張替え・内装工事・原状回復の専門パートナー",
+  inLanguage: "ja",
+  publisher: {
+    "@id": `${SITE_URL}/#organization`,
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${SITE_URL}/column?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function HomePage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_SCHEMA) }}
       />
 
       {/* ===== 1. HERO ===== */}
@@ -239,7 +278,7 @@ export default function HomePage() {
                 一般住宅の和室から、賃貸物件の退去後整備、不動産会社・管理会社の継続案件、旅館・寺社・店舗の空間整備まで、用途に合わせた施工相談を受け付けています。
               </p>
               <p className="text-sm text-sumi/70 leading-relaxed">
-                埼玉エリアを中心に対応しており、い草・和紙・樹脂・縁なし畳など幅広い素材と施工方法に対応します。現地確認・お見積もりは無料です。
+                1都6県（東京・神奈川・千葉・埼玉・群馬・栃木・茨城）に対応しており、い草・和紙・樹脂・縁なし畳など幅広い素材と施工方法に対応します。現地確認・お見積もりは無料です。
               </p>
             </div>
             <div className="space-y-4">
@@ -1111,10 +1150,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionLabel en="Service Area" className="justify-center mb-4" />
           <h2 className="text-2xl sm:text-3xl text-sumi mb-3 text-center" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            埼玉の畳工事・内装工事に対応
+            1都6県（東京・神奈川・千葉・埼玉・群馬・栃木・茨城）の畳工事・内装工事に対応
           </h2>
           <p className="text-sm text-sumi/60 text-center mb-10 max-w-2xl mx-auto leading-relaxed">
-            埼玉県内の住宅・賃貸物件・旅館・寺社・店舗の畳張替え・表替え・新調・内装・原状回復をご相談いただけます。まずはお問い合わせください。
+            東京・神奈川・千葉・埼玉・群馬・栃木・茨城エリアの住宅・賃貸物件・旅館・寺社・店舗の畳張替え・表替え・新調・内装・原状回復をご相談いただけます。まずはお問い合わせください。
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
             {[

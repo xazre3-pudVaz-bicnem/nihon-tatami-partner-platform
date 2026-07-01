@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import FullServicePageTemplate, { type FullServicePageData } from "@/components/templates/FullServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
@@ -12,6 +12,25 @@ export const metadata: Metadata = buildMetadata({
   image: "/images/nihon-tatami/tatami/tatami-craftsman-01.png",
 });
 
+const TATAMI_SERVICE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${SITE_URL}/services/tatami#service`,
+  name: "畳張替え・畳工事",
+  serviceType: "畳張替え",
+  provider: { "@id": `${SITE_URL}/#organization` },
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "東京都" },
+    { "@type": "AdministrativeArea", name: "神奈川県" },
+    { "@type": "AdministrativeArea", name: "千葉県" },
+    { "@type": "AdministrativeArea", name: "埼玉県" },
+    { "@type": "AdministrativeArea", name: "群馬県" },
+    { "@type": "AdministrativeArea", name: "栃木県" },
+    { "@type": "AdministrativeArea", name: "茨城県" },
+  ],
+  description: "畳の表替え・裏返し・新調・縁なし畳・和紙畳・樹脂畳など各種畳工事に対応。住宅・賃貸・旅館・法人施設まで対応します。",
+};
+
 const data: FullServicePageData = {
   slug: "tatami",
   breadcrumbs: [
@@ -19,7 +38,7 @@ const data: FullServicePageData = {
     { label: "畳工事" },
   ],
   h1: "畳工事・畳張替えなら日本畳パートナーズ｜表替え・裏返し・新調・原状回復まで対応",
-  lead: "埼玉県・さいたま市を中心に、畳表替え・裏返し・新調から縁なし畳・和紙畳・樹脂畳の新調まで。住宅・賃貸・旅館・寺社・店舗まであらゆる場面の畳工事に対応します。",
+  lead: "東京・神奈川・千葉・埼玉・群馬・栃木・茨城（1都6県）に対応。畳表替え・裏返し・新調から縁なし畳・和紙畳・樹脂畳の新調まで。住宅・賃貸・旅館・寺社・店舗まであらゆる場面の畳工事に対応します。",
   heroImage: "/images/nihon-tatami/tatami/tatami-craftsman-01.png",
   heroImageAlt: "畳を一枚ずつ手作業で仕上げる職人",
   targets: ["一般住宅", "賃貸オーナー", "不動産・管理会社", "旅館・宿泊施設", "寺社", "店舗"],
@@ -274,8 +293,13 @@ const data: FullServicePageData = {
 
 export default function TatamiServicePage() {
   return (
-    <FullServicePageTemplate
-      data={data}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(TATAMI_SERVICE_SCHEMA) }}
+      />
+      <FullServicePageTemplate
+        data={data}
       extraSections={
         /* 埼玉エリアリンク */
         <section className="py-10 bg-kiji/20">
@@ -300,6 +324,7 @@ export default function TatamiServicePage() {
           </div>
         </section>
       }
-    />
+      />
+    </>
   );
 }

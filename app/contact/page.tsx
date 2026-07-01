@@ -7,13 +7,17 @@ import { SITE_TEL, SITE_EMAIL, SITE_LINE, SITE_URL, SITE_NAME } from "@/lib/site
 const CONTACT_PAGE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "@id": `${SITE_URL}/contact`,
+  "@id": `${SITE_URL}/contact#webpage`,
   url: `${SITE_URL}/contact`,
-  name: `お問い合わせ | ${SITE_NAME}`,
-  description: "畳・内装・原状回復のご相談はこちらから。無料見積もりはお気軽にどうぞ。",
+  name: `お問い合わせ｜${SITE_NAME}`,
+  description: "畳張替え・原状回復・内装工事のお問い合わせ。東京・神奈川・千葉・埼玉・群馬・栃木・茨城に対応。",
   inLanguage: "ja",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   about: { "@id": `${SITE_URL}/#organization` },
+  mainEntity: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+  },
 };
 
 const hasTel = (SITE_TEL as string).trim() !== "";

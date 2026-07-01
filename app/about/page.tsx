@@ -45,9 +45,19 @@ const ORG_SCHEMA = {
   url: SITE_URL,
   telephone: SITE_TEL,
   email: SITE_EMAIL,
-  description: "畳の表替え・新調から内装工事・原状回復まで対応する畳と空間整備の専門パートナー",
+  description: "畳の表替え・新調から内装工事・原状回復まで。東京・神奈川・千葉・埼玉・群馬・栃木・茨城に対応する畳と空間整備の専門パートナー。",
   knowsAbout: [
-    "畳工事", "畳表替え", "畳裏返し", "畳新調", "縁なし畳", "和紙畳", "内装工事", "原状回復"
+    "畳張替え", "畳表替え", "畳新調", "縁なし畳", "琉球畳", "和紙畳", "樹脂畳", "襖張替え", "障子張替え", "原状回復工事", "内装工事",
+  ],
+  serviceType: ["畳工事", "内装工事", "原状回復"],
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "東京都" },
+    { "@type": "AdministrativeArea", name: "神奈川県" },
+    { "@type": "AdministrativeArea", name: "千葉県" },
+    { "@type": "AdministrativeArea", name: "埼玉県" },
+    { "@type": "AdministrativeArea", name: "群馬県" },
+    { "@type": "AdministrativeArea", name: "栃木県" },
+    { "@type": "AdministrativeArea", name: "茨城県" },
   ],
 };
 
