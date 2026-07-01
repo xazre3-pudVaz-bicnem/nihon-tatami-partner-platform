@@ -7,19 +7,19 @@
 
 ## 公開前に必ず差し替える情報
 
-`lib/site.ts` を開き、以下を設定してください。設定するまで連絡先はサイト上に表示されません。
+`lib/site.ts` に正式情報を設定済みです。
 
 ```ts
-export const SITE_TEL   = "";  // → 例: "03-XXXX-XXXX"
-export const SITE_EMAIL = "";  // → 例: "info@example.com"
-export const SITE_LINE  = "";  // → LINE公式アカウントURL
+export const SITE_TEL   = "070-5439-9949";
+export const SITE_EMAIL = "nihontatami.0110@gmail.com";
+export const SITE_LINE  = "";  // LINE公式アカウントURL（未設定）
 ```
 
 | 項目 | 状態 | 担当 |
 |------|------|------|
-| 正式電話番号 | 未設定（site.ts 要更新） | |
-| 正式メールアドレス | 未設定（site.ts 要更新） | |
-| LINE公式URL | 未設定（site.ts 要更新） | |
+| 正式電話番号 | ✅ 設定済み: 070-5439-9949 | |
+| 正式メールアドレス | ✅ 設定済み: nihontatami.0110@gmail.com | |
+| LINE公式URL | 未設定（取得後に site.ts を更新） | |
 | 正式屋号/社名 | app/about/page.tsx 要確認 | |
 | 正式所在地 | app/about/page.tsx 要追加 | |
 | 対応エリア | 現在「詳しくはお問い合わせください」| |
@@ -33,7 +33,7 @@ export const SITE_LINE  = "";  // → LINE公式アカウントURL
 ## 公開前チェックリスト
 
 ### 必須（情報差し替え）
-- [ ] lib/site.ts に正式電話番号・メール・LINE URL を設定
+- [x] lib/site.ts に正式電話番号・メール を設定済み（LINE URL は取得後に追加）
 - [ ] app/about/page.tsx に正式所在地・屋号を追加
 - [ ] Organization/LocalBusiness スキーマに正式情報を追記
 - [ ] フォーム送信先を実装（Formspree 等、下部参照）

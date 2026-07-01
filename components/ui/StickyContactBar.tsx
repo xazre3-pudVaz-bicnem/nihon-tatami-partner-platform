@@ -44,7 +44,7 @@ export default function StickyContactBar() {
           </a>
         )}
 
-        {/* Primary CTA — 無料見積もり相談 */}
+        {/* Primary CTA — 無料見積もり */}
         <Link
           href="/contact"
           className={`flex items-center justify-center text-white tracking-widest text-[11px] font-medium transition-opacity hover:opacity-90 ${
@@ -52,18 +52,16 @@ export default function StickyContactBar() {
           }`}
           style={{ backgroundColor: "#B88942", fontFamily: "var(--font-serif)" }}
         >
-          無料見積もり相談
+          無料見積もり
         </Link>
 
-        {/* Secondary CTA — 法人・施設のご相談 */}
+        {/* Secondary CTA — 法人相談 */}
         <Link
           href="/contact#business"
           className="flex-1 flex items-center justify-center text-white/60 hover:text-white border-l border-white/10 transition-colors text-[10px] tracking-widest"
           style={{ fontFamily: "var(--font-serif)" }}
         >
-          法人・施設の
-          <br />
-          ご相談
+          法人相談
         </Link>
       </div>
     </div>

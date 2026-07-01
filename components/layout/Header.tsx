@@ -227,12 +227,14 @@ export default function Header() {
                 >
                   法人・管理会社のご相談
                 </Link>
-                <a
-                  href={`tel:${SITE_TEL.replace(/-/g, "")}`}
-                  className="flex items-center justify-center py-2.5 text-xs text-white/35 tracking-widest"
-                >
-                  {SITE_TEL}
-                </a>
+                {(SITE_TEL as string).trim() !== "" && (
+                  <a
+                    href={`tel:${SITE_TEL.replace(/-/g, "")}`}
+                    className="flex items-center justify-center py-2.5 text-xs text-white/35 tracking-widest"
+                  >
+                    {SITE_TEL}
+                  </a>
+                )}
               </motion.div>
             </div>
           </motion.div>

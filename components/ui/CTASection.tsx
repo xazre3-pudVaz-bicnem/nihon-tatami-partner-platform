@@ -56,16 +56,15 @@ export default function CTASection({
         </div>
 
         <div className={`flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t ${borderClass}`}>
-          {showTel && (
+          {showTel && (SITE_TEL as string).trim() !== "" && (
             <div className="text-center">
-              <p className={`text-xs ${subtitleColor} mb-1 tracking-wide`}>お電話でのご相談</p>
+              <p className={`text-xs ${subtitleColor} mb-1 tracking-wide`}>お急ぎの場合はお電話でのご相談も可能です</p>
               <a href={`tel:${SITE_TEL.replace(/-/g, "")}`} className="text-xl hover:opacity-70 transition-opacity" style={{ fontFamily: "var(--font-serif)" }}>
                 {SITE_TEL}
               </a>
-              <p className={`text-xs ${subtitleColor} mt-1`}>受付時間 9:00〜18:00（土日祝定休）</p>
             </div>
           )}
-          {showLine && (
+          {showLine && (SITE_LINE as string).trim() !== "" && (
             <div className="text-center">
               <p className={`text-xs ${subtitleColor} mb-1 tracking-wide`}>LINEでご相談</p>
               <a href={SITE_LINE} className="inline-block text-sm border border-kincya/40 text-kincya px-5 py-2 hover:bg-kincya/10 transition-colors duration-300">

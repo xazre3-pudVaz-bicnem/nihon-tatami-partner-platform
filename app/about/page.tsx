@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, SITE_TEL, SITE_EMAIL } from "@/lib/site";
 import CTASection from "@/components/ui/CTASection";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 
@@ -13,6 +13,8 @@ export const metadata: Metadata = buildMetadata({
 const COMPANY_INFO = [
   { label: "屋号", value: "日本畳パートナーズ" },
   { label: "事業内容", value: "畳工事・内装工事・原状回復工事" },
+  { label: "電話番号", value: SITE_TEL },
+  { label: "メールアドレス", value: SITE_EMAIL },
   { label: "対応地域", value: "詳しくはお問い合わせください" },
   { label: "お問い合わせ", value: "サイト内フォームよりご連絡ください" },
 ];
@@ -41,6 +43,8 @@ const ORG_SCHEMA = {
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: SITE_URL,
+  telephone: SITE_TEL,
+  email: SITE_EMAIL,
   description: "畳の表替え・新調から内装工事・原状回復まで対応する畳と空間整備の専門パートナー",
   knowsAbout: [
     "畳工事", "畳表替え", "畳裏返し", "畳新調", "縁なし畳", "和紙畳", "内装工事", "原状回復"

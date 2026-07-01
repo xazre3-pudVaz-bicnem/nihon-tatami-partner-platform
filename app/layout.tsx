@@ -4,7 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BrandLoader from "@/components/ui/BrandLoader";
 import StickyContactBar from "@/components/ui/StickyContactBar";
-import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from "@/lib/site";
+import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, SITE_TEL, SITE_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -48,6 +48,8 @@ const GLOBAL_SCHEMA = {
       "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       url: SITE_URL,
+      telephone: SITE_TEL,
+      email: SITE_EMAIL,
       description: SITE_DESCRIPTION,
       image: `${SITE_URL}/og-image.jpg`,
       priceRange: "¥¥",
