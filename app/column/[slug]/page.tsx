@@ -64,8 +64,10 @@ export default async function ColumnArticlePage({ params }: Props) {
   const ARTICLE_SCHEMA = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${SITE_URL}/column/${slug}#article`,
     headline: article.title,
     description: article.excerpt,
+    url: `${SITE_URL}/column/${slug}`,
     datePublished: article.publishedAt,
     dateModified: article.updatedAt ?? article.publishedAt,
     image: {
@@ -91,6 +93,10 @@ export default async function ColumnArticlePage({ params }: Props) {
         width: 1200,
         height: 630,
       },
+    },
+    about: {
+      "@type": "Thing",
+      name: "畳・内装工事",
     },
     keywords: article.tags.join(", "),
     mainEntityOfPage: {
@@ -297,6 +303,34 @@ export default async function ColumnArticlePage({ params }: Props) {
           <Link href="/column" className="text-sm text-sumi/60 hover:text-sumi transition-colors">← コラム一覧に戻る</Link>
         </div>
       </article>
+
+      <section className="bg-kiji/30 border-t border-border py-10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-base text-sumi mb-6" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }}>
+            エリアから探す
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { href: "/area/saitama/tatami", label: "埼玉県の畳張替え" },
+              { href: "/area/tokyo/tatami", label: "東京都の畳張替え" },
+              { href: "/area/kanagawa/tatami", label: "神奈川県の畳張替え" },
+              { href: "/area/chiba/tatami", label: "千葉県の畳張替え" },
+              { href: "/area/saitama/restoration", label: "埼玉県の原状回復" },
+              { href: "/area/tokyo/restoration", label: "東京都の原状回復" },
+              { href: "/area/saitama/fusuma", label: "埼玉県の襖張替え" },
+              { href: "/area/tokyo/fusuma", label: "東京都の襖張替え" },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="block border border-border bg-white text-xs text-sumi/70 text-center px-2 py-3 hover:border-kincya hover:text-kincya transition-all duration-200"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <CTASection />
     </>

@@ -15,13 +15,13 @@ export const metadata: Metadata = buildMetadata({
 const COLLECTION_PAGE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "@id": `${SITE_URL}/column`,
+  "@id": `${SITE_URL}/column#page`,
   url: `${SITE_URL}/column`,
-  name: `専門コラム | ${SITE_NAME}`,
-  description: "畳工事・内装工事・原状回復に関する専門コラム記事一覧",
+  name: `畳・内装工事コラム｜${SITE_NAME}`,
+  description: "畳の種類・選び方・お手入れ方法から業者選びまで。畳と和室に関する専門コラムを提供しています。",
   inLanguage: "ja",
   isPartOf: { "@id": `${SITE_URL}/#website` },
-  about: { "@id": `${SITE_URL}/#organization` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 const COLUMN_LIST_SCHEMA = {
