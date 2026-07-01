@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
 import FullServicePageTemplate, { type FullServicePageData } from "@/components/templates/FullServicePageTemplate";
@@ -272,5 +273,33 @@ const data: FullServicePageData = {
 };
 
 export default function TatamiServicePage() {
-  return <FullServicePageTemplate data={data} />;
+  return (
+    <FullServicePageTemplate
+      data={data}
+      extraSections={
+        /* 埼玉エリアリンク */
+        <section className="py-10 bg-kiji/20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs text-sumi/40 tracking-[0.3em] mb-5 uppercase text-center">埼玉エリア対応</p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              {[
+                { label: "埼玉の畳張替え", href: "/area/saitama/tatami" },
+                { label: "埼玉の畳表替え", href: "/area/saitama/tatami-omotegae" },
+                { label: "埼玉の畳新調", href: "/area/saitama/tatami-shinchou" },
+                { label: "埼玉の畳裏返し", href: "/area/saitama/tatami-uragaeshi" },
+                { label: "さいたま市", href: "/area/saitama/saitama-city" },
+                { label: "川口市", href: "/area/saitama/kawaguchi" },
+                { label: "越谷市", href: "/area/saitama/koshigaya" },
+                { label: "川越市", href: "/area/saitama/kawagoe" },
+              ].map((item) => (
+                <Link key={item.href} href={item.href} className="text-xs text-center text-sumi/60 hover:text-ai border border-border py-2 px-3 bg-white hover:border-ai/30 transition-colors">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      }
+    />
+  );
 }

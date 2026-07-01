@@ -300,6 +300,29 @@ export default function PricePage() {
         </div>
       </section>
 
+      {/* 埼玉エリアリンク */}
+      <section className="py-10 bg-kiji/20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs text-sumi/40 tracking-[0.3em] mb-5 uppercase text-center">埼玉エリアの畳工事・料金相談</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {[
+              { label: "埼玉の畳表替え料金", href: "/area/saitama/tatami-omotegae" },
+              { label: "埼玉の畳新調料金", href: "/area/saitama/tatami-shinchou" },
+              { label: "埼玉の畳工事TOP", href: "/area/saitama/tatami" },
+              { label: "埼玉の原状回復", href: "/area/saitama/restoration" },
+              { label: "さいたま市の畳張替え", href: "/area/saitama/saitama-city" },
+              { label: "川口市の畳張替え", href: "/area/saitama/kawaguchi" },
+              { label: "お問い合わせ・見積もり", href: "/contact" },
+              { label: "埼玉エリアTOP", href: "/area/saitama" },
+            ].map((item) => (
+              <Link key={item.href} href={item.href} className="text-xs text-center text-sumi/60 hover:text-ai border border-border py-2 px-3 bg-white hover:border-ai/30 transition-colors">
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CTASection />
     </>
   );

@@ -155,6 +155,75 @@ async function handleSubmit(e: React.FormEvent) {
 
 ---
 
+## SEO キーワードマップ
+
+### ブランド系
+| キーワード | 対応ページ |
+|---|---|
+| 日本畳パートナーズ | / (トップ), /about |
+| 日本畳パートナーズ 料金 | /price |
+| 日本畳パートナーズ 問い合わせ | /contact |
+| 日本畳パートナーズ 施工事例 | /works |
+
+### 埼玉エリア系
+| キーワード | 対応ページ |
+|---|---|
+| 埼玉 畳 張替え | /area/saitama/tatami |
+| 埼玉 畳 表替え | /area/saitama/tatami-omotegae |
+| 埼玉 畳 新調 | /area/saitama/tatami-shinchou |
+| 埼玉 畳 裏返し | /area/saitama/tatami-uragaeshi |
+| 埼玉 襖 張替え | /area/saitama/fusuma |
+| 埼玉 障子 張替え | /area/saitama/shoji |
+| 埼玉 原状回復 畳 | /area/saitama/restoration |
+
+### 市区町村系
+| キーワード | 対応ページ |
+|---|---|
+| さいたま市 畳張替え | /area/saitama/saitama-city |
+| 川口市 畳張替え | /area/saitama/kawaguchi |
+| 越谷市 畳張替え | /area/saitama/koshigaya |
+| 春日部市 畳張替え | /area/saitama/kasukabe |
+| 川越市 畳張替え | /area/saitama/kawagoe |
+| 所沢市 畳張替え | /area/saitama/tokorozawa |
+| 熊谷市 畳張替え | /area/saitama/kumagaya |
+| 草加市 畳張替え | /area/saitama/soka |
+| 上尾市 畳張替え | /area/saitama/ageo |
+| 新座市 畳張替え | /area/saitama/niiza |
+| 戸田市 畳張替え | /area/saitama/toda |
+| 蕨市 畳張替え | /area/saitama/warabi |
+
+### Google Search Console 優先送信URL
+公開後に以下のURLを Search Console で手動送信してください。
+
+1. https://www.tatami-partners.jp/
+2. https://www.tatami-partners.jp/area/saitama
+3. https://www.tatami-partners.jp/area/saitama/tatami
+4. https://www.tatami-partners.jp/area/saitama/tatami-omotegae
+5. https://www.tatami-partners.jp/area/saitama/tatami-shinchou
+6. https://www.tatami-partners.jp/area/saitama/tatami-uragaeshi
+7. https://www.tatami-partners.jp/area/saitama/fusuma
+8. https://www.tatami-partners.jp/area/saitama/shoji
+9. https://www.tatami-partners.jp/area/saitama/restoration
+10. https://www.tatami-partners.jp/area/saitama/saitama-city
+11. https://www.tatami-partners.jp/area/saitama/kawaguchi
+12. https://www.tatami-partners.jp/area/saitama/koshigaya
+13. https://www.tatami-partners.jp/area/saitama/kasukabe
+14. https://www.tatami-partners.jp/area/saitama/kawagoe
+15. https://www.tatami-partners.jp/services/tatami-omotegae
+16. https://www.tatami-partners.jp/price
+17. https://www.tatami-partners.jp/contact
+18. https://www.tatami-partners.jp/about
+
+### Google Search Console 設定手順
+1. https://search.google.com/search-console/ にアクセス
+2. 「URLプレフィックス」で `https://www.tatami-partners.jp/` を登録
+3. 所有権確認（HTMLファイル、DNSレコード、またはGoogleアナリティクスで確認）
+4. プロパティ登録後、「サイトマップ」から `sitemap.xml` を送信
+5. 上記URLをURL検査からインデックス登録リクエスト
+6. 4〜6週間後に「検索パフォーマンス」で「日本畳パートナーズ」「埼玉 畳」系クエリの表示回数を確認
+
+---
+
 ## サイト役割の整理
 
 このサイトは **日本畳パートナーズ（施工会社）のコーポレートサイト** として設計されています。
