@@ -2,7 +2,7 @@ import Link from "next/link";
 import CTASection from "@/components/ui/CTASection";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, SITE_TEL, SITE_EMAIL } from "@/lib/site";
 import { AREA_SERVICES, type Prefecture, type City } from "@/data/areas";
 
 type Bc = { label: string; href?: string };
@@ -54,6 +54,8 @@ export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: P
     "@type": "LocalBusiness",
     name: SITE_NAME,
     url: `${SITE_URL}${path}`,
+    telephone: SITE_TEL,
+    email: SITE_EMAIL,
     description: `${areaName}の畳張替え・内装工事・原状回復工事`,
     areaServed,
     priceRange: "¥¥",
@@ -63,6 +65,11 @@ export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: P
     { q: `${areaName}に対応していますか？`, a: `はい。${areaName}の${serviceName}に対応しています。対応可否は現地確認後にご案内します。まずはお気軽にご相談ください。`, category: "general" as const },
     { q: "見積もりは無料ですか？", a: "現地確認・お見積もりは無料です。素材や枚数により費用は変動します。お気軽にお問い合わせください。", category: "general" as const },
     { q: "法人・複数物件にも対応できますか？", a: "はい。賃貸物件・旅館・寺社・店舗など法人案件、複数物件もご相談可能です。", category: "general" as const },
+    { q: `${areaName}で畳の表替えと新調、どちらが良いですか？`, a: `畳床（土台）が健全なら表替えで対応可能です。踏み込むと沈む感覚や、床がへたっている場合は新調が必要です。現地確認後に適切な方法をご案内します。`, category: "general" as const },
+    { q: "畳表替えの費用目安はいくらですか？", a: "素材・枚数・現場状況により異なりますが、い草の一般品で4,500円〜/枚程度が目安です。和紙畳や樹脂畳はやや高めになります。正確な費用は現地確認後にお見積もりします。", category: "price" as const },
+    { q: "畳の新調はどのくらいの費用がかかりますか？", a: "素材・サイズ・枚数により異なります。一般的な稲わら床+い草表で15,000円〜/枚程度が目安です。建材床や和紙・樹脂畳は価格が異なります。", category: "price" as const },
+    { q: "施工当日に退去できますか？", a: "基本的に当日中に仕上げます。ただし枚数・素材・現場状況により所要時間は変わります。お見積もり時にご確認ください。", category: "general" as const },
+    { q: "賃貸物件の退去後に畳交換を依頼できますか？", a: "はい。賃貸物件の退去後整備も対応しています。管理会社・オーナー様からのご依頼も承ります。法人案件・複数物件もご相談ください。", category: "general" as const },
   ];
 
   return (
@@ -164,6 +171,35 @@ export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: P
             <div className="bg-white border border-border px-5 py-1">
               <FaqSection items={faqs} />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 関連エリアページ */}
+      <section className="py-12 bg-kiji/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs text-sumi/40 tracking-[0.3em] mb-5 uppercase text-center">Related Pages</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            {[
+              { label: `${pref.name}の畳工事TOP`, href: `/area/${pref.slug}` },
+              { label: `${pref.name}の畳表替え`, href: `/area/${pref.slug}/tatami-omotegae` },
+              { label: `${pref.name}の畳新調`, href: `/area/${pref.slug}/tatami-shinchou` },
+              { label: `${pref.name}の畳裏返し`, href: `/area/${pref.slug}/tatami-uragaeshi` },
+              { label: `${pref.name}の襖張替え`, href: `/area/${pref.slug}/fusuma` },
+              { label: `${pref.name}の障子張替え`, href: `/area/${pref.slug}/shoji` },
+              { label: `${pref.name}の原状回復`, href: `/area/${pref.slug}/restoration` },
+              { label: "畳サービス一覧", href: "/services" },
+              { label: "料金目安", href: "/price" },
+              { label: "お問い合わせ", href: "/contact" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-xs text-sumi/60 hover:text-ai border border-border py-2 px-3 text-center bg-white hover:border-ai/30 transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </section>

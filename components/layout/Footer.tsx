@@ -47,6 +47,22 @@ const FOOTER_LINKS = [
       { label: "プライバシーポリシー", href: "/privacy" },
     ],
   },
+  {
+    heading: "埼玉エリア",
+    links: [
+      { label: "埼玉の畳張替え", href: "/area/saitama/tatami" },
+      { label: "埼玉の畳表替え", href: "/area/saitama/tatami-omotegae" },
+      { label: "埼玉の畳新調", href: "/area/saitama/tatami-shinchou" },
+      { label: "埼玉の襖張替え", href: "/area/saitama/fusuma" },
+      { label: "埼玉の障子張替え", href: "/area/saitama/shoji" },
+      { label: "埼玉の原状回復", href: "/area/saitama/restoration" },
+      { label: "さいたま市", href: "/area/saitama/saitama-city" },
+      { label: "川口市", href: "/area/saitama/kawaguchi" },
+      { label: "越谷市", href: "/area/saitama/koshigaya" },
+      { label: "春日部市", href: "/area/saitama/kasukabe" },
+      { label: "川越市", href: "/area/saitama/kawagoe" },
+    ],
+  },
 ];
 
 export default function Footer() {
@@ -54,7 +70,7 @@ export default function Footer() {
     <footer className="bg-sumi text-white">
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-6 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">

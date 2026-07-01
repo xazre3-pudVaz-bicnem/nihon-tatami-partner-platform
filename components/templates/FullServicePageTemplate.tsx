@@ -98,7 +98,7 @@ const TARGET_PROPOSALS = [
   { key: "store", label: "店舗", icon: "店" },
 ] as const;
 
-export default function FullServicePageTemplate({ data, extraSections }: { data: FullServicePageData; extraSections?: React.ReactNode }) {
+export default function FullServicePageTemplate({ data, extraSections = null }: { data: FullServicePageData; extraSections?: React.ReactNode }) {
   const proposals: Record<string, string> = {
     residential: data.residentialProposal,
     rentalOwner: data.rentalOwnerProposal,
