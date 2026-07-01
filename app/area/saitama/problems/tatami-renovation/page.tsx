@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
@@ -7,74 +7,11 @@ import CTASection from "@/components/ui/CTASection";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "埼玉で和室をリノベーションしたい方へ｜畳・ふすま・障子の一括整備",
+  title: "埼玉で和室をリノベーション・全面整備したい方へ｜畳・ふすま・障子の一括工事",
   description:
-    "埼玉県で和室全体のリノベーション・内装整備をご検討の方へ。畳・ふすま・障子の一括整備メリット、畳からフローリングへの変更の選択肢、費用目安と施工期間を専門家が解説。現地確認・見積もり無料。",
+    "埼玉県で和室をリノベーションしたい方へ。畳・ふすま・障子の一括整備から縁なし畳でのモダン和室まで対応。複数業者不要でスムーズに進められます。",
   path: "/area/saitama/problems/tatami-renovation",
 });
-
-const faqItems = [
-  {
-    category: "general" as const,
-    q: "和室のリノベーションはどのくらいの期間かかりますか？",
-    a: "畳・ふすま・障子の一括整備であれば、通常1〜3日程度が目安です。ただし、素材の取り寄せ・部屋の大きさ・施工内容によって異なります。事前の打ち合わせと素材選定を済ませておくことでスムーズに進みます。",
-  },
-  {
-    category: "general" as const,
-    q: "畳・ふすま・障子を別々の業者に依頼してもよいですか？",
-    a: "それぞれ別の業者に依頼することも可能ですが、スケジュール調整の手間・複数回の立ち合い・トータルコーディネートのしにくさというデメリットがあります。当社では畳・ふすま・障子の一括対応ができるため、トータルで統一感のある仕上がりにご対応できます。",
-  },
-  {
-    category: "general" as const,
-    q: "ふすまの張替えの種類は何がありますか？",
-    a: "ふすまの表張り材には、量産クロス・和紙・本鳥の子紙など様々なグレードがあります。デザインも無地から伝統的な柄まで幅広く、部屋の雰囲気に合わせてお選びいただけます。また、ふすまの骨組みが傷んでいる場合は新調も対応します。",
-  },
-  {
-    category: "general" as const,
-    q: "障子紙はどんな種類がありますか？",
-    a: "障子紙には、標準的な和紙・強化和紙（破れにくい）・アクリル入り（ペット・子ども対応）・雪見障子（下部がガラス）など様々な種類があります。用途や環境に合わせてご提案します。",
-  },
-  {
-    category: "general" as const,
-    q: "和室をフローリングに変更することも相談できますか？",
-    a: "はい、和室から洋室へのリノベーションも対応しています。畳の撤去・下地調整・フローリング施工までご相談ください。ライフスタイルの変化に合わせた全面リノベーションもご提案できます。",
-  },
-  {
-    category: "general" as const,
-    q: "一括整備の場合、費用は安くなりますか？",
-    a: "複数の施工を同時に行うことで、出張費・段取りのコストが効率化される場合があります。また、素材をトータルでコーディネートすることで統一感が生まれ、空間全体の印象が高まります。費用感はお見積もりでご確認ください。",
-  },
-  {
-    category: "general" as const,
-    q: "賃貸物件の和室を一括整備する場合はどうすればよいですか？",
-    a: "管理会社・オーナー様からのご依頼も承っています。退去後の原状回復として畳・ふすま・障子をまとめて整備することで、次の入居者への印象を向上させます。複数物件の継続対応もご相談ください。",
-  },
-  {
-    category: "general" as const,
-    q: "古い和室の雰囲気をそのまま残したいのですが対応できますか？",
-    a: "はい、伝統的な素材・デザインを活かしたリフォームにも対応しています。古い和室の骨格を残しながら、畳・ふすま・障子だけを新しくすることで、趣のある和室を維持できます。素材の選定はご要望をお聞きしてご提案します。",
-  },
-  {
-    category: "general" as const,
-    q: "施工中は部屋を使えますか？",
-    a: "施工中は基本的にその部屋は使用できなくなります。施工期間は通常1〜3日が目安ですので、スケジュールに合わせてご相談ください。複数の和室がある場合は順番に施工する方法もご提案できます。",
-  },
-  {
-    category: "general" as const,
-    q: "和室全体の整備について相談できますか？",
-    a: "はい、埼玉県内であれば現地確認・お見積もりを無料で承っています。現在の和室の状態を確認し、畳・ふすま・障子のトータルコーディネートプランをご提案します。まずはお気軽にご相談ください。",
-  },
-];
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map(({ q, a }) => ({
-    "@type": "Question",
-    name: q,
-    acceptedAnswer: { "@type": "Answer", text: a },
-  })),
-};
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -82,83 +19,230 @@ const localBusinessSchema = {
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   telephone: SITE_TEL,
-  areaServed: { "@type": "State", name: "埼玉県" },
+  areaServed: [{ "@type": "State", name: "埼玉県" }],
   url: SITE_URL,
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "和室のリノベーションで畳・ふすま・障子をまとめて依頼できますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "はい、当社では畳・ふすま・障子・網戸の一括整備に対応しています。複数の業者を手配する手間がなく、工程をまとめてスケジュール管理できるため、スムーズに和室全体を整備できます。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "縁なし畳（琉球畳）に変更するとどのような部屋になりますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "縁なし畳（半畳サイズ）を市松敷きにすると、すっきりとしたモダンな和室になります。間接照明や木製の家具と組み合わせることで、高級感のある和モダン空間が実現します。従来の和室のイメージを大きく刷新できます。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "和室をフローリングに変更することも対応していますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ご要望に応じて現地確認後に提案可能です。畳を撤去してフローリングを敷く場合は、床の高さ調整・下地工事が必要になることがあります。まずは現地確認でご相談ください。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "畳だけでなくふすまや障子の状態も確認してもらえますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "はい、現地確認の際に畳・ふすま・障子の状態をまとめてご確認します。それぞれの状態に応じた施工内容と費用を一括でお見積もりします。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "和室リノベーションの費用はどのくらいかかりますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "畳6枚の表替えとふすま2枚・障子2枚の張替えをまとめて依頼された場合の目安は、素材・グレードにより大きく異なります。正確な費用は部屋のサイズ・素材選定・現場状況を確認したうえで、内訳明示の見積もりをご提示します。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "工事を複数まとめると費用は安くなりますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "畳・ふすま・障子を一括で依頼いただくことで、個別依頼より出張費・工程費の効率化が図れる場合があります。詳しくはお見積もり時にご確認ください。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "和室リノベーションにはどのくらいの期間がかかりますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "表替え・ふすま・障子の張替えをまとめて行う場合、一般的に数日〜1週間程度が目安です。素材の取り寄せが必要な場合や、フローリング工事が含まれる場合はさらに期間がかかることがあります。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "リノベーションの工事中は部屋を使えませんか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "施工中は対象の部屋を使用できません。畳の持ち出し・搬入のスケジュールを事前にお知らせしますので、生活への影響を最小限に抑えた工程調整が可能です。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "縁なし畳に使える素材はどのようなものがありますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "縁なし畳には和紙畳・樹脂畳・い草（縁なし加工）などの素材があります。和紙畳は色あせに強く長持ちし、樹脂畳は水拭き可能で傷・汚れに強いため子どもやペットがいる家庭に向いています。素材サンプルを現地でご覧いただけます。",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "ふすまや障子の素材・デザインも選べますか？",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "はい、ふすま紙・障子紙ともに複数の素材・デザインからお選びいただけます。シンプルな白無地から和柄・モダンデザインまで対応しています。現地確認時にサンプルをご覧いただきながらお選びください。",
+      },
+    },
+  ],
+};
+
+const faqs: { q: string; a: string; category: "general" | "price" | "timing" | "material" | "btob" }[] = [
+  {
+    category: "general",
+    q: "和室のリノベーションで畳・ふすま・障子をまとめて依頼できますか？",
+    a: "はい、当社では畳・ふすま・障子・網戸の一括整備に対応しています。複数の業者を手配する手間がなく、工程をまとめてスケジュール管理できるため、スムーズに和室全体を整備できます。",
+  },
+  {
+    category: "material",
+    q: "縁なし畳（琉球畳）に変更するとどのような部屋になりますか？",
+    a: "縁なし畳（半畳サイズ）を市松敷きにすると、すっきりとしたモダンな和室になります。間接照明や木製の家具と組み合わせることで、高級感のある和モダン空間が実現します。従来の和室のイメージを大きく刷新できます。",
+  },
+  {
+    category: "general",
+    q: "和室をフローリングに変更することも対応していますか？",
+    a: "ご要望に応じて現地確認後に提案可能です。畳を撤去してフローリングを敷く場合は、床の高さ調整・下地工事が必要になることがあります。まずは現地確認でご相談ください。",
+  },
+  {
+    category: "general",
+    q: "畳だけでなくふすまや障子の状態も確認してもらえますか？",
+    a: "はい、現地確認の際に畳・ふすま・障子の状態をまとめてご確認します。それぞれの状態に応じた施工内容と費用を一括でお見積もりします。",
+  },
+  {
+    category: "price",
+    q: "和室リノベーションの費用はどのくらいかかりますか？",
+    a: "畳6枚の表替えとふすま2枚・障子2枚の張替えをまとめて依頼された場合の目安は、素材・グレードにより大きく異なります。正確な費用は部屋のサイズ・素材選定・現場状況を確認したうえで、内訳明示の見積もりをご提示します。",
+  },
+  {
+    category: "price",
+    q: "工事を複数まとめると費用は安くなりますか？",
+    a: "畳・ふすま・障子を一括で依頼いただくことで、個別依頼より出張費・工程費の効率化が図れる場合があります。詳しくはお見積もり時にご確認ください。",
+  },
+  {
+    category: "timing",
+    q: "和室リノベーションにはどのくらいの期間がかかりますか？",
+    a: "表替え・ふすま・障子の張替えをまとめて行う場合、一般的に数日〜1週間程度が目安です。素材の取り寄せが必要な場合や、フローリング工事が含まれる場合はさらに期間がかかることがあります。",
+  },
+  {
+    category: "timing",
+    q: "リノベーションの工事中は部屋を使えませんか？",
+    a: "施工中は対象の部屋を使用できません。畳の持ち出し・搬入のスケジュールを事前にお知らせしますので、生活への影響を最小限に抑えた工程調整が可能です。",
+  },
+  {
+    category: "material",
+    q: "縁なし畳に使える素材はどのようなものがありますか？",
+    a: "縁なし畳には和紙畳・樹脂畳・い草（縁なし加工）などの素材があります。和紙畳は色あせに強く長持ちし、樹脂畳は水拭き可能で傷・汚れに強いため子どもやペットがいる家庭に向いています。素材サンプルを現地でご覧いただけます。",
+  },
+  {
+    category: "material",
+    q: "ふすまや障子の素材・デザインも選べますか？",
+    a: "はい、ふすま紙・障子紙ともに複数の素材・デザインからお選びいただけます。シンプルな白無地から和柄・モダンデザインまで対応しています。現地確認時にサンプルをご覧いただきながらお選びください。",
+  },
+];
 
 export default function TatamiRenovationPage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Breadcrumb */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <Breadcrumb
-          variant="light"
-          items={[
-            { label: "対応エリア", href: "/area" },
-            { label: "埼玉県", href: "/area/saitama" },
-            { label: "お悩み別" },
-            { label: "和室リノベーション" },
-          ]}
-        />
-      </div>
-
       {/* Hero */}
-      <section className="bg-shiro border-b border-border py-14 sm:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <p className="text-xs tracking-[0.3em] text-kincya mb-4 uppercase">
-            Renovation — Saitama
-          </p>
+      <section className="bg-sumi text-white py-16 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <Breadcrumb
+            items={[
+              { label: "エリア", href: "/area" },
+              { label: "埼玉県", href: "/area/saitama" },
+              { label: "お悩み" },
+              { label: "和室リノベーション" },
+            ]}
+          />
           <h1
-            className="text-3xl sm:text-4xl leading-snug mb-6 text-sumi"
+            className="text-3xl sm:text-4xl leading-snug mt-6 mb-4"
             style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}
           >
-            埼玉で和室のリノベーション・全面整備をお考えの方へ
+            埼玉で和室をリノベーション・全面整備したい方へ
           </h1>
-          <p className="text-sumi/70 text-sm sm:text-base leading-relaxed max-w-2xl">
-            古くなった和室を一新したいとき、畳・ふすま・障子をまとめて整備することで
-            手間なく統一感のある空間に仕上がります。
-            フローリングへの変更もご相談可能。埼玉県内の現地確認・見積もりは無料です。
+          <p className="text-white/75 text-sm sm:text-base leading-relaxed max-w-2xl">
+            畳の張替えだけでなく、ふすま・障子・網戸の一括整備に対応しています。
+            縁なし畳でモダンな和室にする、フローリングへ変更するなど、ご要望に合わせた
+            リノベーションプランを現地確認後にご提案します。埼玉県内の現地確認・見積もりは無料です。
           </p>
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-16">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-16">
 
         {/* Section 1 */}
         <section>
           <h2
-            className="text-2xl text-sumi mb-6"
+            className="text-2xl font-medium text-sumi mb-6"
             style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
           >
             和室リノベーションの選択肢
           </h2>
           <div className="space-y-6 text-sm text-sumi/80 leading-relaxed">
-            <div>
-              <p className="font-medium text-sumi mb-2">① 畳・ふすま・障子を一括整備してリフレッシュ</p>
-              <p>
-                和室の骨格はそのままに、内装を新しくすることで和室の良さを活かしながら
-                清潔で美しい空間に生まれ変わらせる方法です。
-                素材の統一・デザインのコーディネートで、シンプルな工事でも大きな印象の変化が生まれます。
-                費用を抑えながら空間をリフレッシュしたい方に最適な選択肢です。
-              </p>
-            </div>
-            <div>
-              <p className="font-medium text-sumi mb-2">② フローリングに変更して洋室化</p>
-              <p>
-                ライフスタイルの変化・家具の変更・バリアフリー対応など、
-                様々な理由から和室を洋室に変更するケースも多くあります。
-                畳を撤去し、下地を整えてフローリングを施工することで、
-                使いやすい洋室に変更できます。当社では和室から洋室への変更工事もご相談可能です。
-              </p>
+            <p>
+              和室のリノベーションには大きく3つの方向性があります。目的・ライフスタイル・予算に
+              合わせて最適なプランを選ぶことが重要です。
+            </p>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <div className="border border-border rounded-sm p-4">
+                <h3 className="text-sumi font-medium mb-2 text-sm" style={{ fontFamily: "var(--font-serif)" }}>
+                  ① 畳→畳（素材・縁のアップグレード）
+                </h3>
+                <p className="text-xs text-sumi/70">
+                  素材を和紙・樹脂に変更したり、縁なし畳に変えることで同じ和室をリフレッシュ。
+                  コストを抑えながら大きくイメージチェンジできます。
+                </p>
+              </div>
+              <div className="border border-border rounded-sm p-4">
+                <h3 className="text-sumi font-medium mb-2 text-sm" style={{ fontFamily: "var(--font-serif)" }}>
+                  ② 畳＋壁紙＋ふすま＋障子の一括整備
+                </h3>
+                <p className="text-xs text-sumi/70">
+                  和室全体をまとめて整備。統一感のある仕上がりになり、
+                  業者がひとつにまとまるためスケジュール管理が簡単です。
+                </p>
+              </div>
+              <div className="border border-border rounded-sm p-4">
+                <h3 className="text-sumi font-medium mb-2 text-sm" style={{ fontFamily: "var(--font-serif)" }}>
+                  ③ 畳→フローリング（洋室への転換）
+                </h3>
+                <p className="text-xs text-sumi/70">
+                  畳を撤去してフローリングを敷き、和室を洋室に転換。
+                  ライフスタイルの変化に合わせた大規模リノベーション。
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -166,34 +250,24 @@ export default function TatamiRenovationPage() {
         {/* Section 2 */}
         <section>
           <h2
-            className="text-2xl text-sumi mb-6"
+            className="text-2xl font-medium text-sumi mb-6"
             style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
           >
-            畳・ふすま・障子の一括整備のメリット
+            畳・ふすま・障子の一括整備メリット
           </h2>
           <div className="space-y-4 text-sm text-sumi/80 leading-relaxed">
             <p>
-              和室の内装を構成する3要素——畳・ふすま・障子——をまとめて整備することには、
-              個別に依頼するよりも多くのメリットがあります。
+              業者をまとめることで工程調整がスムーズになり、以下のメリットがあります。
             </p>
+            <ul className="list-disc list-inside space-y-2 pl-2">
+              <li>工程調整がスムーズ — 施工の順序・日程を当社内で調整</li>
+              <li>スケジュール管理が簡単 — お客様の立ち合いが一度で済む</li>
+              <li>費用の透明性が高い — 一括でお見積もりするため総費用が把握しやすい</li>
+              <li>複数業者への連絡が不要 — 窓口がひとつにまとまる</li>
+            </ul>
             <p>
-              <strong>トータルコーディネートができる</strong><br />
-              畳の色・素材、ふすま紙の柄、障子紙の種類を一度に選定することで、
-              和室全体に統一感が生まれます。個別に選ぶと素材・トーンがバラバラになりがちですが、
-              一括でご相談いただくことでコーディネートしやすくなります。
-            </p>
-            <p>
-              <strong>職人を別々に呼ぶ手間が省ける</strong><br />
-              畳職人・ふすま職人・障子職人を個別に手配すると、
-              スケジュール調整・複数回の立ち合いが必要になります。
-              当社では一括対応ができるため、連絡先が一つで済み、
-              施工の段取りをまとめて進めることができます。
-            </p>
-            <p>
-              <strong>施工期間をまとめられる</strong><br />
-              別々に施工すると部屋を何度も明け渡す必要がありますが、
-              一括施工であれば1〜3日程度でまとめて完成します。
-              生活への影響を最小限に抑えられます。
+              和室全体を統一感のある仕上がりにできるのも、一括依頼の大きなメリットです。
+              畳の素材・縁のデザイン・ふすま紙・障子紙を合わせてコーディネートできます。
             </p>
           </div>
         </section>
@@ -201,182 +275,143 @@ export default function TatamiRenovationPage() {
         {/* Section 3 */}
         <section>
           <h2
-            className="text-2xl text-sumi mb-6"
+            className="text-2xl font-medium text-sumi mb-6"
             style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
           >
-            フローリングへの変更を選ぶケース
+            縁なし畳でモダン和室に
           </h2>
           <div className="space-y-4 text-sm text-sumi/80 leading-relaxed">
             <p>
-              ライフスタイルの変化に合わせて、和室をフローリングの洋室に変更する選択肢もあります。
-              以下のようなケースでご相談いただくことが多いです。
+              縁なし畳（半畳の市松敷き）＋間接照明＋シンプルな家具で、
+              現代的な和モダン空間に変わります。従来の和室のイメージを払拭しつつ、
+              畳の気持ちよさは残せます。
             </p>
-            <ul className="list-disc list-inside space-y-2 pl-2">
-              <li>子どもが成長してベッド・机を置きたいなど洋室のニーズが高まった</li>
-              <li>車いす・歩行器を使用するためバリアフリーが必要になった</li>
-              <li>ペットを飼い始め、畳の汚れ・傷みが気になるようになった</li>
-              <li>賃貸物件の入居率改善のため洋室化したい</li>
-              <li>和室が使わなくなり、収納や書斎として活用したい</li>
-            </ul>
             <p>
-              フローリングへの変更は畳の厚み（通常55mm程度）とフローリングの厚みの差を
-              下地工事で調整する必要があります。現地の状況によって工事内容が異なりますので、
-              まずは現地確認でご相談ください。
+              半畳サイズの畳を向きを交互にして敷く「市松敷き」は、光の当たり方によって
+              畳の目の方向が変わり、美しいグラデーションを生み出します。
             </p>
+            <div className="bg-kiji/30 border border-border rounded-sm p-4 text-xs text-sumi/70">
+              縁なし畳の素材は和紙畳・樹脂畳・い草（縁なし加工）から選べます。
+              子ども・ペットがいるご家庭には耐久性・耐湿性の高い和紙畳・樹脂畳がおすすめです。
+              現地確認時にサンプルをご覧いただきながら選んでいただけます。
+            </div>
           </div>
         </section>
 
         {/* Section 4 */}
         <section>
           <h2
-            className="text-2xl text-sumi mb-6"
+            className="text-2xl font-medium text-sumi mb-6"
             style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
           >
-            施工の流れと期間
+            フローリングへの変更も対応
           </h2>
           <div className="space-y-4 text-sm text-sumi/80 leading-relaxed">
             <p>
-              和室のリノベーション・一括整備は、以下の流れで進めます。
+              和室から洋室への転換ご希望の場合も、現地確認後に提案可能です。
+              畳を撤去してフローリングを敷く場合の費用・工期は状況次第です。
+              まずはご相談ください。
             </p>
-            <ol className="list-decimal list-inside space-y-3 pl-2">
-              <li>
-                <strong>ご相談・現地確認（無料）</strong><br />
-                <span className="pl-5 block mt-1">
-                  現在の畳・ふすま・障子の状態を確認し、ご要望をヒアリングします。
-                  施工内容・費用のおおまかな見通しをお伝えします。
-                </span>
-              </li>
-              <li>
-                <strong>素材選定・お見積もり</strong><br />
-                <span className="pl-5 block mt-1">
-                  畳表の素材・縁のデザイン、ふすま紙・障子紙の種類をご選択いただきます。
-                  確定したお見積もりをご提示します。
-                </span>
-              </li>
-              <li>
-                <strong>施工（1〜3日目安）</strong><br />
-                <span className="pl-5 block mt-1">
-                  素材を取り寄せ、施工日に畳・ふすま・障子を一括で仕上げます。
-                  施工内容・枚数によって日数が変わります。
-                </span>
-              </li>
-              <li>
-                <strong>お引き渡し・アフターフォロー</strong><br />
-                <span className="pl-5 block mt-1">
-                  施工完了後にご確認いただきます。気になる点があればすぐに対応します。
-                </span>
-              </li>
-            </ol>
+            <div className="bg-kiji/30 border border-border rounded-sm p-4 text-xs text-sumi/70">
+              ※ フローリング工事の対応範囲は現地確認後にご案内します。場合によっては提携業者との
+              連携が必要になることもあります。
+            </div>
           </div>
         </section>
 
-        {/* Section 5 — Price Table */}
+        {/* Section 5 */}
         <section>
           <h2
-            className="text-2xl text-sumi mb-6"
+            className="text-2xl font-medium text-sumi mb-6"
             style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
           >
-            費用目安
+            費用の考え方
           </h2>
-          <p className="text-xs text-sumi/50 mb-4">
-            ※ 価格はあくまで目安です。サイズ・素材・状態・枚数により異なります。
-            対応可否は現地確認後にご案内します。
+          <div className="space-y-4 text-sm text-sumi/80 leading-relaxed">
+            <p>
+              畳6枚+ふすま2枚+障子2枚の場合は複数工事の組み合わせになります。
+              実際の費用は部屋のサイズ・素材・現場条件によって大きく異なります。
+              現地確認後に内訳明示の見積もりをご提示します。
+            </p>
+          </div>
+          <p className="text-xs text-sumi/50 mb-4 mt-4">
+            ※ 価格はあくまで目安です。現地確認後に内訳明示の見積もりをご提示します。
           </p>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
+            <table className="w-full text-sm border-collapse border border-border">
               <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left py-3 pr-6 text-sumi font-normal" style={{ fontFamily: "var(--font-serif)" }}>施工内容</th>
-                  <th className="text-left py-3 pr-6 text-sumi font-normal" style={{ fontFamily: "var(--font-serif)" }}>費用目安</th>
-                  <th className="text-left py-3 text-sumi font-normal" style={{ fontFamily: "var(--font-serif)" }}>備考</th>
+                <tr className="border-b border-border bg-sumi/5">
+                  <th className="text-left py-3 px-4 text-sumi font-medium" style={{ fontFamily: "var(--font-serif)" }}>施工内容</th>
+                  <th className="text-left py-3 px-4 text-sumi font-medium" style={{ fontFamily: "var(--font-serif)" }}>費用目安</th>
+                  <th className="text-left py-3 px-4 text-sumi font-medium" style={{ fontFamily: "var(--font-serif)" }}>備考</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-3 pr-6 text-sumi/80">畳 表替え</td>
-                  <td className="py-3 pr-6 text-sumi/80">4,500円〜/枚</td>
-                  <td className="py-3 text-sumi/60">い草素材・標準グレード</td>
+                  <td className="py-3 px-4 text-sumi/80">畳表替え（い草）</td>
+                  <td className="py-3 px-4 text-sumi/80">4,500円〜/枚</td>
+                  <td className="py-3 px-4 text-sumi/60">畳床が良好な場合</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-6 text-sumi/80">ふすま 張替え</td>
-                  <td className="py-3 pr-6 text-sumi/80">5,000円〜/枚</td>
-                  <td className="py-3 text-sumi/60">両面・素材により変動</td>
+                  <td className="py-3 px-4 text-sumi/80">縁なし畳（半畳）</td>
+                  <td className="py-3 px-4 text-sumi/80">7,000円〜/枚</td>
+                  <td className="py-3 px-4 text-sumi/60">素材により異なる。デザイン性が高い</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-6 text-sumi/80">障子 張替え</td>
-                  <td className="py-3 pr-6 text-sumi/80">3,500円〜/枚</td>
-                  <td className="py-3 text-sumi/60">和紙・強化タイプなど選択可</td>
+                  <td className="py-3 px-4 text-sumi/80">ふすまの張替え</td>
+                  <td className="py-3 px-4 text-sumi/80">別途お見積もり</td>
+                  <td className="py-3 px-4 text-sumi/60">ふすま紙の種類・枚数による</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-6 text-sumi/80">一括整備（6畳和室目安）</td>
-                  <td className="py-3 pr-6 text-sumi/80">別途お見積もり</td>
-                  <td className="py-3 text-sumi/60">畳・ふすま・障子セット</td>
-                </tr>
-                <tr>
-                  <td className="py-3 pr-6 text-sumi/80">フローリング変更</td>
-                  <td className="py-3 pr-6 text-sumi/80">別途お見積もり</td>
-                  <td className="py-3 text-sumi/60">下地工事含む・現地確認要</td>
+                  <td className="py-3 px-4 text-sumi/80">障子の張替え</td>
+                  <td className="py-3 px-4 text-sumi/80">別途お見積もり</td>
+                  <td className="py-3 px-4 text-sumi/60">障子紙の種類・枚数による</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="text-xs text-sumi/50 mt-3">
-            ※ 対応可否は現地確認後にご案内します。
+            ※ 複数工事の組み合わせ費用は現地確認後に一括でご提示します。
           </p>
         </section>
 
         {/* FAQ */}
-        <section>
-          <h2
-            className="text-2xl text-sumi mb-6"
-            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
-          >
-            よくある質問
-          </h2>
-          <FaqSection items={faqItems} />
-        </section>
+        <FaqSection items={faqs} />
 
         {/* Related links */}
         <section>
           <h2
-            className="text-xl text-sumi mb-5"
+            className="text-xl font-medium text-sumi mb-5"
             style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
           >
             関連ページ
           </h2>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/area/saitama" className="text-kincya hover:underline">
-                埼玉県の対応エリア一覧 →
-              </Link>
-            </li>
-            <li>
-              <Link href="/area/saitama/tatami" className="text-kincya hover:underline">
-                埼玉県の畳工事サービス →
-              </Link>
-            </li>
-            <li>
-              <Link href="/interior" className="text-kincya hover:underline">
-                内装工事・リノベーションについて →
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/fusuma" className="text-kincya hover:underline">
-                ふすま・障子の張替えサービス →
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-kincya hover:underline">
-                お問い合わせ・無料見積もり →
-              </Link>
-            </li>
-          </ul>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <Link
+              href="/area/saitama"
+              className="border border-border rounded-sm p-4 text-sm text-sumi/80 hover:border-kincya transition-colors"
+            >
+              埼玉県の対応エリア一覧 →
+            </Link>
+            <Link
+              href="/services/fusuma-shoji-amido"
+              className="border border-border rounded-sm p-4 text-sm text-sumi/80 hover:border-kincya transition-colors"
+            >
+              ふすま・障子・網戸の施工サービス →
+            </Link>
+            <Link
+              href="/contact"
+              className="border border-border rounded-sm p-4 text-sm text-sumi/80 hover:border-kincya transition-colors"
+            >
+              お問い合わせ・無料見積もり →
+            </Link>
+          </div>
         </section>
-      </div>
+      </main>
 
       <CTASection
-        title="和室リノベーション・一括整備についてご相談ください"
-        subtitle="埼玉県内の現地確認・お見積もりは無料です。畳・ふすま・障子のトータルコーディネートをご提案します。"
+        title="和室リノベーションのご相談はお気軽にどうぞ"
+        subtitle="埼玉県内の現地確認・お見積もりは無料です。畳・ふすま・障子の一括整備から縁なし畳へのリノベーションまで対応します。"
       />
     </>
   );

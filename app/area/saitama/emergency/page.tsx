@@ -7,83 +7,83 @@ import CTASection from "@/components/ui/CTASection";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "埼玉で畳・内装工事を急ぎで依頼したい方へ｜緊急対応の流れ",
+  title: "埼玉で畳工事を急ぎで相談したい方へ｜緊急対応の流れ",
   description:
-    "埼玉県で畳工事・内装工事を急ぎで相談したい方へ。緊急性が高いケース（水濡れ/退去前/入居直前）、相談から施工までの最短フロー、対応可否の確認方法を専門家が解説。まずはお電話ください。",
+    "埼玉県で畳工事を急ぎでご相談の方へ。水濡れ・退去直前・入居前など緊急ケースの対応フローと、施工可否の判断方法を解説。まずはお電話でご連絡ください。",
   path: "/area/saitama/emergency",
 });
 
-const faqItems = [
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: SITE_NAME,
+  url: SITE_URL,
+  telephone: SITE_TEL,
+  areaServed: [{ "@type": "State", name: "埼玉県" }],
+  "@id": `${SITE_URL}/#local-business`,
+};
+
+const faqs = [
   {
-    category: "general" as const,
-    q: "急ぎで畳工事を依頼したい場合、まず何をすればよいですか？",
-    a: "まずはお電話でご連絡ください。状況をお聞きして、対応できるスケジュールをお伝えします。状況によっては当日または翌日の現地確認が可能なこともあります。",
+    category: "timing" as const,
+    q: "畳が水濡れしました。すぐに対応してもらえますか？",
+    a: "水濡れは24〜48時間以内の対応が重要です。まず乾燥・通気を確保することが先決です。状態によっては畳を上げて乾燥させる、または表替え・新調が必要になります。まずはお電話でご連絡ください。状況を聞いて可能な限り早期に対応します。",
+  },
+  {
+    category: "timing" as const,
+    q: "退去まで数日しかありません。間に合いますか？",
+    a: "素材在庫・職人スケジュールに依存しますが、可能な限り対応します。表替えは引き取り翌日返しが基本です。まずお電話で状況をお伝えいただければ、対応可能かどうかを確認してお伝えします。「絶対に間に合う」とは言えませんが、できる限り対応します。",
+  },
+  {
+    category: "timing" as const,
+    q: "入居前日に畳が気になりました。翌日に施工できますか？",
+    a: "素材の在庫状況・職人のスケジュールによります。当日・翌日の対応は確約できませんが、まずお電話でご相談ください。状況によって最短の対応日をお伝えします。",
+  },
+  {
+    category: "timing" as const,
+    q: "法事・行事が近いのですが、急ぎで畳を整備できますか？",
+    a: "法事・法要・行事前の畳整備は多くいただくご相談です。日程の余裕次第で対応できることが多いですが、直前になるほど日程が難しくなります。できるだけ早めにご連絡ください。",
   },
   {
     category: "general" as const,
-    q: "水濡れ・浸水後の畳は急いで交換する必要がありますか？",
-    a: "水分を含んだ畳はカビの発生リスクが高まります。濡れた状態が続くほどカビの繁殖が進み、床下まで影響が及ぶ可能性があります。可能な限り早めにご連絡ください。まずは状態を確認してから対応方針をご案内します。",
+    q: "急ぎの場合、フォームと電話どちらが良いですか？",
+    a: "急ぎの場合はお電話が確実です。フォームは確認・返信に時間がかかる場合があります。状況（枚数・緊急の理由・希望施工日）をお伝えいただくとスムーズです。",
+  },
+  {
+    category: "timing" as const,
+    q: "問い合わせから施工まで最短でどのくらいかかりますか？",
+    a: "問い合わせ当日または翌日に現地確認、その後素材在庫・職人スケジュールが合えば早期の施工日を確保します。表替えは引き取り翌日返しが基本です。ただし混雑期や素材在庫状況によって変動します。",
   },
   {
     category: "general" as const,
-    q: "退去立会いの前日に依頼することは可能ですか？",
-    a: "前日のご依頼については、スケジュールの空き状況によります。直前のご依頼は対応が難しい場合もありますが、まずはお電話でご相談ください。状況に応じて可能な範囲でご対応します。",
+    q: "現地確認なしで施工日を決めてもらえますか？",
+    a: "急ぎの場合も、状態確認をしてから最短スケジュールをご案内します。状態によって施工内容（裏返し・表替え・新調）が変わるため、まず現地確認が必要です。現地確認は最優先でスケジュールします。",
   },
   {
-    category: "general" as const,
-    q: "急ぎの場合、通常より費用が高くなりますか？",
-    a: "緊急料金として費用が上乗せになることは基本的にありません。ただし素材の取り寄せが必要な場合など、通常より費用がかかる場合は事前にご説明します。見積もり後にご承認いただいてから施工を進めます。",
+    category: "timing" as const,
+    q: "水濡れした畳は表替えで対応できますか？新調が必要ですか？",
+    a: "水濡れの程度・乾燥状況・畳床の状態によります。表面のみが濡れた軽度の場合は乾燥後に表替えで対応できることもあります。畳床まで傷んでいる場合は新調が必要です。現地確認で状態を見てからご案内します。",
   },
   {
-    category: "general" as const,
-    q: "急ぎでも品質は変わりませんか？",
-    a: "急いでいる場合でも、施工の手を抜くことはしません。丁寧な作業を心がけています。ただし、急ぎのため素材の選択肢が限られる場合や、乾燥時間の確保が難しい場合があります。状況はご連絡時にご説明します。",
+    category: "timing" as const,
+    q: "週末・祝日でも急ぎの相談はできますか？",
+    a: "対応状況によりますので、まずお電話でご確認ください。平日以外でも可能な限り対応します。ご連絡いただいたうえで対応可能かをお伝えします。",
   },
   {
-    category: "general" as const,
-    q: "急ぎ対応が難しいケースはどのような場合ですか？",
-    a: "素材の取り寄せが必要な場合（特殊サイズ・特殊素材など）や、繁忙期（春・秋の引越しシーズン）は対応に時間がかかることがあります。また遠方の物件や広範囲の施工は日程調整に時間が必要な場合があります。まずはご連絡いただければ対応可否をお伝えします。",
-  },
-  {
-    category: "general" as const,
-    q: "入居直前でも畳の施工は間に合いますか？",
-    a: "入居日の1週間前以上あれば対応できる可能性が高いです。それ以内の場合も、状況によっては対応できることがあります。まずはお電話でご相談ください。スケジュールの空き状況と素材の在庫を確認してお答えします。",
-  },
-  {
-    category: "general" as const,
-    q: "急ぎの相談でも現地確認は必要ですか？",
-    a: "正確な状態確認と見積もりのために、原則として現地確認をお願いしています。急ぎの場合はできるだけ早く現地確認に伺い、その場でお見積もりをお出しして即日〜翌日の施工開始を目指します。",
-  },
-  {
-    category: "general" as const,
-    q: "費用の目安を教えてください。",
-    a: "表替えは4,500円〜/枚、新調は15,000円〜/枚、ふすまは5,000円〜/枚、障子は3,500円〜/枚が目安です。素材・枚数・現場状況によって異なります。正確な費用は現地確認後にご案内します。",
-  },
-  {
-    category: "general" as const,
-    q: "埼玉県のどのエリアでも対応できますか？",
-    a: "埼玉県内全域を対応エリアとしています。さいたま市・川越市・川口市・越谷市・熊谷市・所沢市・春日部市などの主要エリアを中心に対応しています。エリアによっては移動時間が必要なため、急ぎの場合は所在地もお知らせください。",
+    category: "price" as const,
+    q: "急ぎの場合、費用は割高になりますか？",
+    a: "緊急対応料金を別途設定しているわけではありませんが、素材・施工内容によって通常の費用感と変わらない場合もあります。費用については現地確認後にご案内します。まずはお電話でご相談ください。",
   },
 ];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map(({ q, a }) => ({
+  mainEntity: faqs.map(({ q, a }) => ({
     "@type": "Question",
     name: q,
     acceptedAnswer: { "@type": "Answer", text: a },
   })),
-};
-
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": `${SITE_URL}/#organization`,
-  name: SITE_NAME,
-  telephone: SITE_TEL,
-  areaServed: { "@type": "State", name: "埼玉県" },
-  url: SITE_URL,
 };
 
 export default function EmergencyPage() {
@@ -91,255 +91,196 @@ export default function EmergencyPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* ─── Breadcrumb ─── */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <Breadcrumb
-          variant="light"
           items={[
-            { label: "対応エリア", href: "/area" },
+            { label: "エリア", href: "/area" },
             { label: "埼玉県", href: "/area/saitama" },
-            { label: "急ぎの畳・内装工事" },
+            { label: "急ぎの相談" },
           ]}
         />
       </div>
 
-      {/* ─── Hero ─── */}
-      <section className="bg-shiro border-b border-border py-14 sm:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="bg-sumi text-white py-16 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
           <p className="text-xs tracking-[0.3em] text-kincya mb-4 uppercase">Emergency — Saitama</p>
           <h1
-            className="text-3xl sm:text-4xl leading-snug mb-6 text-sumi"
-            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}
+            className="text-3xl sm:text-4xl font-medium leading-snug mt-6 mb-4"
+            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
           >
-            埼玉で畳工事・内装工事を急ぎで相談したい方へ
+            埼玉で畳工事を急ぎで相談したい方へ
           </h1>
-          <p className="text-sumi/70 text-sm sm:text-base leading-relaxed max-w-2xl">
-            水濡れ後のカビリスク、退去前の原状回復、入居直前の整備など、急いで対応が必要な場合はまずお電話ください。状況をお聞きして、対応できるスケジュールをご案内します。
+          <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl">
+            水濡れ・退去直前・入居前・法事前など、急を要する畳工事のご相談は早めのご連絡が対応の選択肢を広げます。まずはお電話でご状況をお伝えください。
           </p>
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-16">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-16">
 
-        {/* ─── 緊急性が高い代表的なケース ─── */}
+        {/* 急ぎで相談が必要なケース */}
         <section>
           <h2
-            className="text-2xl text-sumi mb-6"
-            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
+            className="text-2xl font-medium mb-6 text-sumi"
+            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }}
           >
-            緊急性が高い代表的なケース
+            急ぎで相談が必要なケース
           </h2>
-          <div className="bg-white border border-border rounded-sm p-6 space-y-6 text-sm text-sumi/80 leading-relaxed">
-            <div>
-              <h3 className="text-sumi font-medium mb-2">① 水濡れ・浸水後のカビ発生リスク</h3>
-              <p>
-                雨漏り・水道管のトラブル・洗濯機の排水詰まりなどで畳が水濡れした場合、放置すると短期間でカビが繁殖します。カビは一度発生すると畳床（芯材）や床下まで浸透することがあり、早期対応が被害を最小限に抑えます。まずはお電話でご連絡ください。状態を確認して対応策をご案内します。
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sumi font-medium mb-2">② 退去・立会い前の原状回復</h3>
-              <p>
-                退去立会い前に畳の状態を整えたいというご相談は多くいただきます。退去日が決まっている場合は、できるだけ早めにご連絡ください。スケジュールの空き状況を確認して、対応できる日程をお伝えします。立会い直前のご相談は対応が難しい場合もありますが、まずはご連絡ください。
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sumi font-medium mb-2">③ 入居直前の整備</h3>
-              <p>
-                入居日が決まっているが畳の状態が気になる、前の住人の臭いや汚れが残っているといったケースです。入居日の1週間前以上のご相談であれば対応できる可能性が高いです。それ以内の場合も、素材の在庫状況によっては対応できることがあります。まずはお電話でご確認ください。
-              </p>
+          <div className="bg-kiji/30 p-5 rounded-sm space-y-4 text-sm text-sumi/80 leading-relaxed">
+            <p>
+              主なケース：①畳が水濡れ・浸水した（24〜48時間以内の乾燥が重要）、②退去日まで数日しかない、③入居直前・内覧前日に畳の状態が気になった、④法事・行事が近い。どのケースも早めのご連絡が対応の選択肢を広げます。
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4 mt-2">
+              <div className="border border-border p-5 rounded-sm">
+                <h3 className="text-sumi font-medium mb-2">① 畳の水濡れ・浸水</h3>
+                <p className="text-xs text-sumi/70">
+                  24〜48時間以内の乾燥が重要です。放置するとカビが発生し、畳床まで傷む可能性があります。まず通気を確保し、すぐにご連絡ください。
+                </p>
+              </div>
+              <div className="border border-border p-5 rounded-sm">
+                <h3 className="text-sumi font-medium mb-2">② 退去日まで数日</h3>
+                <p className="text-xs text-sumi/70">
+                  退去直前の原状回復は時間との勝負です。素材在庫・職人スケジュールによって対応可否が変わります。できるだけ早くご連絡ください。
+                </p>
+              </div>
+              <div className="border border-border p-5 rounded-sm">
+                <h3 className="text-sumi font-medium mb-2">③ 入居直前・内覧前日</h3>
+                <p className="text-xs text-sumi/70">
+                  入居直前や内覧前日に畳の状態が気になった場合のご相談も対応します。当日・翌日対応は確約できませんが、まずご連絡ください。
+                </p>
+              </div>
+              <div className="border border-border p-5 rounded-sm">
+                <h3 className="text-sumi font-medium mb-2">④ 法事・行事が近い</h3>
+                <p className="text-xs text-sumi/70">
+                  法事・法要・行事前の畳整備は多くいただくご相談です。余裕がある段階でご連絡いただけると、ご希望の日程に対応しやすくなります。
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ─── 相談から施工までの最短フロー ─── */}
+        {/* 問い合わせから施工までの最短フロー */}
         <section>
           <h2
-            className="text-2xl text-sumi mb-6"
-            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
+            className="text-2xl font-medium mb-6 text-sumi"
+            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }}
           >
-            相談から施工までの最短フロー
+            問い合わせから施工までの最短フロー
           </h2>
-          <div className="bg-white border border-border rounded-sm p-6 space-y-4 text-sm text-sumi/80 leading-relaxed">
-            <p className="text-kincya text-xs font-medium tracking-wide">
-              ※ 対応可否・スケジュールは状況によって異なります。まずはご連絡ください。
+          <div className="border border-border p-5 rounded-sm space-y-4 text-sm text-sumi/80 leading-relaxed">
+            <p>
+              ①お問い合わせ（電話・フォーム）→②当日または翌日に現地確認（状態・スケジュール確認）→③可能な限り早期の施工日を確保→④施工（表替えは引き取り翌日返しが基本）。素材在庫・職人スケジュールに依存するため、まず状況をお伝えいただくことが重要です。
             </p>
             <ol className="list-decimal pl-5 space-y-3">
               <li>
-                <strong>お電話でご相談（即日）：</strong>
-                状況・物件の場所・希望のスケジュールをお聞きします。対応できるかどうかを確認してお伝えします。
+                <strong>お問い合わせ：</strong>
+                急ぎの場合はお電話が確実です。状況（枚数・緊急の理由・希望施工日）をお伝えください。
               </li>
               <li>
                 <strong>現地確認（当日または翌日）：</strong>
                 状況が許す限り、できるだけ早く現地に伺います。畳の状態・枚数・施工内容を確認します。
               </li>
               <li>
-                <strong>即日お見積もり：</strong>
-                現地確認のその場でお見積もりをお出しします。ご承認いただき次第、施工の手配を進めます。
+                <strong>施工日の確保：</strong>
+                素材在庫・職人スケジュールを確認して、可能な限り早期の施工日をご案内します。
               </li>
               <li>
-                <strong>スケジュール確認・施工：</strong>
-                素材の在庫・スタッフの空き状況を確認して施工日を設定します。
-              </li>
-              <li>
-                <strong>完了・引き渡し：</strong>
-                仕上がりをご確認いただいて完了です。
+                <strong>施工：</strong>
+                表替えは工場へ引き取り翌日返しが基本です。施工後にご確認いただきます。
               </li>
             </ol>
           </div>
         </section>
 
-        {/* ─── 急ぎ対応が難しいケースについて ─── */}
+        {/* 施工可能かどうかは現地確認が前提 */}
         <section>
           <h2
-            className="text-2xl text-sumi mb-6"
-            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
+            className="text-2xl font-medium mb-6 text-sumi"
+            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }}
           >
-            急ぎ対応が難しいケースについて
+            施工可能かどうかは現地確認が前提
           </h2>
-          <div className="bg-white border border-border rounded-sm p-6 space-y-4 text-sm text-sumi/80 leading-relaxed">
-            <p>
-              状況によっては、ご希望のスケジュールに対応できない場合があります。あらかじめご理解いただけると幸いです。
+          <div className="bg-kiji/20 border-l-4 border-kincya/60 p-5">
+            <p className="text-sumi/90 text-sm leading-relaxed">
+              急ぎの場合も、まず現地で状態を確認してから最短スケジュールをご案内します。素材の在庫・職人のスケジュールによって対応できる日程が変わります。「絶対に○日に間に合う」とは言えませんが、できる限り対応します。まずご連絡いただくことで選択肢が広がります。
             </p>
+          </div>
+          <div className="mt-4 border border-border p-5 rounded-sm space-y-3 text-sm text-sumi/80 leading-relaxed">
+            <p>現地確認で確認すること：</p>
             <ul className="list-disc pl-5 space-y-2">
-              <li>
-                <strong>素材の取り寄せが必要な場合：</strong>特殊なサイズ・素材は在庫がない場合があり、取り寄せに数日〜1週間程度かかることがあります。
-              </li>
-              <li>
-                <strong>繁忙期（春・秋）：</strong>退去・入居が集中する時期は施工スタッフのスケジュールが埋まりやすいです。早めのご連絡をおすすめします。
-              </li>
-              <li>
-                <strong>施工規模が大きい場合：</strong>多室・大量の畳の施工は1日では完了しないことがあります。スケジュールは現地確認後にご案内します。
-              </li>
+              <li>畳の状態（裏返し・表替え・新調のどれが必要か）</li>
+              <li>枚数・サイズ（規格外の場合は別途調整が必要）</li>
+              <li>搬入経路（狭い階段等の場合は作業の手間が変わる）</li>
+              <li>素材の在庫状況と対応可能な最短日程</li>
             </ul>
-            <p>
-              いずれの場合も、まずはご連絡いただくことで、対応の可否と現実的なスケジュールをお伝えできます。ご連絡をためらわず、まずはお電話ください。
-            </p>
           </div>
         </section>
 
-        {/* ─── 急ぎでも品質は変えない方針 ─── */}
+        {/* 急ぎの場合の連絡方法 */}
         <section>
           <h2
-            className="text-2xl text-sumi mb-6"
-            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
+            className="text-2xl font-medium mb-6 text-sumi"
+            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }}
           >
-            急ぎでも品質は変えない方針
+            急ぎの場合の連絡方法
           </h2>
-          <div className="bg-white border border-border rounded-sm p-6 space-y-4 text-sm text-sumi/80 leading-relaxed">
+          <div className="bg-kiji/30 p-5 rounded-sm space-y-4 text-sm text-sumi/80 leading-relaxed">
             <p>
-              急ぎの依頼であっても、施工の品質を落とすことはしません。畳の張り方・素材の確認・仕上げの丁寧さは通常の施工と変わりません。急いでいるからこそ、手早くかつ丁寧に仕上げることを心がけています。
+              フォームよりお電話が確実です。状況（枚数・緊急の理由・希望施工日）をお伝えいただくとスムーズです。電話番号はページ下部またはヘッダーに記載しています。
             </p>
-            <p>
-              ただし、急ぎのため選べる素材の選択肢が限られる場合や、乾燥時間が十分に確保できない場合は、その点をあらかじめご説明します。ご不明な点はお気軽にご質問ください。
-            </p>
+            <div className="bg-kiji/20 border-l-4 border-kincya/60 p-5">
+              <p className="text-sumi/90 text-sm font-medium mb-2">お電話でお伝えいただきたいこと</p>
+              <ul className="list-disc pl-4 space-y-1 text-xs text-sumi/70">
+                <li>緊急の状況（水濡れ・退去直前・法事前など）</li>
+                <li>物件の所在地・部屋の広さ・畳の枚数（おおよそ）</li>
+                <li>ご希望の施工日・期限</li>
+                <li>連絡のつきやすい時間帯</li>
+              </ul>
+            </div>
           </div>
         </section>
 
-        {/* ─── 費用目安テーブル ─── */}
-        <section>
-          <h2
-            className="text-2xl text-sumi mb-6"
-            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
-          >
-            費用目安
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm text-left border border-border">
-              <thead className="bg-sumi text-white">
-                <tr>
-                  <th className="px-4 py-3 font-normal">施工内容</th>
-                  <th className="px-4 py-3 font-normal">費用目安（1枚あたり）</th>
-                  <th className="px-4 py-3 font-normal">備考</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                <tr className="bg-white">
-                  <td className="px-4 py-3">表替え（一般い草）</td>
-                  <td className="px-4 py-3">4,500円〜</td>
-                  <td className="px-4 py-3 text-sumi/70">在庫状況により対応可能な場合あり</td>
-                </tr>
-                <tr className="bg-shiro">
-                  <td className="px-4 py-3">新調</td>
-                  <td className="px-4 py-3">15,000円〜</td>
-                  <td className="px-4 py-3 text-sumi/70">畳床ごと交換。状況により日数が必要</td>
-                </tr>
-                <tr className="bg-white">
-                  <td className="px-4 py-3">ふすま張替え</td>
-                  <td className="px-4 py-3">5,000円〜</td>
-                  <td className="px-4 py-3 text-sumi/70">紙の種類・状態により変動</td>
-                </tr>
-                <tr className="bg-shiro">
-                  <td className="px-4 py-3">障子張替え</td>
-                  <td className="px-4 py-3">3,500円〜</td>
-                  <td className="px-4 py-3 text-sumi/70">障子紙の種類により変動</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p className="text-xs text-sumi/50 mt-3">
-            ※ 費用は素材・枚数・現場状況によって異なります。正確な費用は現地確認後にご案内します。
-          </p>
-        </section>
+        {/* FAQ */}
+        <FaqSection items={faqs} />
 
-        {/* ─── FAQ ─── */}
+        {/* 関連ページ */}
         <section>
           <h2
-            className="text-2xl text-sumi mb-6"
-            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
-          >
-            よくある質問
-          </h2>
-          <FaqSection items={faqItems} />
-        </section>
-
-        {/* ─── 関連ページ ─── */}
-        <section>
-          <h2
-            className="text-xl text-sumi mb-5"
-            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
+            className="text-2xl font-medium mb-6 text-sumi"
+            style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }}
           >
             関連ページ
           </h2>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/area/saitama" className="text-kincya hover:underline">
-                埼玉県の対応エリア一覧 →
-              </Link>
-            </li>
-            <li>
-              <Link href="/area/saitama/tatami" className="text-kincya hover:underline">
-                埼玉県の畳工事サービス →
-              </Link>
-            </li>
-            <li>
-              <Link href="/area/saitama/problems/tatami-flood-damage" className="text-kincya hover:underline">
-                埼玉の畳の水濡れ・浸水被害について →
-              </Link>
-            </li>
-            <li>
-              <Link href="/area/saitama/before-move-in" className="text-kincya hover:underline">
-                入居前の畳工事について →
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="text-kincya hover:underline">
-                お問い合わせ・無料見積もり →
-              </Link>
-            </li>
+          <ul className="space-y-3">
+            {[
+              { href: "/area/saitama/tatami-flood-damage", label: "畳の水濡れ・浸水被害への対応" },
+              { href: "/area/saitama/before-move-in", label: "入居前の畳整備について" },
+              { href: "/contact", label: "お問い合わせ・無料見積もり" },
+            ].map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="flex items-center justify-between p-4 border border-border hover:border-kincya/50 hover:bg-kiji/10 transition-all duration-200 group"
+                >
+                  <span className="text-sm text-sumi group-hover:text-kincya transition-colors">{label}</span>
+                  <span className="text-kincya text-xs">→</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </section>
-      </div>
+      </main>
 
       <CTASection
-        title="急ぎの畳・内装工事はお電話でご相談ください"
-        subtitle="埼玉県内の現地確認・お見積もりは無料です。まずはご連絡いただければ対応可否をお伝えします。"
+        title="急ぎの畳工事はまずお電話でご連絡ください"
+        subtitle="状況をお伝えいただければ、できる限り早期の対応をご案内します。埼玉県内全域対応。"
       />
     </>
   );

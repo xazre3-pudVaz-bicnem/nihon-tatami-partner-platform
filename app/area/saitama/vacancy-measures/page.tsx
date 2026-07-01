@@ -7,9 +7,9 @@ import CTASection from "@/components/ui/CTASection";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "埼玉の空室対策に畳・内装工事を活用する方法｜入居率向上のポイント",
+  title: "埼玉の空室対策に畳・内装工事を活用する方法｜賃貸オーナー向け",
   description:
-    "埼玉県の賃貸物件で空室対策として畳・内装工事を活用したい方へ。畳の状態が入居率に与える影響、おすすめ素材、費用対効果の考え方を専門家が解説。現地確認・見積もり無料。",
+    "埼玉県の賃貸オーナー・管理会社向け。空室対策として畳の表替え・素材変更・ふすま障子の整備が内覧印象に与える効果を解説。複数物件の一括対応可能。",
   path: "/area/saitama/vacancy-measures",
 });
 
@@ -79,11 +79,11 @@ const faqSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
-  telephone: SITE_TEL,
-  areaServed: { "@type": "State", name: "埼玉県" },
   url: SITE_URL,
+  telephone: SITE_TEL,
+  areaServed: [{ "@type": "State", name: "埼玉県" }],
+  "@id": `${SITE_URL}/#local-business`,
 };
 
 export default function VacancyMeasuresPage() {
@@ -341,6 +341,11 @@ export default function VacancyMeasuresPage() {
             <li>
               <Link href="/area/saitama/for-real-estate" className="text-kincya hover:underline">
                 不動産会社・管理会社向け →
+              </Link>
+            </li>
+            <li>
+              <Link href="/area/saitama/bulk-order" className="text-kincya hover:underline">
+                複数物件・大量発注の畳工事 →
               </Link>
             </li>
             <li>
