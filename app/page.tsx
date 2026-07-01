@@ -222,6 +222,53 @@ export default function HomePage() {
 
       {/* ===== 2. STATS BAND — 実績確定まで非表示 ===== */}
 
+      {/* ===== 2b. 日本畳パートナーズとは ===== */}
+      {/* 日本畳パートナーズとは */}
+      <section className="py-20 bg-shiro">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionLabel en="About" className="justify-center mb-4" />
+          <h2 className="text-2xl sm:text-3xl text-sumi mb-6 text-center" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
+            日本畳パートナーズとは
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            <div>
+              <p className="text-sm text-sumi/70 leading-relaxed mb-4">
+                日本畳パートナーズは、畳の表替え・裏返し・新調を中心に、襖・障子・内装工事・原状回復までご相談いただける専門窓口です。
+              </p>
+              <p className="text-sm text-sumi/70 leading-relaxed mb-4">
+                一般住宅の和室から、賃貸物件の退去後整備、不動産会社・管理会社の継続案件、旅館・寺社・店舗の空間整備まで、用途に合わせた施工相談を受け付けています。
+              </p>
+              <p className="text-sm text-sumi/70 leading-relaxed">
+                埼玉エリアを中心に対応しており、い草・和紙・樹脂・縁なし畳など幅広い素材と施工方法に対応します。現地確認・お見積もりは無料です。
+              </p>
+            </div>
+            <div className="space-y-4">
+              {[
+                { label: "対象", value: "一般住宅・賃貸物件・旅館・寺社・店舗・不動産管理物件" },
+                { label: "対応工事", value: "畳工事・襖障子・内装工事・原状回復" },
+                { label: "お見積もり", value: "現地確認・お見積もり無料" },
+                { label: "お問い合わせ", value: "フォーム・お電話でご相談ください" },
+                { label: "電話番号", value: "070-5439-9949" },
+                { label: "メールアドレス", value: "nihontatami.0110@gmail.com" },
+              ].map((row) => (
+                <div key={row.label} className="flex gap-4 pb-3 border-b border-border">
+                  <span className="text-xs text-sumi/40 w-28 shrink-0 tracking-wide">{row.label}</span>
+                  <span className="text-sm text-sumi/80">{row.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/about" className="inline-block text-sm border border-sumi/30 text-sumi/70 px-6 py-2.5 hover:border-sumi hover:text-sumi transition-all duration-300 tracking-wider text-center">
+              会社情報を見る
+            </Link>
+            <Link href="/contact" className="inline-block text-sm bg-sumi text-white px-6 py-2.5 hover:bg-ai transition-all duration-300 tracking-wider text-center">
+              お問い合わせはこちら
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ===== 3. CONCEPT ===== */}
       <section className="py-24 sm:py-32 bg-kiji relative overflow-hidden">
         <div className="absolute inset-0 tatami-bg" aria-hidden="true" />
@@ -1055,6 +1102,56 @@ export default function HomePage() {
               対応エリア詳細を確認する →
             </Link>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ===== 14b. 埼玉エリア対応 ===== */}
+      {/* 埼玉エリア対応 */}
+      <section className="py-16 bg-kiji/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionLabel en="Service Area" className="justify-center mb-4" />
+          <h2 className="text-2xl sm:text-3xl text-sumi mb-3 text-center" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
+            埼玉の畳工事・内装工事に対応
+          </h2>
+          <p className="text-sm text-sumi/60 text-center mb-10 max-w-2xl mx-auto leading-relaxed">
+            埼玉県内の住宅・賃貸物件・旅館・寺社・店舗の畳張替え・表替え・新調・内装・原状回復をご相談いただけます。まずはお問い合わせください。
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
+            {[
+              { label: "埼玉の畳工事全般", href: "/area/saitama" },
+              { label: "埼玉の畳表替え", href: "/area/saitama/tatami-omotegae" },
+              { label: "埼玉の畳新調", href: "/area/saitama/tatami-shinchou" },
+              { label: "埼玉の畳裏返し", href: "/area/saitama/tatami-uragaeshi" },
+              { label: "埼玉の縁なし畳", href: "/area/saitama/herinashi-tatami" },
+              { label: "埼玉の和紙畳", href: "/area/saitama/washi-tatami" },
+              { label: "埼玉の襖張替え", href: "/area/saitama/fusuma" },
+              { label: "埼玉の障子張替え", href: "/area/saitama/shoji" },
+              { label: "埼玉の原状回復", href: "/area/saitama/restoration" },
+              { label: "さいたま市", href: "/area/saitama/saitama-city" },
+              { label: "川口市", href: "/area/saitama/kawaguchi" },
+              { label: "越谷市", href: "/area/saitama/koshigaya" },
+              { label: "春日部市", href: "/area/saitama/kasukabe" },
+              { label: "川越市", href: "/area/saitama/kawagoe" },
+              { label: "所沢市", href: "/area/saitama/tokorozawa" },
+              { label: "草加市", href: "/area/saitama/soka" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-center text-xs text-sumi/70 hover:text-ai border border-border py-2.5 px-3 bg-white hover:border-ai/30 transition-all duration-200"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link
+              href="/area/saitama"
+              className="inline-block text-sm border border-sumi text-sumi px-8 py-3 hover:bg-sumi hover:text-white transition-all duration-300 tracking-wider"
+            >
+              埼玉のエリア・対応内容を詳しく見る
+            </Link>
+          </div>
         </div>
       </section>
 
