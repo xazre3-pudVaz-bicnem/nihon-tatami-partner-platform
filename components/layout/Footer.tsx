@@ -53,14 +53,31 @@ const FOOTER_LINKS = [
       { label: "埼玉の畳張替え", href: "/area/saitama/tatami" },
       { label: "埼玉の畳表替え", href: "/area/saitama/tatami-omotegae" },
       { label: "埼玉の畳新調", href: "/area/saitama/tatami-shinchou" },
-      { label: "埼玉の襖張替え", href: "/area/saitama/fusuma" },
-      { label: "埼玉の障子張替え", href: "/area/saitama/shoji" },
       { label: "埼玉の原状回復", href: "/area/saitama/restoration" },
       { label: "さいたま市", href: "/area/saitama/saitama-city" },
       { label: "川口市", href: "/area/saitama/kawaguchi" },
       { label: "越谷市", href: "/area/saitama/koshigaya" },
-      { label: "春日部市", href: "/area/saitama/kasukabe" },
       { label: "川越市", href: "/area/saitama/kawagoe" },
+    ],
+  },
+  {
+    heading: "東京エリア",
+    links: [
+      { label: "東京の畳張替え", href: "/area/tokyo/tatami" },
+      { label: "世田谷区の畳", href: "/area/tokyo/setagaya/tatami" },
+      { label: "新宿区の畳", href: "/area/tokyo/shinjuku/tatami" },
+      { label: "八王子市の畳", href: "/area/tokyo/hachioji/tatami" },
+      { label: "東京の原状回復", href: "/area/tokyo/restoration" },
+    ],
+  },
+  {
+    heading: "神奈川・千葉エリア",
+    links: [
+      { label: "神奈川の畳張替え", href: "/area/kanagawa/tatami" },
+      { label: "横浜市の畳", href: "/area/kanagawa/yokohama/tatami" },
+      { label: "千葉の畳張替え", href: "/area/chiba/tatami" },
+      { label: "千葉市の畳", href: "/area/chiba/chiba/tatami" },
+      { label: "全エリア一覧", href: "/area" },
     ],
   },
 ];
@@ -70,9 +87,9 @@ export default function Footer() {
     <footer className="bg-sumi text-white">
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-6 gap-10 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 mb-12">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-9 h-9 rounded-full overflow-hidden shrink-0">
                 <Image

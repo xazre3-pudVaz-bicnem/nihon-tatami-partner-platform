@@ -8,7 +8,7 @@ import { AREAS, AREA_SERVICES } from "@/data/areas";
 import { PURPOSE_PAGES } from "@/data/purpose";
 
 const BASE = SITE_URL;
-const LAST_MODIFIED = new Date("2026-06-21");
+const LAST_MODIFIED = new Date("2026-07-02");
 
 function url(
   path: string,
@@ -184,5 +184,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Area pages
     ...areaUrls,
+
+    // Saitama standalone SEO pages
+    url("/area/saitama/for-homeowner", 0.8, "monthly"),
+    url("/area/saitama/for-rental-owner", 0.8, "monthly"),
+    url("/area/saitama/for-real-estate", 0.8, "monthly"),
+    url("/area/saitama/for-property-management", 0.8, "monthly"),
+    url("/area/saitama/for-ryokan", 0.7, "monthly"),
+    url("/area/saitama/for-temple-shrine", 0.7, "monthly"),
+    url("/area/saitama/for-store", 0.7, "monthly"),
+    url("/area/saitama/before-move-in", 0.7, "monthly"),
+    url("/area/saitama/vacancy-measures", 0.7, "monthly"),
+    url("/area/saitama/seasonal-maintenance", 0.7, "monthly"),
+    url("/area/saitama/bulk-order", 0.7, "monthly"),
+    url("/area/saitama/emergency", 0.7, "monthly"),
+    url("/area/saitama/price-estimate", 0.7, "monthly"),
+    url("/area/saitama/corporate", 0.7, "monthly"),
+    url("/area/saitama/problems/tatami-mold", 0.7, "monthly"),
+    url("/area/saitama/problems/tatami-dani", 0.7, "monthly"),
+    url("/area/saitama/problems/tatami-sasakure", 0.7, "monthly"),
+    url("/area/saitama/problems/tatami-smell", 0.7, "monthly"),
+    url("/area/saitama/problems/tatami-sunken", 0.7, "monthly"),
+    url("/area/saitama/problems/pet-urine", 0.7, "monthly"),
+    url("/area/saitama/problems/tatami-discoloration", 0.7, "monthly"),
+    url("/area/saitama/problems/tatami-edge-damage", 0.7, "monthly"),
+    url("/area/saitama/problems/tatami-gap", 0.7, "monthly"),
+    url("/area/saitama/problems/tatami-flood-damage", 0.7, "monthly"),
+    url("/area/saitama/problems/tatami-for-wheelchair", 0.7, "monthly"),
+    url("/area/saitama/problems/tatami-renovation", 0.7, "monthly"),
   ];
 }
