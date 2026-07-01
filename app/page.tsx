@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME, SITE_TEL } from "@/lib/site";
+import { SITE_NAME, SITE_TEL, SITE_URL } from "@/lib/site";
 import { TATAMI_SERVICES, INTERIOR_SERVICES, RESTORATION_SERVICES } from "@/data/services";
 import { FAQ_ITEMS } from "@/data/faq";
 import { WORKS } from "@/data/works";
@@ -103,8 +103,8 @@ const STRUCTURED_DATA = {
   "@type": "LocalBusiness",
   name: SITE_NAME,
   description: "畳の表替え・新調から内装工事・原状回復まで。住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナー。",
-  "@id": "https://nihontatami.jp",
-  url: "https://nihontatami.jp",
+  "@id": `${SITE_URL}`,
+  url: `${SITE_URL}`,
   ...(_hasTel ? { telephone: SITE_TEL } : {}),
   priceRange: "¥¥",
   areaServed: { "@type": "Country", name: "Japan" },

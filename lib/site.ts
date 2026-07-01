@@ -1,6 +1,6 @@
 export const SITE_NAME = "日本畳パートナーズ";
 export const SITE_NAME_EN = "Nihon Tatami Partners";
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://nihontatami.jp";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.tatami-partners.jp";
 export const SITE_DESCRIPTION = "畳の表替え・新調から内装工事・原状回復まで。住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナー。";
 export const SITE_TEL = "070-5439-9949";
 export const SITE_EMAIL = "nihontatami.0110@gmail.com";
