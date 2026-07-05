@@ -12,6 +12,7 @@ export const AREA_PREF = "";
 export const OG_IMAGE = "/og-image.jpg";
 
 export const NAV_LINKS = [
+  { label: "埼玉の畳工事", href: "/area/saitama/tatami" },
   { label: "サービス", href: "/services" },
   { label: "法人・施設", href: "/business" },
   { label: "内装工事", href: "/interior" },

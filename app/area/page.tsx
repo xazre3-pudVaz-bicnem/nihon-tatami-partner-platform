@@ -75,10 +75,11 @@ export default function AreaPage() {
             className="text-3xl sm:text-5xl text-white mb-6"
             style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
           >
+            埼玉を中心に1都6県対応<br />
             畳・内装工事の対応エリア
           </h1>
           <p className="text-sm sm:text-base text-white/70 max-w-2xl leading-relaxed">
-            東京・神奈川・千葉・埼玉・群馬・栃木・茨城の1都6県に対応。
+            埼玉県全域を中心に、東京・神奈川・千葉・群馬・栃木・茨城の1都6県に対応。
             住宅・賃貸・旅館・寺社・法人施設など、あらゆる用途の畳工事・内装工事をご依頼いただけます。
           </p>
         </div>
@@ -141,10 +142,14 @@ export default function AreaPage() {
         </div>
       </section>
 
-      {/* Prefecture Sections */}
+      {/* Prefecture Sections — Saitama first */}
       <section className="py-16 bg-shiro">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          {AREAS.map((pref) => (
+          {AREAS.sort((a, b) => {
+            if (a.slug === 'saitama') return -1;
+            if (b.slug === 'saitama') return 1;
+            return 0;
+          }).map((pref) => (
             <div key={pref.slug}>
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-3 gap-2">
                 <h2

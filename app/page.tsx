@@ -308,6 +308,70 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== 2c. SAITAMA TATAMI FOCUS ===== */}
+      <section className="py-20 sm:py-28 bg-ai/5 border-y border-border/40">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <SectionLabel en="Saitama Area" className="justify-center mb-4" />
+              <h2
+                className="text-3xl sm:text-4xl text-sumi mb-6"
+                style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}
+              >
+                埼玉県での畳工事なら<br />
+                日本畳パートナーズ
+              </h2>
+              <p className="text-sm text-sumi/60 leading-relaxed max-w-2xl mx-auto mb-2">
+                さいたま市・川口市・越谷市・川越市など埼玉県全域に対応。<br />
+                住宅から賃貸、旅館、寺社まで、あらゆる畳工事をご相談ください。
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Featured Saitama services */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            {[
+              { title: "埼玉の畳張替え", desc: "表替え・裏返し・新調", href: "/area/saitama/tatami" },
+              { title: "素材選びガイド", desc: "い草・和紙・樹脂の選び方", href: "/area/saitama/guide-tatami-buying" },
+              { title: "一戸建て・マンション向け", desc: "個人のお客様向け", href: "/area/saitama/for-homeowner" },
+              { title: "賃貸オーナー向け", desc: "空室対策・原状回復", href: "/area/saitama/for-rental-owner" },
+            ].map((item, i) => (
+              <ScrollReveal key={item.href} delay={0.05 + i * 0.07}>
+                <Link
+                  href={item.href}
+                  className="group h-full flex flex-col items-start justify-between bg-white border border-border p-6 hover:border-ai hover:shadow-md transition-all duration-300"
+                >
+                  <div>
+                    <h3
+                      className="text-base text-sumi mb-2 group-hover:text-ai transition-colors"
+                      style={{ fontFamily: "var(--font-serif)" }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-sumi/55 leading-relaxed">{item.desc}</p>
+                  </div>
+                  <span className="text-sumi/30 text-xs mt-4 group-hover:text-ai transition-colors">
+                    →
+                  </span>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* CTA to Saitama area page */}
+          <ScrollReveal>
+            <div className="text-center">
+              <Link
+                href="/area/saitama"
+                className="inline-block bg-ai text-white text-sm px-10 py-4 tracking-[0.15em] hover:bg-ai/90 transition-all duration-300"
+              >
+                埼玉エリアの詳細を見る
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* ===== 3. CONCEPT ===== */}
       <section className="py-24 sm:py-32 bg-kiji relative overflow-hidden">
         <div className="absolute inset-0 tatami-bg" aria-hidden="true" />
@@ -1134,63 +1198,14 @@ export default function HomePage() {
               対応エリア
             </h2>
             <p className="text-sm text-sumi/55 leading-relaxed mb-6">
+              東京・神奈川・千葉・埼玉・群馬・栃木・茨城の1都6県に対応。
               対応エリアはご相談ください。旅館・寺社・大規模法人案件については、
               遠方への対応も承ります。
             </p>
             <Link href="/area" className="text-sm text-ai hover:underline underline-offset-4">
-              対応エリア詳細を確認する →
+              全エリア詳細を確認する →
             </Link>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ===== 14b. 埼玉エリア対応 ===== */}
-      {/* 埼玉エリア対応 */}
-      <section className="py-16 bg-kiji/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionLabel en="Service Area" className="justify-center mb-4" />
-          <h2 className="text-2xl sm:text-3xl text-sumi mb-3 text-center" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            1都6県（東京・神奈川・千葉・埼玉・群馬・栃木・茨城）の畳工事・内装工事に対応
-          </h2>
-          <p className="text-sm text-sumi/60 text-center mb-10 max-w-2xl mx-auto leading-relaxed">
-            東京・神奈川・千葉・埼玉・群馬・栃木・茨城エリアの住宅・賃貸物件・旅館・寺社・店舗の畳張替え・表替え・新調・内装・原状回復をご相談いただけます。まずはお問い合わせください。
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
-            {[
-              { label: "埼玉の畳工事全般", href: "/area/saitama" },
-              { label: "埼玉の畳表替え", href: "/area/saitama/tatami-omotegae" },
-              { label: "埼玉の畳新調", href: "/area/saitama/tatami-shinchou" },
-              { label: "埼玉の畳裏返し", href: "/area/saitama/tatami-uragaeshi" },
-              { label: "埼玉の縁なし畳", href: "/area/saitama/herinashi-tatami" },
-              { label: "埼玉の和紙畳", href: "/area/saitama/washi-tatami" },
-              { label: "埼玉の襖張替え", href: "/area/saitama/fusuma" },
-              { label: "埼玉の障子張替え", href: "/area/saitama/shoji" },
-              { label: "埼玉の原状回復", href: "/area/saitama/restoration" },
-              { label: "さいたま市", href: "/area/saitama/saitama-city" },
-              { label: "川口市", href: "/area/saitama/kawaguchi" },
-              { label: "越谷市", href: "/area/saitama/koshigaya" },
-              { label: "春日部市", href: "/area/saitama/kasukabe" },
-              { label: "川越市", href: "/area/saitama/kawagoe" },
-              { label: "所沢市", href: "/area/saitama/tokorozawa" },
-              { label: "草加市", href: "/area/saitama/soka" },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-center text-xs text-sumi/70 hover:text-ai border border-border py-2.5 px-3 bg-white hover:border-ai/30 transition-all duration-200"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-          <div className="text-center">
-            <Link
-              href="/area/saitama"
-              className="inline-block text-sm border border-sumi text-sumi px-8 py-3 hover:bg-sumi hover:text-white transition-all duration-300 tracking-wider"
-            >
-              埼玉のエリア・対応内容を詳しく見る
-            </Link>
-          </div>
         </div>
       </section>
 

@@ -48,16 +48,16 @@ const FOOTER_LINKS = [
     ],
   },
   {
-    heading: "埼玉エリア",
+    heading: "埼玉エリア（推奨）",
     links: [
       { label: "埼玉の畳張替え", href: "/area/saitama/tatami" },
+      { label: "素材選びガイド", href: "/area/saitama/guide-tatami-buying" },
+      { label: "一戸建て・マンション向け", href: "/area/saitama/for-homeowner" },
+      { label: "賃貸オーナー向け", href: "/area/saitama/for-rental-owner" },
       { label: "埼玉の畳表替え", href: "/area/saitama/tatami-omotegae" },
       { label: "埼玉の畳新調", href: "/area/saitama/tatami-shinchou" },
       { label: "埼玉の原状回復", href: "/area/saitama/restoration" },
-      { label: "さいたま市", href: "/area/saitama/saitama-city" },
-      { label: "川口市", href: "/area/saitama/kawaguchi" },
-      { label: "越谷市", href: "/area/saitama/koshigaya" },
-      { label: "川越市", href: "/area/saitama/kawagoe" },
+      { label: "さいたま市の畳", href: "/area/saitama/saitama-city" },
     ],
   },
   {
