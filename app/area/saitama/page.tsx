@@ -8,9 +8,9 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: `埼玉県の畳張替え・襖障子・原状回復｜全38市区対応 | ${SITE_NAME}`,
+  title: `埼玉の畳張替え・表替え・新調なら日本畳パートナーズ｜全38市区対応 | ${SITE_NAME}`,
   description:
-    "埼玉県全域の畳表替え・新調・裏返し、襖・障子張替え、原状回復・内装工事に対応。さいたま市・川口・越谷・川越・春日部など全38市区へお伺い。法人・複数物件・継続案件もご相談ください。現地確認・見積もり無料。",
+    "埼玉県全域対応。畳張替え・表替え・新調・裏返し・縁なし畳・和紙畳・樹脂畳、襖・障子・原状回復・内装工事に対応。さいたま市・川口・越谷・春日部・川越・所沢・草加・上尾など全38市区へお伺い。埼玉の湿度・気候に合わせた最適な素材選びをご提案。現地確認・見積もり無料。",
   path: "/area/saitama",
 });
 
@@ -19,7 +19,7 @@ const saitama = AREAS.find((p) => p.slug === "saitama")!;
 const FAQ_ITEMS = [
   {
     q: "埼玉県全域に対応していますか？",
-    a: "はい。さいたま市・川口市・越谷市・川越市・春日部市・所沢市・草加市・上尾市をはじめ、埼玉県内全38市区に対応しています。対応可否は現地確認後にご案内します。",
+    a: "はい。さいたま市・川口市・越谷市・川越市・春日部市・所沢市・草加市・上尾市をはじめ、埼玉県内全38市区に対応しています。お気軽にお問い合わせください。",
     category: "general" as const,
   },
   {
@@ -65,6 +65,46 @@ const FAQ_ITEMS = [
   {
     q: "費用の支払い方法は？",
     a: "施工完了後のお支払いが基本です。法人様・管理会社様は請求書払いにも対応しています。お支払い方法の詳細はお問い合わせ時にご確認ください。",
+    category: "price" as const,
+  },
+  {
+    q: "緊急で畳を張り替えたい場合は対応できますか？",
+    a: "はい。表替え・裏返しは短期対応が可能な場合があります。空き家の急な入居や賃貸物件の緊急入退去など、可能な限り対応いたします。お電話でお急ぎの旨をお知らせください。",
+    category: "general" as const,
+  },
+  {
+    q: "複数物件をまとめて依頼する場合、割引はありますか？",
+    a: "はい。賃貸オーナー様や不動産管理会社様の複数物件・継続案件につきましては、ご相談の上割引対応も検討させていただきます。",
+    category: "price" as const,
+  },
+  {
+    q: "埼玉南部（さいたま市・川口市・越谷市）のマンション対応は？",
+    a: "はい。埼玉南部の高層マンション・団地につきましても多くの施工実績がございます。集合住宅の床スラブ対応、防音・遮音性を考慮した素材選びなども可能です。",
+    category: "general" as const,
+  },
+  {
+    q: "古民家・農家住宅の畳工事は対応していますか？",
+    a: "はい。埼玉県西部・北部の古民家・農家住宅のわら床の畳、太い床框の調整、歴史的建造物への対応実績があります。築年数が古い建物こそご相談ください。",
+    category: "general" as const,
+  },
+  {
+    q: "ペットのいる家庭の畳選びはどうしたらいい？",
+    a: "和紙畳または樹脂畳をおすすめします。特に樹脂畳は水拭きが可能で、尿の臭いや汚れへの対応が容易です。縁なし畳にすれば、縁をかじられる心配も減らせます。",
+    category: "material" as const,
+  },
+  {
+    q: "埼玉県内の古い物件から新しい物件への引越時に畳を新調したいのですが？",
+    a: "古い建物から新築へのお引越しの際は、新居に合わせた素材・サイズの畳新調が最適です。古い畳の撤去・処分もお任せください。新居のサイズに合わせた採寸・製作・搬入・設置まで対応いたします。",
+    category: "general" as const,
+  },
+  {
+    q: "埼玉での畳の最適な張り替え時期は？",
+    a: "表替えは5～8年、裏返しは使用2～3年が目安です。埼玉の夏の高湿度によるカビ・ダニリスクを考えると、梅雨前の春先や秋口の表替えをお勧めします。現地確認で最適な時期をご提案いたします。",
+    category: "general" as const,
+  },
+  {
+    q: "埼玉東部（春日部・加須・久喜）への配送費は別途かかりますか？",
+    a: "いいえ。埼玉県全域への出張費は基本的に無料です。埼玉北部・東部への現地確認・施工もお気軽にお問い合わせください。",
     category: "price" as const,
   },
 ];
@@ -134,48 +174,54 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "対応エリア", item: `${SITE_URL}/area` },
-    { "@type": "ListItem", position: 3, name: "埼玉県", item: `${SITE_URL}/area/saitama` },
+    { "@type": "ListItem", position: 1, name: "埼玉県", item: `${SITE_URL}/area/saitama` },
   ],
-};
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: SITE_NAME,
-  url: SITE_URL,
-  telephone: SITE_TEL,
-  email: SITE_EMAIL,
-  areaServed: {
-    "@type": "State",
-    name: "埼玉県",
-  },
 };
 
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama#webpage`,
   name: "埼玉県の畳張替え・襖障子・原状回復｜全38市区対応",
   description:
     "埼玉県全域の畳表替え・新調・裏返し、襖・障子張替え、原状回復・内装工事に対応。全38市区へお伺い。法人・複数物件・継続案件もご相談ください。",
   url: `${SITE_URL}/area/saitama`,
-  provider: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
   breadcrumb: breadcrumbSchema,
+};
+
+const specialAnnouncementSchema = {
+  "@context": "https://schema.org",
+  "@type": "SpecialAnnouncement",
+  "@id": `${SITE_URL}/area/saitama#announcement`,
+  name: "埼玉県での畳工事・原状回復工事に対応",
+  description:
+    "日本畳パートナーズは埼玉県全38市区での畳張替え・原状回復・内装工事に対応しています。",
+  inLanguage: "ja",
+  spatialCoverage: {
+    "@type": "AdministrativeArea",
+    name: "埼玉県",
+  },
+  text: "埼玉県全域対応。さいたま市・川口市・越谷市・川越市・春日部市・所沢市など全38市区へお伺い。",
+  keywords: "埼玉 畳, 埼玉 畳張替え, 埼玉 畳表替え, さいたま市 畳, 川口 畳, 越谷 畳, 埼玉県 内装工事",
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
-  url: `${SITE_URL}/area/saitama`,
+  url: SITE_URL,
   telephone: SITE_TEL,
   email: SITE_EMAIL,
   description: "埼玉県全域の畳張替え・襖障子・原状回復・内装工事に対応する専門業者。",
   areaServed: [
     { "@type": "State", name: "埼玉県" },
-    ...saitama.cities.map((c) => ({ "@type": "City", name: c.name })),
+    ...saitama.cities.map((c) => ({ "@type": "AdministrativeArea", name: c.name })),
   ],
+  serviceType: ["畳工事", "原状回復工事", "内装工事"],
   priceRange: "¥¥",
 };
 
@@ -193,9 +239,9 @@ export default function SaitamaPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(specialAnnouncementSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
@@ -203,26 +249,25 @@ export default function SaitamaPage() {
         <div className="absolute inset-0 tatami-pattern opacity-20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県" }]} />
-          <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Saitama Prefecture</p>
-          <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            埼玉県の畳張替え・襖障子・原状回復
+          <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">埼玉県対応</p>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
+            埼玉の畳張替え・表替え・新調なら日本畳パートナーズ
           </h1>
-          <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
-            さいたま市・川口市・越谷市・川越市・春日部市をはじめ、埼玉県内全38市区に対応しています。
-            一般住宅・賃貸物件・旅館・寺社・店舗・不動産管理会社まで幅広くご相談ください。
+          <p className="text-base text-white/70 max-w-3xl leading-relaxed mb-3">
+            埼玉県全38市区対応。さいたま市・川口市・越谷市・春日部市・川越市・所沢市・草加市・上尾市をはじめ、埼玉県内のあらゆる地域でご対応。一戸建て・マンション・賃貸物件・旅館・施設まで、幅広いご相談をお受けします。
           </p>
-          <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-6">
-            現地確認・お見積もりは無料。法人・複数物件・継続案件も歓迎します。施工後には写真付き報告書をご提出します。
+          <p className="text-sm text-white/60 max-w-3xl leading-relaxed mb-6">
+            埼玉の夏の高湿度・冬の乾燥に対応した素材選び、迅速な施工、法人・複数物件・継続案件も大歓迎。現地確認・見積もりは無料です。
           </p>
           <div className="flex flex-wrap gap-3">
             <a
               href={`tel:${SITE_TEL.replace(/-/g, "")}`}
-              className="inline-block bg-kincya text-white text-sm px-5 py-2.5 tracking-wide hover:bg-kincya/90 transition-colors"
+              className="inline-block bg-kincya text-white text-sm px-6 py-3 tracking-wide hover:bg-kincya/90 transition-colors"
             >
-              {SITE_TEL} に電話する
+              お問い合わせ
             </a>
-            <Link href="/contact" className="inline-block border border-white/30 text-white text-sm px-5 py-2.5 tracking-wide hover:bg-white/10 transition-colors">
-              フォームで相談する
+            <Link href="/area" className="inline-block border border-white/30 text-white text-sm px-6 py-3 tracking-wide hover:bg-white/10 transition-colors">
+              エリアから探す
             </Link>
           </div>
         </div>
@@ -253,27 +298,32 @@ export default function SaitamaPage() {
       <section className="py-14 bg-shiro">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
 
-          {/* 埼玉県の畳について */}
+          {/* 埼玉県の畳工事：実績と対応 */}
           <div>
-            <h2 className="text-xl text-sumi mb-4 pl-4 border-l-2 border-kincya" style={{ fontFamily: "var(--font-serif)" }}>
-              埼玉県の畳について
+            <h2 className="text-2xl text-sumi mb-6 pl-4 border-l-4 border-kincya" style={{ fontFamily: "var(--font-serif)" }}>
+              埼玉の畳工事：実績と対応
             </h2>
             <div className="space-y-4 text-sm text-sumi/80 leading-relaxed">
               <p>
-                埼玉県は関東平野の中央に位置し、海がない内陸県です。夏場は気温が高く湿度も上昇しやすく、特に梅雨から夏にかけての高温多湿が畳にとって厳しい環境となります。
-                冬は北西からの「空っ風（からっかぜ）」の影響で乾燥が激しく、畳表のひび割れや縮みが起きやすい季節でもあります。
+                日本畳パートナーズは埼玉県内で多くの畳工事実績を持つ専門業者です。さいたま市から深谷市まで、埼玉県全38市区に対応しており、一戸建て住宅からマンション、賃貸物件、旅館・施設まで幅広いご相談をお受けしています。
               </p>
               <p>
-                このような気候条件のもとでは、夏の湿気によるカビ・ダニの発生リスクが高まります。特に賃貸物件・旅館・古い住宅では換気が不十分になりがちで、退去後に畳のカビや臭いが発覚するケースも少なくありません。
-                また、さいたま市・川口市・越谷市などの都市部では、マンション・高層住宅の普及に伴い、床暖房・防音フローリングとの組み合わせや、薄型建材床の畳が多く使われる傾向があります。
+                埼玉県は首都圏のベッドタウンとして急速に発展してきた地域です。埼玉県は関東平野の中央に位置する内陸県であり、海がない地形のため、気候が独特です。埼玉の気候は畳にとって非常に過酷な環境です。夏場は気温が30℃を超えることが多く、梅雨から初夏にかけての高温多湿によるカビ・ダニの発生リスクが高まります。特に賃貸物件・旅館・古い住宅では換気が不十分になりがちで、退去後に畳のカビや臭いが発覚するケースが多くあります。冬は北西からの「空っ風（からっかぜ）」の影響で乾燥が激しく、畳表のひび割れや縮みが起きやすい季節です。このような気候変化に対応できる素材選びと施工方法が重要になります。
               </p>
               <p>
-                一方、飯能市・秩父方面など西部・北西部の山間部エリアでは古民家・旅館・寺社が多く残り、わら床を使った本格的な畳の需要が根強くあります。
-                川越市の「小江戸」エリアや所沢・狭山方面の旧家など、歴史的な建物での畳工事にも豊富な対応実績があります。
+                埼玉県は地域ごとに特徴が異なります。埼玉県南部（さいたま市・川口市・越谷市・草加市・八潮市）のマンション改装では、床スラブ対応の薄型畳や防音フローリング併用の工事が多く、高層住宅・団地での施工経験が豊富です。さいたま市のような大都市では、新しい建物での防音性・断熱性を考慮した畳選びが必要になります。また、川口市や越谷市などの工業地帯では、賃貸物件の数が多く、不動産管理会社・賃貸オーナー様からの継続案件が多くあります。
               </p>
               <p>
-                埼玉県の気候への対策として、ダニが繁殖しにくい和紙畳・完全防水の樹脂畳への素材変更や、調湿性能の高い国産い草を使った表替えをお勧めするケースが多くあります。
-                地域や建物の特性に合わせた最適な素材・施工方法を、現地確認後にご提案します。
+                埼玉県東部（春日部市・加須市・久喜市・幸手市・白岡市）では、古い民家が多く残っており、わら床を使った本格的な畳や太い床框への対応が必要になります。こうした特殊な施工にも対応しており、築年数が古い建物の引き継ぎ工事にも実績があります。特に春日部市や久喜市の農村地帯では、伝統的な和室が残っており、本物の畳工事を重視するお客様が多くいます。
+              </p>
+              <p>
+                埼玉県西部・中部（川越市・所沢市・狭山市・飯能市・秩父市）の高級住宅地では、リノベーション・リフォーム時の和室リメイクが多く、モダン和室への縁なし畳や和紙畳・樹脂畳への変更が人気です。特に川越市の「小江戸」エリアでは、歴史的建造物や古家の格式ある畳工事が多く、国産い草やわら床での高級感のある施工を得意としています。飯能市や秩父市の山間部では、旅館・寺社の施工が多く、国産い草の高級グレードやわら床を使った本格的な対応が必要になります。
+              </p>
+              <p>
+                埼玉県全域の気候課題に対して、私たちは地域や建物の特性に合わせた素材選び、季節に応じた施工時期のアドバイス、長期保全までを提案します。ダニが繁殖しにくい和紙畳は埼玉の湿度対策に最適です。完全防水の樹脂畳は飲食店・ペット家庭向けに重宝されています。調湿性能の高い国産い草は、格式ある空間や本物の和室を求める方に選ばれています。お客様の環境・予算・希望に応じた選択肢を、現地確認の際にご提案いたします。
+              </p>
+              <p>
+                埼玉県は不動産投資の活発な地域です。賃貸物件・アパート・マンションの数が首都圏の中でも特に多く、不動産管理会社・賃貸オーナー様からの継続案件が常に多くあります。複数物件の一括発注、現地確認・見積もり・施工のスケジュール調整、施工前後の写真付き報告書の提出など、プロフェッショナルな対応をお約束します。
               </p>
             </div>
           </div>
@@ -339,6 +389,44 @@ export default function SaitamaPage() {
                 </Link>
               ))}
             </div>
+          </div>
+
+          {/* セクション：素材比較表 */}
+          <div>
+            <h2 className="text-2xl text-sumi mb-4 pl-4 border-l-4 border-kincya" style={{ fontFamily: "var(--font-serif)" }}>
+              埼玉での畳選び：素材・価格比較
+            </h2>
+            <p className="text-xs text-sumi/50 mb-4 pl-4">埼玉の気候に合わせた素材選びをご提案します。</p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="bg-sumi text-white">
+                    <th className="text-left px-3 py-2.5 font-normal">素材</th>
+                    <th className="text-left px-3 py-2.5 font-normal">い草</th>
+                    <th className="text-left px-3 py-2.5 font-normal">和紙畳</th>
+                    <th className="text-left px-3 py-2.5 font-normal">樹脂畳</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { aspect: "埼玉の湿度対策", igusa: "調湿性あり。カビ対策は別途必要", washi: "撥水性あり。カビ・ダニ対策に◎", resin: "完全防水。カビなし。最適" },
+                    { aspect: "耐久性", igusa: "5〜8年で表替え", washi: "い草より長持ち", resin: "非常に長持ち" },
+                    { aspect: "価格", igusa: "最も手頃", washi: "やや高め", resin: "高め" },
+                    { aspect: "香り", igusa: "あり（好評）", washi: "なし", resin: "なし" },
+                    { aspect: "メンテナンス", igusa: "定期的な換気・清掃が必要", washi: "簡単", resin: "水拭き可・最も簡単" },
+                    { aspect: "ペット対応", igusa: "弱い", washi: "中程度", resin: "最適" },
+                  ].map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-kiji/20"}>
+                      <td className="px-3 py-2.5 text-sumi/80 font-medium">{row.aspect}</td>
+                      <td className="px-3 py-2.5 text-sumi/70">{row.igusa}</td>
+                      <td className="px-3 py-2.5 text-sumi/70">{row.washi}</td>
+                      <td className="px-3 py-2.5 text-sumi/70">{row.resin}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-sumi/40 mt-2">埼玉の夏の高湿度・冬の乾燥を考慮すると、和紙畳・樹脂畳がおすすめです。現地確認時にサンプルをご覧いただき、最適な素材をご相談ください。</p>
           </div>
 
           {/* 対象者別ページ・お悩み別ページ */}
