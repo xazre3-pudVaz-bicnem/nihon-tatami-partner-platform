@@ -92,9 +92,49 @@ const localBusinessSchema = {
   url: SITE_URL,
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "賃貸オーナー向け畳交換", item: `${SITE_URL}/area/saitama/for-rental-owner` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/for-rental-owner#webpage`,
+  name: "埼玉の賃貸オーナー向け畳交換・原状回復",
+  description:
+    "埼玉県の賃貸オーナー様向け。退去後の畳交換・原状回復に迅速対応。国土交通省ガイドライン対応の費用負担区分の説明も可能。",
+  url: `${SITE_URL}/area/saitama/for-rental-owner`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function ForRentalOwnerPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
@@ -102,6 +142,10 @@ export default function ForRentalOwnerPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ServicePageTemplate
         eyebrow="For Rental Owners"

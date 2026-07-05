@@ -13,6 +13,27 @@ export const metadata: Metadata = buildMetadata({
   path: "/area/saitama/bulk-order",
 });
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉で複数物件・大量発注の畳工事をご検討の方へ", item: `${SITE_URL}/area/saitama/bulk-order` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/bulk-order#webpage`,
+  name: "埼玉で複数物件・大量発注の畳工事｜管理会社・オーナー向け",
+  description: "埼玉県で複数物件・大量発注の畳工事をお考えの管理会社・オーナー様へ。複数棟の同時進行・写真付き施工報告書・透明な見積もりで継続的にご対応します。",
+  url: `${SITE_URL}/area/saitama/bulk-order`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -89,6 +110,14 @@ const faqSchema = {
 export default function BulkOrderPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

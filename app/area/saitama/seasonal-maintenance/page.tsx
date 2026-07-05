@@ -13,6 +13,27 @@ export const metadata: Metadata = buildMetadata({
   path: "/area/saitama/seasonal-maintenance",
 });
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉の畳・ふすま・障子の定期メンテナンスをお考えの方へ", item: `${SITE_URL}/area/saitama/seasonal-maintenance` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/seasonal-maintenance#webpage`,
+  name: "埼玉の畳・ふすま・障子の定期メンテナンス｜推奨サイクルと時期",
+  description: "埼玉県の畳・ふすま・障子の定期メンテナンスについて。推奨サイクル・最適な整備時期・法人向けの計画整備まで解説。早期発見でコストを抑えられます。",
+  url: `${SITE_URL}/area/saitama/seasonal-maintenance`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -89,6 +110,14 @@ const faqSchema = {
 export default function SeasonalMaintenancePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

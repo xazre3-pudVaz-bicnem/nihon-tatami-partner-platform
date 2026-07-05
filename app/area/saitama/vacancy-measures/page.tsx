@@ -76,6 +76,27 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉の空室対策として畳・内装工事を活用したい方へ", item: `${SITE_URL}/area/saitama/vacancy-measures` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/vacancy-measures#webpage`,
+  name: "埼玉の空室対策に畳・内装工事を活用する方法｜賃貸オーナー向け",
+  description: "埼玉県の賃貸オーナー・管理会社向け。空室対策として畳の表替え・素材変更・ふすま障子の整備が内覧印象に与える効果を解説。複数物件の一括対応可能。",
+  url: `${SITE_URL}/area/saitama/vacancy-measures`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -89,6 +110,14 @@ const localBusinessSchema = {
 export default function VacancyMeasuresPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

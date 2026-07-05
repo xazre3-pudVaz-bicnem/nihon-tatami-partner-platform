@@ -120,7 +120,7 @@ const STRUCTURED_DATA = {
   ...(_hasTel ? { telephone: SITE_TEL } : {}),
   priceRange: "¥¥",
   areaServed: AREA_SERVED,
-  knowsAbout: ["畳張替え", "畳表替え", "畳新調", "縁なし畳", "琉球畳", "和紙畳", "樹脂畳", "襖張替え", "障子張替え", "原状回復工事", "内装工事"],
+  knowsAbout: ["畳張替え", "畳表替え", "畳新調", "縁なし畳", "琉球畳", "和紙畳", "樹脂畳", "襖張替え", "障子張替え", "原状回復工事", "内装工事", "埼玉県での施工", "東京都での施工", "神奈川県での施工"],
   serviceType: ["畳工事", "内装工事", "原状回復"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",

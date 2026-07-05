@@ -110,6 +110,28 @@ const faqSchema = {
   ],
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉で和室をリノベーション・全面整備したい方へ", item: `${SITE_URL}/area/saitama/problems/tatami-renovation` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/problems/tatami-renovation#webpage`,
+  name: "埼玉で和室をリノベーション・全面整備したい方へ",
+  description:
+    "埼玉県で和室をリノベーションしたい方へ。畳・ふすま・障子の一括整備から縁なし畳でのモダン和室まで対応。複数業者不要でスムーズに進められます。",
+  url: `${SITE_URL}/area/saitama/problems/tatami-renovation`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const faqs: { q: string; a: string; category: "general" | "price" | "timing" | "material" | "btob" }[] = [
   {
     category: "general",
@@ -166,6 +188,14 @@ const faqs: { q: string; a: string; category: "general" | "price" | "timing" | "
 export default function TatamiRenovationPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

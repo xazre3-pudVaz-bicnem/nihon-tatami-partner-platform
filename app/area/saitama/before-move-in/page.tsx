@@ -13,6 +13,27 @@ export const metadata: Metadata = buildMetadata({
   path: "/area/saitama/before-move-in",
 });
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉で入居前・引越し前に畳を整備したい方へ", item: `${SITE_URL}/area/saitama/before-move-in` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/before-move-in#webpage`,
+  name: "埼玉で入居前・引越し前に畳を整備したい方へ｜スケジュールと費用目安",
+  description: "埼玉県で入居前・引越し前に畳を整備したい方へ。清潔なスタートのための畳の状態確認ポイント・施工スケジュール・素材選びを解説。現地確認・お見積もり無料。",
+  url: `${SITE_URL}/area/saitama/before-move-in`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -166,6 +187,14 @@ const faqs: { q: string; a: string; category: "general" | "price" | "timing" | "
 export default function BeforeMoveInPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

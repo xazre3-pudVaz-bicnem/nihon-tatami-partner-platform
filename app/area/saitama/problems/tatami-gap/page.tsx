@@ -110,6 +110,28 @@ const faqSchema = {
   ],
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉で畳の隙間・浮きが気になる方へ", item: `${SITE_URL}/area/saitama/problems/tatami-gap` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/problems/tatami-gap#webpage`,
+  name: "埼玉で畳の隙間・浮きが気になる方へ",
+  description:
+    "埼玉県で畳の隙間・浮きにお悩みの方へ。乾燥・施工後の収縮・経年による隙間の原因と、業者に相談すべき基準を解説。現地確認・お見積もり無料。",
+  url: `${SITE_URL}/area/saitama/problems/tatami-gap`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const faqs: { q: string; a: string; category: "general" | "price" | "timing" | "material" | "btob" }[] = [
   {
     category: "general",
@@ -166,6 +188,14 @@ const faqs: { q: string; a: string; category: "general" | "price" | "timing" | "
 export default function TatamiGapPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

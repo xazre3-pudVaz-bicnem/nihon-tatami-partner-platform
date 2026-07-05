@@ -13,6 +13,27 @@ export const metadata: Metadata = buildMetadata({
   path: "/area/saitama/price-estimate",
 });
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉の畳張替え・表替えの料金目安と見積もり方法", item: `${SITE_URL}/area/saitama/price-estimate` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/price-estimate#webpage`,
+  name: "埼玉の畳張替え・表替えの料金目安｜素材別・部屋別の費用例",
+  description: "埼玉県の畳裏返し・表替え・新調の料金目安。素材別・部屋の広さ別の費用例と見積もりの流れを解説。現地確認・お見積もり無料。追加費用は事前に説明します。",
+  url: `${SITE_URL}/area/saitama/price-estimate`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -89,6 +110,14 @@ const faqSchema = {
 export default function PriceEstimatePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

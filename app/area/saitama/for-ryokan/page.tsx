@@ -63,6 +63,27 @@ const faqItems = [
   },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉の旅館・宿泊施設向け畳張替え", item: `${SITE_URL}/area/saitama/for-ryokan` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/for-ryokan#webpage`,
+  name: "埼玉の旅館・宿泊施設向け畳張替え｜日本畳パートナーズ",
+  description: "埼玉県の旅館・温泉宿・宿泊施設の畳張替え・客室整備に対応。格式感を維持しながら繁忙期前に整備。客室別施工で営業を続けながら対応可能です。",
+  url: `${SITE_URL}/area/saitama/for-ryokan`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const pageSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -92,17 +113,24 @@ const localBusinessSchema = {
   url: SITE_URL,
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function ForRyokanPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ServicePageTemplate
         eyebrow="For Ryokan & Hotels"
         title="埼玉の旅館・宿泊施設の畳張替え・客室整備"

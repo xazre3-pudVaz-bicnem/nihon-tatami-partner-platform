@@ -13,6 +13,27 @@ export const metadata: Metadata = buildMetadata({
   path: "/area/saitama/corporate",
 });
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉の法人・企業向け畳工事・内装工事", item: `${SITE_URL}/area/saitama/corporate` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/corporate#webpage`,
+  name: "埼玉の法人・企業向け畳工事・内装工事｜管理会社・旅館・寺社・施設対応",
+  description: "埼玉県の法人・企業向け畳工事・内装工事。不動産管理・旅館・寺社・飲食店・福祉施設など各業種に対応。見積書・請求書・施工報告書対応。複数物件も承ります。現地確認・お見積もり無料。",
+  url: `${SITE_URL}/area/saitama/corporate`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -189,6 +210,14 @@ const industries = [
 export default function CorporatePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

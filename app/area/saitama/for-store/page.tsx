@@ -63,6 +63,27 @@ const faqItems = [
   },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉の店舗向け畳・小上がり・内装工事", item: `${SITE_URL}/area/saitama/for-store` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/for-store#webpage`,
+  name: "埼玉の店舗向け畳・小上がり・内装工事｜日本畳パートナーズ",
+  description: "埼玉県の飲食店・小売店・サロン向け。座敷席の畳張替え、小上がりの新規設置・リフレッシュ、店舗イメージに合わせた内装工事に対応。営業中・閉店後の施工も相談可能です。",
+  url: `${SITE_URL}/area/saitama/for-store`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const pageSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -92,17 +113,24 @@ const localBusinessSchema = {
   url: SITE_URL,
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function ForStorePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ServicePageTemplate
         eyebrow="For Stores & Restaurants"
         title="埼玉の店舗・飲食店の畳・小上がり・内装工事"

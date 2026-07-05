@@ -76,9 +76,39 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉で畳のカビが気になる方へ", item: `${SITE_URL}/area/saitama/problems/tatami-mold` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/problems/tatami-mold#webpage`,
+  name: "埼玉で畳のカビが気になる方へ",
+  description:
+    "埼玉県で畳にカビが生えてお困りの方へ。黒・緑のカビ点の原因、アレルギーリスク、応急処置から表替え・新調の判断基準まで専門家が解説。和紙畳・樹脂畳など再発しにくい素材の選択肢もご紹介。現地確認・見積もり無料。",
+  url: `${SITE_URL}/area/saitama/problems/tatami-mold`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 export default function TatamiMoldPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

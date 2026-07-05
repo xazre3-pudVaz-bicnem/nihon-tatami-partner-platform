@@ -86,9 +86,39 @@ const localBusinessSchema = {
   url: SITE_URL,
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉で車いす・介護対応の畳・床材選びをお考えの方へ", item: `${SITE_URL}/area/saitama/problems/tatami-for-wheelchair` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/problems/tatami-for-wheelchair#webpage`,
+  name: "埼玉で車いす・介護対応の畳・床材選びをお考えの方へ",
+  description:
+    "埼玉県で車いす・介護対応の畳・床材選びをご検討の方へ。畳の段差・摩擦問題、車いすに向いた床材の選択肢、バリアフリー改修との組み合わせを専門家が解説。現地確認・見積もり無料。",
+  url: `${SITE_URL}/area/saitama/problems/tatami-for-wheelchair`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 export default function TatamiForWheelchairPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

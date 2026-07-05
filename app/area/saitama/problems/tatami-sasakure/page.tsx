@@ -76,9 +76,39 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉で畳のささくれ・毛羽立ちが気になる方へ", item: `${SITE_URL}/area/saitama/problems/tatami-sasakure` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/problems/tatami-sasakure#webpage`,
+  name: "埼玉で畳のささくれ・毛羽立ちが気になる方へ",
+  description:
+    "埼玉県で畳のささくれ・毛羽立ちにお困りの方へ。繊維の自然劣化が起きるタイミング、裏返し・表替え・新調どれを選ぶべきか、費用目安まで専門家が解説。足にひっかかる前に対処しましょう。現地確認・見積もり無料。",
+  url: `${SITE_URL}/area/saitama/problems/tatami-sasakure`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 export default function TatamiSasakurePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

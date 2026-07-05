@@ -76,9 +76,39 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "ペットによる畳の汚れ・臭い", item: `${SITE_URL}/area/saitama/problems/pet-urine` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/problems/pet-urine#webpage`,
+  name: "埼玉でペットによる畳の汚れ・臭いに悩む方へ",
+  description:
+    "埼玉県でペット（猫・犬）の尿による畳の汚れ・臭いにお困りの方へ。染み込んだ尿の応急処置、表替え・新調の判断基準、防水性の高い樹脂畳・和紙畳への素材変更の選択肢を専門家が解説。",
+  url: `${SITE_URL}/area/saitama/problems/pet-urine`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 export default function PetUrinePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

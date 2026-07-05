@@ -63,6 +63,27 @@ const faqItems = [
   },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉の寺院・神社向け畳・襖・障子工事", item: `${SITE_URL}/area/saitama/for-temple-shrine` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/for-temple-shrine#webpage`,
+  name: "埼玉の寺院・神社向け畳・襖・障子工事｜日本畳パートナーズ",
+  description: "埼玉県の寺院・神社の本堂・社務所・書院の畳・襖・障子工事に対応。格式と品位を重んじた素材選定と丁寧な施工で、行事前の整備をサポートします。",
+  url: `${SITE_URL}/area/saitama/for-temple-shrine`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const pageSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -92,17 +113,24 @@ const localBusinessSchema = {
   url: SITE_URL,
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function ForTempleShrinePageRoute() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ServicePageTemplate
         eyebrow="For Temples & Shrines"
         title="埼玉の寺院・神社の畳・襖・障子工事"

@@ -76,9 +76,39 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉で畳の沈み・へたりが気になる方へ", item: `${SITE_URL}/area/saitama/problems/tatami-sunken` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/problems/tatami-sunken#webpage`,
+  name: "埼玉で畳の沈み・へたりが気になる方へ",
+  description:
+    "埼玉県で畳の沈み・へたりにお困りの方へ。わら床・建材床の劣化年数の目安、ふかふかする感触の原因、表替えでは解決しない理由、新調の費用目安を専門家が解説。踏み心地の問題は表面工事では直りません。現地確認・見積もり無料。",
+  url: `${SITE_URL}/area/saitama/problems/tatami-sunken`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 export default function TatamiSunkenPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

@@ -63,6 +63,27 @@ const faqItems = [
   },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉の不動産会社向け畳交換・内装整備", item: `${SITE_URL}/area/saitama/for-real-estate` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/for-real-estate#webpage`,
+  name: "埼玉の不動産会社向け畳交換・内装整備｜日本畳パートナーズ",
+  description: "埼玉県の不動産会社様向け。売買・賃貸前の畳交換・内装整備に対応。内覧前の印象改善、複数物件の一括対応、迅速な施工で物件の価値を高めます。",
+  url: `${SITE_URL}/area/saitama/for-real-estate`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 const pageSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -92,17 +113,24 @@ const localBusinessSchema = {
   url: SITE_URL,
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function ForRealEstatePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ServicePageTemplate
         eyebrow="For Real Estate"
         title="埼玉の不動産会社様へ｜売買・賃貸前の畳交換・内装整備"

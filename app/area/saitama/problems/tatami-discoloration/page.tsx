@@ -86,9 +86,39 @@ const localBusinessSchema = {
   url: SITE_URL,
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "埼玉で畳の変色・色あせが気になる方へ", item: `${SITE_URL}/area/saitama/problems/tatami-discoloration` },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/area/saitama/problems/tatami-discoloration#webpage`,
+  name: "埼玉で畳の変色・色あせが気になる方へ",
+  description:
+    "埼玉県で畳の変色・日焼けが気になる方へ。い草の黄変・褐変のメカニズム、変色と劣化の違い、表替えのタイミング、UV対策・カーテンによる防止策、素材別の費用目安を専門家が解説。",
+  url: `${SITE_URL}/area/saitama/problems/tatami-discoloration`,
+  inLanguage: "ja",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  breadcrumb: breadcrumbSchema,
+};
+
 export default function TatamiDiscolorationPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
