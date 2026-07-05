@@ -212,5 +212,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/area/saitama/problems/tatami-flood-damage", 0.7, "monthly"),
     url("/area/saitama/problems/tatami-for-wheelchair", 0.7, "monthly"),
     url("/area/saitama/problems/tatami-renovation", 0.7, "monthly"),
+
+    // Saitama guide cluster（埼玉 畳 キーワードクラスター）
+    url("/area/saitama/guide-tatami-buying", 0.8, "monthly"),
+    url("/area/saitama/guide-tatami-price", 0.8, "monthly"),
+    url("/area/saitama/guide-tatami-maintenance", 0.8, "monthly"),
+
+    // Tokyo standalone SEO pages
+    url("/area/tokyo/for-homeowner", 0.8, "monthly"),
+    url("/area/tokyo/for-rental-owner", 0.8, "monthly"),
+    url("/area/tokyo/for-real-estate", 0.8, "monthly"),
+    url("/area/tokyo/for-property-management", 0.8, "monthly"),
+    url("/area/tokyo/problems/tatami-mold", 0.7, "monthly"),
+    url("/area/tokyo/problems/pet-urine", 0.7, "monthly"),
+
+    // Kanagawa standalone SEO pages
+    url("/area/kanagawa/for-homeowner", 0.8, "monthly"),
+    url("/area/kanagawa/for-rental-owner", 0.8, "monthly"),
+
+    // Chiba standalone SEO pages
+    url("/area/chiba/for-homeowner", 0.8, "monthly"),
+    url("/area/chiba/for-rental-owner", 0.8, "monthly"),
   ];
 }

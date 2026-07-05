@@ -87,6 +87,40 @@ const localBusinessSchema = {
   url: SITE_URL,
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "埼玉の気候に合わせた畳の定期メンテナンス手順",
+  description:
+    "埼玉県の高温多湿・冬の乾燥に対応した畳の日常お手入れと定期保全の手順です。",
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "毎日の掃除",
+      text: "畳の目に沿って掃除機をかけ、乾いた雑巾で乾拭きします。水拭きはい草の劣化・カビの原因になるため避けます。",
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "定期的な換気",
+      text: "1日1回、10分以上の換気で室内の湿気を逃がします。梅雨〜初夏は除湿機の併用が効果的です。",
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "畳上げによる乾燥",
+      text: "月1回を目安に畳を上げ、裏側と畳床を風通しの良い場所で乾燥させます。埼玉の梅雨時期は特に重要です。",
+    },
+    {
+      "@type": "HowToStep",
+      position: 4,
+      name: "季節ごとの点検",
+      text: "春・初夏・秋・冬の年4回、カビ・ダニ・へたり・色あせを点検し、必要に応じて裏返し・表替えを検討します。",
+    },
+  ],
+};
+
 export default function TatamiGuideMaintenancePage() {
   return (
     <>
@@ -97,6 +131,10 @@ export default function TatamiGuideMaintenancePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
 
       {/* ─── Breadcrumb ─── */}
