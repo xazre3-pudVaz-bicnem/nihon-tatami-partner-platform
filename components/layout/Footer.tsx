@@ -41,6 +41,7 @@ const FOOTER_LINKS = [
       { label: "会社情報", href: "/about" },
       { label: "施工事例", href: "/works" },
       { label: "料金・見積もり", href: "/price" },
+      { label: "ブログ", href: "/blog" },
       { label: "専門コラム", href: "/column" },
       { label: "よくある質問", href: "/faq" },
       { label: "お問い合わせ", href: "/contact" },
