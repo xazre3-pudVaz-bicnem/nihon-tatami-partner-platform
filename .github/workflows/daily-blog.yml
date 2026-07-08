@@ -44,6 +44,10 @@ jobs:
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
 
       - name: Commit and push
+        env:
+          POST_FILE: ${{ steps.generate.outputs.filename }}
+          POST_TITLE: ${{ steps.generate.outputs.title }}
+          POST_MODEL: ${{ steps.generate.outputs.model }}
         run: |
           git config user.name "tatami-blog-bot"
           git config user.email "blog-bot@users.noreply.github.com"
@@ -54,14 +58,11 @@ jobs:
             exit 0
           fi
 
-          echo "生成ファイル: ${{ steps.generate.outputs.filename }}"
-          echo "タイトル:     ${{ steps.generate.outputs.title }}"
-          echo "使用モデル:   ${{ steps.generate.outputs.model }}"
+          echo "生成ファイル: ${POST_FILE}"
+          echo "タイトル:     ${POST_TITLE}"
+          echo "使用モデル:   ${POST_MODEL}"
 
-          git commit -m "chore(blog): 自動投稿 ${{ steps.generate.outputs.title }}
-
-生成ファイル: ${{ steps.generate.outputs.filename }}
-使用モデル: ${{ steps.generate.outputs.model }}"
+          git commit -m "chore(blog): 自動投稿 ${POST_TITLE} (model: ${POST_MODEL})"
 
           git push origin HEAD:main
           echo "push完了: mainブランチへ反映しました。"
