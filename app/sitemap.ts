@@ -6,6 +6,7 @@ import { MATERIALS } from "@/data/materials";
 import { PROBLEMS } from "@/data/problems";
 import { AREAS, AREA_SERVICES } from "@/data/areas";
 import { PURPOSE_PAGES } from "@/data/purpose";
+import { getAllPosts, getUsedCategories } from "@/lib/blog";
 
 const BASE = SITE_URL;
 const LAST_MODIFIED = new Date("2026-07-02");
@@ -29,6 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const materialUrls = MATERIALS.map((m) => url(`/materials/${m.slug}`, 0.7, "monthly"));
   const problemUrls = PROBLEMS.map((p) => url(`/problems/${p.slug}`, 0.7, "monthly"));
   const purposeUrls = PURPOSE_PAGES.map((p) => url(`/purpose/${p.slug}`, 0.7, "monthly"));
+  const blogUrls = getAllPosts().map((p) => url(`/blog/${p.slug}`, 0.6, "weekly"));
+  const blogCategoryUrls = getUsedCategories().map((c) => url(`/blog/category/${c.slug}`, 0.5, "weekly"));
 
   // Area pages: prefecture / city / pref×service / city×service
   const areaUrls: MetadataRoute.Sitemap = [];
@@ -170,8 +173,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/column", 0.8, "weekly"),
     ...columnUrls,
 
-    // Blog
-    url("/blog", 0.7, "weekly"),
+    // Blog（Markdown自動投稿）
+    url("/blog", 0.7, "daily"),
+    ...blogCategoryUrls,
+    ...blogUrls,
 
     // Works details
     ...worksUrls,

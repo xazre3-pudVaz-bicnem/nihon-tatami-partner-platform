@@ -1,0 +1,67 @@
+name: Daily Blog Post
+
+# 毎日10:50 JST（= 01:50 UTC）に1記事を自動生成してmainへ直接コミットする
+on:
+  schedule:
+    - cron: "50 1 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-blog
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Show model
+        run: echo "ANTHROPIC_MODEL=${ANTHROPIC_MODEL:-claude-haiku-4-5-20251001 (default)}"
+        env:
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+
+      - name: Generate daily blog post
+        id: generate
+        run: npx tsx scripts/generate-daily-post.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+
+      - name: Commit and push
+        run: |
+          git config user.name "tatami-blog-bot"
+          git config user.email "blog-bot@users.noreply.github.com"
+          git add content/blog
+
+          if git diff --cached --quiet; then
+            echo "変更なし（新しい記事は生成されませんでした）。正常終了します。"
+            exit 0
+          fi
+
+          echo "生成ファイル: ${{ steps.generate.outputs.filename }}"
+          echo "タイトル:     ${{ steps.generate.outputs.title }}"
+          echo "使用モデル:   ${{ steps.generate.outputs.model }}"
+
+          git commit -m "chore(blog): 自動投稿 ${{ steps.generate.outputs.title }}
+
+生成ファイル: ${{ steps.generate.outputs.filename }}
+使用モデル: ${{ steps.generate.outputs.model }}"
+
+          git push origin HEAD:main
+          echo "push完了: mainブランチへ反映しました。"
