@@ -82,7 +82,7 @@ _theme: セキスイ畳（樹脂畳）の特徴と向いている場所
 
 セキスイ畳と天然い草の畳、どちらを選ぶかは、生活スタイル、家族構成、部屋の環境によって大きく異なります。埼玉県内で和室リフォームや畳の新調をお考えでしたら、実績のある専門業者に相談することをお勧めします。
 
-日本畳パートナーズでは、[畳新調](https://www.tatami-partners.jp/services/tatami-shinchou)や[表替え](https://www.tatami-partners.jp/services/tatami-omotegae)、[和室リフォーム](https://www.tatami-partners.jp/interior/house-renovation)など、様々なニーズに対応しています。樹脂畳・天然い草それぞれのメリットを踏まえた提案が可能ですので、まずはお気軽にご相談ください。
+埼玉畳店では、[畳新調](https://www.tatami-partners.jp/services/tatami-shinchou)や[表替え](https://www.tatami-partners.jp/services/tatami-omotegae)、[和室リフォーム](https://www.tatami-partners.jp/interior/house-renovation)など、様々なニーズに対応しています。樹脂畳・天然い草それぞれのメリットを踏まえた提案が可能ですので、まずはお気軽にご相談ください。
 
 ## まとめ
 

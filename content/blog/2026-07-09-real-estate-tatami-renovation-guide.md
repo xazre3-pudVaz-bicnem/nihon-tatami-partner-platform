@@ -71,7 +71,7 @@ _theme: 不動産管理会社向けの畳工事の進め方
 - **効率的なスケジュール管理**: 複数物件の工事を同時進行できる場合がある
 - **割引交渉が容易**: 継続的な関係により、費用交渉が進めやすい
 
-弊社「日本畳パートナーズ」では、埼玉県全域および関東エリアの物件に対応しており、[原状回復](https://www.tatami-partners.jp/restoration)から[和室リフォーム](https://www.tatami-partners.jp/interior/house-renovation)まで、幅広いニーズに対応しています。
+弊社「埼玉畳店」では、埼玉県全域および関東エリアの物件に対応しており、[原状回復](https://www.tatami-partners.jp/restoration)から[和室リフォーム](https://www.tatami-partners.jp/interior/house-renovation)まで、幅広いニーズに対応しています。
 
 ## 工事完了後のポイント
 

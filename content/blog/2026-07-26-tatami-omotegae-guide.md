@@ -1,7 +1,7 @@
 ---
 title: 畳の表替えとは｜工程・向いているケースを埼玉の業者が解説
 slug: tatami-omotegae-guide
-description: 畳の表替えについて、工程や裏返し・新調との違い、向いているケースを分かりやすく解説。埼玉での施工なら日本畳パートナーズへ。
+description: 畳の表替えについて、工程や裏返し・新調との違い、向いているケースを分かりやすく解説。埼玉での施工なら埼玉畳店へ。
 date: '2026-07-26'
 category: 畳の基礎知識
 tags:
@@ -115,7 +115,7 @@ _theme: 畳の表替えとは｜工程・向いているケースを解説
 
 ## 埼玉で畳表替えをご検討なら
 
-埼玉県内での畳工事・和室メンテナンスなら、**日本畳パートナーズ**にお任せください。表替えから新調、[和室リフォーム](https://www.tatami-partners.jp/interior/house-renovation)、[原状回復](https://www.tatami-partners.jp/restoration)まで、幅広い施工に対応しています。
+埼玉県内での畳工事・和室メンテナンスなら、**埼玉畳店**にお任せください。表替えから新調、[和室リフォーム](https://www.tatami-partners.jp/interior/house-renovation)、[原状回復](https://www.tatami-partners.jp/restoration)まで、幅広い施工に対応しています。
 
 現地確認・見積もりは無料ですので、畳の状態に不安がある場合や、複数の選択肢を検討したい場合でも、気軽に[お問い合わせ](https://www.tatami-partners.jp/contact)ください。
 

@@ -82,7 +82,7 @@ _theme: 畳の寿命はどのくらいか｜素材別の目安と延ばし方
 
 ## 埼玉県で畳の寿命についてご相談なら
 
-畳の状態を正確に判断し、最適な対応方法を提案するには、専門家による現地確認が大切です。埼玉県をはじめ関東エリアで、[畳の表替え](https://www.tatami-partners.jp/services/tatami-omotegae)や[新調](https://www.tatami-partners.jp/services/tatami-shinchou)、[和室リフォーム](https://www.tatami-partners.jp/interior/house-renovation)をお考えでしたら、日本畳パートナーズまでお気軽にお問い合わせください。
+畳の状態を正確に判断し、最適な対応方法を提案するには、専門家による現地確認が大切です。埼玉県をはじめ関東エリアで、[畳の表替え](https://www.tatami-partners.jp/services/tatami-omotegae)や[新調](https://www.tatami-partners.jp/services/tatami-shinchou)、[和室リフォーム](https://www.tatami-partners.jp/interior/house-renovation)をお考えでしたら、埼玉畳店までお気軽にお問い合わせください。
 
 現地でお客様の畳の状態を詳しく確認し、今後のメンテナンス計画についてアドバイスさせていただきます。
 

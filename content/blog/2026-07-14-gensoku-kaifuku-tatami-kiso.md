@@ -109,7 +109,7 @@ DIYで修復しようとすると、かえって状態が悪化し、費用が�
 
 ## 関連サービスのご案内
 
-日本畳パートナーズでは、埼玉県・関東エリアの賃貸物件向け[原状回復サービス](https://www.tatami-partners.jp/restoration)を提供しています。
+埼玉畳店では、埼玉県・関東エリアの賃貸物件向け[原状回復サービス](https://www.tatami-partners.jp/restoration)を提供しています。
 
 各種の[畳工事サービス](https://www.tatami-partners.jp/services)と[和室リフォーム](https://www.tatami-partners.jp/interior/house-renovation)にも対応しており、複合的なご要望にお応えすることが可能です。[施工対応例](https://www.tatami-partners.jp/works)もあわせてご覧ください。
 
