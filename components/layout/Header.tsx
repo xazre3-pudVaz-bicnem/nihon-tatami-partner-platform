@@ -73,7 +73,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-7 flex-1 justify-center" aria-label="メインナビゲーション">
+          <nav className="hidden lg:flex items-center gap-x-4 xl:gap-x-7 flex-1 justify-center" aria-label="メインナビゲーション">
             {NAV_LINKS.map((n) => (
               <Link
                 key={n.href}
@@ -93,7 +93,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-3 shrink-0">
             <Link
               href="/contact#business"
-              className={`text-[11px] px-4 py-2 border transition-all duration-300 whitespace-nowrap tracking-wider ${
+              className={`hidden xl:inline-block text-[11px] px-4 py-2 border transition-all duration-300 whitespace-nowrap tracking-wider ${
                 scrolled
                   ? "border-sumi/20 text-sumi/60 hover:border-sumi/50 hover:text-sumi"
                   : "border-white/20 text-white/60 hover:border-white/50 hover:text-white"

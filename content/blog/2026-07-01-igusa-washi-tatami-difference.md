@@ -2,7 +2,7 @@
 title: い草畳と和紙畳の違い｜特徴と選び方をやさしく解説
 slug: igusa-washi-tatami-difference
 description: い草畳と和紙畳は何が違うのか。それぞれの特徴、向いている場所、手入れのしやすさを比較し、埼玉の住まいでの選び方の考え方を解説します。
-date: 2026-07-01
+date: "2026-07-01"
 category: 畳の基礎知識
 tags:
   - 畳

@@ -3,7 +3,7 @@ title: 埼玉の畳が日焼け・色あせする原因と対処法｜長く美�
 slug: tatami-sunburn-discoloration-causes-solutions
 description: 畳の日焼けと色あせの原因、予防策、対処法を解説。埼玉の和室で畳を長く美しく保つための専門的なアドバイスをご紹介します。
 date: '2026-07-27'
-category: 畳のお手елあれ
+category: 畳のお手入れ
 tags:
   - 畳のお手入れ
   - 日焼け対策

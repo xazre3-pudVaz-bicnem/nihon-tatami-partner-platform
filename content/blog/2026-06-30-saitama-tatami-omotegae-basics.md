@@ -2,7 +2,7 @@
 title: 埼玉で畳の表替えを検討するときに押さえたい基本
 slug: saitama-tatami-omotegae-basics
 description: 埼玉で畳の表替えを考えている方へ。表替え・裏返し・新調の違い、依頼前に確認したい点、和室を長く使うための考え方を畳工事の視点で解説します。
-date: 2026-06-30
+date: "2026-06-30"
 category: 畳工事・張替え
 tags:
   - 埼玉
