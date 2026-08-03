@@ -49,7 +49,7 @@ export default function BrandLoader() {
             className="text-2xl tracking-[0.3em] text-[#1E1C1A] mb-2 select-none"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            日本畳パートナーズ
+            埼玉畳店
           </motion.p>
 
           <motion.p
@@ -58,7 +58,7 @@ export default function BrandLoader() {
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.65 }}
             className="text-[10px] tracking-[0.45em] text-[#1E1C1A] mb-1 uppercase select-none"
           >
-            NIHON TATAMI PARTNERS
+            SAITAMA TATAMI STORE
           </motion.p>
 
           <motion.p

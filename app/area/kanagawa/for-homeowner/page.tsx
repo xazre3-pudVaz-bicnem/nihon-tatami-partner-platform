@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "神奈川県の一戸建て・マンション向け畳張替え｜日本畳パートナーズ",
+  title: "神奈川県の一戸建て・マンション向け畳張替え｜埼玉畳店",
   description:
     "神奈川県内の畳張替え・表替え・新調に対応。横浜・川崎・相模原・鎌倉・藤沢など全域。素材選びから施工まで丁寧にご対応。",
   path: "/area/kanagawa/for-homeowner",
@@ -136,7 +136,7 @@ export default function ForHomeownerPage() {
                   横浜市内の旧家・邸宅では、江戸間・京間など特殊サイズの畳が使われているケースも多く、現地採寸が欠かせません。鎌倉・逗子の和風住宅では、わら床の伝統畳を大切にしたいというご要望も多くあります。川崎市のマンションでは薄型建材畳が主流で、管理規約に配慮した工事計画が重要です。
                 </p>
                 <p>
-                  日本畳パートナーズでは、神奈川県内の様々な住宅タイプに対応した畳工事を承っています。現地確認・お見積もりは無料ですので、まずはお気軽にご相談ください。
+                  埼玉畳店では、神奈川県内の様々な住宅タイプに対応した畳工事を承っています。現地確認・お見積もりは無料ですので、まずはお気軽にご相談ください。
                 </p>
               </>
             ),

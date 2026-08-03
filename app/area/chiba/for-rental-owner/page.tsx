@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "千葉県の賃貸オーナー・大家向け畳張替え・原状回復｜日本畳パートナーズ",
+  title: "千葉県の賃貸オーナー・大家向け畳張替え・原状回復｜埼玉畳店",
   description:
     "千葉県の賃貸物件の畳・原状回復に対応。東京湾岸・内陸部の幅広い賃貸物件に対応し、空室期間短縮をサポート。",
   path: "/area/chiba/for-rental-owner",
@@ -136,7 +136,7 @@ export default function ForRentalOwnerPage() {
                   千葉市・船橋市・松戸市などの内陸都市部では、退去後の迅速な原状回復が次の入居者獲得の鍵になります。特に繁忙期（2〜3月）は退去・入居が集中するため、事前のご相談をおすすめします。
                 </p>
                 <p>
-                  日本畳パートナーズでは、千葉県内の賃貸オーナー様からのご依頼に迅速対応しています。現地確認・費用負担区分の説明・施工・写真報告までワンストップで承ります。
+                  埼玉畳店では、千葉県内の賃貸オーナー様からのご依頼に迅速対応しています。現地確認・費用負担区分の説明・施工・写真報告までワンストップで承ります。
                 </p>
               </>
             ),

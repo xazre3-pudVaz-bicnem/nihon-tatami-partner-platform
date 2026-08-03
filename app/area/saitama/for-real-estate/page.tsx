@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "埼玉の不動産会社向け畳交換・内装整備｜日本畳パートナーズ",
+  title: "埼玉の不動産会社向け畳交換・内装整備｜埼玉畳店",
   description:
     "埼玉県の不動産会社様向け。売買・賃貸前の畳交換・内装整備に対応。内覧前の印象改善、複数物件の一括対応、迅速な施工で物件の価値を高めます。",
   path: "/area/saitama/for-real-estate",
@@ -75,7 +75,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": `${SITE_URL}/area/saitama/for-real-estate#webpage`,
-  name: "埼玉の不動産会社向け畳交換・内装整備｜日本畳パートナーズ",
+  name: "埼玉の不動産会社向け畳交換・内装整備｜埼玉畳店",
   description: "埼玉県の不動産会社様向け。売買・賃貸前の畳交換・内装整備に対応。内覧前の印象改善、複数物件の一括対応、迅速な施工で物件の価値を高めます。",
   url: `${SITE_URL}/area/saitama/for-real-estate`,
   inLanguage: "ja",
@@ -161,7 +161,7 @@ export default function ForRealEstatePage() {
                   不動産売買・賃貸前の物件整備において、和室の畳の状態は内覧者の第一印象を大きく左右します。変色・臭い・へたりのある畳は「古い」「汚い」という印象を与えてしまいますが、表替えや新調によって清潔感が一気に回復します。
                 </p>
                 <p>
-                  日本畳パートナーズでは、埼玉県内の不動産会社様から物件単位でご依頼をお受けしています。引き渡し期限に合わせた迅速施工を心がけ、急ぎの案件にも柔軟に対応します。
+                  埼玉畳店では、埼玉県内の不動産会社様から物件単位でご依頼をお受けしています。引き渡し期限に合わせた迅速施工を心がけ、急ぎの案件にも柔軟に対応します。
                 </p>
                 <p>
                   畳だけでなく、襖・障子の張替えもセットで対応可能です。和室全体を一度に整備することで、印象改善の効果が高まります。施工前後の写真もご提供しますので、物件資料や買主への説明にお役立てください。

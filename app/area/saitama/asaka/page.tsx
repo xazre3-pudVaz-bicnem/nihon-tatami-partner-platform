@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "朝霞市の畳張替え・表替え・新調｜都心近接ベッドタウン対応｜日本畳パートナーズ",
+  title: "朝霞市の畳張替え・表替え・新調｜都心近接ベッドタウン対応｜埼玉畳店",
   description:
     "朝霞市全域で畳張替え・表替え・新調に対応。朝霞駅・朝霞台駅・北朝霞周辺の賃貸マンション・アパート・戸建てを丁寧に施工。原状回復も対応。現地確認・見積もり無料。",
   path: "/area/saitama/asaka",
@@ -130,7 +130,7 @@ export default function AsakaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "朝霞市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Asaka City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            朝霞市での畳工事なら日本畳パートナーズ
+            朝霞市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             都心へのアクセスに優れた埼玉県南部のベッドタウン・朝霞市。黒目川が流れる住宅地で、朝霞市 畳の張替え・表替え・新調を承ります。
@@ -169,7 +169,7 @@ export default function AsakaPage() {
                 住まいの特徴は、賃貸マンション・アパートと戸建てが混在していることです。駅周辺には多層の賃貸物件が立ち並び、少し離れると戸建て住宅街が広がります。このため、持ち家の和室の表替え・新調と、賃貸物件の退去後の原状回復工事の両方のご依頼を数多くいただいています。畳・襖・障子をまとめて対応し、次の入居に向けてすっきりと仕上げます。
               </p>
               <p>
-                市内を流れる黒目川沿いなど水辺に近い低地では湿度が上がりやすく、畳のカビ・ダニ対策が気になるお住まいもあります。日本畳パートナーズでは、伝統的ない草表に加え、防カビ・防湿性に優れた和紙畳・樹脂畳をご用意し、住まいの環境やペットの有無に合わせてご提案しています。
+                市内を流れる黒目川沿いなど水辺に近い低地では湿度が上がりやすく、畳のカビ・ダニ対策が気になるお住まいもあります。埼玉畳店では、伝統的ない草表に加え、防カビ・防湿性に優れた和紙畳・樹脂畳をご用意し、住まいの環境やペットの有無に合わせてご提案しています。
               </p>
               <p>
                 都内へ通勤される方が多い朝霞市では、日中お留守のご家庭も少なくありません。畳を一度お預かりして工場で仕上げる持ち帰り施工なら、在宅の負担を抑えて進められます。朝霞市 畳のことなら、賃貸オーナー様・管理会社様から一般のご家庭まで、幅広くご相談を承ります。

@@ -1,4 +1,4 @@
-# 日本畳パートナーズ — 公開前チェックリスト & 変更履歴
+# 埼玉畳店 — 公開前チェックリスト & 変更履歴
 
 **Next.js 16 + TypeScript + Tailwind CSS v4 / App Router**
 ビルド: 334ページ静的生成・TypeScript エラーなし
@@ -10,15 +10,15 @@
 `lib/site.ts` に正式情報を設定済みです。
 
 ```ts
-export const SITE_TEL   = "070-5439-9949";
-export const SITE_EMAIL = "nihontatami.0110@gmail.com";
+export const SITE_TEL   = "090-2360-0052";
+export const SITE_EMAIL = "info@cypress-all.co.jp";
 export const SITE_LINE  = "";  // LINE公式アカウントURL（未設定）
 ```
 
 | 項目 | 状態 | 担当 |
 |------|------|------|
-| 正式電話番号 | ✅ 設定済み: 070-5439-9949 | |
-| 正式メールアドレス | ✅ 設定済み: nihontatami.0110@gmail.com | |
+| 正式電話番号 | ✅ 設定済み: 090-2360-0052 | |
+| 正式メールアドレス | ✅ 設定済み: info@cypress-all.co.jp | |
 | LINE公式URL | 未設定（取得後に site.ts を更新） | |
 | 正式屋号/社名 | app/about/page.tsx 要確認 | |
 | 正式所在地 | app/about/page.tsx 要追加 | |
@@ -160,10 +160,10 @@ async function handleSubmit(e: React.FormEvent) {
 ### ブランド系
 | キーワード | 対応ページ |
 |---|---|
-| 日本畳パートナーズ | / (トップ), /about |
-| 日本畳パートナーズ 料金 | /price |
-| 日本畳パートナーズ 問い合わせ | /contact |
-| 日本畳パートナーズ 施工事例 | /works |
+| 埼玉畳店 | / (トップ), /about |
+| 埼玉畳店 料金 | /price |
+| 埼玉畳店 問い合わせ | /contact |
+| 埼玉畳店 施工事例 | /works |
 
 ### 埼玉エリア系
 | キーワード | 対応ページ |
@@ -220,13 +220,13 @@ async function handleSubmit(e: React.FormEvent) {
 3. 所有権確認（HTMLファイル、DNSレコード、またはGoogleアナリティクスで確認）
 4. プロパティ登録後、「サイトマップ」から `sitemap.xml` を送信
 5. 上記URLをURL検査からインデックス登録リクエスト
-6. 4〜6週間後に「検索パフォーマンス」で「日本畳パートナーズ」「埼玉 畳」系クエリの表示回数を確認
+6. 4〜6週間後に「検索パフォーマンス」で「埼玉畳店」「埼玉 畳」系クエリの表示回数を確認
 
 ---
 
 ## サイト役割の整理
 
-このサイトは **日本畳パートナーズ（施工会社）のコーポレートサイト** として設計されています。
+このサイトは **埼玉畳店（施工会社）のコーポレートサイト** として設計されています。
 
 - 自社での畳工事・内装・原状回復の受注サイト
 - BtoC（一般住宅）と BtoB（法人・管理会社・旅館・寺社・店舗）の両対応

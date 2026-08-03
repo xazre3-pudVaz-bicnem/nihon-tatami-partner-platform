@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "春日部市の畳張替え・表替え・新調｜全域対応｜日本畳パートナーズ",
+  title: "春日部市の畳張替え・表替え・新調｜全域対応｜埼玉畳店",
   description:
     "春日部市全域で畳張替え・表替え・新調に対応。埼玉県東部の拠点都市。戸建て・マンション・法人施設・庭園建築。現地確認・見積もり無料。",
   path: "/area/saitama/kasukabe",
@@ -114,7 +114,7 @@ export default function KasukabePage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "春日部市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Kasukabe City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            春日部市での畳工事なら日本畳パートナーズ
+            春日部市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県東部の拠点都市・春日部市。古民家・庭園建築から現代的なマンションまで、多様な物件での施工実績が豊富です。

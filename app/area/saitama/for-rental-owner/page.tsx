@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "埼玉の賃貸オーナー向け畳交換・原状回復｜日本畳パートナーズ",
+  title: "埼玉の賃貸オーナー向け畳交換・原状回復｜埼玉畳店",
   description:
     "埼玉県の賃貸オーナー様向け。退去後の畳交換・原状回復に迅速対応。国土交通省ガイドライン対応の費用負担区分の説明も可能。次の入居者のために、適切な整備をご提案します。",
   path: "/area/saitama/for-rental-owner",
@@ -174,7 +174,7 @@ export default function ForRentalOwnerPage() {
             content: (
               <>
                 <p>
-                  賃貸物件の退去後は、次の入居者のために素早く適切な状態に整えることが重要です。日本畳パートナーズでは、埼玉県内の賃貸オーナー様からのご依頼に迅速対応しています。
+                  賃貸物件の退去後は、次の入居者のために素早く適切な状態に整えることが重要です。埼玉畳店では、埼玉県内の賃貸オーナー様からのご依頼に迅速対応しています。
                 </p>
                 <p>
                   畳の状態確認・費用負担の区分説明・施工・写真報告まで、ワンストップで承ります。国土交通省の原状回復ガイドラインに沿った費用負担の考え方についても、わかりやすくご説明しますので、入居者とのやり取りでお困りの際もご相談ください。

@@ -6,12 +6,12 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: `会社情報 | ${SITE_NAME}`,
-  description: "日本畳パートナーズの事業内容と強みをご紹介します。畳工事・内装工事・原状回復を軸に、住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナーです。",
+  description: "埼玉畳店の事業内容と強みをご紹介します。畳工事・内装工事・原状回復を軸に、住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナーです。",
   path: "/about",
 });
 
 const COMPANY_INFO = [
-  { label: "屋号", value: "日本畳パートナーズ" },
+  { label: "屋号", value: "埼玉畳店" },
   { label: "事業内容", value: "畳工事・内装工事・原状回復工事" },
   { label: "電話番号", value: SITE_TEL },
   { label: "メールアドレス", value: SITE_EMAIL },
@@ -32,7 +32,7 @@ const ABOUT_PAGE_SCHEMA = {
   "@id": `${SITE_URL}/about`,
   name: `会社情報 | ${SITE_NAME}`,
   url: `${SITE_URL}/about`,
-  description: "日本畳パートナーズの事業内容・強み・会社概要",
+  description: "埼玉畳店の事業内容・強み・会社概要",
   inLanguage: "ja",
   mainEntity: { "@id": `${SITE_URL}/#organization` },
 };
@@ -89,7 +89,7 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-5 text-sm text-sumi/70 leading-relaxed text-left max-w-2xl mx-auto">
             <p>畳は単なる床材ではありません。空間の清潔感・香り・格式・印象をつくり、住む人の気持ちと建物の資産価値に直接影響を与える存在です。</p>
-            <p>日本畳パートナーズは、畳の専門性を軸にしながら、内装工事・原状回復まで一括でご相談いただける「空間整備の専門パートナー」を目指しています。</p>
+            <p>埼玉畳店は、畳の専門性を軸にしながら、内装工事・原状回復まで一括でご相談いただける「空間整備の専門パートナー」を目指しています。</p>
             <p>個人のご家庭から、旅館・寺社・店舗、不動産管理会社・賃貸オーナーまで。規模や用途を問わず、最適な提案と施工でお応えします。</p>
           </div>
         </div>

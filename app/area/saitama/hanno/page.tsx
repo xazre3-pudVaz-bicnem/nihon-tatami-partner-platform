@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "飯能市の畳張替え・表替え・新調｜日本畳パートナーズ",
+  title: "飯能市の畳張替え・表替え・新調｜埼玉畳店",
   description:
     "飯能市全域で畳の張替え・表替え・新調に対応。西川材の産地・ムーミンバレーパークで知られる山あいのまちの古民家・別荘・戸建てに実績豊富。飯能 畳のご相談はお気軽に。見積もり無料。",
   path: "/area/saitama/hanno",
@@ -130,7 +130,7 @@ export default function HannoPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "飯能市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Hanno City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            飯能市での畳工事なら日本畳パートナーズ
+            飯能市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             西川材の産地でありムーミンバレーパークでも知られる埼玉県西部の飯能市。山あいの古民家や別荘、市街地の戸建てまで、飯能 畳の張替え・表替え・新調に対応します。
@@ -171,7 +171,7 @@ export default function HannoPage() {
                 山に近い立地では、畳への虫の付着や湿気によるカビが気になるという声を多くいただきます。防虫・防カビ加工の畳表や、調湿性に優れた和紙畳・樹脂畳のご提案が好評です。
               </p>
               <p>
-                日本畳パートナーズでは、飯能市全域を対象に現地確認・お見積もりを無料で承っています。山あいの集落や別荘でも、日程を調整して丁寧に施工します。
+                埼玉畳店では、飯能市全域を対象に現地確認・お見積もりを無料で承っています。山あいの集落や別荘でも、日程を調整して丁寧に施工します。
               </p>
             </div>
           </div>

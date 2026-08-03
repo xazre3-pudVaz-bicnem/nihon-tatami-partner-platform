@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "八潮市の畳張替え・表替え・新調｜日本畳パートナーズ",
+  title: "八潮市の畳張替え・表替え・新調｜埼玉畳店",
   description:
     "八潮市全域で畳の張替え・表替え・新調に対応。つくばエクスプレスで都心へ好アクセスの南東部エリア。戸建て・分譲マンション・賃貸の原状回復に実績豊富。八潮 畳のご相談はお気軽に。見積もり無料。",
   path: "/area/saitama/yashio",
@@ -130,7 +130,7 @@ export default function YashioPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "八潮市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Yashio City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            八潮市での畳工事なら日本畳パートナーズ
+            八潮市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             つくばエクスプレスで秋葉原まで直通、都心に近い埼玉県南東部の八潮市。駅周辺の分譲マンション・新築戸建てから賃貸の原状回復まで、八潮 畳の張替え・表替え・新調に対応します。
@@ -171,7 +171,7 @@ export default function YashioPage() {
                 一方で、都心アクセスの良さから賃貸需要も高く、アパート・マンションの退去後の原状回復工事のご依頼も多く寄せられます。畳・襖・障子・網戸を一括で承り、次の入居募集にスムーズに間に合わせる工程管理を心がけています。
               </p>
               <p>
-                日本畳パートナーズでは、八潮市全域を対象に現地確認・お見積もりを無料で承っています。共働きのご家庭には畳のお預かり施工や土日・夕方の訪問など、暮らしに合わせた対応を大切にしています。
+                埼玉畳店では、八潮市全域を対象に現地確認・お見積もりを無料で承っています。共働きのご家庭には畳のお預かり施工や土日・夕方の訪問など、暮らしに合わせた対応を大切にしています。
               </p>
             </div>
           </div>

@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "富士見市の畳張替え・表替え・新調｜ららぽーと富士見エリア対応｜日本畳パートナーズ",
+  title: "富士見市の畳張替え・表替え・新調｜ららぽーと富士見エリア対応｜埼玉畳店",
   description:
     "富士見市全域で畳張替え・表替え・新調に対応。鶴瀬・みずほ台・ふじみ野駅周辺、ららぽーと富士見や難波田城公園エリアの戸建て・団地・マンションを丁寧に施工。見積もり無料。",
   path: "/area/saitama/fujimi",
@@ -130,7 +130,7 @@ export default function FujimiPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "富士見市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Fujimi City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            富士見市での畳工事なら日本畳パートナーズ
+            富士見市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             ららぽーと富士見が広域から人を集める埼玉県南部のベッドタウン・富士見市。田園と新興住宅地が調和したまちで、富士見市 畳の張替え・表替え・新調を承ります。
@@ -169,7 +169,7 @@ export default function FujimiPage() {
                 住まいのタイプは実に多彩で、区画整理された新興住宅地の戸建て、昭和期に整備された団地、駅前のマンション、そして農村部の広い座敷を備えたお住まいまでが混在しています。難波田城公園（なんばたじょうこうえん）周辺には昔ながらの和室を残すお宅もあり、続き間や仏間の表替え・新調のご依頼も少なくありません。一方、ららぽーと富士見周辺の新しい戸建てでは、洋室になじむ縁なし畳・カラー和紙畳のご要望が増えています。
               </p>
               <p>
-                びん沼川沿いなど水辺に近い低地では湿度が上がりやすく、畳のカビ・ダニ対策が気になるお住まいもあります。日本畳パートナーズでは、伝統的ない草表に加え、防カビ・防湿性に優れた和紙畳・樹脂畳をご用意し、住まいの環境やご予算に合わせてご提案しています。
+                びん沼川沿いなど水辺に近い低地では湿度が上がりやすく、畳のカビ・ダニ対策が気になるお住まいもあります。埼玉畳店では、伝統的ない草表に加え、防カビ・防湿性に優れた和紙畳・樹脂畳をご用意し、住まいの環境やご予算に合わせてご提案しています。
               </p>
               <p>
                 富士見市 畳のことなら、団地・マンションの一室から農家住宅の大広間まで幅広く対応可能です。畳・襖・障子をまとめてのご依頼にも一括で対応し、写真付きの丁寧なご説明を心がけています。

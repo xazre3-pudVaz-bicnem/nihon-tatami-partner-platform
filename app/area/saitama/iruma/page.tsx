@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "入間市の畳張替え・表替え・新調｜狭山茶の里対応｜日本畳パートナーズ",
+  title: "入間市の畳張替え・表替え・新調｜狭山茶の里対応｜埼玉畳店",
   description:
     "入間市全域で畳張替え・表替え・新調に対応。豊岡・武蔵藤沢・仏子・金子・宮寺・二本木など茶畑と西武池袋線沿線の戸建て・農家住宅を丁寧に施工。現地確認・見積もり無料。",
   path: "/area/saitama/iruma",
@@ -130,7 +130,7 @@ export default function IrumaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "入間市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Iruma City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            入間市での畳工事なら日本畳パートナーズ
+            入間市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県西部・狭山茶の主産地として知られる入間市。茶畑の広がる田園と西武池袋線沿線のベッドタウンが調和したまちで、入間市 畳の張替え・表替え・新調を承ります。
@@ -169,7 +169,7 @@ export default function IrumaPage() {
                 一方、豊岡・武蔵藤沢・仏子（ぶし）などの西武池袋線沿線は、都心へ通勤する世帯が暮らすベッドタウンとして発展してきました。入間市駅周辺の市街地から住宅街まで、戸建てとマンションが混在し、和室のある間取りも数多く残っています。旧米軍ジョンソン基地跡地の再開発エリアや三井アウトレットパーク入間周辺には新しい住宅地も広がり、洋室に合う縁なし畳・カラー和紙畳のご要望も増えています。
               </p>
               <p>
-                加治丘陵や入間川沿いの緑に恵まれた入間市は、湿度が上がりやすい季節があり、畳のカビ・ダニ対策が気になるお住まいも少なくありません。日本畳パートナーズでは、伝統的ない草表から、防カビ・防虫性に優れた和紙畳・樹脂畳まで、住まいの環境とご予算に合わせてご提案します。
+                加治丘陵や入間川沿いの緑に恵まれた入間市は、湿度が上がりやすい季節があり、畳のカビ・ダニ対策が気になるお住まいも少なくありません。埼玉畳店では、伝統的ない草表から、防カビ・防虫性に優れた和紙畳・樹脂畳まで、住まいの環境とご予算に合わせてご提案します。
               </p>
               <p>
                 彩の森入間公園に近い住宅街の一室から、茶農家の大広間まで、入間市 畳のことなら幅広く対応可能です。畳・襖・障子をまとめてのご依頼にも一括対応し、写真付きの丁寧なご説明を心がけています。

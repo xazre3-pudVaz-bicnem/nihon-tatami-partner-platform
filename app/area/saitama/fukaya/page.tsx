@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "深谷市の畳張替え・表替え・新調｜日本畳パートナーズ",
+  title: "深谷市の畳張替え・表替え・新調｜埼玉畳店",
   description:
     "深谷市全域で畳の張替え・表替え・新調に対応。深谷ねぎと渋沢栄一のふるさとで知られる北部エリアの農家住宅・古民家・戸建てに実績豊富。深谷 畳のご相談はお気軽に。見積もり無料。",
   path: "/area/saitama/fukaya",
@@ -130,7 +130,7 @@ export default function FukayaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "深谷市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Fukaya City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            深谷市での畳工事なら日本畳パートナーズ
+            深谷市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             深谷ねぎの産地であり、渋沢栄一のふるさととして知られる埼玉県北部の深谷市。広い和室を持つ農家住宅・古民家から市街地の戸建てまで、深谷 畳の張替え・表替え・新調に対応します。
@@ -171,7 +171,7 @@ export default function FukayaPage() {
                 深谷市は冬にからっ風が吹く乾燥した気候で、夏は農地からの湿気も気になります。色あせ・湿気に強い和紙畳や、耐久性の高い樹脂畳のご提案が好評です。伝統的な和室にはい草畳の風合いを活かした仕上げも承ります。
               </p>
               <p>
-                日本畳パートナーズでは、深谷市全域を対象に現地確認・お見積もりを無料で承っています。畳の寸法や縁の格に配慮し、住まいにふさわしい仕上げをご提案します。
+                埼玉畳店では、深谷市全域を対象に現地確認・お見積もりを無料で承っています。畳の寸法や縁の格に配慮し、住まいにふさわしい仕上げをご提案します。
               </p>
             </div>
           </div>

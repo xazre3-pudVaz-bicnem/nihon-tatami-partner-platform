@@ -102,7 +102,7 @@ export default function BusinessPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 text-sm text-sumi/80 leading-relaxed">
           <h2 className="text-2xl text-sumi mb-4" style={{ fontFamily: "var(--font-serif)" }}>法人対応の概要</h2>
           <p>
-            日本畳パートナーズは、法人・事業者のお客様に向けて、畳工事・内装工事・原状回復をワンストップでご提供します。
+            埼玉畳店は、法人・事業者のお客様に向けて、畳工事・内装工事・原状回復をワンストップでご提供します。
             複数物件・複数現場の同時対応、退去や内覧・行事に合わせたスピード見積もり、施工前後の写真報告まで、
             事業者様の業務効率と意思決定を支える体制を整えています。
           </p>

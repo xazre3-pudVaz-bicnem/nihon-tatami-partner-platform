@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "所沢市の畳張替え・表替え・新調｜狭山茶の産地対応｜日本畳パートナーズ",
+  title: "所沢市の畳張替え・表替え・新調｜狭山茶の産地対応｜埼玉畳店",
   description:
     "所沢市全域で畳張替え・表替え・新調に対応。狭山茶の産地・多摩地区に隣接。戸建て・マンション・旧家・農家住宅。現地確認・見積もり無料。",
   path: "/area/saitama/tokorozawa",
@@ -114,7 +114,7 @@ export default function TokorozawaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "所沢市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Tokorozawa City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            所沢市での畳工事なら日本畳パートナーズ
+            所沢市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県西部・狭山茶の産地である所沢市。農家住宅から都市型マンションまで、多様な建築での施工に対応しています。

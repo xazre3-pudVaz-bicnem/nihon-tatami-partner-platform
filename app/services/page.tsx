@@ -9,7 +9,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqAccordion from "@/components/templates/FaqAccordion";
 
 export const metadata: Metadata = buildMetadata({
-  title: `畳工事・内装工事なら日本畳パートナーズ｜畳表替え・新調・原状回復まで一括対応 | ${SITE_NAME}`,
+  title: `畳工事・内装工事なら埼玉畳店｜畳表替え・新調・原状回復まで一括対応 | ${SITE_NAME}`,
   description:
     "畳の表替え・裏返し・新調・縁なし畳・和紙畳・樹脂畳から、襖・障子・網戸、クロス・床の内装工事、原状回復まで一括対応。い草・和紙・樹脂の素材比較、対象者別サービス、料金目安、施工の流れ、FAQを掲載。住宅・賃貸・旅館・寺社・店舗対応。現地確認・お見積もり無料。",
   path: "/services",
@@ -86,7 +86,7 @@ export default function ServicesPage() {
           <Breadcrumb items={[{ label: "サービス一覧" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Services</p>
           <h1 className="text-2xl sm:text-3xl lg:text-4xl text-white mb-5 leading-snug" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }}>
-            畳工事・内装工事なら日本畳パートナーズ｜畳表替え・新調・原状回復まで一括対応
+            畳工事・内装工事なら埼玉畳店｜畳表替え・新調・原状回復まで一括対応
           </h1>
           <p className="text-sm text-white/70 max-w-2xl leading-relaxed">
             畳の表替え・裏返し・新調から、縁なし畳・和紙畳・樹脂畳、襖・障子・網戸、クロス・床の内装工事、
@@ -101,7 +101,7 @@ export default function ServicesPage() {
           <h2 className="text-2xl sm:text-3xl text-sumi mb-6" style={{ fontFamily: "var(--font-serif)" }}>畳と空間整備のワンストップパートナー</h2>
           <div className="text-sm text-sumi/80 leading-loose space-y-5">
             <p>
-              日本畳パートナーズは、畳工事を軸に、和室の建具から住戸全体の内装、原状回復までを一社で手がける専門パートナーです。
+              埼玉畳店は、畳工事を軸に、和室の建具から住戸全体の内装、原状回復までを一社で手がける専門パートナーです。
               畳の表替え・裏返し・新調はもちろん、近年人気の縁なし畳・和紙畳・樹脂畳・カラー畳まで、あらゆる畳のご要望に対応します。
             </p>
             <p>

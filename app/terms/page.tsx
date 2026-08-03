@@ -16,7 +16,7 @@ export default function TermsPage() {
       </div>
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white border border-border p-6 sm:p-8 text-sm text-sumi/70 leading-relaxed space-y-6">
-          <p>本利用規約（以下「本規約」）は、日本畳パートナーズ（以下「当社」）が提供するサービスの利用条件を定めるものです。</p>
+          <p>本利用規約（以下「本規約」）は、埼玉畳店（以下「当社」）が提供するサービスの利用条件を定めるものです。</p>
           {[
             { h: "第1条（適用）", p: "本規約は、本サービスの利用に関する当社とお客様との間の権利義務関係を定めることを目的とします。" },
             { h: "第2条（禁止事項）", p: "法令または公序良俗に違反する行為、当社・第三者の知的財産権・プライバシー・名誉を侵害する行為、虚偽の情報を提供する行為を禁止します。" },

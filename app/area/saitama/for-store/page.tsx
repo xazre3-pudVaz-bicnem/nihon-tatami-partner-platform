@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "埼玉の店舗向け畳・小上がり・内装工事｜日本畳パートナーズ",
+  title: "埼玉の店舗向け畳・小上がり・内装工事｜埼玉畳店",
   description:
     "埼玉県の飲食店・小売店・サロン向け。座敷席の畳張替え、小上がりの新規設置・リフレッシュ、店舗イメージに合わせた内装工事に対応。営業中・閉店後の施工も相談可能です。",
   path: "/area/saitama/for-store",
@@ -75,7 +75,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": `${SITE_URL}/area/saitama/for-store#webpage`,
-  name: "埼玉の店舗向け畳・小上がり・内装工事｜日本畳パートナーズ",
+  name: "埼玉の店舗向け畳・小上がり・内装工事｜埼玉畳店",
   description: "埼玉県の飲食店・小売店・サロン向け。座敷席の畳張替え、小上がりの新規設置・リフレッシュ、店舗イメージに合わせた内装工事に対応。営業中・閉店後の施工も相談可能です。",
   url: `${SITE_URL}/area/saitama/for-store`,
   inLanguage: "ja",
@@ -161,7 +161,7 @@ export default function ForStorePage() {
                   飲食店の座敷席、居酒屋・和食店の小上がり、美容院や和雑貨店の和スペースなど、店舗の畳・内装工事のご依頼に対応しています。
                 </p>
                 <p>
-                  店舗の畳は、一般住宅と比べて踏まれる頻度が高く、食べこぼしや水分への耐性も求められます。日本畳パートナーズでは、飲食店向けには汚れに強い和紙畳・樹脂畳もご提案しており、清掃のしやすさと耐久性を重視した素材選定を行います。
+                  店舗の畳は、一般住宅と比べて踏まれる頻度が高く、食べこぼしや水分への耐性も求められます。埼玉畳店では、飲食店向けには汚れに強い和紙畳・樹脂畳もご提案しており、清掃のしやすさと耐久性を重視した素材選定を行います。
                 </p>
                 <p>
                   縁なし畳・カラー畳など、店舗のデザインコンセプトに合わせた素材も豊富に取り扱っています。和モダン・古民家風・スタイリッシュなど、お店のイメージに合わせてご提案します。施工は閉店後・定休日にも対応可能ですので、営業への影響を最小限にできます。

@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "狭山市の畳張替え・表替え・新調｜日本畳パートナーズ",
+  title: "狭山市の畳張替え・表替え・新調｜埼玉畳店",
   description:
     "狭山市全域で畳の張替え・表替え・新調に対応。狭山茶の産地として知られ、入間川が流れる西部エリア。戸建て・団地・分譲マンションの和室に実績豊富。狭山 畳のご相談はお気軽に。見積もり無料。",
   path: "/area/saitama/sayama",
@@ -130,7 +130,7 @@ export default function SayamaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "狭山市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Sayama City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            狭山市での畳工事なら日本畳パートナーズ
+            狭山市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             狭山茶の産地として知られ、入間川が市の中央を流れる埼玉県西部の狭山市。戸建て住宅地から団地・社宅、分譲マンションまで、狭山 畳の張替え・表替え・新調に対応します。
@@ -171,7 +171,7 @@ export default function SayamaPage() {
                 入間川沿いの地域は湿気がこもりやすい傾向があり、畳のカビ・ダニが気になるという声も多くいただきます。防カビ・防ダニ加工の畳表や、調湿性に優れ、傷・汚れにも強い和紙畳・樹脂畳のご提案が好評です。
               </p>
               <p>
-                日本畳パートナーズでは、狭山市全域を対象に現地確認・お見積もりを無料で承っています。畳の状態を丁寧に拝見し、暮らし方とご予算に合わせた最適なプランをご提案します。
+                埼玉畳店では、狭山市全域を対象に現地確認・お見積もりを無料で承っています。畳の状態を丁寧に拝見し、暮らし方とご予算に合わせた最適なプランをご提案します。
               </p>
             </div>
           </div>

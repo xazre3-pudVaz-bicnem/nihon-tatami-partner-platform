@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "羽生市の畳張替え・表替え・新調｜日本畳パートナーズ",
+  title: "羽生市の畳張替え・表替え・新調｜埼玉畳店",
   description:
     "羽生市全域で畳の張替え・表替え・新調に対応。武州正藍染の伝統と田園風景が広がる北東部エリアの農家住宅・古民家・戸建てに実績豊富。羽生 畳のご相談はお気軽に。見積もり無料。",
   path: "/area/saitama/hanyu",
@@ -130,7 +130,7 @@ export default function HanyuPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "羽生市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Hanyu City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            羽生市での畳工事なら日本畳パートナーズ
+            羽生市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             武州正藍染の伝統と豊かな田園風景で知られる埼玉県北東部の羽生市。広い和室を持つ農家住宅・古民家から市街地の戸建てまで、羽生 畳の張替え・表替え・新調に対応します。
@@ -171,7 +171,7 @@ export default function HanyuPage() {
                 羽生市は利根川・羽生水郷公園に近い低地が多く、湿気がこもりやすいのも特徴です。カビ・ダニの発生を抑えるため、防カビ・防ダニ加工の畳表や、調湿性・耐水性に優れた和紙畳・樹脂畳をおすすめするケースが増えています。
               </p>
               <p>
-                日本畳パートナーズでは、羽生市全域を対象に現地確認・お見積もりを無料で承っています。畳の状態を丁寧に拝見し、暮らし方とご予算に合わせた最適なプランをご提案します。
+                埼玉畳店では、羽生市全域を対象に現地確認・お見積もりを無料で承っています。畳の状態を丁寧に拝見し、暮らし方とご予算に合わせた最適なプランをご提案します。
               </p>
             </div>
           </div>

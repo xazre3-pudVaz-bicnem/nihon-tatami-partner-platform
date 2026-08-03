@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "三郷市の畳張替え・表替え・新調｜物流拠点対応｜日本畳パートナーズ",
+  title: "三郷市の畳張替え・表替え・新調｜物流拠点対応｜埼玉畳店",
   description:
     "三郷市全域で畳張替え・表替え・新調に対応。三郷中央・新三郷・早稲田の住宅地、ららぽーと新三郷やIKEA周辺の新興マンション・戸建てを丁寧に施工。現地確認・見積もり無料。",
   path: "/area/saitama/misato",
@@ -130,7 +130,7 @@ export default function MisatoPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "三郷市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Misato City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            三郷市での畳工事なら日本畳パートナーズ
+            三郷市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             ららぽーと新三郷やIKEA・コストコが集まる埼玉県東部の物流拠点・三郷市。江戸川と中川に挟まれたまちで、三郷市 畳の張替え・表替え・新調を承ります。
@@ -169,7 +169,7 @@ export default function MisatoPage() {
                 三郷中央駅周辺や新三郷ららシティのように、近年は再開発による新興マンション・分譲戸建てが数多く生まれています。早稲田地区をはじめ区画整理された住宅地には子育て世代のファミリーが多く暮らし、フローリング中心の間取りに和室を一室設けたお住まいが目立ちます。こうした住まいでは、洋室になじむ縁なし畳やカラー和紙畳のご要望も増えています。
               </p>
               <p>
-                江戸川・中川に挟まれた三郷市は、地形的に湿度が上がりやすく、畳のカビ・ダニ対策が気になるお住まいも少なくありません。日本畳パートナーズでは、伝統的ない草表に加え、防カビ・防湿性に優れた和紙畳・樹脂畳をご用意し、住まいの環境に合わせてご提案しています。
+                江戸川・中川に挟まれた三郷市は、地形的に湿度が上がりやすく、畳のカビ・ダニ対策が気になるお住まいも少なくありません。埼玉畳店では、伝統的ない草表に加え、防カビ・防湿性に優れた和紙畳・樹脂畳をご用意し、住まいの環境に合わせてご提案しています。
               </p>
               <p>
                 また、三郷市には大型物流倉庫や事業所が数多く立地しており、休憩室・宿直室・和室応接など法人施設の畳・襖工事のご依頼も承っています。三郷市 畳のことなら、一般住宅から法人施設まで幅広く対応し、畳・襖・障子をまとめてのご相談にも一括で対応します。

@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "白岡市の畳張替え・表替え・新調｜梨のまちの戸建て対応｜日本畳パートナーズ",
+  title: "白岡市の畳張替え・表替え・新調｜梨のまちの戸建て対応｜埼玉畳店",
   description:
     "白岡市全域で畳張替え・表替え・新調に対応。白岡駅・新白岡駅周辺の区画整理された住宅地から梨の産地の農家住宅まで、戸建て和室の畳工事を承ります。見積もり無料。",
   path: "/area/saitama/shiraoka",
@@ -130,7 +130,7 @@ export default function ShiraokaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "白岡市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Shiraoka City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            白岡市での畳工事なら日本畳パートナーズ
+            白岡市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県東部・白岡市。梨の産地として知られる田園に、区画整理された分譲住宅地が広がるエリアで、白岡 畳の張替え・表替え・新調を承ります。

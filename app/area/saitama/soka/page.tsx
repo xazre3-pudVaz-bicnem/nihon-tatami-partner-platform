@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "草加市の畳張替え・表替え・新調｜江戸情緒・おせんべい対応｜日本畳パートナーズ",
+  title: "草加市の畳張替え・表替え・新調｜江戸情緒・おせんべい対応｜埼玉畳店",
   description:
     "草加市全域で畳張替え・表替え・新調に対応。江戸情緒・おせんべいの町。戸建て・マンション・旧家・商店。現地確認・見積もり無料。",
   path: "/area/saitama/soka",
@@ -114,7 +114,7 @@ export default function SokaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "草加市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Soka City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            草加市での畳工事なら日本畳パートナーズ
+            草加市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             江戸情緒が残る「おせんべいの町」草加市。旧家・商家から現代的なマンションまで、幅広い施工に対応しています。

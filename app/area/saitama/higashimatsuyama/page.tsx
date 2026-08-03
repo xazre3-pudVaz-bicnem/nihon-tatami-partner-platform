@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "東松山市の畳張替え・表替え・新調｜日本畳パートナーズ",
+  title: "東松山市の畳張替え・表替え・新調｜埼玉畳店",
   description:
     "東松山市全域で畳の張替え・表替え・新調に対応。味噌だれやきとりで知られ、比企エリアの拠点として発展する中部のまち。戸建て・古民家・分譲マンションに実績豊富。東松山 畳のご相談はお気軽に。見積もり無料。",
   path: "/area/saitama/higashimatsuyama",
@@ -130,7 +130,7 @@ export default function HigashimatsuyamaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "東松山市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Higashimatsuyama City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            東松山市での畳工事なら日本畳パートナーズ
+            東松山市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             味噌だれやきとりで知られ、比企エリアの拠点として発展する埼玉県中部の東松山市。市街地の戸建てや高坂ニュータウンから、田園地帯の農家住宅・古民家まで、東松山 畳の張替え・表替え・新調に対応します。
@@ -171,7 +171,7 @@ export default function HigashimatsuyamaPage() {
                 比企エリアの拠点である東松山市を中心に、隣接する滑川町・嵐山町・小川町・吉見町など周辺地域からのご相談も多くいただいています。農家住宅の続き間の新調から、ニュータウンの薄型畳・縁なし畳まで、住まいのタイプに合わせた素材と仕上げをご提案します。
               </p>
               <p>
-                日本畳パートナーズでは、東松山市全域を対象に現地確認・お見積もりを無料で承っています。畳の状態を丁寧に拝見し、暮らし方とご予算に合わせた最適なプランをご提案します。
+                埼玉畳店では、東松山市全域を対象に現地確認・お見積もりを無料で承っています。畳の状態を丁寧に拝見し、暮らし方とご予算に合わせた最適なプランをご提案します。
               </p>
             </div>
           </div>

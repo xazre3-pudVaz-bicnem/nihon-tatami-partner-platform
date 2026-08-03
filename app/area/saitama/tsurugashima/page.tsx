@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "鶴ヶ島市の畳張替え・表替え・新調｜日本畳パートナーズ",
+  title: "鶴ヶ島市の畳張替え・表替え・新調｜埼玉畳店",
   description:
     "鶴ヶ島市全域で畳の張替え・表替え・新調に対応。若葉駅・鶴ヶ島駅周辺の住宅地の戸建て・分譲マンション・賃貸まで、鶴ヶ島 畳のご相談に幅広く対応。現地確認・見積もり無料。",
   path: "/area/saitama/tsurugashima",
@@ -130,7 +130,7 @@ export default function TsurugashimaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "鶴ヶ島市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Tsurugashima City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            鶴ヶ島市での畳工事なら日本畳パートナーズ
+            鶴ヶ島市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             東武東上線・越生線が通る埼玉県西部の鶴ヶ島市。落ち着いた住宅地が広がり、戸建て・分譲マンションが多いエリアで、鶴ヶ島 畳の張替え・表替え・新調に対応します。
@@ -171,7 +171,7 @@ export default function TsurugashimaPage() {
                 こうした住宅地では、小さなお子さまのいるご家庭から「傷や汚れに強い畳にしたい」というご相談が増えています。和紙畳・樹脂畳など、お手入れが簡単でダニ・カビの発生を抑えられる素材のご提案が好評です。
               </p>
               <p>
-                日本畳パートナーズでは、鶴ヶ島市全域を対象に現地確認・お見積もりを無料で承っています。共働きのご家庭には畳のお預かり施工など、暮らしに合わせた柔軟な対応を心がけています。
+                埼玉畳店では、鶴ヶ島市全域を対象に現地確認・お見積もりを無料で承っています。共働きのご家庭には畳のお預かり施工など、暮らしに合わせた柔軟な対応を心がけています。
               </p>
             </div>
           </div>

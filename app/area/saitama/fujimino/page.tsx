@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "ふじみ野市の畳張替え・表替え・新調｜子育て世代の新興住宅対応｜日本畳パートナーズ",
+  title: "ふじみ野市の畳張替え・表替え・新調｜子育て世代の新興住宅対応｜埼玉畳店",
   description:
     "ふじみ野市全域で畳張替え・表替え・新調に対応。ふじみ野駅・上福岡駅周辺、新河岸川エリアの区画整理された新興住宅地・マンションのファミリー世帯を丁寧に施工。見積もり無料。",
   path: "/area/saitama/fujimino",
@@ -130,7 +130,7 @@ export default function FujiminoPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "ふじみ野市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Fujimino City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            ふじみ野市での畳工事なら日本畳パートナーズ
+            ふじみ野市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             区画整理された新しい住宅地が広がる埼玉県南西部の新興住宅都市・ふじみ野市。子育て世代が多く暮らすまちで、ふじみ野市 畳の張替え・表替え・新調を承ります。

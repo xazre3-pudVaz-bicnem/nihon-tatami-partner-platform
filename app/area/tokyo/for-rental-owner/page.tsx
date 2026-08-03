@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "東京都の賃貸オーナー・大家向け畳張替え・原状回復｜日本畳パートナーズ",
+  title: "東京都の賃貸オーナー・大家向け畳張替え・原状回復｜埼玉畳店",
   description:
     "東京都内の賃貸物件の畳張替え・原状回復工事に対応。空室対策・退去後の速やかな対応で入居率向上をサポート。",
   path: "/area/tokyo/for-rental-owner",
@@ -130,7 +130,7 @@ export default function TokyoForRentalOwnerPage() {
             content: (
               <>
                 <p>
-                  東京都内の賃貸物件オーナー様にとって、退去後の速やかな原状回復と空室対策は入居率に直結する重要な課題です。日本畳パートナーズでは、東京23区・多摩地区の賃貸オーナー様からのご依頼に迅速対応しています。
+                  東京都内の賃貸物件オーナー様にとって、退去後の速やかな原状回復と空室対策は入居率に直結する重要な課題です。埼玉畳店では、東京23区・多摩地区の賃貸オーナー様からのご依頼に迅速対応しています。
                 </p>
                 <p>
                   畳の状態確認・費用負担の区分説明・施工・写真報告まで、ワンストップで承ります。国土交通省の原状回復ガイドラインに沿った費用負担の考え方についても、わかりやすくご説明しますので、入居者とのやり取りでお困りの際もご相談ください。

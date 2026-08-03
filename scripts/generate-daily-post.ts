@@ -22,7 +22,7 @@ const MODEL = process.env.ANTHROPIC_MODEL || DEFAULT_MODEL;
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
 const SITE = {
-  name: "日本畳パートナーズ",
+  name: "埼玉畳店",
   baseUrl: "https://www.tatami-partners.jp",
   areaKeyword: "埼玉県・関東エリア",
   businessType: "畳工事・和室リフォーム・内装工事・原状回復",

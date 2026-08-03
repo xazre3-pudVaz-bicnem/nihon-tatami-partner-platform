@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "北本市の畳張替え・表替え・新調｜雑木林に囲まれた住宅地対応｜日本畳パートナーズ",
+  title: "北本市の畳張替え・表替え・新調｜雑木林に囲まれた住宅地対応｜埼玉畳店",
   description:
     "北本市全域で畳張替え・表替え・新調に対応。北本駅周辺の落ち着いた戸建て住宅地から、自然観察公園・石戸蒲ザクラ周辺の和室まで、北本の畳工事を承ります。見積もり無料。",
   path: "/area/saitama/kitamoto",
@@ -130,7 +130,7 @@ export default function KitamotoPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "北本市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Kitamoto City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            北本市での畳工事なら日本畳パートナーズ
+            北本市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県中央部・北本市。雑木林や自然観察公園の緑が残り、トマトのまちとしても知られる落ち着いた住宅地で、北本 畳の張替え・表替え・新調を承ります。

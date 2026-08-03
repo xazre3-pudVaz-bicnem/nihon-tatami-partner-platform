@@ -115,7 +115,7 @@ const STRUCTURED_DATA = {
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: `${SITE_URL}`,
-  email: "nihontatami.0110@gmail.com",
+  email: "info@cypress-all.co.jp",
   description: "畳の表替え・新調から内装工事・原状回復まで。東京・神奈川・千葉・埼玉・群馬・栃木・茨城に対応する畳と空間整備の専門パートナー。",
   ...(_hasTel ? { telephone: SITE_TEL } : {}),
   priceRange: "¥¥",
@@ -220,7 +220,7 @@ export default function HomePage() {
             <div className="flex items-center gap-4 mb-9">
               <div className="w-7 h-px bg-kincya/75" />
               <p className="text-[10px] text-kincya tracking-[0.45em] uppercase">
-                Nihon Tatami Partners
+                Saitama Tatami Store
               </p>
             </div>
 
@@ -261,18 +261,18 @@ export default function HomePage() {
 
       {/* ===== 2. STATS BAND — 実績確定まで非表示 ===== */}
 
-      {/* ===== 2b. 日本畳パートナーズとは ===== */}
-      {/* 日本畳パートナーズとは */}
+      {/* ===== 2b. 埼玉畳店とは ===== */}
+      {/* 埼玉畳店とは */}
       <section className="py-20 bg-shiro">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionLabel en="About" className="justify-center mb-4" />
           <h2 className="text-2xl sm:text-3xl text-sumi mb-6 text-center" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            日本畳パートナーズとは
+            埼玉畳店とは
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <div>
               <p className="text-sm text-sumi/70 leading-relaxed mb-4">
-                日本畳パートナーズは、畳の表替え・裏返し・新調を中心に、襖・障子・内装工事・原状回復までご相談いただける専門窓口です。
+                埼玉畳店は、畳の表替え・裏返し・新調を中心に、襖・障子・内装工事・原状回復までご相談いただける専門窓口です。
               </p>
               <p className="text-sm text-sumi/70 leading-relaxed mb-4">
                 一般住宅の和室から、賃貸物件の退去後整備、不動産会社・管理会社の継続案件、旅館・寺社・店舗の空間整備まで、用途に合わせた施工相談を受け付けています。
@@ -287,8 +287,8 @@ export default function HomePage() {
                 { label: "対応工事", value: "畳工事・襖障子・内装工事・原状回復" },
                 { label: "お見積もり", value: "現地確認・お見積もり無料" },
                 { label: "お問い合わせ", value: "フォーム・お電話でご相談ください" },
-                { label: "電話番号", value: "070-5439-9949" },
-                { label: "メールアドレス", value: "nihontatami.0110@gmail.com" },
+                { label: "電話番号", value: "090-2360-0052" },
+                { label: "メールアドレス", value: "info@cypress-all.co.jp" },
               ].map((row) => (
                 <div key={row.label} className="flex gap-4 pb-3 border-b border-border">
                   <span className="text-xs text-sumi/40 w-28 shrink-0 tracking-wide">{row.label}</span>
@@ -319,7 +319,7 @@ export default function HomePage() {
                 style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}
               >
                 埼玉県での畳工事なら<br />
-                日本畳パートナーズ
+                埼玉畳店
               </h2>
               <p className="text-sm text-sumi/60 leading-relaxed max-w-2xl mx-auto mb-2">
                 さいたま市・川口市・越谷市・川越市など埼玉県全域に対応。<br />
@@ -399,7 +399,7 @@ export default function HomePage() {
                     私たちはその重みを知っているからこそ、畳の施工に誠実に向き合います。
                   </p>
                   <p>
-                    日本畳パートナーズは、一般住宅の和室リフレッシュから、旅館客室の格式維持、
+                    埼玉畳店は、一般住宅の和室リフレッシュから、旅館客室の格式維持、
                     寺社の本堂整備、賃貸物件の空室対策、不動産売買前の印象改善まで、
                     「畳を軸にした空間整備の専門パートナー」として幅広くご支援します。
                   </p>

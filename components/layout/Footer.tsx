@@ -95,7 +95,7 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-full overflow-hidden shrink-0">
                 <Image
                   src="/logo.png"
-                  alt="日本畳パートナーズ ロゴ"
+                  alt="埼玉畳店 ロゴ"
                   width={36}
                   height={36}
                   className="w-full h-full object-cover"
@@ -105,7 +105,7 @@ export default function Footer() {
                 <span className="block text-sm tracking-[0.12em]" style={{ fontFamily: "var(--font-serif)" }}>
                   {SITE_NAME}
                 </span>
-                <span className="block text-[9px] text-white/30 tracking-[0.15em]">NIHON TATAMI PARTNERS</span>
+                <span className="block text-[9px] text-white/30 tracking-[0.15em]">SAITAMA TATAMI STORE</span>
               </div>
             </div>
             <p className="text-xs text-white/40 leading-relaxed mb-6">

@@ -8,7 +8,7 @@ import CTASection from "@/components/ui/CTASection";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "埼玉の畳工事 料金ガイド｜費用相場・見積もり方法・賢い値段交渉｜日本畳パートナーズ",
+    "埼玉の畳工事 料金ガイド｜費用相場・見積もり方法・賢い値段交渉｜埼玉畳店",
   description:
     "埼玉での畳張替え・表替え・新調の料金相場。費用を左右する要因、見積もり前の注意点、複数物件割引、埼玉内の費用差を解説。",
   path: "/area/saitama/guide-tatami-price",

@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "蓮田市の畳張替え・表替え・新調｜田園地帯の戸建て対応｜日本畳パートナーズ",
+  title: "蓮田市の畳張替え・表替え・新調｜田園地帯の戸建て対応｜埼玉畳店",
   description:
     "蓮田市全域で畳張替え・表替え・新調に対応。蓮田駅周辺の住宅地から黒浜・元荒川沿いの農家住宅まで、戸建て・和室の畳工事を承ります。現地確認・見積もり無料。",
   path: "/area/saitama/hasuda",
@@ -130,7 +130,7 @@ export default function HasudaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "蓮田市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Hasuda City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            蓮田市での畳工事なら日本畳パートナーズ
+            蓮田市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県中東部の田園地帯・蓮田市。黒浜沼や元荒川に抱かれた田畑と住宅地が広がるエリアで、蓮田 畳の張替え・表替え・新調を承ります。

@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "新座市の畳張替え・表替え・新調｜南部拠点対応｜日本畳パートナーズ",
+  title: "新座市の畳張替え・表替え・新調｜南部拠点対応｜埼玉畳店",
   description:
     "新座市全域で畳張替え・表替え・新調に対応。埼玉県南部の住宅地。戸建て・マンション・団地。東京都内への対応も相談可能。現地確認・見積もり無料。",
   path: "/area/saitama/niiza",
@@ -114,7 +114,7 @@ export default function NiizaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "新座市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Niiza City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            新座市での畳工事なら日本畳パートナーズ
+            新座市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県南部の住宅地・新座市。東京都との境界に位置し、団地・マンション・戸建て住宅での多様な施工に対応しています。

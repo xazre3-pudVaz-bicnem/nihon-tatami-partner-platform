@@ -8,7 +8,7 @@ import CTASection from "@/components/ui/CTASection";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "埼玉で畳を選ぶ時の完全ガイド｜素材・サイズ・予算から正しい判断を｜日本畳パートナーズ",
+    "埼玉で畳を選ぶ時の完全ガイド｜素材・サイズ・予算から正しい判断を｜埼玉畳店",
   description:
     "埼玉での畳選びの完全ガイド。い草・和紙・樹脂の比較、素材選びのポイント、埼玉の気候に合わせた選び方、予算別の選択肢を網羅。",
   path: "/area/saitama/guide-tatami-buying",

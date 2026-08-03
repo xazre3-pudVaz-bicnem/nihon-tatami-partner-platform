@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "上尾市の畳張替え・表替え・新調｜埼玉県中央対応｜日本畳パートナーズ",
+  title: "上尾市の畳張替え・表替え・新調｜埼玉県中央対応｜埼玉畳店",
   description:
     "上尾市全域で畳張替え・表替え・新調に対応。埼玉県中央部の拠点都市。戸建て・マンション・団地。現地確認・見積もり無料。",
   path: "/area/saitama/ageo",
@@ -114,7 +114,7 @@ export default function AgeoPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "上尾市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Ageo City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            上尾市での畳工事なら日本畳パートナーズ
+            上尾市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県の中央部・上尾市。駅周辺の商業地から団地・戸建て住宅地まで、多様な物件での施工に対応しています。

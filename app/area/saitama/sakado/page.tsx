@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "坂戸市の畳張替え・表替え・新調｜日本畳パートナーズ",
+  title: "坂戸市の畳張替え・表替え・新調｜埼玉畳店",
   description:
     "坂戸市全域で畳の張替え・表替え・新調に対応。にっさい花みず木の住宅地や大学周辺の学生向け賃貸まで、坂戸 畳のご相談に幅広く対応。戸建て・アパート・法人施設。現地確認・見積もり無料。",
   path: "/area/saitama/sakado",
@@ -130,7 +130,7 @@ export default function SakadoPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "坂戸市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Sakado City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            坂戸市での畳工事なら日本畳パートナーズ
+            坂戸市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県西部、東武東上線が通る坂戸市。にっさい花みず木の分譲住宅地や、大学周辺の学生向け賃貸が集まるエリアで、坂戸 畳の張替え・表替え・新調に対応します。
@@ -171,7 +171,7 @@ export default function SakadoPage() {
                 また、女子栄養大学・城西大学などのキャンパスがあり、学生向けのアパート・ワンルームが数多く立地しています。2〜3月の退去シーズンには原状回復のご依頼が集中するため、計画的なスケジュール調整を大切にしています。
               </p>
               <p>
-                日本畳パートナーズでは、坂戸市全域を対象に現地確認・お見積もりを無料で承っています。住まいのタイプに合わせた素材と仕上げをご提案します。
+                埼玉畳店では、坂戸市全域を対象に現地確認・お見積もりを無料で承っています。住まいのタイプに合わせた素材と仕上げをご提案します。
               </p>
             </div>
           </div>

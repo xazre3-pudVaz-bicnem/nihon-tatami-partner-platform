@@ -42,11 +42,11 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 h-16 flex items-center justify-between gap-6">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 group" aria-label="日本畳パートナーズ トップへ">
+          <Link href="/" className="flex items-center gap-2.5 shrink-0 group" aria-label="埼玉畳店 トップへ">
             <div className="w-9 h-9 rounded-full overflow-hidden shrink-0 ring-1 ring-white/10 group-hover:ring-white/25 transition-all duration-300">
               <Image
                 src="/logo.png"
-                alt="日本畳パートナーズ ロゴ"
+                alt="埼玉畳店 ロゴ"
                 width={36}
                 height={36}
                 className="w-full h-full object-cover"
@@ -67,7 +67,7 @@ export default function Header() {
                   scrolled ? "text-sumi/35" : "text-white/35"
                 }`}
               >
-                NIHON TATAMI PARTNERS
+                SAITAMA TATAMI STORE
               </span>
             </div>
           </Link>

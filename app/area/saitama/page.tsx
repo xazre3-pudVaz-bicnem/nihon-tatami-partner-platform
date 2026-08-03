@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: `埼玉の畳張替え・表替え・新調なら日本畳パートナーズ｜全38市区対応 | ${SITE_NAME}`,
+  title: `埼玉の畳張替え・表替え・新調なら埼玉畳店｜全38市区対応 | ${SITE_NAME}`,
   description:
     "埼玉県全域対応。畳張替え・表替え・新調・裏返し・縁なし畳・和紙畳・樹脂畳、襖・障子・原状回復・内装工事に対応。さいたま市・川口・越谷・春日部・川越・所沢・草加・上尾など全38市区へお伺い。埼玉の湿度・気候に合わせた最適な素材選びをご提案。現地確認・見積もり無料。",
   path: "/area/saitama",
@@ -198,7 +198,7 @@ const specialAnnouncementSchema = {
   "@id": `${SITE_URL}/area/saitama#announcement`,
   name: "埼玉県での畳工事・原状回復工事に対応",
   description:
-    "日本畳パートナーズは埼玉県全38市区での畳張替え・原状回復・内装工事に対応しています。",
+    "埼玉畳店は埼玉県全38市区での畳張替え・原状回復・内装工事に対応しています。",
   inLanguage: "ja",
   spatialCoverage: {
     "@type": "AdministrativeArea",
@@ -251,7 +251,7 @@ export default function SaitamaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">埼玉県対応</p>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            埼玉の畳張替え・表替え・新調なら日本畳パートナーズ
+            埼玉の畳張替え・表替え・新調なら埼玉畳店
           </h1>
           <p className="text-base text-white/70 max-w-3xl leading-relaxed mb-3">
             埼玉県全38市区対応。さいたま市・川口市・越谷市・春日部市・川越市・所沢市・草加市・上尾市をはじめ、埼玉県内のあらゆる地域でご対応。一戸建て・マンション・賃貸物件・旅館・施設まで、幅広いご相談をお受けします。
@@ -305,7 +305,7 @@ export default function SaitamaPage() {
             </h2>
             <div className="space-y-4 text-sm text-sumi/80 leading-relaxed">
               <p>
-                日本畳パートナーズは埼玉県内で多くの畳工事実績を持つ専門業者です。さいたま市から深谷市まで、埼玉県全38市区に対応しており、一戸建て住宅からマンション、賃貸物件、旅館・施設まで幅広いご相談をお受けしています。
+                埼玉畳店は埼玉県内で多くの畳工事実績を持つ専門業者です。さいたま市から深谷市まで、埼玉県全38市区に対応しており、一戸建て住宅からマンション、賃貸物件、旅館・施設まで幅広いご相談をお受けしています。
               </p>
               <p>
                 埼玉県は首都圏のベッドタウンとして急速に発展してきた地域です。埼玉県は関東平野の中央に位置する内陸県であり、海がない地形のため、気候が独特です。埼玉の気候は畳にとって非常に過酷な環境です。夏場は気温が30℃を超えることが多く、梅雨から初夏にかけての高温多湿によるカビ・ダニの発生リスクが高まります。特に賃貸物件・旅館・古い住宅では換気が不十分になりがちで、退去後に畳のカビや臭いが発覚するケースが多くあります。冬は北西からの「空っ風（からっかぜ）」の影響で乾燥が激しく、畳表のひび割れや縮みが起きやすい季節です。このような気候変化に対応できる素材選びと施工方法が重要になります。

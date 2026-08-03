@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "吉川市の畳張替え・表替え・新調｜日本畳パートナーズ",
+  title: "吉川市の畳張替え・表替え・新調｜埼玉畳店",
   description:
     "吉川市全域で畳の張替え・表替え・新調に対応。なまずの里として知られ、吉川美南の新興住宅地が広がる東部エリア。戸建て・分譲マンション・賃貸に実績豊富。吉川 畳のご相談はお気軽に。見積もり無料。",
   path: "/area/saitama/yoshikawa",
@@ -130,7 +130,7 @@ export default function YoshikawaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "吉川市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Yoshikawa City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            吉川市での畳工事なら日本畳パートナーズ
+            吉川市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             「なまずの里」として知られ、吉川美南の新興住宅地が広がる埼玉県東部の吉川市。新築戸建て・分譲マンションから賃貸まで、吉川 畳の張替え・表替え・新調に対応します。
@@ -171,7 +171,7 @@ export default function YoshikawaPage() {
                 吉川市は中川・江戸川に挟まれた低地で、湿気がこもりやすいのも特徴です。カビ・ダニの発生を抑えるため、防カビ・防ダニ加工の畳表や、傷・汚れに強くお手入れが簡単な和紙畳・樹脂畳をおすすめするケースが増えています。
               </p>
               <p>
-                日本畳パートナーズでは、吉川市全域を対象に現地確認・お見積もりを無料で承っています。共働きのご家庭には畳のお預かり施工など、暮らしに合わせた柔軟な対応を心がけています。
+                埼玉畳店では、吉川市全域を対象に現地確認・お見積もりを無料で承っています。共働きのご家庭には畳のお預かり施工など、暮らしに合わせた柔軟な対応を心がけています。
               </p>
             </div>
           </div>

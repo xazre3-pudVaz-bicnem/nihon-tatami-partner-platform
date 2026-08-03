@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "行田市の畳張替え・表替え・新調｜足袋と忍城の城下町対応｜日本畳パートナーズ",
+  title: "行田市の畳張替え・表替え・新調｜足袋と忍城の城下町対応｜埼玉畳店",
   description:
     "行田市全域で畳張替え・表替え・新調に対応。足袋蔵の町並み・忍城下の古い戸建てや蔵造り、古代蓮の里周辺の農村住宅まで、行田の和室の畳工事を承ります。見積もり無料。",
   path: "/area/saitama/gyoda",
@@ -130,7 +130,7 @@ export default function GyodaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "行田市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Gyoda City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            行田市での畳工事なら日本畳パートナーズ
+            行田市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県北部・行田市。足袋蔵の町並みと忍城（おしじょう）の城下町、古代蓮の里が息づく歴史のまちで、行田 畳の張替え・表替え・新調を承ります。

@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "さいたま市の畳張替え・表替え・新調｜全区対応｜日本畳パートナーズ",
+  title: "さいたま市の畳張替え・表替え・新調｜全区対応｜埼玉畳店",
   description:
     "さいたま市（中央区・北区・南区・浦和区・緑区・岩槻区）全域で畳張替え・表替え・新調に対応。戸建て・マンション・賃貸物件・法人施設。現地確認・見積もり無料。",
   path: "/area/saitama/saitama-city",
@@ -138,7 +138,7 @@ export default function SaitamaCityPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "さいたま市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Saitama City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            さいたま市での畳工事なら日本畳パートナーズ
+            さいたま市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県庁所在地・さいたま市の6つの行政区（中央区・北区・南区・浦和区・緑区・岩槻区）全域で、畳張替え・表替え・新調・原状回復に対応しています。

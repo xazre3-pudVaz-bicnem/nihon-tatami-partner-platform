@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "川越市の畳張替え・表替え・新調｜蔵造り・歴史建築対応｜日本畳パートナーズ",
+  title: "川越市の畳張替え・表替え・新調｜蔵造り・歴史建築対応｜埼玉畳店",
   description:
     "川越市全域で畳張替え・表替え・新調に対応。「小江戸」蔵造り・歴史的建造物・観光施設での豊富な施工実績。現地確認・見積もり無料。",
   path: "/area/saitama/kawagoe",
@@ -114,7 +114,7 @@ export default function KawagoePage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "川越市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Kawagoe City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            川越市での畳工事なら日本畳パートナーズ
+            川越市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             江戸情緒が残る「小江戸」川越。蔵造り・歴史的建造物での豊富な施工実績があります。

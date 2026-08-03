@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "埼玉の寺院・神社向け畳・襖・障子工事｜日本畳パートナーズ",
+  title: "埼玉の寺院・神社向け畳・襖・障子工事｜埼玉畳店",
   description:
     "埼玉県の寺院・神社の本堂・社務所・書院の畳・襖・障子工事に対応。格式と品位を重んじた素材選定と丁寧な施工で、行事前の整備をサポートします。",
   path: "/area/saitama/for-temple-shrine",
@@ -75,7 +75,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": `${SITE_URL}/area/saitama/for-temple-shrine#webpage`,
-  name: "埼玉の寺院・神社向け畳・襖・障子工事｜日本畳パートナーズ",
+  name: "埼玉の寺院・神社向け畳・襖・障子工事｜埼玉畳店",
   description: "埼玉県の寺院・神社の本堂・社務所・書院の畳・襖・障子工事に対応。格式と品位を重んじた素材選定と丁寧な施工で、行事前の整備をサポートします。",
   url: `${SITE_URL}/area/saitama/for-temple-shrine`,
   inLanguage: "ja",
@@ -158,7 +158,7 @@ export default function ForTempleShrinePageRoute() {
             content: (
               <>
                 <p>
-                  寺院や神社の本堂・社務所・書院の畳は、一般住宅とは異なる格式と品位が求められます。日本畳パートナーズでは、埼玉県内の寺院・神社からの畳・襖・障子工事のご依頼に対応しています。
+                  寺院や神社の本堂・社務所・書院の畳は、一般住宅とは異なる格式と品位が求められます。埼玉畳店では、埼玉県内の寺院・神社からの畳・襖・障子工事のご依頼に対応しています。
                 </p>
                 <p>
                   素材は格式ある空間にふさわしい国産上位グレードのい草を中心にご提案します。現地を確認したうえで、これまで使われてきた素材の継続や新たな素材への切り替えをご相談しながら決定します。

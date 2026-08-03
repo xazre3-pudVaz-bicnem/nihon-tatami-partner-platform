@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "越谷市の畳張替え・表替え・新調｜新興住宅地対応｜日本畳パートナーズ",
+  title: "越谷市の畳張替え・表替え・新調｜新興住宅地対応｜埼玉畳店",
   description:
     "越谷市全域で畳張替え・表替え・新調に対応。レイクタウン等の新興住宅地・大型マンション密集地での豊富な施工実績。戸建て・集合住宅対応。",
   path: "/area/saitama/koshigaya",
@@ -130,7 +130,7 @@ export default function KoshigayaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "越谷市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Koshigaya City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            越谷市での畳工事なら日本畳パートナーズ
+            越谷市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県東部の拠点・越谷市。レイクタウン等の新興住宅地・大型マンション密集地での豊富な施工実績があります。

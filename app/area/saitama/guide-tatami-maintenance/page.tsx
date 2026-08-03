@@ -8,7 +8,7 @@ import CTASection from "@/components/ui/CTASection";
 
 export const metadata: Metadata = buildMetadata({
   title:
-    "埼玉での畳メンテナンス完全ガイド｜定期保全・お手入れ方法・カビ対策｜日本畳パートナーズ",
+    "埼玉での畳メンテナンス完全ガイド｜定期保全・お手入れ方法・カビ対策｜埼玉畳店",
   description:
     "埼玉の気候に合わせた畳メンテナンスガイド。定期保全スケジュール、日常のお手入れ、カビ・ダニ対策、寿命の延ばし方を解説。",
   path: "/area/saitama/guide-tatami-maintenance",

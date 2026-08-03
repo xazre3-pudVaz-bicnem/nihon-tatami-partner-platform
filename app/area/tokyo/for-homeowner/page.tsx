@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "東京都の一戸建て・マンション向け畳張替え｜日本畳パートナーズ",
+  title: "東京都の一戸建て・マンション向け畳張替え｜埼玉畳店",
   description:
     "東京都内のご自宅の畳張替え・表替え・新調に対応。23区・多摩地区・市部まで。素材選びから施工まで丁寧にご対応します。",
   path: "/area/tokyo/for-homeowner",
@@ -130,7 +130,7 @@ export default function TokyoForHomeownerPage() {
             content: (
               <>
                 <p>
-                  日本畳パートナーズは、東京都内の一般住宅（戸建・マンション）の畳工事を専門に承っています。新宿・渋谷・世田谷・目黒・杉並・練馬など23区内はもちろん、八王子・立川・府中・調布・三鷹など多摩地区・市部にも対応しています。
+                  埼玉畳店は、東京都内の一般住宅（戸建・マンション）の畳工事を専門に承っています。新宿・渋谷・世田谷・目黒・杉並・練馬など23区内はもちろん、八王子・立川・府中・調布・三鷹など多摩地区・市部にも対応しています。
                 </p>
                 <p>
                   東京都内のマンションは床スラブ構造のため、一般的な戸建用の畳とは異なる薄型建材畳や防音対応畳が必要なケースがあります。管理規約の遮音等級要件にも配慮した素材選びをご提案します。

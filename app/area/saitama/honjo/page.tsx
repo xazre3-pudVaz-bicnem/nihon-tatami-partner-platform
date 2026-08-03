@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "本庄市の畳張替え・表替え・新調｜日本畳パートナーズ",
+  title: "本庄市の畳張替え・表替え・新調｜埼玉畳店",
   description:
     "本庄市全域で畳の張替え・表替え・新調に対応。中山道の宿場町として栄えた歴史ある北部エリアの町家・古民家・戸建てに実績豊富。本庄 畳のご相談はお気軽に。現地確認・見積もり無料。",
   path: "/area/saitama/honjo",
@@ -130,7 +130,7 @@ export default function HonjoPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "本庄市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Honjo City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            本庄市での畳工事なら日本畳パートナーズ
+            本庄市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             中山道最大級の宿場町として栄えた埼玉県北部の本庄市。旧市街に残る町家・古民家から、本庄早稲田駅周辺の新しい住宅まで、本庄 畳の張替え・表替え・新調に対応します。
@@ -171,7 +171,7 @@ export default function HonjoPage() {
                 本庄市は冬にからっ風が吹く乾燥した気候で、畳が乾燥で傷みやすい傾向があります。乾燥に強く色あせしにくい和紙畳や、耐久性の高い樹脂畳のご提案が好評です。伝統的な和室にはい草畳の風合いを活かした仕上げも承ります。
               </p>
               <p>
-                日本畳パートナーズでは、本庄市全域を対象に現地確認・お見積もりを無料で承っています。畳の寸法や縁の格に配慮し、住まいにふさわしい仕上げをご提案します。
+                埼玉畳店では、本庄市全域を対象に現地確認・お見積もりを無料で承っています。畳の寸法や縁の格に配慮し、住まいにふさわしい仕上げをご提案します。
               </p>
             </div>
           </div>

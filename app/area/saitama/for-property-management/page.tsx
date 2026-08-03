@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "埼玉の管理会社向け畳交換・原状回復｜日本畳パートナーズ",
+  title: "埼玉の管理会社向け畳交換・原状回復｜埼玉畳店",
   description:
     "埼玉県の不動産管理会社様向け。複数物件の畳交換・原状回復を継続的にお受けします。写真付き施工報告、スケジュール調整、一括対応で管理業務をサポートします。",
   path: "/area/saitama/for-property-management",
@@ -75,7 +75,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": `${SITE_URL}/area/saitama/for-property-management#webpage`,
-  name: "埼玉の管理会社向け畳交換・原状回復｜日本畳パートナーズ",
+  name: "埼玉の管理会社向け畳交換・原状回復｜埼玉畳店",
   description: "埼玉県の不動産管理会社様向け。複数物件の畳交換・原状回復を継続的にお受けします。写真付き施工報告、スケジュール調整、一括対応で管理業務をサポートします。",
   url: `${SITE_URL}/area/saitama/for-property-management`,
   inLanguage: "ja",
@@ -158,7 +158,7 @@ export default function ForPropertyManagementPage() {
             content: (
               <>
                 <p>
-                  不動産管理会社様にとって、退去のたびに発生する畳交換・原状回復の対応は、業務負荷が高い作業の一つです。日本畳パートナーズでは、埼玉県内の管理会社様からの継続的な畳工事のご依頼をお受けしています。
+                  不動産管理会社様にとって、退去のたびに発生する畳交換・原状回復の対応は、業務負荷が高い作業の一つです。埼玉畳店では、埼玉県内の管理会社様からの継続的な畳工事のご依頼をお受けしています。
                 </p>
                 <p>
                   複数物件をまとめてご依頼いただける体制を整えており、担当者が一括で進捗を管理します。施工後は写真をご提供しますので、オーナーへの報告や精算書類の作成にそのままお使いいただけます。

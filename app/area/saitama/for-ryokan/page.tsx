@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "埼玉の旅館・宿泊施設向け畳張替え｜日本畳パートナーズ",
+  title: "埼玉の旅館・宿泊施設向け畳張替え｜埼玉畳店",
   description:
     "埼玉県の旅館・温泉宿・宿泊施設の畳張替え・客室整備に対応。格式感を維持しながら繁忙期前に整備。客室別施工で営業を続けながら対応可能です。",
   path: "/area/saitama/for-ryokan",
@@ -75,7 +75,7 @@ const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": `${SITE_URL}/area/saitama/for-ryokan#webpage`,
-  name: "埼玉の旅館・宿泊施設向け畳張替え｜日本畳パートナーズ",
+  name: "埼玉の旅館・宿泊施設向け畳張替え｜埼玉畳店",
   description: "埼玉県の旅館・温泉宿・宿泊施設の畳張替え・客室整備に対応。格式感を維持しながら繁忙期前に整備。客室別施工で営業を続けながら対応可能です。",
   url: `${SITE_URL}/area/saitama/for-ryokan`,
   inLanguage: "ja",
@@ -161,7 +161,7 @@ export default function ForRyokanPage() {
                   旅館や温泉宿にとって、畳の状態はお客様の満足度に直結します。へたった畳、色褪せたい草、古い臭いは「古ぼけた印象」につながりますが、適切に整備することで「手入れが行き届いた宿」という印象になります。
                 </p>
                 <p>
-                  日本畳パートナーズでは、旅館・ホテル・湯治宿など埼玉県内の宿泊施設からのご依頼に対応しています。客室ごとの分割施工で営業を維持しながら整備を進めることができ、繁忙期の直前・直後でも計画的にスケジュールを組むことが可能です。
+                  埼玉畳店では、旅館・ホテル・湯治宿など埼玉県内の宿泊施設からのご依頼に対応しています。客室ごとの分割施工で営業を維持しながら整備を進めることができ、繁忙期の直前・直後でも計画的にスケジュールを組むことが可能です。
                 </p>
                 <p>
                   素材は旅館のグレード感に合わせた国産い草（熊本県八代産など）から選択可能です。大広間・宴会場など大面積の施工にも、複数名体制で対応します。畳だけでなく、襖・障子の張替えも一緒に承りますので、客室全体のリフレッシュをご依頼いただけます。

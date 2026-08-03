@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "桶川市の畳張替え・表替え・新調｜中山道 桶川宿の町並み対応｜日本畳パートナーズ",
+  title: "桶川市の畳張替え・表替え・新調｜中山道 桶川宿の町並み対応｜埼玉畳店",
   description:
     "桶川市全域で畳張替え・表替え・新調に対応。中山道の宿場町・桶川宿の街道沿いの町家や紅花ゆかりの旧家、桶川駅周辺の戸建て和室まで、桶川の畳工事を承ります。見積もり無料。",
   path: "/area/saitama/okegawa",
@@ -130,7 +130,7 @@ export default function OkegawaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "桶川市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Okegawa City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            桶川市での畳工事なら日本畳パートナーズ
+            桶川市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             埼玉県中央部・桶川市。中山道の宿場町「桶川宿」として栄え、紅花の集散地でもあった歴史のまちで、桶川 畳の張替え・表替え・新調を承ります。

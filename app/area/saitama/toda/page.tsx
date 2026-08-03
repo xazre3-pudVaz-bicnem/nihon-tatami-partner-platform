@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "戸田市の畳張替え・表替え・新調｜タワーマンション対応｜日本畳パートナーズ",
+  title: "戸田市の畳張替え・表替え・新調｜タワーマンション対応｜埼玉畳店",
   description:
     "戸田市全域で畳張替え・表替え・新調に対応。戸田公園・戸田・北戸田駅周辺、荒川沿いのタワーマンション・分譲マンション・賃貸を丁寧に施工。原状回復も対応。見積もり無料。",
   path: "/area/saitama/toda",
@@ -130,7 +130,7 @@ export default function TodaPage() {
           <Breadcrumb items={[{ label: "対応エリア", href: "/area" }, { label: "埼玉県", href: "/area/saitama" }, { label: "戸田市" }]} />
           <p className="text-xs text-kincya tracking-[0.3em] mb-4 uppercase">Toda City</p>
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            戸田市での畳工事なら日本畳パートナーズ
+            戸田市での畳工事なら埼玉畳店
           </h1>
           <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-2">
             戸田ボートコースで知られ、荒川沿いにタワーマンションが立ち並ぶ埼玉県南部の戸田市。平均年齢が若く活気あるまちで、戸田市 畳の張替え・表替え・新調を承ります。
@@ -169,7 +169,7 @@ export default function TodaPage() {
                 住まいの中心は、駅周辺に立ち並ぶタワーマンション・分譲マンションと、賃貸マンション・アパートです。都内近接で賃貸需要が非常に高く、単身向けからファミリー向けまで多様な物件が集まっています。このため、分譲マンションの和室の表替え・新調と、賃貸物件の退去後の原状回復工事の両方のご依頼を数多くいただいています。高層階の物件では、畳をお預かりして工場で仕上げる持ち帰り施工が中心となります。
               </p>
               <p>
-                荒川沿いの低地という地形から湿度が上がりやすく、また気密性の高いマンションでは結露による畳のカビ・ダニが気になることもあります。日本畳パートナーズでは、伝統的ない草表に加え、防カビ・防湿性に優れた和紙畳・樹脂畳をご用意し、住まいの環境やペットの有無に合わせてご提案しています。
+                荒川沿いの低地という地形から湿度が上がりやすく、また気密性の高いマンションでは結露による畳のカビ・ダニが気になることもあります。埼玉畳店では、伝統的ない草表に加え、防カビ・防湿性に優れた和紙畳・樹脂畳をご用意し、住まいの環境やペットの有無に合わせてご提案しています。
               </p>
               <p>
                 若い世帯の多い戸田市では、縁なしの琉球畳やカラー和紙畳など、モダンな畳コーナーのご要望も増えています。戸田市 畳のことなら、タワーマンションの一室から賃貸物件の原状回復まで、共用部のルールにも配慮して幅広く承ります。
