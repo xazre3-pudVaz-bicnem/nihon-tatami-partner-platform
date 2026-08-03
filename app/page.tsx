@@ -18,8 +18,8 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import FAQTabs from "@/components/ui/FAQTabs";
 
 export const metadata: Metadata = buildMetadata({
-  title: `${SITE_NAME} | 畳・内装・原状回復の専門パートナー`,
-  description: "畳の表替え・新調から内装工事・原状回復まで。住宅・旅館・寺社・店舗・不動産管理物件に対応。BtoC・BtoB両対応の畳と空間整備の専門パートナー。",
+  title: `埼玉の畳張替え・表替え・新調なら埼玉畳店｜和室リフォーム・原状回復`,
+  description: "埼玉県で畳の張替え（表替え・新調・裏返し）をお探しなら埼玉畳店へ。い草・和紙・樹脂畳、縁なし畳に対応し、和室リフォーム・襖・障子・内装工事・原状回復まで一括でご相談いただけます。現地確認・お見積もり無料。",
   path: "/",
 });
 
@@ -229,17 +229,21 @@ export default function HomePage() {
               className="text-[2.75rem] sm:text-[3.5rem] xl:text-[4.25rem] text-white leading-[1.08] mb-8"
               style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }}
             >
-              畳から、<br />
+              埼玉の畳から、<br />
               空間の価値を<br />
               <span style={{ color: "#B88942" }}>整える。</span>
             </h1>
+            {/* SEO補助: 埼玉の畳キーワードを明示（視覚的にも自然な副見出し） */}
+            <p className="text-sm text-white/70 tracking-wide mb-6">
+              埼玉県の畳張替え・表替え・新調／和室リフォーム・原状回復
+            </p>
 
             {/* Separator */}
             <IgusaLine light className="mb-7" />
 
             {/* Description */}
             <p className="text-sm text-white/60 leading-relaxed mb-3 max-w-sm">
-              住宅・旅館・寺社・店舗まで。<br />
+              埼玉を中心に、住宅・旅館・寺社・店舗まで。<br />
               畳と内装の専門パートナー。
             </p>
             <p className="text-xs text-white/30 leading-relaxed max-w-sm">
