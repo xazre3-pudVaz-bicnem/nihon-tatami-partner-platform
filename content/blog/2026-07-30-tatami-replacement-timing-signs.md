@@ -38,7 +38,7 @@ _theme: 畳交換のタイミングを見極めるサイン
 
 湿度が高い季節や、水分の多い環境（リビング近くの和室など）では、カビが発生することがあります。カビは見た目の問題だけでなく、アレルギーや呼吸器症状の原因にもなります。また、畳特有の香りではなく、不快な臭いがする場合も、カビや湿度トラブルが生じている可能性があります。
 
-定期的な通風で改善することもありますが、カビが深く根付いている場合は、[新調](https://www.tatami-partners.jp/services/tatami-shinchou)や[和室リフォーム](https://www.tatami-partners.jp/interior/house-renovation)で湿度環理を含めた総合的な対応が必要なこともあります。
+定期的な通風で改善することもありますが、カビが深く根付いている場合は、[新調](https://www.tatami-partners.jp/services/tatami-shinchou)や[和室リフォーム](https://www.tatami-partners.jp/interior/house-renovation)で湿度管理を含めた総合的な対応が必要なこともあります。
 
 ### 4. 畳表にくぼみや傷が目立つ
 

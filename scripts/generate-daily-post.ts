@@ -174,14 +174,41 @@ tags: ["タグ1", "タグ2", "タグ3", "タグ4"]
 ${INTERNAL_LINKS}
 
 # 禁止事項（必ず守る）
-- AIが書いたような定型的な前置き・免責文（「本記事では〜」「いかがでしたか」等の紋切り型）を使わない
-- 「最安」「地域一番」「日本一」「No.1」「必ず即日対応」など根拠のない断定・誇大表現を使わない
-- 料金・工期・対応エリアを断定しすぎない（「目安」「現地確認のうえ」等の表現を用いる）
-- 素材や施工方法について不正確な断定をしない
+- AIが書いたような定型的な前置き・免責文は使わない。特に「本記事では」「この記事では」「このガイドでは」で書き始めない。「いかがでしたか」等の紋切り型の締めも使わない
+- 「最安」「地域一番」「日本一」「No.1」「必ず即日対応」「お約束します」など根拠のない断定・誇大表現を使わない
+- 料金・工期・対応エリアを断定しすぎない。「1日で完了します」等と言い切らず「〜日程度が目安」「場合が多い」「現地確認のうえ」等の表現を用いる
+- 素材や施工方法について不正確な断定をしない（例: 畳の芯は「畳床（わら床・ボード床）」であり木製フレームではない。畳表の素材は「い草・和紙・樹脂」であり竹ではない。関東間＝約176×88cm、中京間＝約182×91cm）
 - 事実に基づかない実績・件数・評価を書かない
+- 店名に言及する場合は必ず「埼玉畳店」と書く（「日本畳パートナーズ」など他の名称は使わない）
+- 日本語として正しい文字だけを使う。英単語の不自然な混入（例: い草→"い grass"、琉球→"琉lucy"）、中国語表現（例:「潮湿」）、キリル文字・ハングルなどの混入は絶対にしない。専門用語（畳・い草・琉球畳・表替え・裏返し・新調）は正しい漢字で書く
+- ふりがなを付ける場合は正しい読みにする（表替え＝おもてがえ、裏返し＝うらがえし、市松模様＝いちまつもよう）
 ${reused ? "- このテーマは過去に扱った可能性があるため、切り口・具体例・見出しを変えて新規性のある内容にする\n" : ""}
 # 出力
 frontmatterと本文のみを出力してください。前後に説明文やコードフェンス（\`\`\`）は付けないこと。`;
+}
+
+/** 生成テキストの品質検証。問題があれば理由の配列を返す（空なら合格） */
+function validateArticle(raw: string): string[] {
+  const problems: string[] = [];
+  // 文字化け・混入禁止スクリプト（キリル・ハングル）
+  if (/[Ѐ-ӿ]/.test(raw)) problems.push("キリル文字の混入");
+  if (/[가-힣]/.test(raw)) problems.push("ハングルの混入");
+  // 日本語中に紛れた不自然な英単語（「い grass」「琉lucy」など：日本語文字に隣接する小文字ラテン語）
+  const latinInJa = raw.match(/[぀-ヿ一-鿿][a-z]{2,}|[a-z]{2,}[぀-ヿ一-鿿]/g);
+  if (latinInJa) problems.push(`日本語に隣接する不自然な英字: ${[...new Set(latinInJa)].slice(0, 5).join(", ")}`);
+  // 中国語特有表現
+  if (/潮湿/.test(raw)) problems.push("中国語表現「潮湿」の混入");
+  // 旧店名
+  if (/日本畳パートナーズ/.test(raw)) problems.push("旧店名「日本畳パートナーズ」の残存");
+  if (/パートナーズ/.test(raw)) problems.push("「パートナーズ」の混入（旧ブランド残骸の可能性）");
+  // AI定型文
+  if (/(本記事では|この記事では|このガイドでは|いかがでした)/.test(raw)) problems.push("AI定型文（本記事では/この記事では/いかがでした 等）");
+  // 禁止表現（自社誇大）
+  const banned = raw.match(/最安値|地域一番|日本一|業界最強|激安|必ず即日|お約束します|No\.1/g);
+  if (banned) problems.push(`禁止表現: ${[...new Set(banned)].join(", ")}`);
+  // 誤ルビ
+  if (/表替え（ひょうがえ）|表替え\(ひょうがえ\)/.test(raw)) problems.push("誤ルビ: 表替え（ひょうがえ）");
+  return problems;
 }
 
 // ── メイン ───────────────────────────────────────────
@@ -200,25 +227,41 @@ async function main() {
 
   const client = new Anthropic({ apiKey });
 
-  const res = await client.messages.create({
-    model: MODEL,
-    max_tokens: 4096,
-    messages: [{ role: "user", content: buildPrompt(topic.theme, topic.category, reused) }],
-  });
+  // 生成→検証→（不合格なら）再生成。最大2回試行し、それでも不合格なら投稿せず失敗終了。
+  const MAX_ATTEMPTS = 2;
+  let cleaned = "";
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const res = await client.messages.create({
+      model: MODEL,
+      max_tokens: 4096,
+      messages: [{ role: "user", content: buildPrompt(topic.theme, topic.category, reused) }],
+    });
 
-  const text = res.content
-    .filter((b): b is Anthropic.TextBlock => b.type === "text")
-    .map((b) => b.text)
-    .join("")
-    .trim();
+    const text = res.content
+      .filter((b): b is Anthropic.TextBlock => b.type === "text")
+      .map((b) => b.text)
+      .join("")
+      .trim();
 
-  if (!text) {
-    console.error("[generate-daily-post] ERROR: 生成結果が空でした。");
-    process.exit(1);
+    if (!text) {
+      log(`試行${attempt}: 生成結果が空。`);
+      continue;
+    }
+
+    const candidate = text.replace(/^```(?:markdown|md)?\s*/i, "").replace(/```\s*$/i, "").trim();
+    const problems = validateArticle(candidate);
+    if (problems.length === 0) {
+      cleaned = candidate;
+      log(`試行${attempt}: 品質検証OK`);
+      break;
+    }
+    log(`試行${attempt}: 品質検証NG → ${problems.join(" / ")}`);
   }
 
-  // コードフェンスが付いた場合は除去
-  const cleaned = text.replace(/^```(?:markdown|md)?\s*/i, "").replace(/```\s*$/i, "").trim();
+  if (!cleaned) {
+    console.error("[generate-daily-post] ERROR: 品質基準を満たす記事を生成できませんでした。本日は投稿をスキップします。");
+    process.exit(1);
+  }
 
   // frontmatterを検証
   let parsed;
