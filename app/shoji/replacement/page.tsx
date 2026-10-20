@@ -33,7 +33,7 @@ export default function ShojiReplacementPage() {
       title="障子張替えの費用・種類・流れ"
       subtitle="住宅・賃貸・旅館・寺社まで、障子の張替えに対応。障子紙の種類に応じた最適なご提案で、和室を明るく清潔に整えます。"
       breadcrumbs={[{ label: "障子張替え", href: "/shoji" }, { label: "障子張替えの費用・種類・流れ" }]}
-      image="/images/nihon-tatami/shoji/shoji-installation-01.png"
+      image="/images/nihon-tatami/shoji/shoji-installation-01.jpg"
       sections={[
         {
           heading: "障子張替えで部屋が明るくよみがえる",

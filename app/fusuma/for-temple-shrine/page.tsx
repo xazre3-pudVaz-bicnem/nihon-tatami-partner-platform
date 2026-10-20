@@ -31,7 +31,7 @@ export default function FusumaForTempleShrinePage() {
       title="寺院・神社の襖張替え"
       subtitle="本堂・客殿・社務所の襖を、格式に合った素材で。法要・祭礼前のタイミング、境内での配慮まで丁寧に対応します。"
       breadcrumbs={[{ label: "襖張替え", href: "/fusuma" }, { label: "寺院・神社の襖張替え" }]}
-      image="/images/nihon-tatami/fusuma/fusuma-craftsman-02.png"
+      image="/images/nihon-tatami/fusuma/fusuma-craftsman-02.jpg"
       sections={[
         {
           heading: "寺院・神社の襖に求められること",
@@ -96,7 +96,7 @@ export default function FusumaForTempleShrinePage() {
       relatedPages={[
         { label: "寺院・神社向けサービス", href: "/business/temple-shrine" },
         { label: "旅館・宿泊施設の襖張替え", href: "/fusuma/for-ryokan" },
-        { label: "コラム：寺院・神社の畳工事", href: "/column/temple-shrine-tatami" },
+        { label: "コラム：寺院・神社の畳工事", href: "/column/tatami-temple-shrine-tradition" },
       ]}
     />
   );

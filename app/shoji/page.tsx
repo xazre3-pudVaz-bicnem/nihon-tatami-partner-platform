@@ -16,7 +16,7 @@ export default function ShojiPage() {
       title="障子（しょうじ）張替え"
       subtitle="破れ・黄ばみ・たるみが気になる障子を明るく一新。普通紙から破れにくい強化紙・プラスチック障子紙まで、ライフスタイルに合った障子紙をご提案します。"
       breadcrumbs={[{ label: "障子張替え" }]}
-      image="/images/nihon-tatami/shoji/shoji-installation-01.png"
+      image="/images/nihon-tatami/shoji/shoji-installation-01.jpg"
       path="/shoji"
       intro={[
         "障子は、やわらかな光を取り込み和室を明るく見せる大切な建具です。破れ・黄ばみ・たるみが出てくると見た目だけでなく機能も損なわれますが、張替えるだけで部屋全体が見違えるほど明るくなります。",

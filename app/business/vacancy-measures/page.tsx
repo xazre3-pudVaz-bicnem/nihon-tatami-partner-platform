@@ -33,7 +33,7 @@ export default function VacancyMeasuresPage() {
       title="空室対策に内装リフォーム"
       subtitle="畳交換・クロス張替え・床工事で賃貸物件の競争力を高めます。和紙畳・樹脂畳への変更でペット可物件への転換も可能です。"
       breadcrumbs={[{ label: "法人・施設向け", href: "/business" }, { label: "空室対策" }]}
-      image="/images/nihon-tatami/restoration/restoration-vacant-check-01.png"
+      image="/images/nihon-tatami/restoration/restoration-vacant-check-01.jpg"
       sections={[
         {
           heading: "空室期間の損失と内装整備費用の比較",
@@ -134,7 +134,7 @@ export default function VacancyMeasuresPage() {
       relatedPages={[
         { label: "賃貸オーナー向けサービス", href: "/business/rental-owner" },
         { label: "管理会社向けサービス", href: "/business/property-management" },
-        { label: "コラム：空室対策と畳交換", href: "/column/rental-tatami-vacancy" },
+        { label: "コラム：空室対策と畳交換", href: "/column/vacancy-measures-tatami" },
       ]}
     />
   );

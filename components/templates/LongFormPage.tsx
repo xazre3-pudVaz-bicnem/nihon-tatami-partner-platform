@@ -62,7 +62,7 @@ export default function LongFormPage(props: Props) {
       eyebrow: p.eyebrow,
       h1: p.title,
       lead: [p.subtitle, ...(p.intro ?? [])].filter(Boolean).join(" "),
-      heroImage: p.image ?? "/images/nihon-tatami/tatami/tatami-room-traditional-01.png",
+      heroImage: p.image ?? "/images/nihon-tatami/tatami/tatami-room-traditional-01.jpg",
       heroImageAlt: p.title,
       sections: p.sections,
       faqs: p.faqs ?? [],

@@ -31,7 +31,7 @@ export default function ShojiStrongPaperPage() {
       title="強化障子紙・プラスチック障子紙の特徴と選び方"
       subtitle="破れにくく丈夫な障子紙で、ペット・お子様のいるご家庭も安心。和紙の風合いを残しつつ耐久性を高めた選び方をご提案します。"
       breadcrumbs={[{ label: "障子張替え", href: "/shoji" }, { label: "強化障子紙・プラスチック障子紙" }]}
-      image="/images/nihon-tatami/shoji/shoji-installation-02.png"
+      image="/images/nihon-tatami/shoji/shoji-installation-02.jpg"
       sections={[
         {
           heading: "破れにくい障子紙という選択肢",
@@ -97,7 +97,7 @@ export default function ShojiStrongPaperPage() {
       relatedPages={[
         { label: "ペットがいる家庭の畳", href: "/needs/pet" },
         { label: "子どもがいる家庭の畳", href: "/needs/children" },
-        { label: "コラム：ペット向け畳素材", href: "/column/pet-tatami" },
+        { label: "コラム：ペット向け畳素材", href: "/column/tatami-for-pets" },
       ]}
     />
   );

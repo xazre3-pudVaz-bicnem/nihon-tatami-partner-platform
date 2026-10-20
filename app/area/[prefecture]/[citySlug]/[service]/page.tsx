@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { prefecture, citySlug, service } = await params;
   const found = getCity(prefecture, citySlug);
   const svc = getAreaService(service);
-  if (!found || !svc) return { title: `ページが見つかりません | ${SITE_NAME}` };
+  if (!found || !svc) return { title: { absolute: `ページが見つかりません | ${SITE_NAME}` } };
   return buildMetadata({
     title: `${found.pref.name}${found.city.name}の${svc.name} | ${SITE_NAME}`,
     description: `${found.pref.name}${found.city.name}で${svc.name}に対応。現地確認・お見積もり無料。素材や枚数により費用は変動します。法人・複数物件もご相談ください。`,

@@ -16,7 +16,7 @@ export default function ForStorePage() {
       title="店舗・飲食店様へ"
       subtitle="お客様をもてなす和の空間づくり。座敷・小上がりの畳から店舗内装まで、清掃性と耐久性を両立した素材で、営業を止めずに施工します。和モダンな演出もお任せください。"
       breadcrumbs={[{ label: "店舗・飲食店様へ" }]}
-      image="/images/nihon-tatami/interior/interior-store-workers-01.png"
+      image="/images/nihon-tatami/interior/interior-store-workers-01.jpg"
       path="/for-store"
       intro={[
         "和食店や居酒屋において、小上がりや座敷の和空間は、お客様にくつろぎと特別感を提供します。畳の質感は店舗の雰囲気を大きく左右し、ブランドイメージにも関わります。一方で、飲食による汚れに対応できる清掃性や、人の出入りに耐える耐久性も欠かせません。",

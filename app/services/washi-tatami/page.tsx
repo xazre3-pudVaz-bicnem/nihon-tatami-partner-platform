@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "和紙畳の特徴・費用・メリット・デメリットを解説。耐久性・撥水性・防虫性、い草との質感の違い、ペット・子ども・アレルギー体質への適性、賃貸への向き、ダイケン和紙畳など有名製品の特徴まで専門家がご案内。現地確認・お見積もり無料。",
   path: "/services/washi-tatami",
-  image: "/images/nihon-tatami/tatami/tatami-room-minimal-01.png",
+  image: "/images/nihon-tatami/tatami/tatami-room-minimal-01.jpg",
 });
 
 const data: FullServicePageData = {
@@ -20,7 +20,7 @@ const data: FullServicePageData = {
   ],
   h1: "和紙畳の特徴・費用・メリット・デメリット｜ダニ・カビ・ペットに強い次世代畳",
   lead: "和紙畳は、和紙をこより状にして樹脂加工した次世代の畳表です。色あせ・ささくれに強く、撥水性が高くダニ・カビが発生しにくいため、ペット・子育て世帯・賃貸に選ばれています。い草との違いから費用、有名製品の特徴までご案内します。",
-  heroImage: "/images/nihon-tatami/tatami/tatami-room-minimal-01.png",
+  heroImage: "/images/nihon-tatami/tatami/tatami-room-minimal-01.jpg",
   heroImageAlt: "和紙畳を敷いた明るい和室",
   targets: ["一般住宅", "賃貸オーナー", "不動産・管理会社", "旅館・宿泊施設", "店舗"],
   whatYouLearn: [

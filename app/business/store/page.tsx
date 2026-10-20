@@ -40,7 +40,7 @@ export default function StorePage() {
       title="店舗向け畳工事・内装工事"
       subtitle="和食店・居酒屋・料亭・カフェ・サロンの和空間づくりから、座敷改修・店舗内装・退去時の原状回復まで。店舗の魅力を高める空間づくりをサポートします。"
       breadcrumbs={[{ label: "法人・施設向け", href: "/business" }, { label: "店舗向け" }]}
-      image="/images/nihon-tatami/interior/interior-store-workers-01.png"
+      image="/images/nihon-tatami/interior/interior-store-workers-01.jpg"
       sections={[
         {
           heading: "店舗における和空間の需要",

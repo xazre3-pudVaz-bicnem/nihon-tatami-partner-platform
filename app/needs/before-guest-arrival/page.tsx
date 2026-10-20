@@ -57,8 +57,8 @@ export default function NeedsBeforeGuestArrivalPage() {
       faqs={FAQ_ITEMS.filter((f) => f.category === "btob" || f.category === "general").slice(0, 4)}
       relatedServices={[
         { label: "旅館・ホテル向け畳", href: "/business/ryokan" },
-        { label: "畳の表替え", href: "/services/tatami-omotekaeri" },
-        { label: "国産い草畳", href: "/services/domestic-igusa" },
+        { label: "畳の表替え", href: "/services/tatami-omotegae" },
+        { label: "国産い草畳", href: "/materials/japanese-igusa" },
       ]}
       relatedPages={[
         { label: "施工事例：旅館", href: "/works" },

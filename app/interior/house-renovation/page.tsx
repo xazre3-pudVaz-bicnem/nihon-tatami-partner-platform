@@ -33,7 +33,7 @@ export default function HouseRenovationPage() {
       title="住宅内装リフォームの費用・進め方"
       subtitle="畳を軸に、クロス・床・建具をまとめてリフォーム。和室から洋室への変更、バリアフリー対応まで、部屋単位から丸ごとリフォームまでご相談ください。"
       breadcrumbs={[{ label: "内装工事", href: "/interior" }, { label: "住宅内装リフォーム" }]}
-      image="/images/nihon-tatami/interior/interior-residential-workers-01.png"
+      image="/images/nihon-tatami/interior/interior-residential-workers-01.jpg"
       sections={[
         {
           heading: "住宅内装リフォームの種類",

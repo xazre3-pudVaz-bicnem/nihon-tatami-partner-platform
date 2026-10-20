@@ -9,7 +9,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqAccordion from "@/components/templates/FaqAccordion";
 
 export const metadata: Metadata = buildMetadata({
-  title: `畳工事・内装工事なら葛飾畳店｜畳表替え・新調・原状回復まで一括対応 | ${SITE_NAME}`,
+  title: `畳工事・内装工事なら${SITE_NAME}｜畳表替え・新調・原状回復まで一括対応`,
   description:
     "畳の表替え・裏返し・新調・縁なし畳・和紙畳・樹脂畳から、襖・障子・網戸、クロス・床の内装工事、原状回復まで一括対応。い草・和紙・樹脂の素材比較、対象者別サービス、料金目安、施工の流れ、FAQを掲載。住宅・賃貸・旅館・寺社・店舗対応。現地確認・お見積もり無料。",
   path: "/services",

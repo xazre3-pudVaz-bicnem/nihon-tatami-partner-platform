@@ -74,7 +74,7 @@ export default function ComparePage() {
         { label: "比較ガイド", href: "/compare/omotegae-uragaeshi-shinchou" },
         { label: "表替え・裏返し・新調の違い" },
       ]}
-      image="/images/nihon-tatami/tatami/tatami-craftsman-01.png"
+      image="/images/nihon-tatami/tatami/tatami-craftsman-01.jpg"
       sections={[
         {
           heading: "3つの工法の概要",

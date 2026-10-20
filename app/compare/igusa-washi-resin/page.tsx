@@ -64,7 +64,7 @@ export default function CompareIgusaPage() {
         { label: "比較ガイド", href: "/compare/omotegae-uragaeshi-shinchou" },
         { label: "い草・和紙・樹脂畳の比較" },
       ]}
-      image="/images/nihon-tatami/tatami/tatami-room-herinashi-01.png"
+      image="/images/nihon-tatami/tatami/tatami-room-herinashi-01.jpg"
       sections={[
         {
           heading: "3つの素材の概要",

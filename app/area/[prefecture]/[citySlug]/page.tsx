@@ -34,7 +34,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { prefecture, citySlug } = await params;
   const pref = getPrefecture(prefecture);
-  if (!pref) return { title: `エリアが見つかりません | ${SITE_NAME}` };
+  if (!pref) return { title: { absolute: `エリアが見つかりません | ${SITE_NAME}` } };
 
   if (isAreaServiceSlug(citySlug)) {
     const service = getAreaService(citySlug)!;
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const found = getCity(prefecture, citySlug);
-  if (!found) return { title: `エリアが見つかりません | ${SITE_NAME}` };
+  if (!found) return { title: { absolute: `エリアが見つかりません | ${SITE_NAME}` } };
 
   // 葛飾区のエリアページは地域情報に基づくタイトル・説明文
   const local = getLocalAreaContent(prefecture, citySlug);

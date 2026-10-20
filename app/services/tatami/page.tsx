@@ -9,7 +9,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "畳表替え・裏返し・新調から縁なし畳・和紙畳・樹脂畳まで。住宅・賃貸・旅館・寺社・店舗のあらゆる畳工事に対応。素材の選び方・費用目安・施工の流れ・よくある質問を専門家が徹底解説。現地確認・お見積もり無料。",
   path: "/services/tatami",
-  image: "/images/nihon-tatami/tatami/tatami-craftsman-01.png",
+  image: "/images/nihon-tatami/tatami/tatami-craftsman-01.jpg",
 });
 
 const TATAMI_SERVICE_SCHEMA = {
@@ -31,7 +31,7 @@ const data: FullServicePageData = {
   ],
   h1: "畳工事・畳張替えなら葛飾畳店｜表替え・裏返し・新調・原状回復まで対応",
   lead: "東京都葛飾区の全域を中心に、1都6県（東京・千葉・埼玉・神奈川・群馬・栃木・茨城）のご相談に対応。畳表替え・裏返し・新調から縁なし畳・和紙畳・樹脂畳の新調まで。住宅・賃貸・旅館・寺社・店舗まであらゆる場面の畳工事に対応します。",
-  heroImage: "/images/nihon-tatami/tatami/tatami-craftsman-01.png",
+  heroImage: "/images/nihon-tatami/tatami/tatami-craftsman-01.jpg",
   heroImageAlt: "畳を一枚ずつ手作業で仕上げる職人",
   targets: ["一般住宅", "賃貸オーナー", "不動産・管理会社", "旅館・宿泊施設", "寺社", "店舗"],
   whatYouLearn: [

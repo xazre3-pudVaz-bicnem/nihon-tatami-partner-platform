@@ -74,7 +74,7 @@ export default function TatamiMaintenancePage() {
         { label: "ガイド", href: "/guide/how-to-choose-tatami" },
         { label: "畳のお手入れガイド" },
       ]}
-      image="/images/nihon-tatami/tatami/tatami-room-minimal-01.png"
+      image="/images/nihon-tatami/tatami/tatami-room-minimal-01.jpg"
       sections={[
         {
           heading: "日常のお手入れ方法",

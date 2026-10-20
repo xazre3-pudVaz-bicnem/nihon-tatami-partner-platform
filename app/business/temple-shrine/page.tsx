@@ -43,7 +43,7 @@ export default function TempleShrinesPage() {
       title="寺院・神社の畳工事"
       subtitle="本堂・客殿・社務所など、格式と用途に合わせた素材・縁の選定から施工まで。法要・祭礼前の整備にも対応します。"
       breadcrumbs={[{ label: "法人・施設向け", href: "/business" }, { label: "寺院・神社向け" }]}
-      image="/images/nihon-tatami/tatami/tatami-temple-hall-01.png"
+      image="/images/nihon-tatami/tatami/tatami-temple-hall-01.jpg"
       sections={[
         {
           heading: "寺院・神社の畳工事で大切なこと",
@@ -240,7 +240,7 @@ export default function TempleShrinesPage() {
       relatedPages={[
         { label: "寺院・神社の障子張替え", href: "/shoji/for-temple-shrine" },
         { label: "旅館・宿泊施設向け畳工事", href: "/business/ryokan" },
-        { label: "コラム：寺院・神社の畳工事のポイント", href: "/column/temple-shrine-tatami" },
+        { label: "コラム：寺院・神社の畳工事のポイント", href: "/column/tatami-temple-shrine-tradition" },
         { label: "料金の目安", href: "/price" },
       ]}
     />

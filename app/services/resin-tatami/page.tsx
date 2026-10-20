@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "樹脂畳（ポリプロピレン畳）の特徴・費用・活用場面を解説。圧倒的な耐水性・耐久性、い草・和紙畳との比較、色・デザインの豊富さ、店舗・飲食店・旅館脱衣場など活用例、賃貸への適性まで専門家がご案内。現地確認・お見積もり無料。",
   path: "/services/resin-tatami",
-  image: "/images/nihon-tatami/interior/interior-store-workers-01.png",
+  image: "/images/nihon-tatami/interior/interior-store-workers-01.jpg",
 });
 
 const data: FullServicePageData = {
@@ -20,7 +20,7 @@ const data: FullServicePageData = {
   ],
   h1: "樹脂畳（ポリプロピレン畳）の特徴・費用・活用場面｜水回り・店舗・子ども部屋に",
   lead: "樹脂畳は、ポリプロピレンなどの樹脂を主原料とした畳表です。最大の特長は圧倒的な耐水性。水拭きでき、飲み物や食べこぼしをサッと拭き取れるため、店舗・飲食店・水回り・子ども部屋・ペット世帯に選ばれています。",
-  heroImage: "/images/nihon-tatami/interior/interior-store-workers-01.png",
+  heroImage: "/images/nihon-tatami/interior/interior-store-workers-01.jpg",
   heroImageAlt: "店舗の座敷に樹脂畳を施工する様子",
   targets: ["店舗", "一般住宅", "賃貸オーナー", "旅館・宿泊施設", "不動産・管理会社"],
   whatYouLearn: [

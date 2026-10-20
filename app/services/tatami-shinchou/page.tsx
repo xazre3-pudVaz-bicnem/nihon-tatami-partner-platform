@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "畳新調は畳床・畳表・縁をすべて作り替える完全リニューアル。沈み・へたり・カビなど新調が必要な症状、藁床・建材床・ポリスチレン床の比較、縁の格式別推奨、費用内訳、旅館・寺社の大量施工まで専門家が解説。現地確認・お見積もり無料。",
   path: "/services/tatami-shinchou",
-  image: "/images/nihon-tatami/tatami/tatami-room-traditional-01.png",
+  image: "/images/nihon-tatami/tatami/tatami-room-traditional-01.jpg",
 });
 
 const data: FullServicePageData = {
@@ -20,7 +20,7 @@ const data: FullServicePageData = {
   ],
   h1: "畳新調の費用・素材選び・工期｜畳床から丸ごと交換",
   lead: "畳新調は、畳床・畳表・縁をすべて新しく作り替える完全リニューアルです。踏み込みの沈み・へたり、深部のカビ・臭いなど、表替えでは解決できない畳床の劣化に対応します。藁床・建材床の選び方から縁の格式、費用内訳まで丁寧にご提案します。",
-  heroImage: "/images/nihon-tatami/tatami/tatami-room-traditional-01.png",
+  heroImage: "/images/nihon-tatami/tatami/tatami-room-traditional-01.jpg",
   heroImageAlt: "新調された畳が敷き込まれた和室",
   targets: ["一般住宅", "賃貸オーナー", "不動産・管理会社", "旅館・宿泊施設", "寺社", "店舗"],
   whatYouLearn: [

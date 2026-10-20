@@ -191,7 +191,7 @@ export default function BusinessPage() {
             </p>
           </div>
           <div className="relative h-56 sm:h-72 bg-kiji overflow-hidden">
-            <Image src="/images/nihon-tatami/restoration/restoration-vacant-check-01.png" alt="法人向け畳・内装工事の現地確認" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+            <Image src="/images/nihon-tatami/restoration/restoration-vacant-check-01.jpg" alt="法人向け畳・内装工事の現地確認" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
           </div>
         </div>
       </section>

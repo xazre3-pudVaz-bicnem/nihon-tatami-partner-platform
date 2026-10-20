@@ -23,7 +23,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params;
   const name = categorySlugToName(category);
-  if (!name) return { title: `カテゴリが見つかりません | ${SITE_NAME}` };
+  if (!name) return { title: { absolute: `カテゴリが見つかりません | ${SITE_NAME}` } };
   return buildMetadata({
     title: `${name}の記事一覧｜ブログ | ${SITE_NAME}`,
     description: `${name}に関する記事の一覧です。畳・和室リフォーム・原状回復について、葛飾区をはじめ、東京・関東エリアの住まいに役立つ情報をお届けします。`,

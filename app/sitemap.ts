@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [
+  const entries: MetadataRoute.Sitemap = [
     // Core
     url("/", 1.0, "weekly"),
     url("/about", 0.8, "monthly"),
@@ -241,4 +241,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/area/chiba/for-homeowner", 0.8, "monthly"),
     url("/area/chiba/for-rental-owner", 0.8, "monthly"),
   ];
+
+  // 同じURLが複数のセクションに含まれている場合は、優先度の高い方を1件だけ残す（並び順は最初の出現位置）
+  const byUrl = new Map<string, MetadataRoute.Sitemap[number]>();
+  for (const e of entries) {
+    const prev = byUrl.get(e.url);
+    if (!prev || (e.priority ?? 0) > (prev.priority ?? 0)) byUrl.set(e.url, e);
+  }
+  return [...byUrl.values()];
 }

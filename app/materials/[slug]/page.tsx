@@ -19,7 +19,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const m = getMaterial(slug);
-  if (!m) return { title: `素材が見つかりません | ${SITE_NAME}` };
+  if (!m) return { title: { absolute: `素材が見つかりません | ${SITE_NAME}` } };
   return buildMetadata({
     title: `${m.name}とは｜特徴・メリット・選び方 | ${SITE_NAME}`,
     description: m.description,

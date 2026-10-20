@@ -16,7 +16,7 @@ export default function ForRentalOwnerPage() {
       title="賃貸オーナー様へ"
       subtitle="退去後の原状回復から空室対策まで、賃貸経営を支えるパートナーとして。畳・クロス・床・建具を一社で対応し、次の入居者を迎えるまでの期間を短縮します。"
       breadcrumbs={[{ label: "賃貸オーナー様へ" }]}
-      image="/images/nihon-tatami/restoration/restoration-wallpaper-01.png"
+      image="/images/nihon-tatami/restoration/restoration-wallpaper-01.jpg"
       path="/for-rental-owner"
       intro={[
         "賃貸経営において、退去後の原状回復と空室対策は収益を左右する重要なポイントです。原状回復が遅れれば空室期間が延び、家賃収入の損失につながります。また、ありきたりな内装では競合物件に埋もれ、なかなか入居者が決まりません。",

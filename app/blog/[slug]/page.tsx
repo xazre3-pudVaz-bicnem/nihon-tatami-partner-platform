@@ -17,7 +17,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) return { title: `記事が見つかりません | ${SITE_NAME}` };
+  if (!post) return { title: { absolute: `記事が見つかりません | ${SITE_NAME}` } };
 
   return {
     title: { absolute: `${post.title} | ${SITE_NAME}` },
@@ -103,7 +103,10 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2">
             <div className="prose-tatami">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+              {/* 本文中の H1（# 見出し）は H2 として描画し、ページの H1 を記事タイトルの1つに保つ */}
+              <ReactMarkdown remarkPlugins={[remarkGfm]} components={{ h1: ({ node: _node, ...props }) => <h2 {...props} /> }}>
+                {post.content}
+              </ReactMarkdown>
             </div>
 
             {post.tags.length > 0 && (

@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "畳の裏返しは今ある畳表を裏向きに張り直す最も経済的な施工。対応できる年数の目安、できないケース、メリット・デメリット、表替えとの違い、賃貸での適用条件まで専門家が解説。現地確認・お見積もり無料。",
   path: "/services/tatami-uragaeshi",
-  image: "/images/nihon-tatami/tatami/tatami-room-minimal-01.png",
+  image: "/images/nihon-tatami/tatami/tatami-room-minimal-01.jpg",
 });
 
 const data: FullServicePageData = {
@@ -20,7 +20,7 @@ const data: FullServicePageData = {
   ],
   h1: "畳の裏返しとは｜費用・時期・できないケース・表替えとの違い",
   lead: "畳の裏返しは、今使っている畳表を裏向きに張り直して再利用する、最も費用を抑えられる施工です。使用2〜3年の比較的新しい畳に有効で、一度しかできない大切なメンテナンスです。できる条件・できないケースを正しく見極めてご提案します。",
-  heroImage: "/images/nihon-tatami/tatami/tatami-room-minimal-01.png",
+  heroImage: "/images/nihon-tatami/tatami/tatami-room-minimal-01.jpg",
   heroImageAlt: "裏返しを終えた清潔な和室",
   targets: ["一般住宅", "賃貸オーナー", "不動産・管理会社", "旅館・宿泊施設", "寺社"],
   whatYouLearn: [

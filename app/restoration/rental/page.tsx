@@ -36,7 +36,7 @@ export default function RestorationRentalPage() {
       title="賃貸退去後の原状回復"
       subtitle="退去後の畳・クロス・床・建具をまとめて原状回復。国交省ガイドラインに沿った費用負担の整理と、写真付き報告書を発行します。"
       breadcrumbs={[{ label: "原状回復", href: "/restoration" }, { label: "賃貸退去後の原状回復" }]}
-      image="/images/nihon-tatami/restoration/restoration-vacant-check-01.png"
+      image="/images/nihon-tatami/restoration/restoration-vacant-check-01.jpg"
       sections={[
         {
           heading: "賃貸物件の原状回復とは",
@@ -160,7 +160,7 @@ export default function RestorationRentalPage() {
       relatedPages={[
         { label: "賃貸物件の襖張替え", href: "/fusuma/for-rental" },
         { label: "賃貸物件の障子張替え", href: "/shoji/for-rental" },
-        { label: "コラム：原状回復と畳交換", href: "/column/restoration-tatami-cases" },
+        { label: "コラム：原状回復と畳交換", href: "/column/rental-restoration-checklist" },
         { label: "料金の目安", href: "/price" },
       ]}
     />

@@ -56,12 +56,12 @@ export default function NeedsSunkenTatamiPage() {
       ]}
       faqs={FAQ_ITEMS.filter((f) => f.category === "timing" || f.category === "price").slice(0, 4)}
       relatedServices={[
-        { label: "畳の新調", href: "/services/tatami-shincho" },
-        { label: "畳の表替え", href: "/services/tatami-omotekaeri" },
-        { label: "フローリングへ変更", href: "/interior/flooring" },
+        { label: "畳の新調", href: "/services/tatami-shinchou" },
+        { label: "畳の表替え", href: "/services/tatami-omotegae" },
+        { label: "フローリングへ変更", href: "/interior/floor" },
       ]}
       relatedPages={[
-        { label: "畳替えのタイミング", href: "/needs/timing" },
+        { label: "畳替えのタイミング", href: "/column/tatami-timing" },
         { label: "料金の目安", href: "/price" },
       ]}
     />

@@ -31,7 +31,7 @@ export default function FusumaForRentalPage() {
       title="賃貸物件の襖張替え"
       subtitle="退去後の原状回復に伴う襖張替えを、費用負担の整理と写真付き報告とともに。管理会社・オーナー様の複数物件にも対応します。"
       breadcrumbs={[{ label: "襖張替え", href: "/fusuma" }, { label: "賃貸物件の襖張替え" }]}
-      image="/images/nihon-tatami/fusuma/fusuma-installation-02.png"
+      image="/images/nihon-tatami/fusuma/fusuma-installation-02.jpg"
       sections={[
         {
           heading: "賃貸物件の襖張替えで押さえるべきこと",
@@ -96,7 +96,7 @@ export default function FusumaForRentalPage() {
       relatedPages={[
         { label: "賃貸オーナー向けサービス", href: "/business/rental-owner" },
         { label: "不動産会社・管理会社向け", href: "/business/real-estate" },
-        { label: "コラム：原状回復と畳交換", href: "/column/restoration-tatami-cases" },
+        { label: "コラム：原状回復と畳交換", href: "/column/rental-restoration-checklist" },
       ]}
     />
   );

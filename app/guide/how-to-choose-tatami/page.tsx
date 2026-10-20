@@ -74,7 +74,7 @@ export default function HowToChooseTatamiPage() {
         { label: "ガイド", href: "/guide/how-to-choose-tatami" },
         { label: "畳の選び方ガイド" },
       ]}
-      image="/images/nihon-tatami/tatami/tatami-room-herinashi-01.png"
+      image="/images/nihon-tatami/tatami/tatami-room-herinashi-01.jpg"
       sections={[
         {
           heading: "畳選びの3つのポイント",

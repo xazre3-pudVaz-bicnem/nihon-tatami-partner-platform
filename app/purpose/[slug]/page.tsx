@@ -14,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const p = getPurpose(slug);
-  if (!p) return { title: `ページが見つかりません | ${SITE_NAME}` };
+  if (!p) return { title: { absolute: `ページが見つかりません | ${SITE_NAME}` } };
   return buildMetadata({
     title: `${p.h1} | ${SITE_NAME}`,
     description: p.lead.slice(0, 120),

@@ -33,7 +33,7 @@ export default function RentalOwnerPage() {
       title="賃貸オーナー向け畳工事・原状回復・空室対策"
       subtitle="退去後の原状回復、空室対策、ペット可・子供可物件への転換まで。複数物件をまとめてご依頼いただけ、費用も透明にご案内します。"
       breadcrumbs={[{ label: "法人・施設向け", href: "/business" }, { label: "賃貸オーナー向け" }]}
-      image="/images/nihon-tatami/restoration/restoration-vacant-check-02.png"
+      image="/images/nihon-tatami/restoration/restoration-vacant-check-02.jpg"
       sections={[
         {
           heading: "賃貸オーナーが畳工事で直面する課題",
@@ -122,7 +122,7 @@ export default function RentalOwnerPage() {
       relatedPages={[
         { label: "管理会社向けサービス", href: "/business/property-management" },
         { label: "原状回復工事", href: "/restoration" },
-        { label: "コラム：空室対策と畳交換", href: "/column/rental-tatami-vacancy" },
+        { label: "コラム：空室対策と畳交換", href: "/column/vacancy-measures-tatami" },
       ]}
     />
   );

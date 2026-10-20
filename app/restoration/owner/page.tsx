@@ -33,7 +33,7 @@ export default function RestorationOwnerPage() {
       title="自主管理オーナー向け原状回復ガイド"
       subtitle="退去後の整備を自分でコントロールしたいオーナー様へ。見積もりの取り方・費用の抑え方・費用負担の交渉まで、わかりやすくサポートします。"
       breadcrumbs={[{ label: "原状回復", href: "/restoration" }, { label: "自主管理オーナー向け" }]}
-      image="/images/nihon-tatami/restoration/restoration-vacant-check-02.png"
+      image="/images/nihon-tatami/restoration/restoration-vacant-check-02.jpg"
       sections={[
         {
           heading: "自主管理オーナーの退去後対応の流れ",
@@ -123,7 +123,7 @@ export default function RestorationOwnerPage() {
       ]}
       relatedPages={[
         { label: "管理会社向け原状回復", href: "/restoration/management-company" },
-        { label: "コラム：空室対策と畳交換", href: "/column/rental-tatami-vacancy" },
+        { label: "コラム：空室対策と畳交換", href: "/column/vacancy-measures-tatami" },
         { label: "料金の目安", href: "/price" },
       ]}
     />

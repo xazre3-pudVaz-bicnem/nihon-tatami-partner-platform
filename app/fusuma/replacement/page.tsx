@@ -33,7 +33,7 @@ export default function FusumaReplacementPage() {
       title="襖張替えの費用・種類・流れ"
       subtitle="住宅・賃貸・旅館・寺社まで、襖（ふすま）の張替えに対応。素材・仕様に応じた最適なご提案で、和室の印象を一新します。"
       breadcrumbs={[{ label: "襖張替え", href: "/fusuma" }, { label: "襖張替えの費用・種類・流れ" }]}
-      image="/images/nihon-tatami/fusuma/fusuma-installation-01.png"
+      image="/images/nihon-tatami/fusuma/fusuma-installation-01.jpg"
       sections={[
         {
           heading: "襖張替えで和室の印象が変わる",

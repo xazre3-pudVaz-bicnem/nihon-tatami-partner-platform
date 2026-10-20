@@ -29,7 +29,7 @@ export default function FusumaPricePage() {
       title="襖張替えの料金目安"
       subtitle="素材・枚数・仕様によって費用は変動します。代表的な料金目安と、費用が変わる要因をわかりやすくご案内します。"
       breadcrumbs={[{ label: "襖張替え", href: "/fusuma" }, { label: "料金目安" }]}
-      image="/images/nihon-tatami/fusuma/fusuma-craftsman-01.png"
+      image="/images/nihon-tatami/fusuma/fusuma-craftsman-01.jpg"
       sections={[
         {
           heading: "襖張替えの料金は何で決まるか",

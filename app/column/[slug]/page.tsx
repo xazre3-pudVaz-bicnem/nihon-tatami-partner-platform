@@ -18,10 +18,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = COLUMN_ARTICLES.find((a) => a.slug === slug);
-  if (!article) return { title: `記事が見つかりません | ${SITE_NAME}` };
+  if (!article) return { title: { absolute: `記事が見つかりません | ${SITE_NAME}` } };
 
   return {
-    title: `${article.title} | ${SITE_NAME}`,
+    // layout の title.template（%s | 店名）で店名が二重にならないよう absolute を指定
+    title: { absolute: `${article.title} | ${SITE_NAME}` },
     description: article.excerpt,
     alternates: { canonical: `${SITE_URL}/column/${slug}` },
     openGraph: {

@@ -74,7 +74,7 @@ export default function NeedsDaniPage() {
         { label: "お悩み別", href: "/needs" },
         { label: "畳のダニ" },
       ]}
-      image="/images/nihon-tatami/tatami/tatami-room-minimal-01.png"
+      image="/images/nihon-tatami/tatami/tatami-room-minimal-01.jpg"
       sections={[
         {
           heading: "畳のダニの症状",

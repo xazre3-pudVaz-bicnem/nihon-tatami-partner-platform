@@ -57,12 +57,12 @@ export default function NeedsChildrenPage() {
       ]}
       faqs={FAQ_ITEMS.filter((f) => f.category === "material" || f.category === "general").slice(0, 4)}
       relatedServices={[
-        { label: "畳の表替え", href: "/services/tatami-omotekaeri" },
-        { label: "国産い草畳", href: "/services/domestic-igusa" },
+        { label: "畳の表替え", href: "/services/tatami-omotegae" },
+        { label: "国産い草畳", href: "/materials/japanese-igusa" },
         { label: "和紙畳・樹脂畳", href: "/services/washi-tatami" },
       ]}
       relatedPages={[
-        { label: "畳の素材ガイド", href: "/column/tatami-material-guide" },
+        { label: "畳の素材ガイド", href: "/materials" },
         { label: "料金の目安", href: "/price" },
       ]}
     />

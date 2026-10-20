@@ -14,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const p = getProblem(slug);
-  if (!p) return { title: `お悩みが見つかりません | ${SITE_NAME}` };
+  if (!p) return { title: { absolute: `お悩みが見つかりません | ${SITE_NAME}` } };
   return buildMetadata({
     title: `${p.title}｜原因と対処法 | ${SITE_NAME}`,
     description: `${p.title}の原因・対処法・費用の目安を専門家が解説。${p.solution.slice(0, 60)}`,

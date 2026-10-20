@@ -16,7 +16,7 @@ export default function ForTemplePage() {
       title="寺院・神社様へ"
       subtitle="格式を重んじる神聖な空間の畳工事。本堂・客殿・社務所など用途に応じた素材・縁の選定から、法要・祭事に合わせた施工計画まで、伝統に配慮してていねいに対応します。"
       breadcrumbs={[{ label: "寺院・神社様へ" }]}
-      image="/images/nihon-tatami/tatami/tatami-temple-hall-01.png"
+      image="/images/nihon-tatami/tatami/tatami-temple-hall-01.jpg"
       path="/for-temple"
       intro={[
         "寺院・神社の畳工事は、一般住宅とは異なる配慮が求められます。本堂・客殿・庫裏・社務所など用途によって求められる格式が異なり、縁（へり）の柄にも伝統的な意味があります。広い面積をまとめて施工することも多く、法要や祭事に合わせた段取りも重要です。",

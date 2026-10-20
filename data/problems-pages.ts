@@ -16,7 +16,7 @@ export const PROBLEM_PAGES: LongFormData[] = [
     eyebrow: "Problem",
     h1: "畳のカビ対策・除去・防止方法｜原因と正しい対処",
     lead: "畳の表面に白や黒の点々、カビ臭が出たら早めの対処が肝心です。カビが生える原因、自分でできる除去、芯まで及んだ場合の対応、再発を防ぐ方法を専門家が解説します。",
-    heroImage: `${T}/tatami-room-traditional-01.png`,
+    heroImage: `${T}/tatami-room-traditional-01.jpg`,
     heroImageAlt: "和室の畳",
     sections: [
       {
@@ -69,7 +69,7 @@ export const PROBLEM_PAGES: LongFormData[] = [
     eyebrow: "Problem",
     h1: "畳のダニ対策・駆除・予防｜かゆみ・アレルギーを防ぐ",
     lead: "畳の上で刺される、かゆみが出る、アレルギー症状が出る場合はダニの発生が疑われます。発生の原因、駆除と予防の方法、繰り返す場合の根本対策を専門家が解説します。",
-    heroImage: `${T}/tatami-room-minimal-01.png`,
+    heroImage: `${T}/tatami-room-minimal-01.jpg`,
     heroImageAlt: "明るい和室",
     sections: [
       {
@@ -122,7 +122,7 @@ export const PROBLEM_PAGES: LongFormData[] = [
     eyebrow: "Problem",
     h1: "畳のささくれ・毛羽立ちの対処法｜原因と表替えの目安",
     lead: "畳の表面が毛羽立ち、ささくれが肌や靴下に引っかかるのは、い草の経年劣化のサインです。原因、応急処置、表替えの目安、ささくれにくい素材を専門家が解説します。",
-    heroImage: `${T}/tatami-craftsman-01.png`,
+    heroImage: `${T}/tatami-craftsman-01.jpg`,
     heroImageAlt: "畳の職人作業",
     sections: [
       {
@@ -175,7 +175,7 @@ export const PROBLEM_PAGES: LongFormData[] = [
     eyebrow: "Problem",
     h1: "畳の臭い・新畳の匂い対策｜湿気臭・カビ臭・ペット臭の対処",
     lead: "畳から湿気っぽい臭い、カビ臭、ペット臭がする場合は対処が必要です。臭いの種類別の原因と対処、芯まで染み込んだ場合の対応、新しい畳の匂いについて専門家が解説します。",
-    heroImage: `${T}/tatami-room-traditional-01.png`,
+    heroImage: `${T}/tatami-room-traditional-01.jpg`,
     heroImageAlt: "和室の畳",
     sections: [
       {
@@ -228,7 +228,7 @@ export const PROBLEM_PAGES: LongFormData[] = [
     eyebrow: "Problem",
     h1: "畳のへたり・沈み・固さの問題｜原因と新調・補修の判断",
     lead: "畳を踏むと沈む、ふわふわする、段差ができているのは畳床の劣化のサインです。原因の切り分け、表替えで直らない理由、新調・下地補修の判断を専門家が解説します。",
-    heroImage: `${R}/restoration-floor-repair-01.png`,
+    heroImage: `${R}/restoration-floor-repair-01.jpg`,
     heroImageAlt: "床の補修作業",
     sections: [
       {
@@ -281,7 +281,7 @@ export const PROBLEM_PAGES: LongFormData[] = [
     eyebrow: "Problem",
     h1: "ペットの尿染み・臭い対策｜畳への染み込みを防ぐ方法",
     lead: "ペットの粗相による臭い・シミが取れない、畳に染み込んでしまった場合の対処法を解説します。すぐの対処、芯まで染み込んだ場合の対応、染み込みにくい素材への変更をご提案します。",
-    heroImage: `${T}/tatami-room-herinashi-01.png`,
+    heroImage: `${T}/tatami-room-herinashi-01.jpg`,
     heroImageAlt: "ペットと暮らす和室",
     sections: [
       {
@@ -334,7 +334,7 @@ export const PROBLEM_PAGES: LongFormData[] = [
     eyebrow: "Problem",
     h1: "襖の穴・破れの修繕｜張替えで和室を一新する方法",
     lead: "襖に穴があいた、破れた、めくれた場合は襖紙の張替えで対応できます。原因、応急処置、骨組みの状態による判断、破れにくい仕様への変更を専門家が解説します。",
-    heroImage: `${F}/fusuma-installation-01.png`,
+    heroImage: `${F}/fusuma-installation-01.jpg`,
     heroImageAlt: "襖の張替え作業",
     sections: [
       {
@@ -386,7 +386,7 @@ export const PROBLEM_PAGES: LongFormData[] = [
     eyebrow: "Problem",
     h1: "障子の破れ・張替え｜破れにくい紙で明るい和室に",
     lead: "障子が破れた、黄ばんで汚れた場合は障子紙の張替えできれいに直せます。原因、応急処置、破れにくい強化紙・プラスチック障子紙への変更を専門家が解説します。",
-    heroImage: `${S}/shoji-installation-01.png`,
+    heroImage: `${S}/shoji-installation-01.jpg`,
     heroImageAlt: "障子の張替え作業",
     sections: [
       {
@@ -438,7 +438,7 @@ export const PROBLEM_PAGES: LongFormData[] = [
     eyebrow: "Problem",
     h1: "クロスの汚れ・シミ・補修｜張替えで部屋を一新する方法",
     lead: "壁紙の汚れ・黒ずみ・剥がれ・ヤニ汚れは、部分補修または張替えで対応します。原因、応急処置、機能性クロスでの汚れ・臭い対策を専門家が解説します。",
-    heroImage: `${R}/restoration-wallpaper-01.png`,
+    heroImage: `${R}/restoration-wallpaper-01.jpg`,
     heroImageAlt: "クロス張替えの様子",
     sections: [
       {
@@ -490,7 +490,7 @@ export const PROBLEM_PAGES: LongFormData[] = [
     eyebrow: "Problem",
     h1: "床の傷・めくれ・補修｜部分補修と張替えの使い分け",
     lead: "フローリングの傷・へこみ・きしみ・浮きは、状態に応じて部分補修と張替えを使い分けます。原因、応急処置、下地の点検が必要なケースを専門家が解説します。",
-    heroImage: `${R}/restoration-floor-repair-01.png`,
+    heroImage: `${R}/restoration-floor-repair-01.jpg`,
     heroImageAlt: "床の補修作業",
     sections: [
       {
@@ -542,7 +542,7 @@ export const PROBLEM_PAGES: LongFormData[] = [
     eyebrow: "Problem",
     h1: "賃貸空室期間の長期化問題｜内装改善で成約率を上げる",
     lead: "内見はあるが決まらない、長期間空室が続く場合は、室内の印象改善が鍵です。原因分析、畳・クロス・床のリフレッシュ、差別化の方法を専門家が解説します。",
-    heroImage: `${R}/restoration-vacant-check-01.png`,
+    heroImage: `${R}/restoration-vacant-check-01.jpg`,
     heroImageAlt: "空室の点検",
     sections: [
       {

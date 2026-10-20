@@ -14,7 +14,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
     eyebrow: "Purpose",
     h1: "空室対策に畳交換｜内装改善で入居率を上げる方法",
     lead: "空室が続く和室物件は、畳・クロス・床の第一印象が決め手です。畳交換を中心とした費用対効果の高い内装改善で、内見からの成約率を高める方法をご紹介します。",
-    heroImage: `${R}/restoration-vacant-check-01.png`,
+    heroImage: `${R}/restoration-vacant-check-01.jpg`,
     heroImageAlt: "空室の和室を点検する様子",
     sections: [
       {
@@ -80,7 +80,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
       { href: "/business/vacancy-measures", label: "空室対策" },
     ],
     relatedColumns: [
-      { href: "/column/rental-tatami-vacancy", label: "賃貸の空室対策と畳" },
+      { href: "/column/vacancy-measures-tatami", label: "賃貸の空室対策と畳" },
     ],
   },
   {
@@ -89,7 +89,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
     eyebrow: "Purpose",
     h1: "不動産売却前の畳交換・内装整備｜内覧印象を高める方法",
     lead: "不動産の売却では、内覧時の第一印象が成約と価格を左右します。畳・クロス・床の整備でどこまで手を入れるべきか、費用と期待効果の考え方をご紹介します。",
-    heroImage: `${R}/restoration-wallpaper-01.png`,
+    heroImage: `${R}/restoration-wallpaper-01.jpg`,
     heroImageAlt: "売却前の内装整備",
     sections: [
       {
@@ -148,7 +148,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
       { href: "/services/tatami", label: "畳工事一覧" },
     ],
     relatedColumns: [
-      { href: "/column/realestate-interior-before-sale", label: "売却前の内装整備" },
+      { href: "/column/property-sale-renovation", label: "売却前の内装整備" },
     ],
   },
   {
@@ -157,7 +157,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
     eyebrow: "Purpose",
     h1: "引っ越し前の畳交換・内装整備｜新生活を清潔な状態で始める",
     lead: "新居や中古住宅への引っ越し前は、畳・クロス・床を整える絶好のタイミングです。入居後では手間がかかる整備も、空室のうちならスムーズ。清潔な状態で新生活を始める方法をご紹介します。",
-    heroImage: `${T}/tatami-room-minimal-01.png`,
+    heroImage: `${T}/tatami-room-minimal-01.jpg`,
     heroImageAlt: "整えられた清潔な和室",
     sections: [
       {
@@ -222,7 +222,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
     eyebrow: "Purpose",
     h1: "退去後の原状回復工事｜畳・クロス・床・建具の交換と修繕",
     lead: "賃貸の退去後は、畳・クロス・床・建具を原状回復し、次の入居者を迎える準備をします。原状回復の義務範囲や借主・貸主の費用負担、費用目安と工期をご説明します。",
-    heroImage: `${R}/restoration-vacant-check-01.png`,
+    heroImage: `${R}/restoration-vacant-check-01.jpg`,
     heroImageAlt: "退去後の原状回復の点検",
     sections: [
       {
@@ -281,7 +281,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
       { href: "/restoration", label: "原状回復" },
     ],
     relatedColumns: [
-      { href: "/column/restoration-tatami-cases", label: "原状回復の畳施工事例" },
+      { href: "/column/rental-restoration-checklist", label: "賃貸の原状回復チェックリスト" },
     ],
   },
   {
@@ -290,7 +290,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
     eyebrow: "Purpose",
     h1: "法要・祭礼前の畳工事｜寺院・神社・住宅の格式ある空間整備",
     lead: "法要・法事・祭礼の前は、本堂・客殿・和室を格式ある清潔な状態に整える大切なタイミングです。日程から逆算した計画施工と、格式に合わせた素材・縁の選び方をご提案します。",
-    heroImage: `${T}/tatami-temple-hall-01.png`,
+    heroImage: `${T}/tatami-temple-hall-01.jpg`,
     heroImageAlt: "格式ある寺院の本堂",
     sections: [
       {
@@ -348,7 +348,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
       { href: "/services/tatami", label: "畳工事一覧" },
     ],
     relatedColumns: [
-      { href: "/column/temple-shrine-tatami", label: "寺社の畳工事" },
+      { href: "/column/tatami-temple-shrine-tradition", label: "寺社の畳工事" },
     ],
   },
   {
@@ -357,7 +357,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
     eyebrow: "Purpose",
     h1: "繁忙期前の畳工事｜旅館・ホテル・民泊の客室整備",
     lead: "繁忙期を前に客室の畳を整えることは、宿泊客の満足度と口コミ評価に直結します。営業を止めない段階施工のスケジュール、複数客室の進め方、推奨素材をご提案します。",
-    heroImage: `${T}/tatami-room-ryokan-table-01.png`,
+    heroImage: `${T}/tatami-room-ryokan-table-01.jpg`,
     heroImageAlt: "旅館の客室の畳",
     sections: [
       {
@@ -415,7 +415,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
       { href: "/services/tatami", label: "畳工事一覧" },
     ],
     relatedColumns: [
-      { href: "/column/ryokan-tatami-merit", label: "旅館の畳メンテナンス" },
+      { href: "/column/ryokan-tatami-maintenance", label: "旅館の畳メンテナンス" },
     ],
   },
   {
@@ -424,7 +424,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
     eyebrow: "Purpose",
     h1: "和モダン空間の作り方｜縁なし畳・カラー畳・和紙畳で和室をリノベーション",
     lead: "和モダンとは、伝統的な和の要素を現代的に再構成した洗練されたスタイルです。縁なし畳・カラー畳・和紙畳を使い、住まいや店舗をモダンで上質な和空間にする方法をご紹介します。",
-    heroImage: `${T}/tatami-room-herinashi-01.png`,
+    heroImage: `${T}/tatami-room-herinashi-01.jpg`,
     heroImageAlt: "和モダンな縁なし畳の空間",
     sections: [
       {
@@ -489,7 +489,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
     eyebrow: "Purpose",
     h1: "ペット対応畳の選び方｜犬・猫がいる家庭に適した畳・床材",
     lead: "犬や猫と暮らすご家庭では、爪による傷や粗相の染み込みが畳の悩みになります。傷・汚れ・臭いに強い和紙畳・樹脂畳と、ペット対応の床材で、快適な住環境を整える方法をご紹介します。",
-    heroImage: `${T}/tatami-room-herinashi-01.png`,
+    heroImage: `${T}/tatami-room-herinashi-01.jpg`,
     heroImageAlt: "ペットと暮らす和室",
     sections: [
       {
@@ -548,7 +548,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
       { href: "/services/tatami", label: "畳工事一覧" },
     ],
     relatedColumns: [
-      { href: "/column/pet-tatami", label: "ペットと畳" },
+      { href: "/column/tatami-for-pets", label: "ペットと畳" },
     ],
   },
   {
@@ -557,7 +557,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
     eyebrow: "Purpose",
     h1: "高齢者向けの畳選び・和室環境整備｜転倒防止・バリアフリー対応",
     lead: "高齢のご家族が安全に過ごせる和室づくりには、畳のクッション性を活かしつつ、段差解消や沈みのない畳床が重要です。転倒防止・バリアフリーに配慮した畳選びと環境整備をご提案します。",
-    heroImage: `${T}/tatami-room-traditional-01.png`,
+    heroImage: `${T}/tatami-room-traditional-01.jpg`,
     heroImageAlt: "高齢者にやさしい和室",
     sections: [
       {
@@ -616,7 +616,7 @@ export const PURPOSE_PAGES: LongFormData[] = [
       { href: "/services/tatami", label: "畳工事一覧" },
     ],
     relatedColumns: [
-      { href: "/column/tatami-for-children-elderly", label: "子ども・高齢者と畳" },
+      { href: "/column/tatami-for-elderly", label: "高齢者に優しい畳" },
     ],
   },
 ];

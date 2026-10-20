@@ -23,21 +23,21 @@ export type WorkDetail = {
 };
 
 const IMG = {
-  craftsman: "/images/nihon-tatami/tatami/tatami-craftsman-01.png",
-  traditional: "/images/nihon-tatami/tatami/tatami-room-traditional-01.png",
-  minimal: "/images/nihon-tatami/tatami/tatami-room-minimal-01.png",
-  herinashi: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.png",
-  temple: "/images/nihon-tatami/tatami/tatami-temple-hall-01.png",
-  ryokan: "/images/nihon-tatami/tatami/tatami-room-ryokan-table-01.png",
-  garden: "/images/nihon-tatami/tatami/tatami-room-lantern-garden-01.png",
-  storeWorkers: "/images/nihon-tatami/interior/interior-store-workers-01.png",
-  resWorkers: "/images/nihon-tatami/interior/interior-residential-workers-01.png",
-  ldk: "/images/nihon-tatami/interior/interior-completed-ldk-01.png",
-  vacant: "/images/nihon-tatami/restoration/restoration-vacant-check-01.png",
-  wallpaper: "/images/nihon-tatami/restoration/restoration-wallpaper-01.png",
-  floorRepair: "/images/nihon-tatami/restoration/restoration-floor-repair-01.png",
-  shoji: "/images/nihon-tatami/shoji/shoji-installation-01.png",
-  fusuma: "/images/nihon-tatami/fusuma/fusuma-installation-01.png",
+  craftsman: "/images/nihon-tatami/tatami/tatami-craftsman-01.jpg",
+  traditional: "/images/nihon-tatami/tatami/tatami-room-traditional-01.jpg",
+  minimal: "/images/nihon-tatami/tatami/tatami-room-minimal-01.jpg",
+  herinashi: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.jpg",
+  temple: "/images/nihon-tatami/tatami/tatami-temple-hall-01.jpg",
+  ryokan: "/images/nihon-tatami/tatami/tatami-room-ryokan-table-01.jpg",
+  garden: "/images/nihon-tatami/tatami/tatami-room-lantern-garden-01.jpg",
+  storeWorkers: "/images/nihon-tatami/interior/interior-store-workers-01.jpg",
+  resWorkers: "/images/nihon-tatami/interior/interior-residential-workers-01.jpg",
+  ldk: "/images/nihon-tatami/interior/interior-completed-ldk-01.jpg",
+  vacant: "/images/nihon-tatami/restoration/restoration-vacant-check-01.jpg",
+  wallpaper: "/images/nihon-tatami/restoration/restoration-wallpaper-01.jpg",
+  floorRepair: "/images/nihon-tatami/restoration/restoration-floor-repair-01.jpg",
+  shoji: "/images/nihon-tatami/shoji/shoji-installation-01.jpg",
+  fusuma: "/images/nihon-tatami/fusuma/fusuma-installation-01.jpg",
 } as const;
 
 const CATEGORY_LABELS: Record<string, string> = {

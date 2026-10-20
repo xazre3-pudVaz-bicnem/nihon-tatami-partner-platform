@@ -15,7 +15,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { prefecture } = await params;
   const pref = getPrefecture(prefecture);
-  if (!pref) return { title: `エリアが見つかりません | ${SITE_NAME}` };
+  if (!pref) return { title: { absolute: `エリアが見つかりません | ${SITE_NAME}` } };
   return buildMetadata({
     title: `${pref.name}の畳張替え・襖障子・原状回復 | ${SITE_NAME}`,
     description: `${pref.name}で畳の表替え・新調、襖・障子の張替え、原状回復・内装工事に対応。各市区へお伺いします。現地確認・お見積もり無料。法人・複数物件もご相談ください。`,

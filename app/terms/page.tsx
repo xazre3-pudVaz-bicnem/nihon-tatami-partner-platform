@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `利用規約 | ${SITE_NAME}`,
+  title: { absolute: `利用規約 | ${SITE_NAME}` },
+  description: `${SITE_NAME}のサービスご利用にあたっての利用規約です。`,
   alternates: { canonical: `${SITE_URL}/terms` },
 };
 

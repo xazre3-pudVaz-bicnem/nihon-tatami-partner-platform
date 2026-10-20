@@ -12,21 +12,45 @@
   --color-igusa: #7C8A55;       /* い草色 */
   --color-hinoki: #B99B6B;      /* 檜色 */
   --color-kincya: #B88942;      /* 金茶 */
+  --color-kincya-ink: #8A642B;  /* 明るい背景に置く小さな文字用の金茶（コントラスト 4.5:1 以上） */
   --color-do: #9A6E38;
   --color-shiro: #FFFFFF;
   --color-cloud: #F4F4F1;       /* 薄灰 */
   --color-border: #DDD9D2;
 
-  --font-serif: 'Shippori Mincho', 'Noto Serif JP', 'Yu Mincho', '游明朝', serif;
-  --font-sans: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  /* 明朝は読み込み直後は端末の標準フォント（下の html.fonts-ready で Webフォントに切り替え） */
+  --font-serif: 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Noto Serif CJK JP', serif;
+  /* 本文のゴシックは端末の標準フォント（iOS/Mac: ヒラギノ、Android: Noto Sans CJK、Windows: BIZ UDPゴシック） */
+  --font-sans: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Noto Sans CJK JP', 'BIZ UDPGothic', Meiryo, sans-serif;
+}
+
+/* 見出しの明朝 Webフォント（next/font で自己ホスト）は、ページ読み込み後に適用して表示速度を優先する */
+html.fonts-ready {
+  --font-serif: var(--font-shippori-mincho), 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', serif;
 }
 
 @layer base {
   html {
     font-family: var(--font-sans);
-    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* 小書き文字（ァ・ッなど）や句読点を行頭に置かない厳格な禁則 */
+    line-break: strict;
+  }
+
+  /* 見出しは文節単位で改行（対応ブラウザのみ）、本文は最終行が1〜2文字だけにならないよう調整 */
+  h1, h2, h3, h4 {
+    word-break: auto-phrase;
+  }
+  p, li, dd {
+    text-wrap: pretty;
+  }
+
+  /* Lenis が無効な環境（視差効果を減らす設定など）以外では、ページ内リンクをなめらかに */
+  @media (prefers-reduced-motion: no-preference) {
+    html:not(.lenis) {
+      scroll-behavior: smooth;
+    }
   }
 
   body {
@@ -176,4 +200,296 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  /* ── Motion utilities ───────────────────────────── */
+
+  /* 1文字ずつマスクから立ち上がる見出し（JS不要・初回描画から開始） */
+  .rise-char {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    padding-block: 0.08em;
+    margin-block: -0.08em;
+  }
+  .rise-char > span {
+    display: inline-block;
+    animation: rise-in 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--intro-delay, 0ms) + var(--d, 0ms) + var(--i, 0) * 42ms);
+  }
+
+  .anim-fade-up {
+    animation: fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--intro-delay, 0ms) + var(--d, 0ms));
+  }
+
+  .anim-fade-in {
+    animation: fade-in 1.4s ease-out both;
+    animation-delay: calc(var(--intro-delay, 0ms) + var(--d, 0ms));
+  }
+
+  .anim-ken-burns {
+    animation: ken-burns 3.2s cubic-bezier(0.22, 1, 0.36, 1) var(--intro-delay, 0ms) both;
+  }
+
+  .anim-draw-x {
+    transform-origin: left center;
+    animation: draw-x 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--intro-delay, 0ms) + var(--d, 0ms));
+  }
+
+  /* 画面外のセクションはレイアウト・描画を後回しにして、初回表示を速くする */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+  }
+
+  /* 無限に流れるテキスト帯 */
+  .marquee {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .marquee__track {
+    display: flex;
+    width: max-content;
+    animation: marquee-x var(--marquee-duration, 40s) linear infinite;
+  }
+  .marquee--reverse .marquee__track {
+    animation-direction: reverse;
+  }
+  .marquee__group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+  }
+
+  /* スクロールを促す縦線 */
+  .scroll-cue {
+    position: relative;
+    overflow: hidden;
+  }
+  .scroll-cue::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.85), transparent);
+    animation: scroll-cue 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  .spin-slow {
+    animation: spin-slow 28s linear infinite;
+  }
+
+  /* ホバーで光が走るボタン */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(115deg, transparent 25%, rgba(255, 255, 255, 0.38) 50%, transparent 75%);
+    transform: translateX(-130%);
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-shine:hover::after {
+    transform: translateX(130%);
+  }
+
+  /* 下線が左から伸びるリンク */
+  .link-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-draw:hover,
+  .group:hover .link-draw {
+    background-size: 100% 1px;
+  }
+
+  /* 輪郭だけの大きな英字 */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--outline-color, rgba(30, 28, 26, 0.14));
+  }
+
+  /* フィルムのような粒子感（静止画・負荷なし） */
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* 金色の光がゆっくり漂う背景（transform のみで再描画なし） */
+  .glow-drift {
+    animation: glow-drift 18s ease-in-out infinite;
+    will-change: transform;
+  }
+}
+
+@keyframes rise-in {
+  from { transform: translateY(108%); }
+  to { transform: translateY(0); }
+}
+@keyframes fade-up {
+  from { opacity: 0.01; transform: translateY(26px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fade-in {
+  from { opacity: 0.01; }
+  to { opacity: 1; }
+}
+@keyframes ken-burns {
+  from { transform: scale(1.14); }
+  to { transform: scale(1); }
+}
+@keyframes draw-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes marquee-x {
+  to { transform: translateX(-50%); }
+}
+@keyframes scroll-cue {
+  0% { transform: translateY(-100%); }
+  70%, 100% { transform: translateY(100%); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes glow-drift {
+  0%, 100% { transform: translate3d(-12%, -8%, 0) scale(1); }
+  50% { transform: translate3d(10%, 8%, 0) scale(1.18); }
+}
+
+/* 各ページのヒーロー（最初のセクション）をふわっと表示（トップページは専用演出） */
+@media (prefers-reduced-motion: no-preference) {
+  main > section:first-of-type:not(.home-hero) > .relative {
+    animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+/* 「視差効果を減らす」設定では動きを止める */
+@media (prefers-reduced-motion: reduce) {
+  .rise-char > span,
+  .anim-fade-up,
+  .anim-fade-in,
+  .anim-ken-burns,
+  .anim-draw-x,
+  .marquee__track,
+  .spin-slow,
+  .glow-drift,
+  .scroll-cue::after {
+    animation: none !important;
+  }
+  .btn-shine::after {
+    display: none;
+  }
+  /* スクロール連動の移動・不透明度も止める（インライン style より優先） */
+  .parallax-layer {
+    transform: none !important;
+  }
+  .highlight-char {
+    opacity: 1 !important;
+  }
+}
+
+/* Lenis（スムーススクロール） */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ── オープニング（トップページの初回訪問時のみ・html[data-intro="1"]） ── */
+.intro-curtain {
+  display: none;
+}
+html[data-intro="1"] {
+  --intro-delay: 900ms;
+}
+html[data-intro="1"] .intro-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #1e1c1a;
+  pointer-events: none;
+  animation: curtain-up 0.85s cubic-bezier(0.76, 0, 0.24, 1) 0.85s both;
+}
+.intro-curtain__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: intro-inner-out 0.5s cubic-bezier(0.76, 0, 0.24, 1) 0.8s both;
+}
+.intro-curtain__logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  overflow: hidden;
+  animation: intro-logo 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.intro-curtain__name {
+  margin-top: 22px;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 0.32em;
+}
+.intro-curtain__char {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-block: 0.08em;
+  margin-block: -0.08em;
+}
+.intro-curtain__char > span {
+  display: inline-block;
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(100ms + var(--i, 0) * 55ms);
+}
+.intro-curtain__line {
+  display: block;
+  width: 120px;
+  height: 1px;
+  margin-top: 18px;
+  background: linear-gradient(90deg, transparent, #b88942, transparent);
+  animation: draw-x 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+.intro-curtain__en {
+  margin-top: 14px;
+  font-size: 9px;
+  letter-spacing: 0.45em;
+  color: rgba(201, 154, 82, 0.85);
+  animation: fade-in 0.6s ease-out 0.4s both;
+}
+@keyframes curtain-up {
+  to { clip-path: inset(0 0 100% 0); }
+}
+@keyframes intro-inner-out {
+  to { opacity: 0; transform: translateY(-24px); }
+}
+@keyframes intro-logo {
+  from { opacity: 0; transform: scale(0.6) rotate(-30deg); }
+  to { opacity: 1; transform: none; }
 }

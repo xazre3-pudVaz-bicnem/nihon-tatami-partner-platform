@@ -23,21 +23,21 @@ export type ColumnArticle = {
 };
 
 const HERO = {
-  craftsman: "/images/nihon-tatami/tatami/tatami-craftsman-01.png",
-  traditional: "/images/nihon-tatami/tatami/tatami-room-traditional-01.png",
-  minimal: "/images/nihon-tatami/tatami/tatami-room-minimal-01.png",
-  herinashi: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.png",
-  temple: "/images/nihon-tatami/tatami/tatami-temple-hall-01.png",
-  ryokan: "/images/nihon-tatami/tatami/tatami-room-ryokan-table-01.png",
-  garden: "/images/nihon-tatami/tatami/tatami-room-lantern-garden-01.png",
-  storeWorkers: "/images/nihon-tatami/interior/interior-store-workers-01.png",
-  resWorkers: "/images/nihon-tatami/interior/interior-residential-workers-01.png",
-  ldk: "/images/nihon-tatami/interior/interior-completed-ldk-01.png",
-  vacant: "/images/nihon-tatami/restoration/restoration-vacant-check-01.png",
-  wallpaper: "/images/nihon-tatami/restoration/restoration-wallpaper-01.png",
-  floorRepair: "/images/nihon-tatami/restoration/restoration-floor-repair-01.png",
-  shoji: "/images/nihon-tatami/shoji/shoji-installation-01.png",
-  fusuma: "/images/nihon-tatami/fusuma/fusuma-installation-01.png",
+  craftsman: "/images/nihon-tatami/tatami/tatami-craftsman-01.jpg",
+  traditional: "/images/nihon-tatami/tatami/tatami-room-traditional-01.jpg",
+  minimal: "/images/nihon-tatami/tatami/tatami-room-minimal-01.jpg",
+  herinashi: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.jpg",
+  temple: "/images/nihon-tatami/tatami/tatami-temple-hall-01.jpg",
+  ryokan: "/images/nihon-tatami/tatami/tatami-room-ryokan-table-01.jpg",
+  garden: "/images/nihon-tatami/tatami/tatami-room-lantern-garden-01.jpg",
+  storeWorkers: "/images/nihon-tatami/interior/interior-store-workers-01.jpg",
+  resWorkers: "/images/nihon-tatami/interior/interior-residential-workers-01.jpg",
+  ldk: "/images/nihon-tatami/interior/interior-completed-ldk-01.jpg",
+  vacant: "/images/nihon-tatami/restoration/restoration-vacant-check-01.jpg",
+  wallpaper: "/images/nihon-tatami/restoration/restoration-wallpaper-01.jpg",
+  floorRepair: "/images/nihon-tatami/restoration/restoration-floor-repair-01.jpg",
+  shoji: "/images/nihon-tatami/shoji/shoji-installation-01.jpg",
+  fusuma: "/images/nihon-tatami/fusuma/fusuma-installation-01.jpg",
 } as const;
 
 // 共通の締めセクション（CV・信頼性）
@@ -3557,8 +3557,8 @@ export const COLUMN_ARTICLES: ColumnArticle[] = [
       },
     ],
     relatedServices: [
-      { label: "襖張替え", href: "/services/fusuma" },
-      { label: "障子張替え", href: "/services/shoji" },
+      { label: "襖張替え", href: "/fusuma" },
+      { label: "障子張替え", href: "/shoji" },
       { label: "畳表替え", href: "/services/tatami-omotegae" },
     ],
     relatedSlugs: [
@@ -4699,12 +4699,12 @@ export const COLUMN_ARTICLES: ColumnArticle[] = [
       { label: "樹脂畳", href: "/services/resin-tatami" },
       { label: "畳表替え", href: "/services/tatami-omotegae" },
     ],
-    relatedSlugs: ["tatami-and-allergies", "tatami-for-elderly", "igusa-vs-washi-vs-resin"],
+    relatedSlugs: ["tatami-and-allergies", "tatami-for-elderly-care", "igusa-vs-washi-vs-resin"],
   },
 
   // 9. 高齢者・介護が必要な家庭での畳選び
   {
-    slug: "tatami-for-elderly",
+    slug: "tatami-for-elderly-care",
     title: "高齢者・介護が必要な家庭での畳選び",
     excerpt:
       "高齢者の転倒リスクと畳の関係、段差のない設計、硬さの選び方、介護施設での畳活用、バリアフリーリフォームとの組み合わせを専門家が解説します。",
@@ -4907,7 +4907,7 @@ export const COLUMN_ARTICLES: ColumnArticle[] = [
       },
     ],
     relatedServices: [
-      { label: "ふすま張替え", href: "/services/fusuma" },
+      { label: "ふすま張替え", href: "/fusuma" },
     ],
     relatedSlugs: ["shoji-type-material-guide", "tatami-room-modern-design", "tatami-maintenance-guide"],
   },
@@ -5011,7 +5011,7 @@ export const COLUMN_ARTICLES: ColumnArticle[] = [
       },
     ],
     relatedServices: [
-      { label: "障子張替え", href: "/services/shoji" },
+      { label: "障子張替え", href: "/shoji" },
     ],
     relatedSlugs: ["fusuma-type-material-guide", "tatami-maintenance-guide", "tatami-room-modern-design"],
   },
@@ -5327,7 +5327,7 @@ export const COLUMN_ARTICLES: ColumnArticle[] = [
     relatedServices: [
       { label: "畳表替え", href: "/services/tatami-omotegae" },
       { label: "畳新調", href: "/services/tatami-shinchou" },
-      { label: "ふすま張替え", href: "/services/fusuma" },
+      { label: "ふすま張替え", href: "/fusuma" },
     ],
     relatedSlugs: ["tatami-temple-shrine-tradition", "tatami-company-selection-guide", "tatami-cost-comparison"],
   },
@@ -5959,8 +5959,8 @@ export const COLUMN_ARTICLES: ColumnArticle[] = [
     ],
     relatedServices: [
       { label: "畳表替え", href: "/services/tatami-omotegae" },
-      { label: "ふすま張替え", href: "/services/fusuma" },
-      { label: "障子張替え", href: "/services/shoji" },
+      { label: "ふすま張替え", href: "/fusuma" },
+      { label: "障子張替え", href: "/shoji" },
     ],
     relatedSlugs: ["tatami-real-estate-value", "rental-tatami-guide-tenant", "tatami-company-selection-guide"],
   },
@@ -7051,8 +7051,8 @@ export const COLUMN_ARTICLES: ColumnArticle[] = [
     ],
     relatedServices: [
       { label: "ふすま・障子・網戸", href: "/services/fusuma-shoji-amido" },
-      { label: "ふすま張替え", href: "/services/fusuma" },
-      { label: "障子張替え", href: "/services/shoji" },
+      { label: "ふすま張替え", href: "/fusuma" },
+      { label: "障子張替え", href: "/shoji" },
     ],
     relatedSlugs: [
       "katsushika-fusuma-shoji-guide",

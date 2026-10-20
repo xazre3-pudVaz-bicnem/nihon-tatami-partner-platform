@@ -55,12 +55,12 @@ export default function NeedsElderlyPage() {
       ]}
       faqs={FAQ_ITEMS.filter((f) => f.category === "material" || f.category === "general").slice(0, 4)}
       relatedServices={[
-        { label: "畳の新調", href: "/services/tatami-shincho" },
+        { label: "畳の新調", href: "/services/tatami-shinchou" },
         { label: "和紙畳・樹脂畳", href: "/services/washi-tatami" },
-        { label: "畳の表替え", href: "/services/tatami-omotekaeri" },
+        { label: "畳の表替え", href: "/services/tatami-omotegae" },
       ]}
       relatedPages={[
-        { label: "畳の素材ガイド", href: "/column/tatami-material-guide" },
+        { label: "畳の素材ガイド", href: "/materials" },
         { label: "料金の目安", href: "/price" },
       ]}
     />

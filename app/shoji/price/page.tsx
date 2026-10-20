@@ -29,7 +29,7 @@ export default function ShojiPricePage() {
       title="障子張替えの料金目安"
       subtitle="紙の種類・枚数によって費用は変動します。代表的な料金目安と、費用が変わる要因をわかりやすくご案内します。"
       breadcrumbs={[{ label: "障子張替え", href: "/shoji" }, { label: "料金目安" }]}
-      image="/images/nihon-tatami/shoji/shoji-craftsman-01.png"
+      image="/images/nihon-tatami/shoji/shoji-craftsman-01.jpg"
       sections={[
         {
           heading: "障子張替えの料金は何で決まるか",

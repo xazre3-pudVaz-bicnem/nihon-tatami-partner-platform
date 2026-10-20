@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
@@ -22,24 +22,23 @@ const VARIANTS: Record<Direction, Variants> = {
   none:  { hidden: { opacity: 0 },          visible: { opacity: 1 } },
 };
 
+/**
+ * 画面に入ったときにふわっと表示するラッパー。
+ * 「視差効果を減らす」設定では MotionProvider（reducedMotion="user"）により移動を省略する。
+ * サーバーとクライアントで同じ構造を描画するため、ここでは設定による分岐をしない。
+ */
 export default function ScrollReveal({
   children,
   delay = 0,
   direction = "up",
   className,
-  duration = 0.65,
+  duration = 0.75,
 }: Props) {
-  const shouldReduce = useReducedMotion();
-
-  if (shouldReduce) {
-    return <div className={className}>{children}</div>;
-  }
-
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-8% 0px" }}
+      viewport={{ once: true, margin: "0px 0px -8% 0px" }}
       variants={VARIANTS[direction]}
       transition={{ duration, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}

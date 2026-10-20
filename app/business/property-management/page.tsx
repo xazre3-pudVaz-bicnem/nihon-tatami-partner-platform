@@ -43,7 +43,7 @@ export default function PropertyManagementPage() {
       title="管理会社向け原状回復・畳交換・内装整備"
       subtitle="複数棟の原状回復・空室対策・定期メンテナンスを一括サポート。写真付き報告・迅速な見積もり対応で、管理業務の窓口を一本化します。"
       breadcrumbs={[{ label: "法人・施設向け", href: "/business" }, { label: "管理会社向け" }]}
-      image="/images/nihon-tatami/restoration/restoration-wall-painting-01.png"
+      image="/images/nihon-tatami/restoration/restoration-wall-painting-01.jpg"
       sections={[
         {
           heading: "管理会社が抱える課題を一本化で解決",
@@ -251,7 +251,7 @@ export default function PropertyManagementPage() {
       relatedPages={[
         { label: "ご依頼の流れ（法人向け）", href: "/flow" },
         { label: "賃貸オーナー向けサービス", href: "/business/rental-owner" },
-        { label: "コラム：原状回復と畳交換", href: "/column/restoration-tatami-cases" },
+        { label: "コラム：原状回復と畳交換", href: "/column/rental-restoration-checklist" },
       ]}
     />
   );

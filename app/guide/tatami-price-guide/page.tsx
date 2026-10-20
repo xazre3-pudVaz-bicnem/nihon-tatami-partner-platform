@@ -64,7 +64,7 @@ export default function TatamiPriceGuidePage() {
         { label: "ガイド", href: "/guide/how-to-choose-tatami" },
         { label: "畳の料金ガイド" },
       ]}
-      image="/images/nihon-tatami/tatami/tatami-craftsman-01.png"
+      image="/images/nihon-tatami/tatami/tatami-craftsman-01.jpg"
       sections={[
         {
           heading: "工法別の料金相場",

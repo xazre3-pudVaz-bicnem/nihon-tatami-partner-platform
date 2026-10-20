@@ -56,12 +56,12 @@ export default function NeedsSasakurePage() {
       ]}
       faqs={FAQ_ITEMS.filter((f) => f.category === "timing" || f.category === "material").slice(0, 4)}
       relatedServices={[
-        { label: "畳の表替え", href: "/services/tatami-omotekaeri" },
+        { label: "畳の表替え", href: "/services/tatami-omotegae" },
         { label: "和紙畳・樹脂畳", href: "/services/washi-tatami" },
-        { label: "国産い草畳", href: "/services/domestic-igusa" },
+        { label: "国産い草畳", href: "/materials/japanese-igusa" },
       ]}
       relatedPages={[
-        { label: "畳替えのタイミング", href: "/needs/timing" },
+        { label: "畳替えのタイミング", href: "/column/tatami-timing" },
         { label: "料金の目安", href: "/price" },
       ]}
     />

@@ -30,14 +30,14 @@ export default function FAQTabs({ items }: Props) {
             className={`px-5 py-3.5 text-xs tracking-wider border-b-2 transition-all duration-200 flex items-center gap-2 ${
               tab === t.key
                 ? "border-kincya text-sumi"
-                : "border-transparent text-sumi/40 hover:text-sumi/60"
+                : "border-transparent text-sumi/65 hover:text-sumi"
             }`}
             style={{ fontFamily: "var(--font-serif)" }}
           >
             {t.label}
             <span
               className={`text-[10px] px-1.5 py-0.5 rounded-sm ${
-                tab === t.key ? "bg-kincya/10 text-kincya" : "bg-sumi/5 text-sumi/30"
+                tab === t.key ? "bg-kincya-ink/10 text-kincya-ink" : "bg-sumi/5 text-sumi/65"
               }`}
             >
               {t.count}

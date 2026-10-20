@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "縁なし畳（琉球畳風）の費用・種類・選び方を解説。半畳サイズの市松模様、い草・和紙・樹脂の素材選び、和モダン空間への活用、デメリットや子ども・ペット・高齢者への適性まで専門家がご案内。現地確認・お見積もり無料。",
   path: "/services/herinashi-tatami",
-  image: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.png",
+  image: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.jpg",
 });
 
 const data: FullServicePageData = {
@@ -20,7 +20,7 @@ const data: FullServicePageData = {
   ],
   h1: "縁なし畳（琉球畳）の費用・種類・選び方｜和室をモダンに",
   lead: "縁なし畳は、縁（へり）のないすっきりとした畳です。半畳サイズを市松状に敷くことで生まれる陰影の美しさが、和室をモダンで上質な空間に変えます。い草・和紙・樹脂の素材選びから、和モダン空間への活用までご提案します。",
-  heroImage: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.png",
+  heroImage: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.jpg",
   heroImageAlt: "市松敷きの縁なし畳のモダンな和室",
   targets: ["一般住宅", "賃貸オーナー", "店舗", "旅館・宿泊施設", "不動産・管理会社"],
   whatYouLearn: [

@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "畳表替えとは畳床はそのままに畳表と縁を新しく張り替える施工。裏返し・新調との違い、できる状態・できない状態、縁の選び方、素材別の費用目安、賃貸の費用負担まで専門家が解説。住宅・賃貸・旅館・寺社対応。現地確認・お見積もり無料。",
   path: "/services/tatami-omotegae",
-  image: "/images/nihon-tatami/tatami/tatami-craftsman-01.png",
+  image: "/images/nihon-tatami/tatami/tatami-craftsman-01.jpg",
 });
 
 const data: FullServicePageData = {
@@ -20,7 +20,7 @@ const data: FullServicePageData = {
   ],
   h1: "畳表替えの費用・時期・素材選び｜住宅・賃貸・旅館・寺社まで対応",
   lead: "畳表替えは、畳床はそのままに表面の畳表（ゴザ）と縁を新しく張り替える、最も一般的なメンテナンスです。い草・和紙・樹脂の素材選びから縁の選定、賃貸の費用負担まで、住宅・賃貸・旅館・寺社のあらゆる現場に対応します。",
-  heroImage: "/images/nihon-tatami/tatami/tatami-craftsman-01.png",
+  heroImage: "/images/nihon-tatami/tatami/tatami-craftsman-01.jpg",
   heroImageAlt: "畳表を張り替える職人の手元",
   targets: ["一般住宅", "賃貸オーナー", "不動産・管理会社", "旅館・宿泊施設", "寺社", "店舗"],
   whatYouLearn: [

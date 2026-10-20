@@ -16,7 +16,7 @@ export default function ForHomeownerPage() {
       title="一般住宅オーナー様へ"
       subtitle="ご自宅の和室を、いつまでも快適に。畳の張替えから襖・障子・内装まで、住まいの和の空間を一社でトータルにサポートします。素材選びのご相談から丁寧に対応します。"
       breadcrumbs={[{ label: "一般住宅オーナー様へ" }]}
-      image="/images/nihon-tatami/tatami/tatami-room-traditional-01.png"
+      image="/images/nihon-tatami/tatami/tatami-room-traditional-01.jpg"
       path="/for-homeowner"
       intro={[
         "和室は、家族がくつろぎ、来客をもてなす大切な空間です。畳の香りや肌触り、襖や障子が作るやわらかな雰囲気は、住まいに落ち着きをもたらします。一方で、畳・襖・障子は経年とともに少しずつ劣化していくため、適切なタイミングでのメンテナンスが欠かせません。",

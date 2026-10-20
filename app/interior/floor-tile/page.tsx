@@ -31,7 +31,7 @@ export default function FloorTilePage() {
       title="フロアタイルの費用・種類・特徴"
       subtitle="耐久性が高くデザイン性に優れたフロアタイルの施工に対応。店舗・オフィス・玄関・水回りのグレードアップに活用できます。"
       breadcrumbs={[{ label: "内装工事", href: "/interior" }, { label: "フロアタイル" }]}
-      image="/images/nihon-tatami/interior/interior-woodwork-shelving-01.png"
+      image="/images/nihon-tatami/interior/interior-woodwork-shelving-01.jpg"
       sections={[
         {
           heading: "フロアタイルとは",

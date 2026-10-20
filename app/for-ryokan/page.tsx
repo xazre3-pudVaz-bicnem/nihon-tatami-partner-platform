@@ -16,7 +16,7 @@ export default function ForRyokanPage() {
       title="旅館・宿泊施設様へ"
       subtitle="おもてなしの質を支える、客室の畳。営業を止めずに客室を順番に施工し、繁忙期前の整備や大広間の大量施工まで計画的に対応します。香り高い畳でお客様をお迎えしましょう。"
       breadcrumbs={[{ label: "旅館・宿泊施設様へ" }]}
-      image="/images/nihon-tatami/tatami/tatami-room-ryokan-table-01.png"
+      image="/images/nihon-tatami/tatami/tatami-room-ryokan-table-01.jpg"
       path="/for-ryokan"
       intro={[
         "旅館・宿泊施設において、客室の畳はお客様の満足度に直結します。青々としたい草の香りと清潔感は、おもてなしの質を高める重要な要素です。逆に、色あせた畳やささくれは、せっかくの宿泊体験の印象を損なってしまいます。",

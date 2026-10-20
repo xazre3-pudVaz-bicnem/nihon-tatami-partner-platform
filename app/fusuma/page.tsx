@@ -16,7 +16,7 @@ export default function FusumaPage() {
       title="襖（ふすま）張替え"
       subtitle="汚れ・破れ・日焼けが気になる襖を美しく一新。本襖から量産襖まで、襖紙のデザイン選びから建具の調整まで、和室の印象を左右する襖をていねいに仕上げます。"
       breadcrumbs={[{ label: "襖張替え" }]}
-      image="/images/nihon-tatami/fusuma/fusuma-installation-01.png"
+      image="/images/nihon-tatami/fusuma/fusuma-installation-01.jpg"
       path="/fusuma"
       intro={[
         "襖は和室の大きな面積を占めるため、襖紙の状態や柄が空間全体の印象を大きく左右します。汚れ・破れ・日焼けが目立つ襖は和室を古びて見せてしまいますが、張替えるだけで部屋は見違えるほど明るくなります。",

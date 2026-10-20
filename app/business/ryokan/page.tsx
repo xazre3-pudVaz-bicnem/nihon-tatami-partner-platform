@@ -43,7 +43,7 @@ export default function RyokanPage() {
       title="旅館・宿泊施設向け畳工事"
       subtitle="客室の定期メンテナンス、繁忙期前の集中施工、高品質素材での格式維持。旅館のスケジュールに合わせた施工計画を立てます。"
       breadcrumbs={[{ label: "法人・施設向け", href: "/business" }, { label: "旅館・宿泊施設向け" }]}
-      image="/images/nihon-tatami/hero/hero-tatami-ryokan-evening.png"
+      image="/images/nihon-tatami/hero/hero-tatami-ryokan-evening.jpg"
       sections={[
         {
           heading: "旅館・宿泊施設の畳が果たす役割",
@@ -305,7 +305,7 @@ export default function RyokanPage() {
         { label: "旅館・宿泊施設の襖張替え", href: "/fusuma/for-ryokan" },
         { label: "旅館・宿泊施設の障子張替え", href: "/shoji/for-ryokan" },
         { label: "寺院・神社向け畳工事", href: "/business/temple-shrine" },
-        { label: "コラム：旅館の畳張替えメリット", href: "/column/ryokan-tatami-merit" },
+        { label: "コラム：旅館の畳メンテナンス計画", href: "/column/ryokan-tatami-maintenance" },
       ]}
     />
   );

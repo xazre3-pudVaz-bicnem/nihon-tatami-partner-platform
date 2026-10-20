@@ -33,7 +33,7 @@ export default function RestorationStorePage() {
       title="店舗・テナント退去後の原状回復工事"
       subtitle="飲食店・事務所・小売店の退去時の原状回復に対応。内装解体・スケルトン返し・設備撤去から床・壁・天井の復旧まで一括で承ります。"
       breadcrumbs={[{ label: "原状回復", href: "/restoration" }, { label: "店舗退去後の原状回復" }]}
-      image="/images/nihon-tatami/restoration/restoration-office-01.png"
+      image="/images/nihon-tatami/restoration/restoration-office-01.jpg"
       sections={[
         {
           heading: "店舗・テナントの原状回復の特徴",

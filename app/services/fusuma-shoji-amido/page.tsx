@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "襖・障子・網戸の張替えを畳と一括で。襖紙（紙・布・糸入り・鳥の子・和紙）、障子紙（普通紙・プラスチック・強化紙）、網戸ネット（メッシュ・ペット対応・防虫）の素材選び、建具調整、賃貸退去時の費用負担、旅館・寺社の大量施工まで専門家が解説。現地確認・お見積もり無料。",
   path: "/services/fusuma-shoji-amido",
-  image: "/images/nihon-tatami/shoji/shoji-installation-01.png",
+  image: "/images/nihon-tatami/shoji/shoji-installation-01.jpg",
 });
 
 const data: FullServicePageData = {
@@ -20,7 +20,7 @@ const data: FullServicePageData = {
   ],
   h1: "襖・障子・網戸の張替え費用・素材・流れ｜住宅・賃貸・旅館・寺社対応",
   lead: "襖・障子・網戸の張替えを、畳工事と一括でご依頼いただけます。襖紙・障子紙・網戸ネットの豊富な素材選び、建具調整、賃貸退去時の費用負担、旅館・寺社の大量施工まで、和室全体の印象を一新します。",
-  heroImage: "/images/nihon-tatami/shoji/shoji-installation-01.png",
+  heroImage: "/images/nihon-tatami/shoji/shoji-installation-01.jpg",
   heroImageAlt: "障子を張り替える職人",
   targets: ["一般住宅", "賃貸オーナー", "不動産・管理会社", "旅館・宿泊施設", "寺社", "店舗"],
   whatYouLearn: [

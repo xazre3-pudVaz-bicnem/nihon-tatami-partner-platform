@@ -16,7 +16,7 @@ export default function ForRealEstateCompanyPage() {
       title="不動産会社・管理会社様へ"
       subtitle="原状回復から売却前整備まで、不動産事業を支える施工パートナー。畳・クロス・床・建具を一社にまとめ、発注業務の効率化と空室期間の短縮を実現します。"
       breadcrumbs={[{ label: "不動産会社・管理会社様へ" }]}
-      image="/images/nihon-tatami/restoration/restoration-vacant-check-01.png"
+      image="/images/nihon-tatami/restoration/restoration-vacant-check-01.jpg"
       path="/for-real-estate-company"
       intro={[
         "多数の物件を扱う不動産会社・管理会社にとって、原状回復や内装整備の発注業務は大きな負担です。畳業者・クロス業者・床業者を個別に手配すれば、調整と進捗管理に時間を取られ、品質や対応にもばらつきが出がちです。",

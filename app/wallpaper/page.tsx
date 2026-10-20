@@ -16,7 +16,7 @@ export default function WallpaperPage() {
       title="クロス（壁紙）張替え"
       subtitle="壁の汚れ・剥がれ・ヤニ汚れを一新。防汚・消臭・防カビなどの機能性クロスで、住まいや物件の印象を明るく整えます。畳・床と合わせた一括施工も可能です。"
       breadcrumbs={[{ label: "クロス張替え" }]}
-      image="/images/nihon-tatami/restoration/restoration-wallpaper-01.png"
+      image="/images/nihon-tatami/restoration/restoration-wallpaper-01.jpg"
       path="/wallpaper"
       intro={[
         "壁は部屋の中で最も面積が広く、クロスの状態が空間の印象を大きく左右します。汚れ・剥がれ・ヤニ汚れがあると部屋全体が古びて見えますが、張替えるだけで明るく清潔な印象に生まれ変わります。",

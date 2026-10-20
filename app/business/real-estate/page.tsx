@@ -43,7 +43,7 @@ export default function RealEstatePage() {
       title="不動産会社向け畳工事・内装工事"
       subtitle="売買前の内覧整備・原状回復・空室対策を一括サポート。買主の第一印象を整え、成約と価格交渉を有利に進めるお手伝いをします。"
       breadcrumbs={[{ label: "法人・施設向け", href: "/business" }, { label: "不動産会社向け" }]}
-      image="/images/nihon-tatami/restoration/restoration-vacant-check-01.png"
+      image="/images/nihon-tatami/restoration/restoration-vacant-check-01.jpg"
       sections={[
         {
           heading: "売買物件の内装整備が成約を左右する",
@@ -275,7 +275,7 @@ export default function RealEstatePage() {
       relatedPages={[
         { label: "賃貸退去後の原状回復", href: "/restoration/rental" },
         { label: "賃貸オーナー向けサービス", href: "/business/rental-owner" },
-        { label: "コラム：売買前に畳と内装を整える理由", href: "/column/realestate-interior-before-sale" },
+        { label: "コラム：売買前に畳と内装を整える理由", href: "/column/property-sale-renovation" },
       ]}
     />
   );

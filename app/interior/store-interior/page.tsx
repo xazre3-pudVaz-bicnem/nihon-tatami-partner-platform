@@ -33,7 +33,7 @@ export default function StoreInteriorPage() {
       title="店舗内装工事の費用・事例・対応範囲"
       subtitle="飲食店・美容室・小売店・オフィスの内装工事を幅広く承ります。和食店の座敷づくりから、新規開業・改装・退去時の原状回復まで対応します。"
       breadcrumbs={[{ label: "内装工事", href: "/interior" }, { label: "店舗内装工事" }]}
-      image="/images/nihon-tatami/interior/interior-store-workers-01.png"
+      image="/images/nihon-tatami/interior/interior-store-workers-01.jpg"
       sections={[
         {
           heading: "店舗内装工事の全体像",

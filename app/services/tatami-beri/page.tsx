@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "畳の縁（ヘリ）の種類・選び方・費用を解説。無地・柄・紋縁・麻縁・デザイン縁・特注縁の特徴、格式・デザイン・機能での選び方、住宅・旅館・寺社での使い分けまで専門家がご案内。現地確認・お見積もり無料。",
   path: "/services/tatami-beri",
-  image: "/images/nihon-tatami/tatami/tatami-room-traditional-01.png",
+  image: "/images/nihon-tatami/tatami/tatami-room-traditional-01.jpg",
 });
 
 const data: FullServicePageData = {
@@ -20,7 +20,7 @@ const data: FullServicePageData = {
   ],
   h1: "畳の縁（ヘリ）の種類・選び方・費用｜格式・デザイン・機能で選ぶ",
   lead: "畳の縁（へり）は、畳の印象と格式を大きく左右する大切な要素です。無地・柄・紋縁・麻縁・デザイン縁・特注縁まで種類は豊富で、住宅・旅館・寺社それぞれの空間に合わせた選定が、仕上がりの満足度を決めます。",
-  heroImage: "/images/nihon-tatami/tatami/tatami-room-traditional-01.png",
+  heroImage: "/images/nihon-tatami/tatami/tatami-room-traditional-01.jpg",
   heroImageAlt: "縁の柄が美しい畳の和室",
   targets: ["一般住宅", "旅館・宿泊施設", "寺社", "店舗", "賃貸オーナー"],
   whatYouLearn: [

@@ -16,7 +16,7 @@ export default function FlooringPage() {
       title="床工事・フローリング補修"
       subtitle="床のキズ・へこみ・きしみの補修から、クッションフロア・フロアタイルへの張替えまで。住宅・賃貸・店舗の床トラブルをワンストップで解決します。"
       breadcrumbs={[{ label: "床工事" }]}
-      image="/images/nihon-tatami/restoration/restoration-floor-repair-01.png"
+      image="/images/nihon-tatami/restoration/restoration-floor-repair-01.jpg"
       path="/flooring"
       intro={[
         "床は毎日歩く場所だからこそ、キズ・へこみ・きしみ・色あせなどのトラブルが起きやすい場所です。状態に応じて部分補修と張替えを使い分けることで、無駄なく最適な対応ができます。",

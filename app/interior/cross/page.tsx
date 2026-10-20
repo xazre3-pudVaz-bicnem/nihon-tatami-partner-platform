@@ -33,7 +33,7 @@ export default function CrossPage() {
       title="クロス張替えの費用・種類・業者選び"
       subtitle="劣化・剥がれ・変色したクロスを新しく張り替えます。住宅・賃貸・店舗・オフィスに対応し、畳工事と合わせて空間全体を一新できます。"
       breadcrumbs={[{ label: "内装工事", href: "/interior" }, { label: "クロス張替え" }]}
-      image="/images/nihon-tatami/restoration/restoration-wallpaper-01.png"
+      image="/images/nihon-tatami/restoration/restoration-wallpaper-01.jpg"
       sections={[
         {
           heading: "クロス張替えで変わること",

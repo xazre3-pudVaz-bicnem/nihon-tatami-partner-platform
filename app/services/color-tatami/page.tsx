@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "カラー畳の種類・費用・デザイン活用法を解説。和紙・樹脂の豊富なカラー、色選びのコツ、和モダン・店舗・子ども部屋への活用、色あせへの強さまで専門家がご案内。現地確認・お見積もり無料。",
   path: "/services/color-tatami",
-  image: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.png",
+  image: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.jpg",
 });
 
 const data: FullServicePageData = {
@@ -20,7 +20,7 @@ const data: FullServicePageData = {
   ],
   h1: "カラー畳の種類・費用・デザイン活用法｜和モダン・店舗・子ども部屋に",
   lead: "カラー畳は、和紙・樹脂の機能性素材で作る、豊富な色合いの畳です。伝統的な緑色だけでなく、ベージュ・ブラウン・グレー・墨色・桜色など多彩な色から、空間のテイストに合わせて選べます。和モダン・店舗・子ども部屋の演出に最適です。",
-  heroImage: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.png",
+  heroImage: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.jpg",
   heroImageAlt: "カラー畳で彩られたモダンな和室",
   targets: ["一般住宅", "店舗", "賃貸オーナー", "旅館・宿泊施設"],
   whatYouLearn: [

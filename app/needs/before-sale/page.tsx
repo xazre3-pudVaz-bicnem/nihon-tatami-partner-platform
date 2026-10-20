@@ -74,7 +74,7 @@ export default function NeedsBeforeSalePage() {
         { label: "お悩み別", href: "/needs" },
         { label: "売却前の内装整備" },
       ]}
-      image="/images/nihon-tatami/interior/interior-completed-ldk-01.png"
+      image="/images/nihon-tatami/interior/interior-completed-ldk-01.jpg"
       sections={[
         {
           heading: "売却前の内装整備が重要な理由",
@@ -156,7 +156,7 @@ export default function NeedsBeforeSalePage() {
         { label: "内装工事", href: "/interior" },
       ]}
       relatedPages={[
-        { label: "コラム：売却前の内装整備", href: "/column/realestate-interior-before-sale" },
+        { label: "コラム：売却前の内装整備", href: "/column/property-sale-renovation" },
         { label: "料金の目安", href: "/price" },
       ]}
     />

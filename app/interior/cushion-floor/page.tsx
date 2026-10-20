@@ -31,7 +31,7 @@ export default function CushionFloorPage() {
       title="クッションフロア張替えの費用・種類・特徴"
       subtitle="水や汚れに強いクッションフロアの張替えに対応。水回り・子供部屋・賃貸の原状回復など、幅広い場面に活用できます。"
       breadcrumbs={[{ label: "内装工事", href: "/interior" }, { label: "クッションフロア" }]}
-      image="/images/nihon-tatami/restoration/restoration-kitchen-check-01.png"
+      image="/images/nihon-tatami/restoration/restoration-kitchen-check-01.jpg"
       sections={[
         {
           heading: "クッションフロアとは",

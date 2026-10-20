@@ -74,7 +74,7 @@ export default function NeedsVacantRoomPage() {
         { label: "お悩み別", href: "/needs" },
         { label: "空室対策と畳" },
       ]}
-      image="/images/nihon-tatami/interior/interior-completed-ldk-01.png"
+      image="/images/nihon-tatami/interior/interior-completed-ldk-01.jpg"
       sections={[
         {
           heading: "空室が続く原因と畳の影響",
@@ -174,7 +174,7 @@ export default function NeedsVacantRoomPage() {
         { label: "賃貸の原状回復", href: "/restoration/rental" },
       ]}
       relatedPages={[
-        { label: "コラム：空室対策と畳交換", href: "/column/rental-tatami-vacancy" },
+        { label: "コラム：空室対策と畳交換", href: "/column/vacancy-measures-tatami" },
         { label: "不動産会社・管理会社向け", href: "/business/real-estate" },
         { label: "料金の目安", href: "/price" },
       ]}

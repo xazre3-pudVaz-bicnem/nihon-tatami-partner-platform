@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "琉球畳の費用・特徴・デザインを解説。七島い草との違い、現代の琉球畳風との違い、市松模様などデザイン種類、一般住宅・賃貸・ホテル・宿泊施設での需要まで専門家がご案内。現地確認・お見積もり無料。",
   path: "/services/ryukyu-tatami",
-  image: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.png",
+  image: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.jpg",
 });
 
 const data: FullServicePageData = {
@@ -20,7 +20,7 @@ const data: FullServicePageData = {
   ],
   h1: "琉球畳の費用・特徴・デザイン種類｜縁なし畳で和モダン空間を演出",
   lead: "琉球畳は、本来は沖縄産の七島い草を使った縁なし畳を指します。断面が三角形の丈夫ない草が生む素朴で力強い風合いは、和モダンな空間づくりに最適です。本格的な七島い草から和紙・樹脂の琉球畳風まで、用途に合わせてご提案します。",
-  heroImage: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.png",
+  heroImage: "/images/nihon-tatami/tatami/tatami-room-herinashi-01.jpg",
   heroImageAlt: "琉球畳を敷いた和モダンな空間",
   targets: ["一般住宅", "旅館・宿泊施設", "店舗", "賃貸オーナー"],
   whatYouLearn: [

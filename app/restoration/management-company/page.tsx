@@ -33,7 +33,7 @@ export default function RestorationManagementPage() {
       title="管理会社向け原状回復工事"
       subtitle="複数物件・スピード対応・写真付き報告書で、管理会社様の原状回復業務を支えます。協力業者として継続的なお取引を歓迎します。"
       breadcrumbs={[{ label: "原状回復", href: "/restoration" }, { label: "管理会社向け" }]}
-      image="/images/nihon-tatami/restoration/restoration-wall-painting-01.png"
+      image="/images/nihon-tatami/restoration/restoration-wall-painting-01.jpg"
       sections={[
         {
           heading: "管理会社様の業務をサポート",

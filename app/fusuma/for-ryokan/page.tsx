@@ -31,7 +31,7 @@ export default function FusumaForRyokanPage() {
       title="旅館・宿泊施設の襖張替え"
       subtitle="客室・大広間・宴会場の襖を、格式ある素材と稼働に配慮したスケジュールで。多枚数の大量施工に対応します。"
       breadcrumbs={[{ label: "襖張替え", href: "/fusuma" }, { label: "旅館・宿泊施設の襖張替え" }]}
-      image="/images/nihon-tatami/fusuma/fusuma-installation-03.png"
+      image="/images/nihon-tatami/fusuma/fusuma-installation-03.jpg"
       sections={[
         {
           heading: "旅館の襖が果たす役割",
@@ -96,7 +96,7 @@ export default function FusumaForRyokanPage() {
       relatedPages={[
         { label: "旅館・宿泊施設向けサービス", href: "/business/ryokan" },
         { label: "寺院・神社の襖張替え", href: "/fusuma/for-temple-shrine" },
-        { label: "コラム：旅館の客室畳メンテナンス", href: "/column/ryokan-tatami-merit" },
+        { label: "コラム：旅館の客室畳メンテナンス", href: "/column/ryokan-tatami-maintenance" },
       ]}
     />
   );

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { CSSProperties } from "react";
+import Marquee from "@/components/ui/motion/Marquee";
 import { SITE_NAME, SITE_TEL, SITE_EMAIL } from "@/lib/site";
 
 const hasTel = (SITE_TEL as string).trim() !== "";
@@ -85,35 +87,40 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-sumi text-white">
-      {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 mb-12">
+    <footer className="relative bg-sumi text-white overflow-hidden pb-14 md:pb-0">
+      <div className="absolute inset-0 tatami-dark pointer-events-none" aria-hidden="true" />
+      {/* 金色の光 */}
+      <div
+        className="glow-drift pointer-events-none absolute -top-40 left-1/3 h-[420px] w-[420px] rounded-full opacity-[0.12] blur-3xl"
+        style={{ background: "radial-gradient(circle, #B88942 0%, transparent 70%)" }}
+        aria-hidden="true"
+      />
+
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-20 pb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 mb-14">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-full overflow-hidden shrink-0">
-                <Image
-                  src="/logo.png"
-                  alt="葛飾畳店 ロゴ"
-                  width={36}
-                  height={36}
-                  className="w-full h-full object-cover"
-                />
+          <div className="lg:col-span-3">
+            <Link href="/" className="group inline-flex items-center gap-3 mb-5" aria-label={`${SITE_NAME} トップへ`}>
+              <div className="w-11 h-11 rounded-full overflow-hidden shrink-0 ring-1 ring-white/10 transition-transform duration-700 group-hover:rotate-[20deg]">
+                <Image src="/logo-96.png" alt={`${SITE_NAME} ロゴ`} width={44} height={44} className="w-full h-full object-cover" />
               </div>
               <div>
-                <span className="block text-sm tracking-[0.12em]" style={{ fontFamily: "var(--font-serif)" }}>
+                <span className="block text-base tracking-[0.14em]" style={{ fontFamily: "var(--font-serif)" }}>
                   {SITE_NAME}
                 </span>
-                <span className="block text-[9px] text-white/30 tracking-[0.15em]">KATSUSHIKA TATAMI STORE</span>
+                <span className="block text-[9px] text-white/35 tracking-[0.2em]">KATSUSHIKA TATAMI STORE</span>
               </div>
-            </div>
-            <p className="text-xs text-white/40 leading-relaxed mb-6">
+            </Link>
+            <p className="text-xs text-white/45 leading-relaxed mb-6 max-w-sm">
               東京都葛飾区を中心に、畳の表替えから内装工事・原状回復まで。住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナー。
             </p>
             <div className="space-y-2">
               {hasTel && (
-                <a href={`tel:${SITE_TEL.replace(/-/g, "")}`} className="block text-xs text-white/50 hover:text-white transition-colors">
+                <a
+                  href={`tel:${SITE_TEL.replace(/-/g, "")}`}
+                  className="block text-lg text-white/85 hover:text-kincya transition-colors tracking-wider"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
                   {SITE_TEL}
                 </a>
               )}
@@ -122,33 +129,53 @@ export default function Footer() {
                   {SITE_EMAIL}
                 </a>
               )}
-              <Link href="/contact" className="block text-xs text-kincya/70 hover:text-kincya transition-colors">
-                お問い合わせフォーム
+              <Link href="/contact" className="link-draw inline-block text-xs text-kincya hover:text-kincya transition-colors pb-0.5 mt-1">
+                お問い合わせフォーム →
               </Link>
             </div>
           </div>
 
           {/* Links */}
-          {FOOTER_LINKS.map((col) => (
-            <div key={col.heading}>
-              <p className="text-xs text-white/30 mb-4 tracking-[0.2em] uppercase">{col.heading}</p>
-              <ul className="space-y-2.5">
-                {col.links.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-xs text-white/50 hover:text-white transition-colors duration-200">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10">
+            {FOOTER_LINKS.map((col) => (
+              <div key={col.heading}>
+                <p className="text-[11px] text-kincya/70 mb-4 tracking-[0.2em]">{col.heading}</p>
+                <ul className="space-y-2.5">
+                  {col.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="link-draw text-xs text-white/55 hover:text-white transition-colors duration-200 pb-0.5">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
 
-        {/* Bottom */}
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/30">&copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
-          <p className="text-xs text-white/20">Crafted with care in Japan</p>
+      {/* 流れる大きな店名（装飾） */}
+      <Marquee duration={60} className="relative border-y border-white/[0.06] py-6">
+        {["KATSUSHIKA TATAMI STORE", "葛飾畳店", "TATAMI · INTERIOR · RESTORATION", "葛飾区の畳張替え"].map((t) => (
+          <span key={t} className="flex items-center">
+            <span
+              className="text-outline px-8 text-5xl sm:text-7xl whitespace-nowrap"
+              style={{ fontFamily: "var(--font-serif)", "--outline-color": "rgba(255,255,255,0.16)" } as CSSProperties}
+            >
+              {t}
+            </span>
+            <span className="text-kincya/40 text-2xl">✦</span>
+          </span>
+        ))}
+      </Marquee>
+
+      {/* Bottom */}
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p className="text-xs text-white/35">&copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
+        <div className="flex items-center gap-6 text-xs text-white/35">
+          <Link href="/privacy" className="hover:text-white transition-colors">プライバシーポリシー</Link>
+          <Link href="/terms" className="hover:text-white transition-colors">利用規約</Link>
         </div>
       </div>
     </footer>

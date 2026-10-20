@@ -33,7 +33,7 @@ export default function FloorPage() {
       title="フローリング工事の費用・種類・選び方"
       subtitle="フローリングの張替え・上貼り・部分補修に対応。和室から洋室への変更や、賃貸・住宅・店舗の床リフォームまで承ります。"
       breadcrumbs={[{ label: "内装工事", href: "/interior" }, { label: "フローリング工事" }]}
-      image="/images/nihon-tatami/restoration/restoration-floor-repair-01.png"
+      image="/images/nihon-tatami/restoration/restoration-floor-repair-01.jpg"
       sections={[
         {
           heading: "フローリング工事でできること",

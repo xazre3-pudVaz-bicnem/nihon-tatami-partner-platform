@@ -74,7 +74,7 @@ export default function NeedsPetPage() {
         { label: "お悩み別", href: "/needs" },
         { label: "ペットと畳" },
       ]}
-      image="/images/nihon-tatami/tatami/tatami-room-minimal-01.png"
+      image="/images/nihon-tatami/tatami/tatami-room-minimal-01.jpg"
       sections={[
         {
           heading: "ペットが原因の畳トラブル",
@@ -174,7 +174,7 @@ export default function NeedsPetPage() {
         { label: "畳の新調", href: "/services/tatami-shinchou" },
       ]}
       relatedPages={[
-        { label: "コラム：ペットと畳", href: "/column/pet-tatami" },
+        { label: "コラム：ペットと畳", href: "/column/tatami-for-pets" },
         { label: "畳の選び方ガイド", href: "/guide/how-to-choose-tatami" },
         { label: "料金の目安", href: "/price" },
       ]}

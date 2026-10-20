@@ -1,10 +1,26 @@
 import type { Metadata } from "next";
+import { Shippori_Mincho } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import BrandLoader from "@/components/ui/BrandLoader";
+import IntroCurtain, { INTRO_SCRIPT } from "@/components/ui/IntroCurtain";
+import FontActivator, { FONTS_SCRIPT } from "@/components/ui/FontActivator";
 import StickyContactBar from "@/components/ui/StickyContactBar";
+import MotionProvider from "@/components/ui/motion/MotionProvider";
+import SmoothScroll from "@/components/ui/motion/SmoothScroll";
+import ScrollProgress from "@/components/ui/motion/ScrollProgress";
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, SITE_TEL, SITE_EMAIL, AREA_SERVED_SCHEMA } from "@/lib/site";
+
+// 見出しの明朝体は next/font で自己ホスト（外部CSSの読み込み待ちをなくし、表示を速くする）。
+// 適用はタブレット・PCのみ、ページ読み込み後（FontActivator が html に .fonts-ready を付ける / globals.css 参照）。
+// 本文のゴシック体は端末の標準フォントを使い、Webフォントの読み込みと再描画をなくす。
+const shipporiMincho = Shippori_Mincho({
+  weight: ["400", "500"],
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+  variable: "--font-shippori-mincho",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -94,25 +110,27 @@ const GLOBAL_SCHEMA = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={shipporiMincho.variable} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&display=swap"
-          rel="stylesheet"
-        />
+        {/* トップページ初回訪問時のオープニング演出用（描画前に html へ data-intro を付ける） */}
+        <script dangerouslySetInnerHTML={{ __html: INTRO_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: FONTS_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(GLOBAL_SCHEMA) }}
         />
       </head>
       <body>
-        <BrandLoader />
-        <Header />
-        <main className="pb-16 md:pb-0">{children}</main>
-        <Footer />
-        <StickyContactBar />
+        <IntroCurtain />
+        <FontActivator />
+        <MotionProvider>
+          <SmoothScroll />
+          <ScrollProgress />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <StickyContactBar />
+        </MotionProvider>
       </body>
     </html>
   );
