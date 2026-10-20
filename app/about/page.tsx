@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME, SITE_URL, SITE_TEL, SITE_EMAIL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, SITE_TEL, SITE_EMAIL, AREA_SERVED_SCHEMA } from "@/lib/site";
 import CTASection from "@/components/ui/CTASection";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: `会社情報 | ${SITE_NAME}`,
-  description: "埼玉畳店の事業内容と強みをご紹介します。畳工事・内装工事・原状回復を軸に、住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナーです。",
+  description: "葛飾畳店の事業内容と強みをご紹介します。東京都葛飾区を中心に、畳工事・内装工事・原状回復を軸として、住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナーです。",
   path: "/about",
 });
 
 const COMPANY_INFO = [
-  { label: "屋号", value: "埼玉畳店" },
+  { label: "屋号", value: "葛飾畳店" },
   { label: "事業内容", value: "畳工事・内装工事・原状回復工事" },
   { label: "電話番号", value: SITE_TEL },
   { label: "メールアドレス", value: SITE_EMAIL },
-  { label: "対応地域", value: "詳しくはお問い合わせください" },
+  { label: "対応地域", value: "東京都葛飾区の全域（亀有・金町・柴又・新小岩・立石など）。1都6県のご相談にも対応" },
   { label: "お問い合わせ", value: "サイト内フォームよりご連絡ください" },
 ];
 
@@ -32,7 +32,7 @@ const ABOUT_PAGE_SCHEMA = {
   "@id": `${SITE_URL}/about`,
   name: `会社情報 | ${SITE_NAME}`,
   url: `${SITE_URL}/about`,
-  description: "埼玉畳店の事業内容・強み・会社概要",
+  description: "葛飾畳店の事業内容・強み・会社概要",
   inLanguage: "ja",
   mainEntity: { "@id": `${SITE_URL}/#organization` },
 };
@@ -45,20 +45,12 @@ const ORG_SCHEMA = {
   url: SITE_URL,
   telephone: SITE_TEL,
   email: SITE_EMAIL,
-  description: "畳の表替え・新調から内装工事・原状回復まで。東京・神奈川・千葉・埼玉・群馬・栃木・茨城に対応する畳と空間整備の専門パートナー。",
+  description: "東京都葛飾区を中心に、畳の表替え・新調から内装工事・原状回復まで。東京・千葉・埼玉・神奈川・群馬・栃木・茨城のご相談にも対応する畳と空間整備の専門パートナー。",
   knowsAbout: [
     "畳張替え", "畳表替え", "畳新調", "縁なし畳", "琉球畳", "和紙畳", "樹脂畳", "襖張替え", "障子張替え", "原状回復工事", "内装工事",
   ],
   serviceType: ["畳工事", "内装工事", "原状回復"],
-  areaServed: [
-    { "@type": "AdministrativeArea", name: "東京都" },
-    { "@type": "AdministrativeArea", name: "神奈川県" },
-    { "@type": "AdministrativeArea", name: "千葉県" },
-    { "@type": "AdministrativeArea", name: "埼玉県" },
-    { "@type": "AdministrativeArea", name: "群馬県" },
-    { "@type": "AdministrativeArea", name: "栃木県" },
-    { "@type": "AdministrativeArea", name: "茨城県" },
-  ],
+  areaServed: AREA_SERVED_SCHEMA,
 };
 
 export default function AboutPage() {
@@ -89,7 +81,7 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-5 text-sm text-sumi/70 leading-relaxed text-left max-w-2xl mx-auto">
             <p>畳は単なる床材ではありません。空間の清潔感・香り・格式・印象をつくり、住む人の気持ちと建物の資産価値に直接影響を与える存在です。</p>
-            <p>埼玉畳店は、畳の専門性を軸にしながら、内装工事・原状回復まで一括でご相談いただける「空間整備の専門パートナー」を目指しています。</p>
+            <p>葛飾畳店は、畳の専門性を軸にしながら、内装工事・原状回復まで一括でご相談いただける「空間整備の専門パートナー」を目指しています。</p>
             <p>個人のご家庭から、旅館・寺社・店舗、不動産管理会社・賃貸オーナーまで。規模や用途を問わず、最適な提案と施工でお応えします。</p>
           </div>
         </div>

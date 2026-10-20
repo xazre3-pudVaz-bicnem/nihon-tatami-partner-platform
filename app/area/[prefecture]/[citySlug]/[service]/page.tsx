@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
-import { AREAS, AREA_SERVICES, getPrefecture, getCity, getAreaService } from "@/data/areas";
+import { AREAS, AREA_SERVICES, getPrefecture, getCity, getAreaService, generatedCities } from "@/data/areas";
+import { getLocalAreaContent } from "@/data/katsushika-areas";
 import AreaPageTemplate from "@/components/templates/AreaPageTemplate";
 
 type Props = { params: Promise<{ prefecture: string; citySlug: string; service: string }> };
 
-// 市区 × サービス（citySlug は実際の市区のみ）
+// 市区（葛飾区はエリア）× サービス（citySlug は実際の市区・エリアのみ）
 export function generateStaticParams() {
   const params: { prefecture: string; citySlug: string; service: string }[] = [];
   for (const pref of AREAS) {
-    for (const city of pref.cities) {
+    for (const city of generatedCities(pref)) {
       for (const s of AREA_SERVICES) {
         params.push({ prefecture: pref.slug, citySlug: city.slug, service: s.slug });
       }
@@ -43,6 +44,7 @@ export default async function CityServicePage({ params }: Props) {
       pref={pref}
       city={found.city}
       service={svc}
+      local={getLocalAreaContent(prefecture, citySlug)}
       breadcrumbs={[
         { label: "対応エリア", href: "/area" },
         { label: pref.name, href: `/area/${pref.slug}` },

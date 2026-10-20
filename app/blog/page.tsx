@@ -9,7 +9,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 export const metadata: Metadata = buildMetadata({
   title: `ブログ｜畳・和室リフォームの解説記事 | ${SITE_NAME}`,
   description:
-    "畳の表替え・新調・裏返し、和室リフォーム、原状回復、畳のお手入れまで。埼玉・関東エリアの住まいに役立つ畳の情報を毎日更新でお届けします。",
+    "畳の表替え・新調・裏返し、和室リフォーム、原状回復、畳のお手入れまで。葛飾区をはじめ、東京・関東エリアの住まいに役立つ畳の情報を毎日更新でお届けします。",
   path: "/blog",
 });
 
@@ -32,7 +32,7 @@ export default function BlogPage() {
           </h1>
           <p className="text-sm text-white/60 max-w-xl leading-relaxed">
             畳の表替え・新調・裏返し、和室リフォーム、原状回復、日々のお手入れまで。
-            埼玉・関東エリアの住まいに役立つ情報をお届けします。
+            葛飾区をはじめ、東京・関東エリアの住まいに役立つ情報をお届けします。
           </p>
         </div>
       </section>

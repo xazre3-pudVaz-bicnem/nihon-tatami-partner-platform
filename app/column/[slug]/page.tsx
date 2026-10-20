@@ -221,7 +221,7 @@ export default async function ColumnArticlePage({ params }: Props) {
                 <h2>専門家のポイント</h2>
                 <p>
                   畳の施工には素材・工法・現場状況により最適な方法が異なります。
-                  埼玉畳店では、現地確認を通じて最適な提案をいたします。
+                  葛飾畳店では、現地確認を通じて最適な提案をいたします。
                 </p>
                 <p>
                   一般住宅から旅館・寺社・店舗・賃貸物件まで、幅広い施工実績から得た知見をこのコラムで発信しています。
@@ -311,14 +311,14 @@ export default async function ColumnArticlePage({ params }: Props) {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
-              { href: "/area/saitama/tatami", label: "埼玉県の畳張替え" },
+              { href: "/area/katsushika/tatami", label: "葛飾区の畳張替え" },
+              { href: "/area/katsushika/restoration", label: "葛飾区の原状回復" },
+              { href: "/area/katsushika/fusuma", label: "葛飾区の襖張替え" },
+              { href: "/area/katsushika", label: "葛飾区の対応エリア" },
               { href: "/area/tokyo/tatami", label: "東京都の畳張替え" },
-              { href: "/area/kanagawa/tatami", label: "神奈川県の畳張替え" },
               { href: "/area/chiba/tatami", label: "千葉県の畳張替え" },
-              { href: "/area/saitama/restoration", label: "埼玉県の原状回復" },
-              { href: "/area/tokyo/restoration", label: "東京都の原状回復" },
-              { href: "/area/saitama/fusuma", label: "埼玉県の襖張替え" },
-              { href: "/area/tokyo/fusuma", label: "東京都の襖張替え" },
+              { href: "/area/saitama/tatami", label: "埼玉県の畳張替え" },
+              { href: "/area/kanagawa/tatami", label: "神奈川県の畳張替え" },
             ].map(({ href, label }) => (
               <Link
                 key={href}

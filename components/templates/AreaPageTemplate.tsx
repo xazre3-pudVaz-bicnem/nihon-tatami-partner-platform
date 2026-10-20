@@ -3,10 +3,18 @@ import CTASection from "@/components/ui/CTASection";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import FaqSection from "@/components/ui/FaqSection";
 import { SITE_NAME, SITE_URL, SITE_TEL, SITE_EMAIL } from "@/lib/site";
-import { AREA_SERVICES, type Prefecture, type City } from "@/data/areas";
+import { AREA_SERVICES, cityHref, subdivisionLabel, type Prefecture, type City } from "@/data/areas";
+import type { LocalAreaContent } from "@/data/katsushika-areas";
 
 type Bc = { label: string; href?: string };
-type Props = { pref: Prefecture; city?: City; service?: { slug: string; name: string }; breadcrumbs: Bc[] };
+type Props = {
+  pref: Prefecture;
+  city?: City;
+  service?: { slug: string; name: string };
+  breadcrumbs: Bc[];
+  /** 地域固有の情報（葛飾区のページのみ） */
+  local?: LocalAreaContent;
+};
 
 type ServiceContent = {
   desc: string;
@@ -395,8 +403,10 @@ const DEFAULT_CONTENT: ServiceContent = {
   faqExtra: [],
 };
 
-export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: Props) {
+export default function AreaPageTemplate({ pref, city, service, breadcrumbs, local }: Props) {
   const areaName = city ? `${pref.name}${city.name}` : pref.name;
+  const unit = subdivisionLabel(pref);
+  const isWard = pref.schemaType === "City";
   const serviceName = service?.name ?? "畳・ふすま・障子・内装・原状回復";
   const title = service ? `${areaName}の${service.name}` : `${areaName}の畳・内装サービス`;
   const content = (service && SM[service.slug]) ? SM[service.slug] : DEFAULT_CONTENT;
@@ -415,11 +425,15 @@ export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: P
     ],
   };
 
+  // 区（葛飾区）の場合は区内のエリアを Place として表す
+  const fullName = (c: City) => (isWard ? `${pref.parentName ?? ""}${pref.name}${c.name}` : c.name);
+  const subType = isWard ? "Place" : "City";
   const areaServed = city
-    ? [{ "@type": "City", name: city.name }]
-    : pref.cities.length > 0
-      ? [{ "@type": "State", name: pref.name }, ...pref.cities.map((c) => ({ "@type": "City", name: c.name }))]
-      : [{ "@type": "State", name: pref.name }];
+    ? [{ "@type": subType, name: fullName(city) }]
+    : [
+        { "@type": pref.schemaType ?? "State", name: pref.name },
+        ...pref.cities.map((c) => ({ "@type": subType, name: fullName(c) })),
+      ];
 
   const hasTel = (SITE_TEL as string).trim() !== "";
   const hasEmail = (SITE_EMAIL as string).trim() !== "";
@@ -452,16 +466,38 @@ export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: P
     { q: "法人・複数物件にも対応できますか？", a: `はい。${areaName}の賃貸物件・旅館・寺社・店舗など法人案件、複数物件もご相談可能です。`, category: "general" as const },
     { q: "施工当日は在宅が必要ですか？", a: "現地確認時・施工時は立ち会いをお願いしています。賃貸物件の場合は管理会社様・オーナー様との調整の上で対応します。", category: "general" as const },
     { q: "費用の支払い方法は？", a: "施工完了後のお支払いが基本です。法人様の場合は請求書払いにも対応しています。詳しくはお問い合わせ時にご確認ください。", category: "price" as const },
+    ...(local?.faqs ?? []).map((f) => ({ ...f, category: "general" as const })),
     ...content.faqExtra.map((f) => ({ ...f, category: "general" as const })),
   ];
 
-  const nearbyCities = pref.cities.filter((c) => city ? c.slug !== city.slug : true).slice(0, 12);
+  // 地域情報のあるページ（葛飾区）は地域固有のFAQがあるため FAQPage を出力
+  const faqSchema = local ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  } : null;
+
+  // 近隣として指定されたエリアを先頭に
+  const nearbyOrder = local?.nearby ?? [];
+  const rank = (c: City) => {
+    const i = nearbyOrder.indexOf(c.slug);
+    return i === -1 ? nearbyOrder.length : i;
+  };
+  const nearbyCities = pref.cities
+    .filter((c) => city ? c.slug !== city.slug : true)
+    .sort((a, b) => rank(a) - rank(b))
+    .slice(0, 12);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       {serviceSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />}
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
 
       {/* Hero */}
       <section className="bg-sumi py-16 sm:py-20 relative overflow-hidden">
@@ -472,9 +508,12 @@ export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: P
           <h1 className="text-3xl sm:text-4xl text-white mb-4" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
             {title}
           </h1>
-          <p className="text-sm text-white/60 max-w-2xl leading-relaxed mb-6">
+          <p className={`text-sm text-white/60 max-w-2xl leading-relaxed ${local ? "mb-2" : "mb-6"}`}>
             {areaName}で{serviceName}をお探しの方へ。{content.desc}現地確認・お見積もりは無料です。
           </p>
+          {local && (
+            <p className="text-sm text-white/75 max-w-2xl leading-relaxed mb-6">{local.lead}</p>
+          )}
           <div className="flex flex-wrap gap-3">
             {hasTel && (
               <a href={`tel:${SITE_TEL.replace(/-/g, "")}`} className="inline-block bg-kincya text-white text-sm px-5 py-2.5 tracking-wide hover:bg-kincya/90 transition-colors">
@@ -494,6 +533,7 @@ export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: P
           <p className="text-xs text-sumi/40 tracking-[0.3em] mb-4 uppercase">このページで分かること</p>
           <ul className="grid sm:grid-cols-2 gap-2">
             {[
+              ...(local ? [`${areaName}の住まいの特徴とご相談例`] : []),
               `${areaName}で${serviceName}を依頼する際の費用目安`,
               "施工の流れ（問い合わせ〜引き渡しまで）",
               service ? "素材・施工方法の選び方" : "対応サービスの一覧",
@@ -523,6 +563,40 @@ export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: P
               一般住宅はもちろん、賃貸物件のオーナー様・管理会社様、旅館・寺社・店舗など法人・施設のご依頼も歓迎します。対応可否は現地確認後にご案内し、素材や枚数により費用は変動します。
             </p>
           </div>
+
+          {/* 地域情報（葛飾区のページのみ） */}
+          {local && (
+            <div>
+              <h2 className="text-xl text-sumi mb-4 pl-4 border-l-2 border-kincya" style={{ fontFamily: "var(--font-serif)" }}>
+                {city ? `${city.name}エリアの住まいと畳工事` : `${pref.name}の住まいと畳工事`}
+              </h2>
+              <div className="space-y-3 text-sm text-sumi/80 leading-relaxed mb-6">
+                <p>{local.intro}</p>
+                <p>{local.housing}</p>
+              </div>
+              <dl className="border border-border bg-white text-sm divide-y divide-border mb-8">
+                <div className="grid grid-cols-[6.5rem_1fr] sm:grid-cols-[8rem_1fr]">
+                  <dt className="bg-kiji/40 px-4 py-3 text-xs text-sumi/60">{city ? "対応町名" : "対応地域"}</dt>
+                  <dd className="px-4 py-3 text-sumi/80 leading-relaxed">{local.towns.join("・")}</dd>
+                </div>
+                <div className="grid grid-cols-[6.5rem_1fr] sm:grid-cols-[8rem_1fr]">
+                  <dt className="bg-kiji/40 px-4 py-3 text-xs text-sumi/60">{city ? "最寄り駅" : "主な駅"}</dt>
+                  <dd className="px-4 py-3 text-sumi/80 leading-relaxed">{local.stations.join("／")}</dd>
+                </div>
+              </dl>
+              <h3 className="text-base text-sumi mb-3" style={{ fontFamily: "var(--font-serif)" }}>
+                {city ? `${city.name}エリア` : pref.name}でのご相談例
+              </h3>
+              <div className="grid sm:grid-cols-3 gap-3">
+                {local.points.map((p) => (
+                  <div key={p.title} className="bg-kiji/30 border border-border p-4">
+                    <p className="text-sm text-sumi mb-2" style={{ fontFamily: "var(--font-serif)" }}>{p.title}</p>
+                    <p className="text-xs text-sumi/70 leading-relaxed">{p.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* こんなときにご相談ください */}
           <div>
@@ -674,13 +748,13 @@ export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: P
           {!city && (
             <div>
               <h2 className="text-xl text-sumi mb-4 pl-4 border-l-2 border-kincya" style={{ fontFamily: "var(--font-serif)" }}>
-                {pref.name}の対応市区
+                {pref.name}の対応{unit}
               </h2>
               <div className="flex flex-wrap gap-2">
                 {pref.cities.map((c) => (
                   <Link
                     key={c.slug}
-                    href={service ? `/area/${pref.slug}/${c.slug}/${service.slug}` : `/area/${pref.slug}/${c.slug}`}
+                    href={cityHref(pref, c, service?.slug)}
                     className="text-xs bg-white border border-border text-sumi/70 px-3 py-1.5 hover:border-ai hover:text-ai transition-colors"
                   >
                     {c.name}{service ? `の${service.name}` : ""}
@@ -694,13 +768,13 @@ export default function AreaPageTemplate({ pref, city, service, breadcrumbs }: P
           {city && nearbyCities.length > 0 && (
             <div>
               <h2 className="text-xl text-sumi mb-4 pl-4 border-l-2 border-kincya" style={{ fontFamily: "var(--font-serif)" }}>
-                {pref.name}の他の市区でのご相談
+                {pref.name}の他の{unit}でのご相談
               </h2>
               <div className="flex flex-wrap gap-2">
                 {nearbyCities.map((c) => (
                   <Link
                     key={c.slug}
-                    href={service ? `/area/${pref.slug}/${c.slug}/${service.slug}` : `/area/${pref.slug}/${c.slug}`}
+                    href={cityHref(pref, c, service?.slug)}
                     className="text-xs bg-white border border-border text-sumi/70 px-3 py-1.5 hover:border-ai hover:text-ai transition-colors"
                   >
                     {c.name}{service ? `の${service.name}` : ""}

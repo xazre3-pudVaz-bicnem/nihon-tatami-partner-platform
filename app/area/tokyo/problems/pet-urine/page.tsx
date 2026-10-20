@@ -7,7 +7,7 @@ import CTASection from "@/components/ui/CTASection";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "東京都の畳のペット臭・ペット汚れ対策｜汚れた畳の張替えガイド｜埼玉畳店",
+  title: "東京都の畳のペット臭・ペット汚れ対策｜汚れた畳の張替えガイド｜葛飾畳店",
   description:
     "東京都内でペットの尿・汚れで傷んだ畳の張替え・対処法をご案内。ペット可物件・マンションの畳工事に対応。",
   path: "/area/tokyo/problems/pet-urine",
@@ -436,8 +436,8 @@ export default function PetUrineTokyoPage() {
               </Link>
             </li>
             <li>
-              <Link href="/area/saitama/problems/pet-urine" className="text-kincya hover:underline">
-                埼玉県のペット畳汚れ対策 →
+              <Link href="/area/katsushika/problems/pet-urine" className="text-kincya hover:underline">
+                葛飾区のペット畳汚れ対策 →
               </Link>
             </li>
             <li>

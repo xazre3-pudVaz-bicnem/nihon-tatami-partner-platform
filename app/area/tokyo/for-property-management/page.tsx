@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "東京都の不動産管理会社向け畳・内装工事｜埼玉畳店",
+  title: "東京都の不動産管理会社向け畳・内装工事｜葛飾畳店",
   description:
     "東京都内の管理物件の畳張替え・内装工事・原状回復に対応。複数棟・定期整備もご相談ください。",
   path: "/area/tokyo/for-property-management",
@@ -130,7 +130,7 @@ export default function TokyoForPropertyManagementPage() {
             content: (
               <>
                 <p>
-                  東京都内で複数の管理物件をお持ちの不動産管理会社様にとって、退去のたびに発生する畳交換・原状回復の対応は、業務負荷が高い作業の一つです。埼玉畳店では、東京都内の管理会社様からの継続的な畳工事・内装工事のご依頼をお受けしています。
+                  東京都内で複数の管理物件をお持ちの不動産管理会社様にとって、退去のたびに発生する畳交換・原状回復の対応は、業務負荷が高い作業の一つです。葛飾畳店では、東京都内の管理会社様からの継続的な畳工事・内装工事のご依頼をお受けしています。
                 </p>
                 <p>
                   23区内・多摩地区にまたがる複数物件をまとめてご依頼いただける体制を整えており、担当者が一括で進捗を管理します。施工後は写真をご提供しますので、オーナーへの報告や精算書類の作成にそのままお使いいただけます。
@@ -212,8 +212,8 @@ export default function TokyoForPropertyManagementPage() {
           { label: "東京都の原状回復", href: "/area/tokyo/restoration" },
         ]}
         relatedPages={[
-          { label: "埼玉の管理会社向けページ", href: "/area/saitama/for-property-management" },
-          { label: "まとめ発注・一括依頼", href: "/area/saitama/bulk-order" },
+          { label: "葛飾区の管理会社向けページ", href: "/area/katsushika/for-property-management" },
+          { label: "まとめ発注・一括依頼", href: "/area/katsushika/bulk-order" },
           { label: "賃貸オーナー向けページ", href: "/area/tokyo/for-rental-owner" },
         ]}
         canonicalPath="/area/tokyo/for-property-management"

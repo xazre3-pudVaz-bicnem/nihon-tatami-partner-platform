@@ -1,11 +1,47 @@
-export type City = { slug: string; name: string; reading?: string };
+export type City = {
+  slug: string;
+  name: string;
+  reading?: string;
+  /** 専用ページが別にある場合の誘導先（例: 東京都の葛飾区 → /area/katsushika）。指定時は汎用ページを生成しない */
+  href?: string;
+};
 export type Prefecture = {
   slug: string;
   name: string;
   cities: City[];
+  /** 下位区分の呼び方（既定「市区」）。葛飾区のように区内を町域で分ける場合は「エリア」 */
+  subdivisionLabel?: string;
+  /** 構造化データ上の型（既定 "State"）。区（特別区）は "City" */
+  schemaType?: "State" | "City";
+  /** 上位の都道府県名（葛飾区 → 東京都） */
+  parentName?: string;
 };
 
+// 主対象エリア: 東京都葛飾区（区内を駅・町域ごとに12エリアに分けて案内）
+export const PRIMARY_AREA_SLUG = "katsushika";
+
 export const AREAS: Prefecture[] = [
+  {
+    slug: "katsushika",
+    name: "葛飾区",
+    parentName: "東京都",
+    subdivisionLabel: "エリア",
+    schemaType: "City",
+    cities: [
+      { slug: "kameari", name: "亀有", reading: "かめあり" },
+      { slug: "kanamachi", name: "金町", reading: "かなまち" },
+      { slug: "shibamata", name: "柴又", reading: "しばまた" },
+      { slug: "takasago", name: "高砂", reading: "たかさご" },
+      { slug: "aoto", name: "青戸", reading: "あおと" },
+      { slug: "tateishi", name: "立石", reading: "たていし" },
+      { slug: "yotsugi", name: "四つ木", reading: "よつぎ" },
+      { slug: "horikiri", name: "堀切", reading: "ほりきり" },
+      { slug: "ohanajaya", name: "お花茶屋", reading: "おはなぢゃや" },
+      { slug: "shinkoiwa", name: "新小岩", reading: "しんこいわ" },
+      { slug: "okudo", name: "奥戸", reading: "おくど" },
+      { slug: "mizumoto", name: "水元", reading: "みずもと" },
+    ],
+  },
   {
     slug: "saitama",
     name: "埼玉県",
@@ -75,7 +111,7 @@ export const AREAS: Prefecture[] = [
       { slug: "taito", name: "台東区" },
       { slug: "kita", name: "北区" },
       { slug: "itabashi", name: "板橋区" },
-      { slug: "katsushika", name: "葛飾区" },
+      { slug: "katsushika", name: "葛飾区", href: "/area/katsushika" },
       { slug: "hachioji", name: "八王子市" },
       { slug: "tachikawa", name: "立川市" },
       { slug: "musashino", name: "武蔵野市" },
@@ -226,9 +262,26 @@ export function getPrefecture(slug: string): Prefecture | undefined {
 export function getCity(prefSlug: string, citySlug: string): { pref: Prefecture; city: City } | undefined {
   const pref = getPrefecture(prefSlug);
   if (!pref) return undefined;
-  const city = pref.cities.find((c) => c.slug === citySlug);
+  // 専用ページへ誘導する市区（href付き）は汎用ページとしては扱わない
+  const city = pref.cities.find((c) => c.slug === citySlug && !c.href);
   if (!city) return undefined;
   return { pref, city };
+}
+
+/** 汎用テンプレートでページを生成する市区（専用ページへ誘導する href 付きを除く） */
+export function generatedCities(pref: Prefecture): City[] {
+  return pref.cities.filter((c) => !c.href);
+}
+
+/** 市区ページ（serviceSlug 指定時はその市区のサービスページ）へのリンク */
+export function cityHref(pref: Prefecture, city: City, serviceSlug?: string): string {
+  const base = city.href ?? `/area/${pref.slug}/${city.slug}`;
+  return serviceSlug ? `${base}/${serviceSlug}` : base;
+}
+
+/** 「市区」「エリア」など下位区分の呼び方 */
+export function subdivisionLabel(pref: Prefecture): string {
+  return pref.subdivisionLabel ?? "市区";
 }
 
 export function getAreaService(slug: string) {

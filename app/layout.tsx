@@ -4,7 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BrandLoader from "@/components/ui/BrandLoader";
 import StickyContactBar from "@/components/ui/StickyContactBar";
-import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, SITE_TEL, SITE_EMAIL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, SITE_TEL, SITE_EMAIL, AREA_SERVED_SCHEMA } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
-  keywords: ["畳", "畳張替え", "畳表替え", "畳新調", "縁なし畳", "和紙畳", "樹脂畳", "内装工事", "原状回復", "旅館畳", "寺院畳", "賃貸畳"],
+  keywords: ["葛飾区 畳", "葛飾区 畳張替え", "葛飾区 畳屋", "畳", "畳張替え", "畳表替え", "畳新調", "縁なし畳", "和紙畳", "樹脂畳", "内装工事", "原状回復", "旅館畳", "寺院畳", "賃貸畳"],
   openGraph: {
     siteName: SITE_NAME,
     locale: "ja_JP",
@@ -55,7 +55,7 @@ const GLOBAL_SCHEMA = {
       priceRange: "¥¥",
       currenciesAccepted: "JPY",
       paymentAccepted: "Cash, Credit Card, Bank Transfer",
-      areaServed: { "@type": "Country", name: "Japan" },
+      areaServed: AREA_SERVED_SCHEMA,
       knowsAbout: [
         "畳工事",
         "畳表替え",

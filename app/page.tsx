@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME, SITE_TEL, SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_TEL, SITE_URL, AREA_SERVED_SCHEMA } from "@/lib/site";
 import { TATAMI_SERVICES, INTERIOR_SERVICES, RESTORATION_SERVICES } from "@/data/services";
 import { FAQ_ITEMS } from "@/data/faq";
 import { WORKS } from "@/data/works";
 import { COLUMN_ARTICLES } from "@/data/column";
 import { TARGETS } from "@/data/targets";
+import { AREAS, PRIMARY_AREA_SLUG } from "@/data/areas";
 import CTASection from "@/components/ui/CTASection";
 import WorksCard from "@/components/ui/WorksCard";
 import ColumnCard from "@/components/ui/ColumnCard";
@@ -18,8 +19,8 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import FAQTabs from "@/components/ui/FAQTabs";
 
 export const metadata: Metadata = buildMetadata({
-  title: `埼玉の畳張替え・表替え・新調なら埼玉畳店｜和室リフォーム・原状回復`,
-  description: "埼玉県で畳の張替え（表替え・新調・裏返し）をお探しなら埼玉畳店へ。い草・和紙・樹脂畳、縁なし畳に対応し、和室リフォーム・襖・障子・内装工事・原状回復まで一括でご相談いただけます。現地確認・お見積もり無料。",
+  title: `葛飾区の畳張替え・表替え・新調なら葛飾畳店｜和室リフォーム・原状回復`,
+  description: "東京都葛飾区で畳の張替え（表替え・新調・裏返し）をお探しなら葛飾畳店へ。亀有・金町・新小岩・柴又・立石など区内全域に対応。襖・障子・内装工事・原状回復まで一括でご相談いただけます。現地確認・お見積もり無料。",
   path: "/",
 });
 
@@ -99,15 +100,7 @@ const FLOW_STEPS = [
 
 const _hasTel = (SITE_TEL as string).trim() !== "";
 
-const AREA_SERVED = [
-  { "@type": "AdministrativeArea", name: "東京都" },
-  { "@type": "AdministrativeArea", name: "神奈川県" },
-  { "@type": "AdministrativeArea", name: "千葉県" },
-  { "@type": "AdministrativeArea", name: "埼玉県" },
-  { "@type": "AdministrativeArea", name: "群馬県" },
-  { "@type": "AdministrativeArea", name: "栃木県" },
-  { "@type": "AdministrativeArea", name: "茨城県" },
-];
+const katsushikaAreas = AREAS.find((p) => p.slug === PRIMARY_AREA_SLUG)?.cities ?? [];
 
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
@@ -116,11 +109,11 @@ const STRUCTURED_DATA = {
   name: SITE_NAME,
   url: `${SITE_URL}`,
   email: "info@cypress-all.co.jp",
-  description: "畳の表替え・新調から内装工事・原状回復まで。東京・神奈川・千葉・埼玉・群馬・栃木・茨城に対応する畳と空間整備の専門パートナー。",
+  description: "東京都葛飾区を中心に、畳の表替え・新調から内装工事・原状回復まで。東京・千葉・埼玉・神奈川・群馬・栃木・茨城のご相談にも対応する畳と空間整備の専門パートナー。",
   ...(_hasTel ? { telephone: SITE_TEL } : {}),
   priceRange: "¥¥",
-  areaServed: AREA_SERVED,
-  knowsAbout: ["畳張替え", "畳表替え", "畳新調", "縁なし畳", "琉球畳", "和紙畳", "樹脂畳", "襖張替え", "障子張替え", "原状回復工事", "内装工事", "埼玉県での施工", "東京都での施工", "神奈川県での施工"],
+  areaServed: AREA_SERVED_SCHEMA,
+  knowsAbout: ["畳張替え", "畳表替え", "畳新調", "縁なし畳", "琉球畳", "和紙畳", "樹脂畳", "襖張替え", "障子張替え", "原状回復工事", "内装工事", "葛飾区での施工", "東京都での施工", "千葉県での施工", "埼玉県での施工"],
   serviceType: ["畳工事", "内装工事", "原状回復"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -220,7 +213,7 @@ export default function HomePage() {
             <div className="flex items-center gap-4 mb-9">
               <div className="w-7 h-px bg-kincya/75" />
               <p className="text-[10px] text-kincya tracking-[0.45em] uppercase">
-                Saitama Tatami Store
+                Katsushika Tatami Store
               </p>
             </div>
 
@@ -229,13 +222,13 @@ export default function HomePage() {
               className="text-[2.75rem] sm:text-[3.5rem] xl:text-[4.25rem] text-white leading-[1.08] mb-8"
               style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.04em" }}
             >
-              埼玉の畳から、<br />
+              葛飾の畳から、<br />
               空間の価値を<br />
               <span style={{ color: "#B88942" }}>整える。</span>
             </h1>
-            {/* SEO補助: 埼玉の畳キーワードを明示（視覚的にも自然な副見出し） */}
+            {/* SEO補助: 葛飾区の畳キーワードを明示（視覚的にも自然な副見出し） */}
             <p className="text-sm text-white/70 tracking-wide mb-6">
-              埼玉県の畳張替え・表替え・新調／和室リフォーム・原状回復
+              東京都葛飾区の畳張替え・表替え・新調／和室リフォーム・原状回復
             </p>
 
             {/* Separator */}
@@ -243,7 +236,7 @@ export default function HomePage() {
 
             {/* Description */}
             <p className="text-sm text-white/60 leading-relaxed mb-3 max-w-sm">
-              埼玉を中心に、住宅・旅館・寺社・店舗まで。<br />
+              葛飾区を中心に、住宅・旅館・寺社・店舗まで。<br />
               畳と内装の専門パートナー。
             </p>
             <p className="text-xs text-white/30 leading-relaxed max-w-sm">
@@ -265,28 +258,29 @@ export default function HomePage() {
 
       {/* ===== 2. STATS BAND — 実績確定まで非表示 ===== */}
 
-      {/* ===== 2b. 埼玉畳店とは ===== */}
-      {/* 埼玉畳店とは */}
+      {/* ===== 2b. 葛飾畳店とは ===== */}
+      {/* 葛飾畳店とは */}
       <section className="py-20 bg-shiro">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionLabel en="About" className="justify-center mb-4" />
           <h2 className="text-2xl sm:text-3xl text-sumi mb-6 text-center" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}>
-            埼玉畳店とは
+            葛飾畳店とは
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <div>
               <p className="text-sm text-sumi/70 leading-relaxed mb-4">
-                埼玉畳店は、畳の表替え・裏返し・新調を中心に、襖・障子・内装工事・原状回復までご相談いただける専門窓口です。
+                葛飾畳店は、畳の表替え・裏返し・新調を中心に、襖・障子・内装工事・原状回復までご相談いただける専門窓口です。
               </p>
               <p className="text-sm text-sumi/70 leading-relaxed mb-4">
                 一般住宅の和室から、賃貸物件の退去後整備、不動産会社・管理会社の継続案件、旅館・寺社・店舗の空間整備まで、用途に合わせた施工相談を受け付けています。
               </p>
               <p className="text-sm text-sumi/70 leading-relaxed">
-                1都6県（東京・神奈川・千葉・埼玉・群馬・栃木・茨城）に対応しており、い草・和紙・樹脂・縁なし畳など幅広い素材と施工方法に対応します。現地確認・お見積もりは無料です。
+                東京都葛飾区の全域（亀有・金町・柴又・新小岩・立石・堀切など）を中心に、1都6県（東京・千葉・埼玉・神奈川・群馬・栃木・茨城）のご相談に対応しています。い草・和紙・樹脂・縁なし畳など幅広い素材と施工方法に対応し、現地確認・お見積もりは無料です。
               </p>
             </div>
             <div className="space-y-4">
               {[
+                { label: "対応エリア", value: "東京都葛飾区の全域（1都6県のご相談にも対応）" },
                 { label: "対象", value: "一般住宅・賃貸物件・旅館・寺社・店舗・不動産管理物件" },
                 { label: "対応工事", value: "畳工事・襖障子・内装工事・原状回復" },
                 { label: "お見積もり", value: "現地確認・お見積もり無料" },
@@ -312,33 +306,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== 2c. SAITAMA TATAMI FOCUS ===== */}
+      {/* ===== 2c. KATSUSHIKA TATAMI FOCUS ===== */}
       <section className="py-20 sm:py-28 bg-ai/5 border-y border-border/40">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-14">
           <ScrollReveal>
             <div className="text-center mb-12">
-              <SectionLabel en="Saitama Area" className="justify-center mb-4" />
+              <SectionLabel en="Katsushika Area" className="justify-center mb-4" />
               <h2
                 className="text-3xl sm:text-4xl text-sumi mb-6"
                 style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.06em" }}
               >
-                埼玉県での畳工事なら<br />
-                埼玉畳店
+                葛飾区での畳工事なら<br />
+                葛飾畳店
               </h2>
               <p className="text-sm text-sumi/60 leading-relaxed max-w-2xl mx-auto mb-2">
-                さいたま市・川口市・越谷市・川越市など埼玉県全域に対応。<br />
-                住宅から賃貸、旅館、寺社まで、あらゆる畳工事をご相談ください。
+                亀有・金町・柴又・新小岩・立石・堀切など、葛飾区の全域に伺います。<br />
+                住宅から賃貸、店舗、寺社まで、あらゆる畳工事をご相談ください。
               </p>
             </div>
           </ScrollReveal>
 
-          {/* Featured Saitama services */}
+          {/* Featured Katsushika services */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
             {[
-              { title: "埼玉の畳張替え", desc: "表替え・裏返し・新調", href: "/area/saitama/tatami" },
-              { title: "素材選びガイド", desc: "い草・和紙・樹脂の選び方", href: "/area/saitama/guide-tatami-buying" },
-              { title: "一戸建て・マンション向け", desc: "個人のお客様向け", href: "/area/saitama/for-homeowner" },
-              { title: "賃貸オーナー向け", desc: "空室対策・原状回復", href: "/area/saitama/for-rental-owner" },
+              { title: "葛飾区の畳張替え", desc: "表替え・裏返し・新調", href: "/area/katsushika/tatami" },
+              { title: "素材選びガイド", desc: "い草・和紙・樹脂の選び方", href: "/area/katsushika/guide-tatami-buying" },
+              { title: "一戸建て・マンション向け", desc: "個人のお客様向け", href: "/area/katsushika/for-homeowner" },
+              { title: "賃貸オーナー向け", desc: "空室対策・原状回復", href: "/area/katsushika/for-rental-owner" },
             ].map((item, i) => (
               <ScrollReveal key={item.href} delay={0.05 + i * 0.07}>
                 <Link
@@ -362,14 +356,32 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* CTA to Saitama area page */}
+          {/* 葛飾区内の12エリア */}
+          <ScrollReveal>
+            <div className="mb-10">
+              <p className="text-xs text-sumi/45 tracking-[0.2em] text-center mb-4">葛飾区内の対応エリア</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {katsushikaAreas.map((c) => (
+                  <Link
+                    key={c.slug}
+                    href={`/area/katsushika/${c.slug}`}
+                    className="text-xs bg-white border border-border text-sumi/70 px-4 py-2 hover:border-ai hover:text-ai transition-colors"
+                  >
+                    {c.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* CTA to Katsushika area page */}
           <ScrollReveal>
             <div className="text-center">
               <Link
-                href="/area/saitama"
+                href="/area/katsushika"
                 className="inline-block bg-ai text-white text-sm px-10 py-4 tracking-[0.15em] hover:bg-ai/90 transition-all duration-300"
               >
-                埼玉エリアの詳細を見る
+                葛飾区の対応エリアを見る
               </Link>
             </div>
           </ScrollReveal>
@@ -403,7 +415,7 @@ export default function HomePage() {
                     私たちはその重みを知っているからこそ、畳の施工に誠実に向き合います。
                   </p>
                   <p>
-                    埼玉畳店は、一般住宅の和室リフレッシュから、旅館客室の格式維持、
+                    葛飾畳店は、一般住宅の和室リフレッシュから、旅館客室の格式維持、
                     寺社の本堂整備、賃貸物件の空室対策、不動産売買前の印象改善まで、
                     「畳を軸にした空間整備の専門パートナー」として幅広くご支援します。
                   </p>
@@ -1202,13 +1214,18 @@ export default function HomePage() {
               対応エリア
             </h2>
             <p className="text-sm text-sumi/55 leading-relaxed mb-6">
-              東京・神奈川・千葉・埼玉・群馬・栃木・茨城の1都6県に対応。
+              東京都葛飾区の全域を中心に、東京・千葉・埼玉・神奈川・群馬・栃木・茨城の1都6県に対応。
               対応エリアはご相談ください。旅館・寺社・大規模法人案件については、
               遠方への対応も承ります。
             </p>
-            <Link href="/area" className="text-sm text-ai hover:underline underline-offset-4">
-              全エリア詳細を確認する →
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center">
+              <Link href="/area/katsushika" className="text-sm text-ai hover:underline underline-offset-4">
+                葛飾区の対応エリア →
+              </Link>
+              <Link href="/area" className="text-sm text-ai hover:underline underline-offset-4">
+                全エリア詳細を確認する →
+              </Link>
+            </div>
           </ScrollReveal>
         </div>
       </section>

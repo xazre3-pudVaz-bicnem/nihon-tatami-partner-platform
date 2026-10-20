@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_URL, SITE_TEL } from "@/lib/site";
 import ServicePageTemplate from "@/components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
-  title: "神奈川県の賃貸オーナー・大家向け畳張替え・原状回復｜埼玉畳店",
+  title: "神奈川県の賃貸オーナー・大家向け畳張替え・原状回復｜葛飾畳店",
   description:
     "神奈川県の賃貸物件の畳張替え・原状回復に対応。横浜・川崎の賃貸市場に特化した対応で空室対策をサポート。",
   path: "/area/kanagawa/for-rental-owner",
@@ -136,7 +136,7 @@ export default function ForRentalOwnerPage() {
                   また、横浜・川崎は外国人入居者も多く、和室・畳に慣れていない方への配慮も必要です。機能性の高い和紙畳・樹脂畳に変更することで、メンテナンスが容易になり、入居者満足度の向上にもつながります。
                 </p>
                 <p>
-                  埼玉畳店では、神奈川県内の賃貸オーナー様からのご依頼に迅速対応しています。現地確認・費用負担区分の説明・施工・写真報告までワンストップで承ります。
+                  葛飾畳店では、神奈川県内の賃貸オーナー様からのご依頼に迅速対応しています。現地確認・費用負担区分の説明・施工・写真報告までワンストップで承ります。
                 </p>
               </>
             ),
@@ -216,7 +216,7 @@ export default function ForRentalOwnerPage() {
         relatedPages={[
           { label: "神奈川県の畳工事", href: "/area/kanagawa/tatami" },
           { label: "ふすまの張替え", href: "/area/kanagawa/fusuma" },
-          { label: "埼玉の賃貸オーナー向け", href: "/area/saitama/for-rental-owner" },
+          { label: "葛飾区の賃貸オーナー向け", href: "/area/katsushika/for-rental-owner" },
         ]}
         canonicalPath="/area/kanagawa/for-rental-owner"
         serviceTypeName="賃貸原状回復・畳交換"

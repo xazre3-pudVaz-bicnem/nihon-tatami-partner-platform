@@ -4,12 +4,12 @@ import { COLUMN_ARTICLES } from "@/data/column";
 import { WORKS_DETAIL } from "@/data/works-detail";
 import { MATERIALS } from "@/data/materials";
 import { PROBLEMS } from "@/data/problems";
-import { AREAS, AREA_SERVICES } from "@/data/areas";
+import { AREAS, AREA_SERVICES, PRIMARY_AREA_SLUG, generatedCities } from "@/data/areas";
 import { PURPOSE_PAGES } from "@/data/purpose";
 import { getAllPosts, getUsedCategories } from "@/lib/blog";
 
 const BASE = SITE_URL;
-const LAST_MODIFIED = new Date("2026-07-02");
+const LAST_MODIFIED = new Date("2026-10-20");
 
 function url(
   path: string,
@@ -20,7 +20,7 @@ function url(
     url: `${BASE}${path}`,
     lastModified: LAST_MODIFIED,
     changeFrequency: changeFreq,
-    priority,
+    priority: Math.round(priority * 10) / 10,
   };
 }
 
@@ -34,16 +34,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogCategoryUrls = getUsedCategories().map((c) => url(`/blog/category/${c.slug}`, 0.5, "weekly"));
 
   // Area pages: prefecture / city / pref×service / city×service
+  // 主対象エリア（葛飾区）は優先度を一段高くする
   const areaUrls: MetadataRoute.Sitemap = [];
   for (const pref of AREAS) {
-    areaUrls.push(url(`/area/${pref.slug}`, 0.8, "monthly"));
+    const boost = pref.slug === PRIMARY_AREA_SLUG ? 0.1 : 0;
+    areaUrls.push(url(`/area/${pref.slug}`, 0.8 + boost, "monthly"));
     for (const s of AREA_SERVICES) {
-      areaUrls.push(url(`/area/${pref.slug}/${s.slug}`, 0.7, "monthly"));
+      areaUrls.push(url(`/area/${pref.slug}/${s.slug}`, 0.7 + boost, "monthly"));
     }
-    for (const city of pref.cities) {
-      areaUrls.push(url(`/area/${pref.slug}/${city.slug}`, 0.7, "monthly"));
+    for (const city of generatedCities(pref)) {
+      areaUrls.push(url(`/area/${pref.slug}/${city.slug}`, 0.7 + boost, "monthly"));
       for (const s of AREA_SERVICES) {
-        areaUrls.push(url(`/area/${pref.slug}/${city.slug}/${s.slug}`, 0.6, "monthly"));
+        areaUrls.push(url(`/area/${pref.slug}/${city.slug}/${s.slug}`, 0.6 + boost, "monthly"));
       }
     }
   }
@@ -190,38 +192,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Area pages
     ...areaUrls,
 
-    // Saitama standalone SEO pages
-    url("/area/saitama/for-homeowner", 0.8, "monthly"),
-    url("/area/saitama/for-rental-owner", 0.8, "monthly"),
-    url("/area/saitama/for-real-estate", 0.8, "monthly"),
-    url("/area/saitama/for-property-management", 0.8, "monthly"),
-    url("/area/saitama/for-ryokan", 0.7, "monthly"),
-    url("/area/saitama/for-temple-shrine", 0.7, "monthly"),
-    url("/area/saitama/for-store", 0.7, "monthly"),
-    url("/area/saitama/before-move-in", 0.7, "monthly"),
-    url("/area/saitama/vacancy-measures", 0.7, "monthly"),
-    url("/area/saitama/seasonal-maintenance", 0.7, "monthly"),
-    url("/area/saitama/bulk-order", 0.7, "monthly"),
-    url("/area/saitama/emergency", 0.7, "monthly"),
-    url("/area/saitama/price-estimate", 0.7, "monthly"),
-    url("/area/saitama/corporate", 0.7, "monthly"),
-    url("/area/saitama/problems/tatami-mold", 0.7, "monthly"),
-    url("/area/saitama/problems/tatami-dani", 0.7, "monthly"),
-    url("/area/saitama/problems/tatami-sasakure", 0.7, "monthly"),
-    url("/area/saitama/problems/tatami-smell", 0.7, "monthly"),
-    url("/area/saitama/problems/tatami-sunken", 0.7, "monthly"),
-    url("/area/saitama/problems/pet-urine", 0.7, "monthly"),
-    url("/area/saitama/problems/tatami-discoloration", 0.7, "monthly"),
-    url("/area/saitama/problems/tatami-edge-damage", 0.7, "monthly"),
-    url("/area/saitama/problems/tatami-gap", 0.7, "monthly"),
-    url("/area/saitama/problems/tatami-flood-damage", 0.7, "monthly"),
-    url("/area/saitama/problems/tatami-for-wheelchair", 0.7, "monthly"),
-    url("/area/saitama/problems/tatami-renovation", 0.7, "monthly"),
+    // Katsushika standalone SEO pages（葛飾区）
+    url("/area/katsushika/for-homeowner", 0.8, "monthly"),
+    url("/area/katsushika/for-rental-owner", 0.8, "monthly"),
+    url("/area/katsushika/for-real-estate", 0.8, "monthly"),
+    url("/area/katsushika/for-property-management", 0.8, "monthly"),
+    url("/area/katsushika/for-ryokan", 0.7, "monthly"),
+    url("/area/katsushika/for-temple-shrine", 0.7, "monthly"),
+    url("/area/katsushika/for-store", 0.7, "monthly"),
+    url("/area/katsushika/before-move-in", 0.7, "monthly"),
+    url("/area/katsushika/vacancy-measures", 0.7, "monthly"),
+    url("/area/katsushika/seasonal-maintenance", 0.7, "monthly"),
+    url("/area/katsushika/bulk-order", 0.7, "monthly"),
+    url("/area/katsushika/emergency", 0.7, "monthly"),
+    url("/area/katsushika/price-estimate", 0.7, "monthly"),
+    url("/area/katsushika/corporate", 0.7, "monthly"),
+    url("/area/katsushika/problems/tatami-mold", 0.7, "monthly"),
+    url("/area/katsushika/problems/tatami-dani", 0.7, "monthly"),
+    url("/area/katsushika/problems/tatami-sasakure", 0.7, "monthly"),
+    url("/area/katsushika/problems/tatami-smell", 0.7, "monthly"),
+    url("/area/katsushika/problems/tatami-sunken", 0.7, "monthly"),
+    url("/area/katsushika/problems/pet-urine", 0.7, "monthly"),
+    url("/area/katsushika/problems/tatami-discoloration", 0.7, "monthly"),
+    url("/area/katsushika/problems/tatami-edge-damage", 0.7, "monthly"),
+    url("/area/katsushika/problems/tatami-gap", 0.7, "monthly"),
+    url("/area/katsushika/problems/tatami-flood-damage", 0.7, "monthly"),
+    url("/area/katsushika/problems/tatami-for-wheelchair", 0.7, "monthly"),
+    url("/area/katsushika/problems/tatami-renovation", 0.7, "monthly"),
 
-    // Saitama guide cluster（埼玉 畳 キーワードクラスター）
-    url("/area/saitama/guide-tatami-buying", 0.8, "monthly"),
-    url("/area/saitama/guide-tatami-price", 0.8, "monthly"),
-    url("/area/saitama/guide-tatami-maintenance", 0.8, "monthly"),
+    // Katsushika guide cluster（葛飾区 畳 キーワードクラスター）
+    url("/area/katsushika/guide-tatami-buying", 0.8, "monthly"),
+    url("/area/katsushika/guide-tatami-price", 0.8, "monthly"),
+    url("/area/katsushika/guide-tatami-maintenance", 0.8, "monthly"),
 
     // Tokyo standalone SEO pages
     url("/area/tokyo/for-homeowner", 0.8, "monthly"),

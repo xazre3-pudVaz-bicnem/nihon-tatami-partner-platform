@@ -10,7 +10,7 @@ const CONTACT_PAGE_SCHEMA = {
   "@id": `${SITE_URL}/contact#webpage`,
   url: `${SITE_URL}/contact`,
   name: `お問い合わせ｜${SITE_NAME}`,
-  description: "畳張替え・原状回復・内装工事のお問い合わせ。東京・神奈川・千葉・埼玉・群馬・栃木・茨城に対応。",
+  description: "畳張替え・原状回復・内装工事のお問い合わせ。東京都葛飾区の全域を中心に、東京・千葉・埼玉・神奈川・群馬・栃木・茨城のご相談に対応。現地確認・お見積もり無料。",
   inLanguage: "ja",
   isPartOf: { "@id": `${SITE_URL}/#website` },
   about: { "@id": `${SITE_URL}/#organization` },

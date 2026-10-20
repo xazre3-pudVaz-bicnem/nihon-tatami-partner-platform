@@ -126,7 +126,7 @@ export default async function BlogPostPage({ params }: Props) {
                   { label: "畳新調", href: "/services/tatami-shinchou" },
                   { label: "和室リフォーム", href: "/interior/house-renovation" },
                   { label: "原状回復", href: "/restoration" },
-                  { label: "対応エリア（埼玉）", href: "/area/saitama" },
+                  { label: "対応エリア（葛飾区）", href: "/area/katsushika" },
                 ].map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className="text-xs text-ai hover:underline">

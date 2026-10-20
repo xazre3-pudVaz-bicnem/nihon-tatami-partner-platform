@@ -1,7 +1,7 @@
-# 埼玉畳店 — 公開前チェックリスト & 変更履歴
+# 葛飾畳店 — 公開前チェックリスト & 変更履歴
 
 **Next.js 16 + TypeScript + Tailwind CSS v4 / App Router**
-ビルド: 334ページ静的生成・TypeScript エラーなし
+ビルド: 2,628ページ静的生成・TypeScript エラーなし（2026-10-20 時点）
 
 ---
 
@@ -22,7 +22,7 @@ export const SITE_LINE  = "";  // LINE公式アカウントURL（未設定）
 | LINE公式URL | 未設定（取得後に site.ts を更新） | |
 | 正式屋号/社名 | app/about/page.tsx 要確認 | |
 | 正式所在地 | app/about/page.tsx 要追加 | |
-| 対応エリア | 現在「詳しくはお問い合わせください」| |
+| 対応エリア | ✅ 東京都葛飾区（主対象・区内12エリア）＋1都6県のご相談 | |
 | フォーム送信先 | フロントのみ（要実装 → README 下部参照）| |
 | プライバシーポリシー制定日 | 2026-06-21（本番公開時に確認）| |
 | 施工事例が実績か対応例か | works-detail.ts の各 status 確認 | |
@@ -93,6 +93,24 @@ async function handleSubmit(e: React.FormEvent) {
 
 ---
 
+## 変更履歴（店名・主対象エリア変更 — 2026-10-20）
+
+店名を「埼玉畳店」→「葛飾畳店」、主対象エリアを「埼玉県」→「東京都葛飾区」に変更。
+
+| 対象 | 変更内容 |
+|------|----------|
+| `lib/site.ts` | 店名・英字表記（KATSUSHIKA TATAMI STORE）・ナビ・サイト説明文を変更。構造化データ用の対応エリア `AREA_SERVED_SCHEMA` を共通化 |
+| `data/areas.ts` | 葛飾区を主対象エリアとして先頭に追加（区内12エリア）。東京都の「葛飾区」は専用ページへ誘導（`href`） |
+| `data/katsushika-areas.ts` | 新規。12エリアの町名・最寄り駅・住まいの傾向・ご相談例・FAQ（事実確認済みの範囲のみ） |
+| `components/templates/AreaPageTemplate.tsx` | 葛飾区のページに地域情報ブロックと FAQPage 構造化データを追加。「市区」/「エリア」の呼び分け |
+| `app/area/katsushika/` | 旧 `/area/saitama/` の独自ページ29本＋ハブを移設し、葛飾区向けに書き換え |
+| `app/area/saitama/{37市}` | 埼玉の市ページ（独自）を削除。埼玉県は1都6県の対応エリアとして汎用テンプレートで存続 |
+| `next.config.ts` | 旧URLからの301リダイレクト（埼玉の独自ページ29本、`/area/tokyo/katsushika`、コラム20本・ブログ14本の旧スラッグ） |
+| `data/column.ts` / `content/blog/` | 埼玉向けコラム20本・ブログ80本を葛飾区向けに書き換え。スラッグの saitama → katsushika |
+| `scripts/generate-daily-post.ts` | 自動投稿のテーマ・地域情報・内部リンクを葛飾区向けに変更。「埼玉」「埼玉畳店」の混入を品質チェックで不合格に |
+
+---
+
 ## 変更履歴（最終品質改善セッション — 2026-06-21）
 
 ### 安全性・仮情報の削除
@@ -160,55 +178,59 @@ async function handleSubmit(e: React.FormEvent) {
 ### ブランド系
 | キーワード | 対応ページ |
 |---|---|
-| 埼玉畳店 | / (トップ), /about |
-| 埼玉畳店 料金 | /price |
-| 埼玉畳店 問い合わせ | /contact |
-| 埼玉畳店 施工事例 | /works |
+| 葛飾畳店 | / (トップ), /about |
+| 葛飾畳店 料金 | /price |
+| 葛飾畳店 問い合わせ | /contact |
+| 葛飾畳店 施工事例 | /works |
 
-### 埼玉エリア系
+### 葛飾区エリア系（主対象）
 | キーワード | 対応ページ |
 |---|---|
-| 埼玉 畳 張替え | /area/saitama/tatami |
-| 埼玉 畳 表替え | /area/saitama/tatami-omotegae |
-| 埼玉 畳 新調 | /area/saitama/tatami-shinchou |
-| 埼玉 畳 裏返し | /area/saitama/tatami-uragaeshi |
-| 埼玉 襖 張替え | /area/saitama/fusuma |
-| 埼玉 障子 張替え | /area/saitama/shoji |
-| 埼玉 原状回復 畳 | /area/saitama/restoration |
+| 葛飾区 畳 張替え | / (トップ), /area/katsushika/tatami |
+| 葛飾区 畳屋 | /area/katsushika（ハブ） |
+| 葛飾区 畳 表替え | /area/katsushika/tatami-omotegae |
+| 葛飾区 畳 新調 | /area/katsushika/tatami-shinchou |
+| 葛飾区 畳 裏返し | /area/katsushika/tatami-uragaeshi |
+| 葛飾区 襖 張替え | /area/katsushika/fusuma |
+| 葛飾区 障子 張替え | /area/katsushika/shoji |
+| 葛飾区 原状回復 畳 | /area/katsushika/restoration |
+| 葛飾区 畳 料金 | /area/katsushika/guide-tatami-price |
 
-### 市区町村系
-| キーワード | 対応ページ |
-|---|---|
-| さいたま市 畳張替え | /area/saitama/saitama-city |
-| 川口市 畳張替え | /area/saitama/kawaguchi |
-| 越谷市 畳張替え | /area/saitama/koshigaya |
-| 春日部市 畳張替え | /area/saitama/kasukabe |
-| 川越市 畳張替え | /area/saitama/kawagoe |
-| 所沢市 畳張替え | /area/saitama/tokorozawa |
-| 熊谷市 畳張替え | /area/saitama/kumagaya |
-| 草加市 畳張替え | /area/saitama/soka |
-| 上尾市 畳張替え | /area/saitama/ageo |
-| 新座市 畳張替え | /area/saitama/niiza |
-| 戸田市 畳張替え | /area/saitama/toda |
-| 蕨市 畳張替え | /area/saitama/warabi |
+### 葛飾区内エリア系（12エリア）
+| キーワード | 対応ページ | 含む町名 |
+|---|---|---|
+| 亀有 畳 | /area/katsushika/kameari | 亀有・西亀有 |
+| 金町 畳 | /area/katsushika/kanamachi | 金町・東金町・新宿（にいじゅく） |
+| 柴又 畳 | /area/katsushika/shibamata | 柴又 |
+| 高砂 畳 | /area/katsushika/takasago | 高砂 |
+| 青戸（青砥） 畳 | /area/katsushika/aoto | 青戸 |
+| 立石 畳 | /area/katsushika/tateishi | 立石・東立石 |
+| 四つ木 畳 | /area/katsushika/yotsugi | 四つ木・東四つ木 |
+| 堀切 畳 | /area/katsushika/horikiri | 堀切・東堀切・小菅 |
+| お花茶屋 畳 | /area/katsushika/ohanajaya | お花茶屋・白鳥・宝町 |
+| 新小岩 畳 | /area/katsushika/shinkoiwa | 新小岩・東新小岩・西新小岩 |
+| 奥戸 畳 | /area/katsushika/okudo | 奥戸・細田・鎌倉 |
+| 水元 畳 | /area/katsushika/mizumoto | 水元・東水元・西水元・南水元 |
+
+各エリア × 12サービス（例: /area/katsushika/kameari/tatami-omotegae）も自動生成されます。地域情報は `data/katsushika-areas.ts` で管理しています。
 
 ### Google Search Console 優先送信URL
 公開後に以下のURLを Search Console で手動送信してください。
 
 1. https://www.tatami-partners.jp/
-2. https://www.tatami-partners.jp/area/saitama
-3. https://www.tatami-partners.jp/area/saitama/tatami
-4. https://www.tatami-partners.jp/area/saitama/tatami-omotegae
-5. https://www.tatami-partners.jp/area/saitama/tatami-shinchou
-6. https://www.tatami-partners.jp/area/saitama/tatami-uragaeshi
-7. https://www.tatami-partners.jp/area/saitama/fusuma
-8. https://www.tatami-partners.jp/area/saitama/shoji
-9. https://www.tatami-partners.jp/area/saitama/restoration
-10. https://www.tatami-partners.jp/area/saitama/saitama-city
-11. https://www.tatami-partners.jp/area/saitama/kawaguchi
-12. https://www.tatami-partners.jp/area/saitama/koshigaya
-13. https://www.tatami-partners.jp/area/saitama/kasukabe
-14. https://www.tatami-partners.jp/area/saitama/kawagoe
+2. https://www.tatami-partners.jp/area/katsushika
+3. https://www.tatami-partners.jp/area/katsushika/tatami
+4. https://www.tatami-partners.jp/area/katsushika/tatami-omotegae
+5. https://www.tatami-partners.jp/area/katsushika/tatami-shinchou
+6. https://www.tatami-partners.jp/area/katsushika/fusuma
+7. https://www.tatami-partners.jp/area/katsushika/shoji
+8. https://www.tatami-partners.jp/area/katsushika/restoration
+9. https://www.tatami-partners.jp/area/katsushika/kameari
+10. https://www.tatami-partners.jp/area/katsushika/kanamachi
+11. https://www.tatami-partners.jp/area/katsushika/shinkoiwa
+12. https://www.tatami-partners.jp/area/katsushika/shibamata
+13. https://www.tatami-partners.jp/area/katsushika/tateishi
+14. https://www.tatami-partners.jp/area/katsushika/guide-tatami-price
 15. https://www.tatami-partners.jp/services/tatami-omotegae
 16. https://www.tatami-partners.jp/price
 17. https://www.tatami-partners.jp/contact
@@ -220,13 +242,13 @@ async function handleSubmit(e: React.FormEvent) {
 3. 所有権確認（HTMLファイル、DNSレコード、またはGoogleアナリティクスで確認）
 4. プロパティ登録後、「サイトマップ」から `sitemap.xml` を送信
 5. 上記URLをURL検査からインデックス登録リクエスト
-6. 4〜6週間後に「検索パフォーマンス」で「埼玉畳店」「埼玉 畳」系クエリの表示回数を確認
+6. 4〜6週間後に「検索パフォーマンス」で「葛飾畳店」「葛飾区 畳」系クエリの表示回数を確認
 
 ---
 
 ## サイト役割の整理
 
-このサイトは **埼玉畳店（施工会社）のコーポレートサイト** として設計されています。
+このサイトは **葛飾畳店（施工会社）のコーポレートサイト** として設計されています。
 
 - 自社での畳工事・内装・原状回復の受注サイト
 - BtoC（一般住宅）と BtoB（法人・管理会社・旅館・寺社・店舗）の両対応
@@ -234,21 +256,23 @@ async function handleSubmit(e: React.FormEvent) {
 
 ---
 
-## ページ構成（334ページ）
+## ページ構成（2,628ページ・2026-10-20 時点）
 
 ```
-334 ページ（静的生成）
+2,628 ページ（静的生成）
 ├── コア: / /about /contact /price /flow /faq /works /area /materials /problems /purpose
 ├── サービス: /services/tatami* /services/washi* など 11 種
 ├── 法人: /business/* (6種), /restoration/* (4種)
 ├── 目的別: /for-homeowner /for-ryokan /for-temple など
 ├── 比較・ガイド: /compare/* /guide/*
-├── 地域: /area/saitama + 19市区 × 5サービス（95ページ）
+├── 葛飾区（主対象）: /area/katsushika（ハブ）＋12サービス＋12エリア×13（エリアTOP＋12サービス）＋独自ページ29本 = 198ページ
+├── 1都6県: /area/{tokyo,chiba,saitama,kanagawa,gunma,tochigi,ibaraki} × 153市区 × 13 ＋ 都県TOP・サービス（約2,080ページ）
 ├── 素材: /materials/[slug] × 11
 ├── お悩み: /problems/[slug] × 15
 ├── 目的: /purpose/[slug] × 9
 ├── 施工対応例: /works/[slug] × 30
-└── コラム: /column/[slug] × 52
+├── コラム: /column/[slug] × 94
+└── ブログ: /blog/[slug] × 80（毎日自動投稿）
 ```
 
 ## 技術スタック

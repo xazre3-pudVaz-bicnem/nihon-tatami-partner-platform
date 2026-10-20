@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, AREA_SERVED_SCHEMA } from "@/lib/site";
 import FullServicePageTemplate, { type FullServicePageData } from "@/components/templates/FullServicePageTemplate";
 
 export const metadata: Metadata = buildMetadata({
@@ -19,15 +19,7 @@ const TATAMI_SERVICE_SCHEMA = {
   name: "畳張替え・畳工事",
   serviceType: "畳張替え",
   provider: { "@id": `${SITE_URL}/#organization` },
-  areaServed: [
-    { "@type": "AdministrativeArea", name: "東京都" },
-    { "@type": "AdministrativeArea", name: "神奈川県" },
-    { "@type": "AdministrativeArea", name: "千葉県" },
-    { "@type": "AdministrativeArea", name: "埼玉県" },
-    { "@type": "AdministrativeArea", name: "群馬県" },
-    { "@type": "AdministrativeArea", name: "栃木県" },
-    { "@type": "AdministrativeArea", name: "茨城県" },
-  ],
+  areaServed: AREA_SERVED_SCHEMA,
   description: "畳の表替え・裏返し・新調・縁なし畳・和紙畳・樹脂畳など各種畳工事に対応。住宅・賃貸・旅館・法人施設まで対応します。",
 };
 
@@ -37,8 +29,8 @@ const data: FullServicePageData = {
     { label: "サービス", href: "/services" },
     { label: "畳工事" },
   ],
-  h1: "畳工事・畳張替えなら埼玉畳店｜表替え・裏返し・新調・原状回復まで対応",
-  lead: "東京・神奈川・千葉・埼玉・群馬・栃木・茨城（1都6県）に対応。畳表替え・裏返し・新調から縁なし畳・和紙畳・樹脂畳の新調まで。住宅・賃貸・旅館・寺社・店舗まであらゆる場面の畳工事に対応します。",
+  h1: "畳工事・畳張替えなら葛飾畳店｜表替え・裏返し・新調・原状回復まで対応",
+  lead: "東京都葛飾区の全域を中心に、1都6県（東京・千葉・埼玉・神奈川・群馬・栃木・茨城）のご相談に対応。畳表替え・裏返し・新調から縁なし畳・和紙畳・樹脂畳の新調まで。住宅・賃貸・旅館・寺社・店舗まであらゆる場面の畳工事に対応します。",
   heroImage: "/images/nihon-tatami/tatami/tatami-craftsman-01.png",
   heroImageAlt: "畳を一枚ずつ手作業で仕上げる職人",
   targets: ["一般住宅", "賃貸オーナー", "不動産・管理会社", "旅館・宿泊施設", "寺社", "店舗"],
@@ -70,7 +62,7 @@ const data: FullServicePageData = {
     "畳工事には、大きく「裏返し」「表替え」「新調」の三種類があります。裏返しは今ある畳表を裏向きに張り直す最も経済的な方法、表替えは畳表と縁を新しくする標準的なメンテナンス、新調は畳床から作り替える完全リニューアルです。状態を見極めずに工事を選ぶと、まだ裏返しで足りる畳を新調してしまったり、逆に新調すべき畳に表替えを繰り返してかえって費用がかさんだりします。\n" +
     "近年は、天然い草に加えて、色あせや傷に強い和紙畳、水拭きできる樹脂畳、縁のないモダンな縁なし畳など、選択肢が大きく広がりました。ペットや子育て世帯、賃貸物件、店舗など、用途に応じて最適な素材を選ぶことで、暮らしやすさと美しさを両立できます。\n" +
     "畳を放置すると、見た目の劣化だけでなく、カビ・ダニによる衛生面の問題、畳床のへたりによる転倒リスクなど、生活の質に関わる影響が出ます。特に湿気の多い環境では、表面のカビが芯まで進行し、表替えでは対応できず新調が必要になることもあります。早めの相談が、結果的に費用と手間を抑えることにつながります。\n" +
-    "業者選びでは、価格の安さだけで判断しないことが大切です。使用する畳表の産地・等級、縁の種類、廃材処分の有無、施工後の保証など、見積もりの条件を揃えて比較しましょう。埼玉畳店では、現地確認のうえで畳床の状態まで見極め、本当に必要な工事だけを正直にご提案します。住宅から旅館・寺社・店舗・賃貸管理物件まで、規模を問わず対応いたします。",
+    "業者選びでは、価格の安さだけで判断しないことが大切です。使用する畳表の産地・等級、縁の種類、廃材処分の有無、施工後の保証など、見積もりの条件を揃えて比較しましょう。葛飾畳店では、現地確認のうえで畳床の状態まで見極め、本当に必要な工事だけを正直にご提案します。住宅から旅館・寺社・店舗・賃貸管理物件まで、規模を問わず対応いたします。",
   workScope: [
     "畳の裏返し（使用2〜3年の畳表を裏向きに再利用）",
     "畳の表替え（畳表と縁を新品に交換）",
@@ -301,20 +293,20 @@ export default function TatamiServicePage() {
       <FullServicePageTemplate
         data={data}
       extraSections={
-        /* 埼玉エリアリンク */
+        /* 葛飾区エリアリンク */
         <section className="py-10 bg-kiji/20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs text-sumi/40 tracking-[0.3em] mb-5 uppercase text-center">埼玉エリア対応</p>
+            <p className="text-xs text-sumi/40 tracking-[0.3em] mb-5 uppercase text-center">葛飾区エリア対応</p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {[
-                { label: "埼玉の畳張替え", href: "/area/saitama/tatami" },
-                { label: "埼玉の畳表替え", href: "/area/saitama/tatami-omotegae" },
-                { label: "埼玉の畳新調", href: "/area/saitama/tatami-shinchou" },
-                { label: "埼玉の畳裏返し", href: "/area/saitama/tatami-uragaeshi" },
-                { label: "さいたま市", href: "/area/saitama/saitama-city" },
-                { label: "川口市", href: "/area/saitama/kawaguchi" },
-                { label: "越谷市", href: "/area/saitama/koshigaya" },
-                { label: "川越市", href: "/area/saitama/kawagoe" },
+                { label: "葛飾区の畳張替え", href: "/area/katsushika/tatami" },
+                { label: "葛飾区の畳表替え", href: "/area/katsushika/tatami-omotegae" },
+                { label: "葛飾区の畳新調", href: "/area/katsushika/tatami-shinchou" },
+                { label: "葛飾区の畳裏返し", href: "/area/katsushika/tatami-uragaeshi" },
+                { label: "亀有", href: "/area/katsushika/kameari" },
+                { label: "金町", href: "/area/katsushika/kanamachi" },
+                { label: "新小岩", href: "/area/katsushika/shinkoiwa" },
+                { label: "柴又", href: "/area/katsushika/shibamata" },
               ].map((item) => (
                 <Link key={item.href} href={item.href} className="text-xs text-center text-sumi/60 hover:text-ai border border-border py-2 px-3 bg-white hover:border-ai/30 transition-colors">
                   {item.label}

@@ -5,7 +5,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 
 export const metadata: Metadata = {
   title: { absolute: `プライバシーポリシー | ${SITE_NAME}` },
-  description: "埼玉畳店のプライバシーポリシーについてご確認いただけます。",
+  description: "葛飾畳店のプライバシーポリシーについてご確認いただけます。",
   alternates: { canonical: `${SITE_URL}/privacy` },
 };
 

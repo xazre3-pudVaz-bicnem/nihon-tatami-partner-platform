@@ -7,7 +7,7 @@ import CTASection from "@/components/ui/CTASection";
 import FaqSection from "@/components/ui/FaqSection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "東京都の畳のカビ・湿気対策｜マンション・和室の畳カビは早期対応が重要｜埼玉畳店",
+  title: "東京都の畳のカビ・湿気対策｜マンション・和室の畳カビは早期対応が重要｜葛飾畳店",
   description:
     "東京都内のマンション・戸建て住宅で畳にカビが発生した場合の対処法と張替え案内。23区・多摩地区全域に対応。",
   path: "/area/tokyo/problems/tatami-mold",
@@ -401,8 +401,8 @@ export default function TatamiMoldTokyoPage() {
               </Link>
             </li>
             <li>
-              <Link href="/area/saitama/problems/tatami-mold" className="text-kincya hover:underline">
-                埼玉県の畳カビ対策 →
+              <Link href="/area/katsushika/problems/tatami-mold" className="text-kincya hover:underline">
+                葛飾区の畳カビ対策 →
               </Link>
             </li>
             <li>

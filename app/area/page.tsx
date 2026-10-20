@@ -2,26 +2,32 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
-import { AREAS, AREA_SERVICES } from "@/data/areas";
+import { AREAS, AREA_SERVICES, cityHref } from "@/data/areas";
 import CTASection from "@/components/ui/CTASection";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
-  title: `対応エリア｜畳・内装工事 東京・神奈川・千葉・埼玉など1都6県 | ${SITE_NAME}`,
+  title: `対応エリア｜葛飾区を中心に1都6県の畳・内装工事に対応 | ${SITE_NAME}`,
   description:
-    "畳張替え・襖障子張替え・原状回復・内装工事の対応エリア。東京・神奈川・千葉・埼玉・群馬・栃木・茨城の1都6県に対応。法人・複数物件・遠方案件もお気軽にご相談ください。",
+    "畳張替え・襖障子張替え・原状回復・内装工事の対応エリア。東京都葛飾区（亀有・金町・柴又・新小岩・立石など）を中心に、東京・千葉・埼玉・神奈川・群馬・栃木・茨城の1都6県に対応します。",
   path: "/area",
 });
 
+// 表示順: 主対象の葛飾区 → 葛飾区に接する都県 → その他
+const DISPLAY_ORDER = ["katsushika", "tokyo", "chiba", "saitama", "kanagawa", "gunma", "tochigi", "ibaraki"];
+const SORTED_AREAS = [...AREAS].sort((a, b) => DISPLAY_ORDER.indexOf(a.slug) - DISPLAY_ORDER.indexOf(b.slug));
+
 const PREF_DESCRIPTIONS: Record<string, string> = {
+  katsushika:
+    "主対象エリアです。亀有・金町・柴又・新小岩・立石・堀切など、区内12エリアの全域に伺います。住宅・賃貸・店舗・寺社の畳工事をご相談ください。",
   saitama:
-    "さいたま市・川口市・越谷市など38市区に対応。埼玉県全域の畳張替え・原状回復に実績があります。",
+    "葛飾区に隣接する八潮市・三郷市をはじめ、埼玉県内の畳張替え・原状回復のご相談に対応します。",
   tokyo:
-    "23区を含む多摩地区まで、東京都内の畳工事に対応。マンション・戸建て・事務所・店舗に対応。",
+    "葛飾区に隣接する足立区・江戸川区・墨田区をはじめ、23区から多摩地区まで東京都内の畳工事に対応。マンション・戸建て・事務所・店舗に対応。",
   kanagawa:
     "横浜市・川崎市・相模原市を中心に神奈川県全域に対応。旅館・賃貸物件・施設向けも承ります。",
   chiba:
-    "千葉市・船橋市・市川市など千葉県内の畳・原状回復工事に対応。不動産管理会社からのご依頼も多数。",
+    "江戸川を挟んで葛飾区と接する松戸市をはじめ、千葉市・船橋市・市川市など千葉県内の畳・原状回復工事に対応します。",
   gunma:
     "前橋市・高崎市など群馬県内に対応。農家住宅・旧家の畳新調・和室整備も承ります。",
   tochigi:
@@ -30,7 +36,8 @@ const PREF_DESCRIPTIONS: Record<string, string> = {
     "水戸市・つくば市など茨城県内に対応。賃貸管理物件・法人施設の畳・内装工事に対応。",
 };
 
-const totalCities = AREAS.reduce((acc, pref) => acc + pref.cities.length, 0);
+// 葛飾区内のエリア（町域）は市区町村ではないため数えない
+const totalCities = AREAS.filter((pref) => pref.schemaType !== "City").reduce((acc, pref) => acc + pref.cities.length, 0);
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -40,7 +47,7 @@ const jsonLd = {
       "@id": "https://www.tatami-partners.jp/area",
       name: "対応エリア｜畳・内装工事",
       description:
-        "東京・神奈川・千葉・埼玉・群馬・栃木・茨城の1都6県に対応する畳張替え・内装工事・原状回復のエリア情報ページです。",
+        "東京都葛飾区を中心に、東京・千葉・埼玉・神奈川・群馬・栃木・茨城の1都6県に対応する畳張替え・内装工事・原状回復のエリア情報ページです。",
       url: "https://www.tatami-partners.jp/area",
     },
     {
@@ -75,13 +82,19 @@ export default function AreaPage() {
             className="text-3xl sm:text-5xl text-white mb-6"
             style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
           >
-            埼玉を中心に1都6県対応<br />
+            葛飾区を中心に1都6県対応<br />
             畳・内装工事の対応エリア
           </h1>
           <p className="text-sm sm:text-base text-white/70 max-w-2xl leading-relaxed">
-            埼玉県全域を中心に、東京・神奈川・千葉・群馬・栃木・茨城の1都6県に対応。
+            東京都葛飾区の全域を中心に、東京・千葉・埼玉・神奈川・群馬・栃木・茨城の1都6県に対応。
             住宅・賃貸・旅館・寺社・法人施設など、あらゆる用途の畳工事・内装工事をご依頼いただけます。
           </p>
+          <Link
+            href="/area/katsushika"
+            className="inline-block mt-6 bg-kincya text-white text-sm px-6 py-3 tracking-wide hover:bg-kincya/90 transition-colors"
+          >
+            葛飾区の対応エリアを見る
+          </Link>
         </div>
       </section>
 
@@ -128,7 +141,7 @@ export default function AreaPage() {
           </div>
 
           <div className="flex flex-wrap gap-2 justify-center">
-            {["東京都", "神奈川県", "千葉県", "埼玉県", "群馬県", "栃木県", "茨城県"].map(
+            {["東京都", "千葉県", "埼玉県", "神奈川県", "群馬県", "栃木県", "茨城県"].map(
               (label) => (
                 <span
                   key={label}
@@ -142,21 +155,17 @@ export default function AreaPage() {
         </div>
       </section>
 
-      {/* Prefecture Sections — Saitama first */}
+      {/* Prefecture Sections — 葛飾区 first */}
       <section className="py-16 bg-shiro">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          {AREAS.sort((a, b) => {
-            if (a.slug === 'saitama') return -1;
-            if (b.slug === 'saitama') return 1;
-            return 0;
-          }).map((pref) => (
+          {SORTED_AREAS.map((pref) => (
             <div key={pref.slug}>
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-3 gap-2">
                 <h2
                   className="text-2xl text-sumi"
                   style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
                 >
-                  {pref.name}
+                  {pref.parentName ? `${pref.parentName}${pref.name}` : pref.name}
                 </h2>
                 <Link
                   href={`/area/${pref.slug}`}
@@ -176,7 +185,7 @@ export default function AreaPage() {
                 {pref.cities.map((c) => (
                   <Link
                     key={c.slug}
-                    href={`/area/${pref.slug}/${c.slug}`}
+                    href={cityHref(pref, c)}
                     className="text-xs bg-kiji/40 border border-border text-sumi/70 px-3 py-1.5 hover:border-ai hover:text-ai transition-colors"
                   >
                     {c.name}
@@ -195,16 +204,16 @@ export default function AreaPage() {
             className="text-xl sm:text-2xl text-sumi mb-2"
             style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.05em" }}
           >
-            エリア別の対応サービス
+            葛飾区の対応サービス
           </h2>
           <p className="text-sm text-sumi/60 mb-8">
-            各エリアで以下のサービスに対応しています。詳細は各エリアページをご確認ください。
+            葛飾区内で以下のサービスに対応しています。そのほかの地域は、上記の各エリアページをご確認ください。
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {AREA_SERVICES.map((s) => (
               <Link
                 key={s.slug}
-                href={`/area/saitama/${s.slug}`}
+                href={`/area/katsushika/${s.slug}`}
                 className="bg-white border border-border text-center text-xs text-sumi/70 px-3 py-3 hover:border-ai hover:text-ai transition-colors leading-snug"
               >
                 {s.name}

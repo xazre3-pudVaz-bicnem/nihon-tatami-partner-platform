@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/metadata";
 import { SITE_NAME } from "@/lib/site";
-import { AREAS, getPrefecture } from "@/data/areas";
+import { AREAS, PRIMARY_AREA_SLUG, getPrefecture } from "@/data/areas";
 import AreaPageTemplate from "@/components/templates/AreaPageTemplate";
 
 type Props = { params: Promise<{ prefecture: string }> };
 
+// 葛飾区は専用ページ（app/area/katsushika/page.tsx）があるため除外
 export function generateStaticParams() {
-  return AREAS.map((p) => ({ prefecture: p.slug }));
+  return AREAS.filter((p) => p.slug !== PRIMARY_AREA_SLUG).map((p) => ({ prefecture: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

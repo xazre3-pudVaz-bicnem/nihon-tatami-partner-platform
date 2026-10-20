@@ -49,35 +49,35 @@ const FOOTER_LINKS = [
     ],
   },
   {
-    heading: "埼玉エリア（推奨）",
+    heading: "葛飾区エリア",
     links: [
-      { label: "埼玉の畳張替え", href: "/area/saitama/tatami" },
-      { label: "素材選びガイド", href: "/area/saitama/guide-tatami-buying" },
-      { label: "一戸建て・マンション向け", href: "/area/saitama/for-homeowner" },
-      { label: "賃貸オーナー向け", href: "/area/saitama/for-rental-owner" },
-      { label: "埼玉の畳表替え", href: "/area/saitama/tatami-omotegae" },
-      { label: "埼玉の畳新調", href: "/area/saitama/tatami-shinchou" },
-      { label: "埼玉の原状回復", href: "/area/saitama/restoration" },
-      { label: "さいたま市の畳", href: "/area/saitama/saitama-city" },
+      { label: "葛飾区の畳工事", href: "/area/katsushika" },
+      { label: "葛飾区の畳表替え", href: "/area/katsushika/tatami-omotegae" },
+      { label: "葛飾区の原状回復", href: "/area/katsushika/restoration" },
+      { label: "亀有の畳", href: "/area/katsushika/kameari" },
+      { label: "金町の畳", href: "/area/katsushika/kanamachi" },
+      { label: "新小岩の畳", href: "/area/katsushika/shinkoiwa" },
+      { label: "柴又の畳", href: "/area/katsushika/shibamata" },
+      { label: "立石の畳", href: "/area/katsushika/tateishi" },
     ],
   },
   {
     heading: "東京エリア",
     links: [
       { label: "東京の畳張替え", href: "/area/tokyo/tatami" },
-      { label: "世田谷区の畳", href: "/area/tokyo/setagaya/tatami" },
-      { label: "新宿区の畳", href: "/area/tokyo/shinjuku/tatami" },
-      { label: "八王子市の畳", href: "/area/tokyo/hachioji/tatami" },
+      { label: "足立区の畳", href: "/area/tokyo/adachi/tatami" },
+      { label: "江戸川区の畳", href: "/area/tokyo/edogawa/tatami" },
+      { label: "墨田区の畳", href: "/area/tokyo/sumida/tatami" },
       { label: "東京の原状回復", href: "/area/tokyo/restoration" },
     ],
   },
   {
-    heading: "神奈川・千葉エリア",
+    heading: "千葉・埼玉・神奈川",
     links: [
-      { label: "神奈川の畳張替え", href: "/area/kanagawa/tatami" },
-      { label: "横浜市の畳", href: "/area/kanagawa/yokohama/tatami" },
       { label: "千葉の畳張替え", href: "/area/chiba/tatami" },
-      { label: "千葉市の畳", href: "/area/chiba/chiba/tatami" },
+      { label: "松戸市の畳", href: "/area/chiba/matsudo/tatami" },
+      { label: "埼玉の畳張替え", href: "/area/saitama/tatami" },
+      { label: "神奈川の畳張替え", href: "/area/kanagawa/tatami" },
       { label: "全エリア一覧", href: "/area" },
     ],
   },
@@ -95,7 +95,7 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-full overflow-hidden shrink-0">
                 <Image
                   src="/logo.png"
-                  alt="埼玉畳店 ロゴ"
+                  alt="葛飾畳店 ロゴ"
                   width={36}
                   height={36}
                   className="w-full h-full object-cover"
@@ -105,11 +105,11 @@ export default function Footer() {
                 <span className="block text-sm tracking-[0.12em]" style={{ fontFamily: "var(--font-serif)" }}>
                   {SITE_NAME}
                 </span>
-                <span className="block text-[9px] text-white/30 tracking-[0.15em]">SAITAMA TATAMI STORE</span>
+                <span className="block text-[9px] text-white/30 tracking-[0.15em]">KATSUSHIKA TATAMI STORE</span>
               </div>
             </div>
             <p className="text-xs text-white/40 leading-relaxed mb-6">
-              畳の表替えから内装工事・原状回復まで。住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナー。
+              東京都葛飾区を中心に、畳の表替えから内装工事・原状回復まで。住宅・旅館・寺社・店舗・不動産管理物件に対応する畳と空間整備の専門パートナー。
             </p>
             <div className="space-y-2">
               {hasTel && (
